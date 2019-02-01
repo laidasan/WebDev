@@ -1,0 +1,16 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.blue {
+    background-color: black;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* text-align: center; */
+}
+h1 {
+    color: antiquewhite;
+    /* text-align: center; */
+}
