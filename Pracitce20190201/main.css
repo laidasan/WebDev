@@ -1,0 +1,24 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+h1 {
+    font-size: 48px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: rgb(16, 7, 95);
+    border: 0.5px solid white;
+}
+#div1 {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+    border: 1.5px solid black;
+    background-color: rgb(141, 175, 226);
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
