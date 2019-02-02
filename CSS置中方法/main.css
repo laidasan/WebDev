@@ -57,3 +57,28 @@ section div {
     justify-content: center;
     align-items: center;
 }
+.democolock {
+    background-color: #79fde0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.colock {
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+}
+.hour {
+    background: #fdcb6e;
+    position: absolute;
+    height: 15px;
+    width: 99px;
+    top: 50%;
+    left: 50%;
+    -webkit-animation: colockRocate 72s infinite;
+    /* transform: translate(-50%,-50%); */
+    /* top: 40px;
+    left: 96px; */
+    /* transform-origin: 50% 60px;
+    -webkit-animation: clockRotate 72s infinite linear; */
+}

@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(8, 160, 165);
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.colock {
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    background-color: white;
+    border: 10px solid rgb(83, 243, 248);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
+}
+.colock .top {
+    background: black;
+    height: 8px;
+    width: 3px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0%);
+    /* margin: 0 auto; */
+}
+.colock .right {
+    background: black;
+    height: 3px;
+    width: 8px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%,-50%);
+    /* margin: 0 auto; */
+}
+.colock .bottom {
+    background: black;
+    height: 8px;
+    width: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0%);
+    /* margin: 0 auto; */
+}
+.colock .left {
+    background: black;
+    height: 3px;
+    width: 8px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%,-50%);
+    /* margin: 0 auto; */
+}
+.colock .center {
+    background: black;
+    height: 9px;
+    width: 9px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    /* margin: auto; */
+    border-radius: 100%;
+}
+.colock .hour {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    animation: time 10s infinite linear;
+}
+.colock .hour:before {
+    position: absolute;
+    content: '';
+    /* transform: translate(-50%,0%); */
+    background: black;
+    height: 20px;
+    width: 3px;
+    top: 50%;
+}
+.colock .minute {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    animation: time 5s infinite linear;
+}
+.colock .minute:before {
+    position: absolute;
+    content: '';
+    background: black;
+    height: 40px;
+    width: 1px;
+    top:50%;
+}
+.colock .second {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left:50%;
+    animation: time 2.5s infinite linear;
+}
+.colock .second:before {
+    position: absolute;
+    content: '';
+    background: red;
+    width: 2px;
+    height: 60px;
+    top:50%;
+}
+@keyframes time {
+    to {
+        transform: rotate(360deg);
+    }
+}
