@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*這個屬性能讓元素的內距與邊框不會影響元素本身的寬度 */
+}
+section {
+    height: 100vh;   /*vh => view height 隨著可視範圍高度的百分比 vw(view width)則是寬度*/
+    color: white;
+}
+section div {
+    width: 300px;
+    height: 300px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
+/* Transform Translate */
+.one {
+    background-color: #74b9ff;
+    position: relative;
+    /* border: 1px solid white; */
+}
+.one div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);  /*比較舊的遊覽器不支援transform屬性*/
+}
+
+/* Margin */
+    
+.two {
+    background-color: #00cec9;
+    position: relative;
+    /* border: 1px solid white; */
+}
+.two div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%,-50%); */
+    margin-top: -150px;
+    margin-left: -150px;
+}
+.three {
+    background-color: #fd79a8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.four {
+    background-color: #fdcb6e;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
