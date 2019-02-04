@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    /* background-color: #fdc244; */
+    background: linear-gradient(-45deg,#fdc344,#44fdb6,#fd44b0);
+    background-size: 270% 270%;
+    animation: Gradient 6s ease infinite;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    /* background: white; */
+    height: 100%;
+    margin-top: 255px;
+    /* border: 3px solid black; */
+
+}
+.container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: white; */
+    font-size: 90px;
+    /* border: 3px solid black; */
+}
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
