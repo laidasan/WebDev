@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body {
+    background-color: rgb(236, 205, 65);
+    width: 100vh;
+    height: 100vh;
+} */
+section {
+    height: 100vh;
+    background-color: #eccd41;
+    background: linear-gradient(120deg,#eccd41,#23dfdf,#c42be2,#e6389d);
+    background-size: 402% 402%;
+    animation: Gradient 5s ease infinite;
+    opacity: 0.9;
+}
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+        /* opacity: 0.6; */
+
+    }
+    100% {
+        background-position: 0% 50%;
+        /* opacity: 0.9; */
+    }
+}

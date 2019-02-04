@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+section {
+    height: 100vh;
+}
+.one {
+    background: linear-gradient(-45deg,#ae2cfa,#eb2fc2,#eb307e,#f13453);
+    background-size: 402% 402%;
+    
+}
