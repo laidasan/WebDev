@@ -5,9 +5,106 @@
 }
 section {
     height: 100vh;
+    padding-top: 255px;
 }
 .one {
     background: linear-gradient(-45deg,#ae2cfa,#eb2fc2,#eb307e,#f13453);
-    background-size: 402% 402%;
-    
+    background-size: 204% 204%;
+    animation: Gradient 4s ease infinite;
+}
+/* .two {
+    background: linear-gradient(-45deg,#ae2cfa,#eb2fc2,#eb307e,#f13453);
+    background-size: 204% 204%;
+    animation: Gradient 4s ease infinite;
+
+} */
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    font-size: 27px;
+}
+.container {
+    background-color: rgb(28, 90, 126);
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    /* border: 3px solid black; */
+}
+.layout-1 {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-columns: repeat(3,1fr); repeat() you know that.*/
+    /*下面這行寫法可以解決當我們視窗縮小時候，GRID被擠壓成很小的樣子,auto-fit自動適應 minmax(最小，最大)*/
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));  
+    /* grid-template-columns: auto auto auto; */
+    grid-gap: 9px;      /*每個格子之間的距離,有分grid-column & grid-row*/
+}
+.items {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border: 3px solid black;
+}
+.item1 {
+    /*grid-column-start: 1;      /*格子中間都有條Line 這兩段的意思是*/
+    /*grid-column-end: 3;        /*從第一條線到第三條線*/
+    /*或是可以這樣寫,一樣是從第一條線開始到第三條線結束,同樣的也有gird-row*/
+    /* grid-column: 1/3; */
+    /*或是可以這樣寫，span(跨越)*/
+    grid-column: 1 / span 2; 
+    /*以上寫法都會達成同樣的效果*/
+}
+/* grid-area*/
+.layout-2 {
+    display: grid;
+    grid-gap: 9px;
+    grid-template-areas: 'myarea myarea myarea';
+}
+.item1-2 {
+    grid-area: myarea;
+}
+.layout-3 {
+    display: grid;
+    grid-gap: 9px;
+    grid-template-areas: 'myarea myarea .'
+}
+.layout-4 {
+    display: grid;
+    grid-gap: 9px;
+    grid-template-areas: 'myarea myarea . ' 'myarea myarea .'
+}
+.header {
+    grid-area: header;
+}
+.menu {
+    grid-area: men;
+}
+.maint {
+    grid-area: main;
+}
+.footer {
+    grid-area: footer;
+}
+
+/*有 BUG?*/
+.layout-5 {
+    display: grid;
+    grid-gap: 9px;
+    grid-template-areas: 
+    'header header header header header header'
+    'men main main main main main'
+    'men footer footer footer footer footer';
 }
