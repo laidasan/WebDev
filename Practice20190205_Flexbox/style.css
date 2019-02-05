@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+section {
+    height: 100vh;
+    /* background-color: #fdd759; */
+    background: linear-gradient(120deg,#fdd759,rgb(65, 253, 244));
+}
+/* Flex很適合單向排版*/
+/*flex container properties */
+/*  flex-direction
+    flex-wrap
+    flex-flow
+    justify-content
+    align-items
+    align-content*/
+.container,.container2 {
+    width: 100%;
+    display: flex;
+    /* background: rgb(255, 74, 240); */
+    background: linear-gradient(#41fdf4,#fdd759,#41fdf4);
+    background-size: 201% 201%;
+    padding: 15px;
+    /* flex-direction: column; /*how to stack items */
+    /* flex-direction: column-reverse /*reverse column stack items */
+    /* flex-direction: row-reverse; */
+    /* flex-wrap: wrap;  換行,有三種 wrap nowrap wrap-reverse */
+    /* flex-wrap: wrap-reverse; */
+    flex-flow: row wrap; /*felx-flow setting flex-direction & flex-wrap at the same time*/
+}
+.container  div {
+    /* width: 10%; */
+    width: 180px;
+    height: 60px;     /*align-items: stretch 時注意*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    font-size: 27px;
+    margin: 15px;
+    /* border:  */
+}
+.layout-2 {
+    height: 450px;
+    border: 3px solid black;
+    justify-content: center;  /*flex-start(default) center flex-end space-round類似於水平對齊*/
+                              /*嚴格來說其實是"主軸對齊" 主軸的設定是flex-direction* 所以可能是水平對齊*/
+                              /*或垂直對齊喔!*/
+    /* justify-content: space-around ; /*space-round space-between */
+    align-items: center;  /*flex-start center flex-end */
+    /*align-items: stretch; /*baseline stretch(伸展) 伸展時記得看看有沒有把item交錯軸要伸展的width or height限制住了*/
+    /*stretch為default值，會全部伸展開來*/
+    /*baseline 依照字體*/
+    /*align-cotent: flex-start | flex-end | center |space-between |space-around stretch*/
+    /*align-items的多行版本，跟justify-content一樣效果 只不過是交錯軸的 */
+}
+.container2  div {
+    width: 180px;
+    background: #fff;
+    font-size: 27px;
+    margin: 15px;
+}
+.container2 {
+    justify-content: center;
+     align-items: flex-start;   /*這裡div裡面字數有多有少，flex-start會往上對齊剛好符合字數的height*/
+    /* align-items: flex-end;  /*flex-end則是往下對齊 */
+}

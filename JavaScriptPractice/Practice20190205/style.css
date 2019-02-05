@@ -8,7 +8,7 @@ body {
     /* background-color: #fdc244; */
     background: linear-gradient(-45deg,#fdc344,#44fdb6,#fd44b0);
     background-size: 270% 270%;
-    animation: Gradient 6s ease infinite;
+    animation: Gradient 6s ease infinite;   
 }
 .container {
     width: 80%;
