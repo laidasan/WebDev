@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+    /* border: 21px solid black; */
+    /* min-width: 748px; */
+}
+header {
+    background: rgb(255, 209, 56);
+    /* width: 100%; */
+    flex-basis: 12%;
+    /* height: 12%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 12px;
+    margin-left: 38px;
+    height: 100%;
+    width: 120px;
+    background: rgb(0, 0, 0);
+    color: #fff;
+}
+nav {
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+nav a {
+    transition: all .3s ease;
+    /* border-radius: 6px; */
+}
+nav  a:hover {
+    color: #fff;
+    text-shadow: 6px 6px 3px  gray;
+    /* border-bottom: 3px solid #fff; */
+    /* box-shadow: 3px 3px 3px 0 gray; */
+
+}
+main > *,header,footer {
+    margin: 3px;
+    padding: 7.5px;
+    border-radius: 9px
+}
+main {
+    display: flex;
+    flex-basis: 75%;   /*flex-basis 就像是width一樣，但是依照flex-direction，row的話就是width，column就是height */
+    justify-content: space-around;
+    /* align-items: stretch; */
+    border: 3px solid black;
+}
+
+footer {
+    height: 12%;
+    background: black;
+}
+ul {
+    list-style: none;
+}
+ul >li {
+    float: left;
+    margin: 12px;
+}
+ul >li >a {
+    text-decoration: none;
+    color :black;
+    font-size: 24px;
+    font-weight: bold;
+}
+section {
+    background: rgba(244, 73, 250, 0.849);
+    flex-basis: 18%;
+    order: -1;
+    /* flex-grow: 1; */
+    
+}
+article {
+    background: rgb(22, 230, 150);
+    flex-basis: 60%;
+}
+aside {
+    flex-basis: 18%;
+    background: rgb(241, 39, 150);
+}
+
+@media all and (max-width:640px) {     /*自動適應網頁大小*/
+    main {
+        flex-direction: column;
+    }
+}

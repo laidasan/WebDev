@@ -16,6 +16,7 @@ section {
     justify-content
     align-items
     align-content*/
+    
 .container,.container2 {
     width: 100%;
     display: flex;
