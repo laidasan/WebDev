@@ -10,21 +10,21 @@ body {
     height: 100vh;
     background: linear-gradient(45deg,black,#fff);
 }
-.container {
-    background: palevioletred;
+  /* .container {
+    background: palevioletred ;
     width: 270px;
     height: 270px;
-    position: relative;
+    position: relative; 
     border: none;
     border-radius: 21px;
     box-shadow: 0 0 3px 3px rgb(53, 250, 224);
-}
+}   */
 .heart {
     background: purple;
     position: absolute;
     width: 150px;
     height: 150px;
-    top:57%;
+    top:50%;
     left:50%;
     transform: translate(-50%,-50%) rotate(45deg);
 }
