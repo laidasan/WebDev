@@ -1,0 +1,157 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    min-height: 100vh;
+    background: #a137bb;
+    background: linear-gradient(45deg,#37bb7d,#a137bb);
+    background-size: 120% 120%;
+}
+.button-1 {
+    background: #37bb7d;
+    font-size: 45px;
+    color: #fff;
+    border: none;
+    padding: 0 15px;
+    height: 60px;
+    transition: all .6s ease;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.button-1:hover {
+    background: #fff;
+    color: #37bb7d;
+    border-radius: 6rem;
+}
+.button-1:after {
+    right: inherit;
+    top: inherit;
+    left:0;
+    bottom: 0;
+}
+
+
+/*Lid Button*/
+/* .lid-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    height: 60px;
+    width: 180px;
+    border-radius: 0.25rem;
+    font-size: 45px;
+    box-shadow: 0 1px 2px gray inset;
+    perspective: 30rem;
+} */
+/* .lid-button {
+    position: relative;
+    width: 11.5rem;
+    height:2.1rem;
+    padding: 0.375rem 0.375rem 0;
+    background: #eee;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+.edge {
+    background-color: #20c7f3;
+    top:0.25rem;
+    height:0.25rem;
+    transform:rotateX(90deg);
+    transform-origin: center top;
+}
+.container,.container > * {
+    position: absolute; 
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+.outer,.inner {
+    border-radius: 0.25rem;
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+}
+.outer {
+    background-color: #2ec8fa;
+    transform: translateZ(0.25rem)
+}
+.inner {
+    background-color: #67e2fe;
+}
+.lid-button:hover .container {
+    transform: rotateX(-120deg);
+}
+.lid-button,.lid-button div  {
+    transition-duration: .7s;
+    transition-timing-function: ease;
+}
+.container {
+    transform-origin: center bottom;
+    transform-style: preserve-3d;
+}
+.shadow {
+    position: absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    height:3.2rem;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%);
+    transform:rotateX(90deg);
+    transform-origin: center top;
+    opacity: 0;
+}
+.twitter-button:hover .shadow {
+    transform: rotateX(45deg) scale(0.95);
+    opacity: 1;
+} */
+
+
+/*shiney button 很像是光從左上角亮到右下角結束，但其實是一大片斜光從左邊Overflow部分滑到右邊*/
+/*所以overflow:hidder 目的在於隱藏a標籤之外的光*/
+.shiney {
+    /* border: 3px solid black; */
+    /* padding: 0 45px; */
+}
+.shiney a {
+    position: relative;
+    padding: 12px 45px;
+    font-size: 45px;
+    text-decoration: none;
+    color: #37bb7d;
+    display: inline-block;
+    border: 3px solid #37bb7d;
+    border-radius: 0.3rem;
+    overflow: hidden;  /*Overflow隱藏，註解掉後可以看到真面目*/
+    transition: all .3s ease-in-out;   /*a標籤hover的速度*/
+}
+.shiney a:before {
+    content: "";
+    background: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top:0;
+    left:-4.5em;   
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+}
+.shiney a:hover {
+    background: #37bb7d;
+    color: #fff;
+    border-bottom: 4.5px solid darken(#37bb7d,10%);
+}
+.shiney a:hover:before {
+    transform: skewX(-45deg) translateX(13.5em);
+    transition: all .6s ease-in-out;   /*這行註解掉後，斜光就會直接translate到之後的位置，不會慢慢跑*/
+}
