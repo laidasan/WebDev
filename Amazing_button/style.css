@@ -142,8 +142,8 @@ section {
     display: block;
     position: absolute;
     top:0;
-    left:-4.5em;   
-    transform: skewX(-45deg) translateX(0);
+    left:-4.5em;   /*將光移動到<a>左邊*/
+    transform: skewX(-45deg); /*translateX(0);  /*skewX將光變成斜光 這裡translateX可有可無*/
     transition: none;
 }
 .shiney a:hover {
@@ -152,6 +152,6 @@ section {
     border-bottom: 4.5px solid darken(#37bb7d,10%);
 }
 .shiney a:hover:before {
-    transform: skewX(-45deg) translateX(13.5em);
+    transform: skewX(-45deg) translateX(13.5em); 
     transition: all .6s ease-in-out;   /*這行註解掉後，斜光就會直接translate到之後的位置，不會慢慢跑*/
 }
