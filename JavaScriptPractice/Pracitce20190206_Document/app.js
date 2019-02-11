@@ -79,7 +79,7 @@ console.log(lis);
 console.log(typeof lis);
 let lisarrs = Array.from(lis);
 console.log(lisarrs);
-// console.log(typeof lisarrs);    //OBJECT
+// console.log(typeof lisarrs);    //OBJECT ARRAY is a OBJECT
 console.log(lis[2]);  
 lis[2].style.color = '#fff';
 
@@ -87,11 +87,24 @@ lis[2].style.color = '#fff';
 // lisarrs.reverse();  
 console.log(lisarrs);
 
-// lisarrs.forEach(function(td) {
-//     console.log(td);
-//     console.log(td.className);
-// })
-lisarrs.forEach(function(td,index) {
+lisarrs.forEach(function(tx) {
+    console.log(tx);
+    console.log(tx.className);
+})
+// for(let i = 0;i < lisarrs.length;i++) {
+//     console.log(lisarrs[i]);
+//     console.log(lisarrs[i].className)
+// }
+lisarrs.forEach(function(tx,index) {
+    console.log(tx.className);
+    tx.innerHTML = `${index} : td`;
+})
+
+
+//doucument.querySelectorAll
+const tds = document.querySelectorAll('td.l-gray');
+console.log(tds);
+tds.forEach(function(td,index) {
     console.log(td.className);
-    td.innerHTML = `${index} : td`;
+    td.innerHTML = `${index} : td.l-gray`
 })

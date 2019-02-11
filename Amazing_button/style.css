@@ -151,7 +151,83 @@ section {
     color: #fff;
     border-bottom: 4.5px solid darken(#37bb7d,10%);
 }
+
+/*shiney a:before 的 hover?*/
 .shiney a:hover:before {
     transform: skewX(-45deg) translateX(13.5em); 
-    transition: all .6s ease-in-out;   /*這行註解掉後，斜光就會直接translate到之後的位置，不會慢慢跑*/
+    transition: all .6s ease-in-out; 
+    /*上面這行註解掉後，斜光就會直接translate到之後的位置，不會慢慢跑*/  
+}
+
+
+/*before 與 after 是element建立前(before)與建立後(after)加入*/
+/*把加入的屬性給到content，所以寫了before或是after要記得寫上content屬性*/
+/*不然會不起作用的喔!!*/
+.box {
+    position: relative;
+}
+.box::before {
+    content: '';
+    position: absolute;
+    background: red;
+    top: 3px;
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+    transform: translate(-50%,-50%) rotate(45deg);
+    z-index: 2;
+    animation: jump .9s infinite linear;
+}
+.box::after {
+    content:'';
+    position: absolute;
+    background:#eaeaea;
+    top: 57px;
+    width: 57px;
+    height: 3px;
+    transform: translate(-50%,0);
+    border-radius: 100%;
+    z-index: 1;
+    animation: shadow .9s infinite linear;
+}
+
+@keyframes jump {
+    0% {
+        top:3px;
+        transform: translate(-50%,-50%) rotate(90deg);
+    }
+    15% {
+        border-bottom-right-radius: 6px;
+
+    }
+    50% {
+        top: 27px;
+        border-bottom-right-radius: 30px;
+        transform: translate(-50%,-50%) rotate(45deg);
+    }
+    80% {
+        border-bottom-right-radius: 6px;
+
+    }
+    100% {
+        top:3px;
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+@keyframes shadow {
+    0%{
+        width: 51px;
+        transform: translate(-50%,0);
+
+    }
+    50% {
+        width: 63px;
+        height: 6px;
+        background: #eee;
+        transform: translate(-50%,0);
+    }
+    100% {
+        width: 51px;
+        transform: translate(-50%,0);
+    }
 }
