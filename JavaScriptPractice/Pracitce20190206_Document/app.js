@@ -67,7 +67,7 @@ const items = document.getElementsByClassName('l-gray');
 console.log(items);
 console.log(typeof items);
 console.log(items[2]);  
-items[0].style.color = '#fff';
+// items[0].style.color = '#fff';
 const table = document.querySelector('table').getElementsByClassName('l-gray');
 console.log(table);
 console.log(typeof table);
@@ -81,7 +81,7 @@ let lisarrs = Array.from(lis);
 console.log(lisarrs);
 // console.log(typeof lisarrs);    //OBJECT ARRAY is a OBJECT
 console.log(lis[2]);  
-lis[2].style.color = '#fff';
+// lis[2].style.color = '#fff';
 
 // lis.reverse();
 // lisarrs.reverse();  
@@ -97,7 +97,7 @@ lisarrs.forEach(function(tx) {
 // }
 lisarrs.forEach(function(tx,index) {
     console.log(tx.className);
-    tx.innerHTML = `${index} : td`;
+    // tx.innerHTML = `${index} : td`;
 })
 
 
@@ -106,5 +106,21 @@ const tds = document.querySelectorAll('td.l-gray');
 console.log(tds);
 tds.forEach(function(td,index) {
     console.log(td.className);
-    td.innerHTML = `${index} : td.l-gray`
-})
+    // td.innerHTML = `${index} : td.l-gray`
+})  
+
+const tdodd = document.querySelectorAll('td:nth-child(odd)');
+const tdeven = document.querySelectorAll('td:nth-child(even)');
+
+console.log(tdodd);
+console.log(tdeven);
+
+tdodd.forEach(function(td) {
+    console.log(td);
+    td.style.background = 'red';
+});
+
+for (let i = 0;i < tdeven.length;i++) {
+    tdeven[i].style.background = 'blue';
+};
+
