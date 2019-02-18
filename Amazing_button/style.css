@@ -12,7 +12,7 @@ body {
 
 
 section {
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -727,6 +727,92 @@ h1 {
     }
     100% {
        top: 0;
+    }
+}
+
+
+/*loading-double-circle*/
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.loading-double {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6rem;
+    height: 6rem;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    animation: loading-double-circle 1.5s infinite ease-in-out;
+    opacity: 0.6;
+}
+.bounce1 {
+    background: #fff;
+}
+.bounce2 {
+    background:#fff;
+    animation-delay: -0.75s;
+}
+@keyframes loading-double-circle {
+    0% {
+        /* opacity: 0.9; */
+        transform: translate(-50%,-50%) scale(0);
+    }
+    50% {
+        /* opacity: 0.3; */
+        transform: translate(-50%,-50%) scale(1);
+    }
+    100% {
+        /* opacity: 0.9; */
+        transform: translate(-50%,-50%) scale(0);
+    }
+}
+
+/*loading-line*/
+.rect-container {
+    width: 12rem;
+}   
+.rect {
+    width: 0.6rem;
+    height: 3rem;
+    margin: 0.24rem;
+    background: #fff;
+    animation: loading-line 1s infinite ease-in-out;
+}
+.rect-one {
+    animation-delay: -0.9s;
+}
+.rect-two {
+    
+    animation-delay: -0.8s;
+}
+.rect-three {
+    animation-delay: -0.7s;
+}
+.rect-four {
+    animation-delay: -.6s;
+}
+.rect-five {
+    animation-delay: -.5s;
+    
+}
+@keyframes loading-line {
+    0% {
+        transform:  scaleY(1);
+    }
+    20% {
+        transform:  scaleY(1.6);
+        
+    }
+    40% {
+        transform:  scaleY(1);
+    }
+    100% {
+        transform:  scale(1);
+
     }
 }
 
