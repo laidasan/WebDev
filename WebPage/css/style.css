@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 COLORS:
 
@@ -6,184 +7,176 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-* ,
+*,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    /* box-sizing: border-box; */
-    box-sizing: inherit;
-}
+  padding: 0;
+  margin: 0;
+  /* box-sizing: border-box; */
+  box-sizing: inherit; }
+
 /*rem為相對大小，依照跟元素html計算出大小，假如html設定font-size為10px;*/
 /*而子元素計算出的大小就為 3rem = 3 * 10px = 30px;*/
 html {
-    /* font-size: 10px; */
-    font-size: 62.5%;   /*62.5 * 16 = 10px*/
-}
+  /* font-size: 10px; */
+  font-size: 62.5%;
+  /*62.5 * 16 = 10px*/ }
+
 body {
-    font-family: "Lato",sans-serif; /*Lato -> Google Font. check index.html link in <head>*/
-    font-weight: 400;
-    /* font-size: 16px; */
-    line-height: 1.7; /*行高*/
-    color: #777;
-    /* padding:30px; */
-    padding: 3rem;
-    box-sizing: border-box;
-}
+  font-family: "Lato",sans-serif;
+  /*Lato -> Google Font. check index.html link in <head>*/
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  /*行高*/
+  color: #777;
+  /* padding:30px; */
+  padding: 3rem;
+  box-sizing: border-box; }
+
 .header {
-    height: 95vh;
-    background-image:linear-gradient(45deg,
-    rgba(92, 177, 111,0.8),
-    rgb(29, 134, 99,0.8)),
-     url(../img/hero.jpg);
-    /*linear-gradient還有可使用 to top|right|bottom|left*/
-    background-size: cover;
-    background-position: top; /*再縮放時看得出差異 top|bottom|center*/
-    clip-path: polygon(0 0,100% 0,100% 75vh,0% 100%);
-    position: relative;
-}
-.logo-box {
-    position: absolute;
-    /* top:42px; */
-    top:4.2rem;
-    /* left:42px; */
-    left:4.2rem;
-}
-.logo {
-    /* height: 36px; */
-    height:3.6rem;
-}
-.text-box {
-    position: absolute;
-    top:40%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-    /* border: 3px solid black; */
-}
+  height: 95vh;
+  background-image: linear-gradient(45deg, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /*linear-gradient還有可使用 to top|right|bottom|left*/
+  background-size: cover;
+  background-position: top;
+  /*再縮放時看得出差異 top|bottom|center*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+  position: relative; }
+
+.header__logo-box {
+  position: absolute;
+  /* top:42px; */
+  top: 4.2rem;
+  /* left:42px; */
+  left: 4.2rem; }
+
+.header__logo {
+  /* height: 36px; */
+  height: 3.6rem; }
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* border: 3px solid black; */ }
+
 .heading-primary {
-    /* display: flex;
+  /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; */
-    /* border: 3px solid black; */
-    color: #fff;
-    text-transform: uppercase;
-    backface-visibility: hidden;
-    /* margin-bottom:60px; */
-    margin-bottom: 6rem;
-}
-.heading-primary-main {
-    /* font-size: 60px; */
-    font-size:6rem;
-    /* letter-spacing: 30px; */
-    letter-spacing: 3rem;
-    font-weight: 400;
-    animation: main 1.5s ease;
-}
-.heading-primary-sub {
-    /* font-size: 20px; */
-    font-size: 2rem;
-    /* letter-spacing: 17.1px; */
-    letter-spacing: 1.71rem;
-    font-weight: 400;
-    animation: sub 1.5s ease;
-}
-.heading-primary-main,.heading-primary-sub {
-    display: block;
-}
-@keyframes main {
-    0% {
-        opacity:0 ;
-        transform: translate(30%,0);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0%,0%);
-    }
-}
-@keyframes sub {
-    0% {
-        opacity: 0;
-        transform: translate(-30%,0);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0,0);
-    }
-}
-a {
-    text-decoration: none;
-}
-header a {
-    /* font-size: 24px; */
-    color: #000;
-    display: inline-block;
-    text-transform: uppercase;
-    background: #fff;
-    /* padding:12px 51px; */
-    padding: 1.2rem 5.1rem;
-    /* border-radius: 100px; */
-    border-radius: 10rem;
-    font-weight: 400;
-    animation: header-a 1.5s ease .6s; /*name duration animation-timing-function delay*/
-    animation-fill-mode: backwards; /*確實的 style before animation start*/
-    /*比如說這裡的animation有delay.6s秒，且一開始有translateY，就可以確保在animation開始前在正確位置*/
-    transition: all .3s;
-    position: relative;
-}
-header a:hover {
-    /* box-shadow: 0px 12px 12px 0 #1e8d68; */
-    box-shadow: 0px 1.2rem 1.2rem 0 #1e8d68;
-    /* transform: translateY(-3px); */
-    transform: translateY(-0.3rem);
-}
-header a:active {
-    /* transform: translateY(-1px); */
-    transform: translateY(-0.1rem);
+  /* border: 3px solid black; */
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* margin-bottom:60px; */
+  margin-bottom: 6rem; }
 
-}
-header a::after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border-radius: 100px;
-    background-color: #fff;
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: -1;
+.heading-primary--main {
+  /* font-size: 60px; */
+  font-size: 6rem;
+  /* letter-spacing: 30px; */
+  letter-spacing: 3rem;
+  font-weight: 400;
+  animation: main 1.5s ease; }
+
+.heading-primary--sub {
+  /* font-size: 20px; */
+  font-size: 2rem;
+  /* letter-spacing: 17.1px; */
+  letter-spacing: 1.71rem;
+  font-weight: 400;
+  animation: sub 1.5s ease; }
+
+.heading-primary--main, .heading-primary--sub {
+  display: block; }
+
+@keyframes main {
+  0% {
     opacity: 0;
-    transition: all .3s ease;
-}
+    transform: translate(30%, 0); }
+  100% {
+    opacity: 1;
+    transform: translate(0%, 0%); } }
+
+@keyframes sub {
+  0% {
+    opacity: 0;
+    transform: translate(-30%, 0); }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0); } }
+
+a {
+  text-decoration: none; }
+
+header a {
+  /* font-size: 24px; */
+  color: #000;
+  display: inline-block;
+  text-transform: uppercase;
+  background: #fff;
+  /* padding:12px 51px; */
+  padding: 1.2rem 5.1rem;
+  /* border-radius: 100px; */
+  border-radius: 10rem;
+  font-weight: 400;
+  animation: header-a 1.5s ease .6s;
+  /*name duration animation-timing-function delay*/
+  animation-fill-mode: backwards;
+  /*確實的 style before animation start*/
+  /*比如說這裡的animation有delay.6s秒，且一開始有translateY，就可以確保在animation開始前在正確位置*/
+  transition: all .3s;
+  position: relative; }
+
+header a:hover {
+  /* box-shadow: 0px 12px 12px 0 #1e8d68; */
+  box-shadow: 0px 1.2rem 1.2rem 0 #1e8d68;
+  /* transform: translateY(-3px); */
+  transform: translateY(-0.3rem); }
+
+header a:active {
+  /* transform: translateY(-1px); */
+  transform: translateY(-0.1rem); }
+
+header a::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: all .3s ease; }
+
 header a:hover::after {
-    transform: scale(1.5);
-    animation: header-a-hover-after .3s ease ;
-}
+  transform: scale(1.5);
+  animation: header-a-hover-after .3s ease; }
 
 @keyframes header-a {
-    0% {
-        opacity: 0;
-        transform: translateY(33%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateY(33%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 @keyframes header-a-hover {
-    0% {
-    }
-}
+  0% { } }
+
 @keyframes header-a-hover-after {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
 /* .circle {
     width: 100px;
     height : 100px;
