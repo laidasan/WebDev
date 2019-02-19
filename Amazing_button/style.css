@@ -889,7 +889,7 @@ h1 {
     }   
 }
 @keyframes loading-polygon-two {
-    0% {-
+    0% {
         top:100%;
         left:100%;
     }
