@@ -1,0 +1,24 @@
+* ,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+    box-sizing: inherit;
+}
+/*rem為相對大小，依照跟元素html計算出大小，假如html設定font-size為10px;*/
+/*而子元素計算出的大小就為 3rem = 3 * 10px = 30px;*/
+html {
+    /* font-size: 10px; */
+    font-size: 62.5%;   /*62.5 * 16 = 10px*/
+}
+body {
+    font-family: "Lato",sans-serif; /*Lato -> Google Font. check index.html link in <head>*/
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7; /*行高*/
+    color: $color-grey-dark;
+    /* padding:30px; */
+    padding: 3rem;
+    box-sizing: border-box;
+}
