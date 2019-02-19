@@ -815,7 +815,102 @@ h1 {
 
     }
 }
-.test {
-    
+
+/*翻牌式loading*/
+.loading-polygon {
+    width: 6rem;
+    height: 6rem;
+    background: #fff;
+    perspective: 18rem;
+    animation: loading-polygon 1.2s infinite ease-in-out;
+}
+@keyframes loading-polygon {
+    0% {    
+        perspective: 21rem;
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        perspective: 21rem;
+        transform: rotateX(180deg) rotateY(0deg);
+    }
+    100% {
+        perspective: 21rem;
+        transform: rotateX(180deg) rotateY(180deg);
+    }
 }
 
+
+/*兩個方形loading*/
+.loading-two-polygon-container {
+    width: 4.5rem;
+    height: 4.5rem;
+    /* border: 3px solid black; */
+}
+.loading-two-polygon {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fff;
+}
+.polygon-one {
+    top: 0;
+    left: 0;
+    animation: loading-polygon-one 2.1s infinite ease-in-out;
+}
+.polygon-two {
+    top:100%;
+    left: 100%;
+    animation: loading-polygon-two 2.1s infinite ease-in-out;
+}
+@keyframes loading-polygon-one {
+    0% {
+        top:0;
+        left:0;
+    }
+    25% {
+        top: 0;
+        left:100%;
+        transform: scale(0.6) rotate(-90deg);
+    }
+    50%{
+        top: 100%;
+        left: 100%;
+        transform: scale(1) rotate(-180deg);
+    }
+    75% {
+        top: 100%;
+        left: 0;
+        transform: scale(0.6) rotate(-270deg);
+    }
+    100%{
+        top:0;
+        left:0;
+        transform: scale(1) rotate(-360deg);
+    }   
+}
+@keyframes loading-polygon-two {
+    0% {-
+        top:100%;
+        left:100%;
+    }
+    25% {
+        top: 100%;
+        left:0;
+        transform: scale(0.6) rotate(-90deg);
+    }
+    50%{
+        top: 0;
+        left: 0;
+        transform: scale(1) rotate(-180deg);
+    }
+    75% {
+        top: 0;
+        left: 100%;
+        transform: scale(0.6) rotate(-270deg);
+    }
+    100%{
+        top:100%;
+        left:100%;
+        transform: scale(1) rotate(-360deg);
+    }   
+}
