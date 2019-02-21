@@ -15,15 +15,6 @@ html {
   /*62.5 * 16 = 10px*/ }
 
 body {
-  font-family: "Lato",sans-serif;
-  /*Lato -> Google Font. check index.html link in <head>*/
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  /*行高*/
-  color: #777;
-  /* padding:30px; */
-  padding: 3rem;
   box-sizing: border-box; }
 
 @keyframes main {
@@ -59,6 +50,18 @@ body {
   100% {
     opacity: 0; } }
 
+body {
+  font-family: "Lato",sans-serif;
+  /*Lato -> Google Font. check index.html link in <head>*/
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  /*行高*/
+  color: #777;
+  /* padding:30px; */
+  padding: 3rem;
+  box-sizing: border-box; }
+
 .heading-primary {
   /* display: flex;
     flex-direction: column;
@@ -87,6 +90,42 @@ body {
 
 .heading-primary--main, .heading-primary--sub {
   display: block; }
+
+.heading-secondary {
+  display: inline-block;
+  font-size: 3.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .3s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 0.1rem 3rem rgba(0, 0, 0, 0.45); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-big {
+  margin-bottom: 7.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4.5rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.2rem; }
 
 .btn:link, .btn:visited {
   display: inline-block;
@@ -130,6 +169,71 @@ body {
   background: #fff;
   color: #000; }
 
+.btn-text:link, .btn-text:visited {
+  text-decoration: none;
+  color: #55c57a;
+  display: inline-block;
+  border-bottom: 3px solid #55c57a;
+  padding: 3px;
+  transition: all .3s;
+  font-size: 1.6rem; }
+
+.btn-text:hover {
+  background: #55c57a;
+  color: #fff;
+  box-shadow: 0 6px 12px #777;
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 9px #777; }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    position: absolute;
+    transition: all .3s;
+    outline-offset: 1.8rem; }
+    .composition__photo--p1 {
+      top: 3rem;
+      left: 0; }
+    .composition__photo--p2 {
+      top: 6rem;
+      right: 0; }
+    .composition__photo--p3 {
+      top: 12rem;
+      left: 25%; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.6rem);
+      box-shadow: 0 3rem 7.5rem rgba(0, 0, 0, 0.4);
+      z-index: 2; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95);
+    /*一個photo hover時，其他的photo縮小*/ }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem 0;
+  text-align: center;
+  width: 24%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.15);
+  transition: all .3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    background: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.05); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(45deg, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
@@ -155,6 +259,68 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     /* border: 3px solid black; */ }
+
+.row {
+  max-width: 75vw;
+  margin: 0 auto;
+  background: #55c57a;
+  color: #fff;
+  /*[]attrible selector，EX:[alt="Logo"],或是下面的例子*/
+  /* ^= "col-"意思是選擇所有"col-"開頭的*/
+  /* *= "col-"意思是選擇所有擁有"col-"的*/
+  /*  = "col-"意思是選擇所有"col-"結束的*/ }
+  .row::after {
+    content: '';
+    clear: both;
+    display: table; }
+  .row:not(:last-child) {
+    margin-bottom: 6rem; }
+  .row [class^="col-"] {
+    background: red;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc( (100% - 6rem) /2); }
+  .row .col-1-of-3 {
+    width: calc( (100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ( (100% - 2 * 6rem) / 3 )  + 6rem); }
+
+.flex {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 75vw;
+  background: #55c57a;
+  color: #fff; }
+  .flex .col-1-of-3 {
+    width: calc(100% / 3);
+    background: black; }
+    .flex .col-1-of-3:not(:last-child) {
+      margin-right: 6rem; }
+
+.flexbox {
+  display: flex;
+  margin: 0 auto;
+  width: 75vw; }
+  .flexbox-text {
+    width: 48%; }
+  .flexbox-img {
+    width: 48%; }
+
+.flex-between {
+  justify-content: space-between; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 15rem 0;
+  margin-top: -20vh; }
+
+.section-features {
+  padding: 15rem 0;
+  background-image: linear-gradient(45deg, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg); }
 
 /* .circle {
     width: 100px;

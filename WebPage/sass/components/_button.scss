@@ -44,3 +44,27 @@
         color: #000;
     }
 }
+
+.btn-text {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $color-primary;
+        display: inline-block;
+        border-bottom:3px solid $color-primary;
+        padding:3px;
+        transition: all .3s;
+        font-size: 1.6rem;
+    }
+    &:hover {
+        background: $color-primary;
+        color: $color-while;
+        box-shadow: 0 6px 12px $color-grey-dark; 
+        transform: translateY(-2px);
+    }
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 9px $color-grey-dark;
+        // transform: scale(0.9);
+    }
+}
