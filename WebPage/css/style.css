@@ -127,6 +127,12 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.2rem; }
 
+.width-flexbox-big {
+  width: 81vw; }
+
+.width-flexbox-medium {
+  width: 75vw; }
+
 .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
@@ -220,7 +226,7 @@ body {
   font-size: 1.5rem;
   padding: 2.5rem 0;
   text-align: center;
-  width: 24%;
+  width: 21%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.15);
   transition: all .3s; }
@@ -303,8 +309,7 @@ body {
 
 .flexbox {
   display: flex;
-  margin: 0 auto;
-  width: 75vw; }
+  margin: 0 auto; }
   .flexbox-text {
     width: 48%; }
   .flexbox-img {
@@ -320,7 +325,12 @@ body {
 
 .section-features {
   padding: 15rem 0;
-  background-image: linear-gradient(45deg, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg); }
+  background-image: linear-gradient(45deg, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
 
 /* .circle {
     width: 100px;

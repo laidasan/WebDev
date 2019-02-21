@@ -588,15 +588,25 @@ ul li {
     border-radius: 12px;
 }
 .info-box {
+    position: relative;
     width: 24rem;
     height: 30rem;
-    background: #fff;
-    transition: all .6s linear;
-    backface-visibility: hidden;
-    perspective: 80rem;
+    transition: all 1s;
+    transform-style: preserve-3d;
+    perspective: 60rem;
 }
 .info-box:hover {
-    transform: rotateY(90deg);
+    transform: rotateY(180deg);
+}
+.info-card-back {
+    transform: rotateY(180deg); 
+}
+.info-card-back,.info-card {
+    backface-visibility: hidden;
+    background: #fff;
+    position: absolute;
+    width:100%;
+    height: 100%;
 }
 /* CSS原生變數*/
 /*:root {
