@@ -15,12 +15,18 @@
     background-size: cover;
     transform: skewY(-7deg);
     margin-top: -10rem;
-
+    
     & > * {
         transform: skewY(7deg);
     }
-
+    
     // & > * {
-    //     transform: scaleY(7deg);
-    // }
+        //     transform: scaleY(7deg);
+        // }
+    }
+    
+.section-tours {
+    padding: 25rem 0 50rem 0;
+    background-color: $color-gery-light;
+    margin-top: -10rem;
 }
