@@ -17,6 +17,7 @@ section {
     justify-content: center;
     align-items: center;    
     min-height: 100vh;
+    height: 100vh;
     background: #a137bb;
     background: linear-gradient(45deg,#37bb7d,#a137bb);
     background-size: 120% 120%;
@@ -969,7 +970,6 @@ h1 {
 } */
 
 /*bacground-clip-text*/ 
-
 .backgroung-clip-text {
     font-size: 12rem;
     text-transform: uppercase;
@@ -980,4 +980,41 @@ h1 {
     /*再將color設為transparent(透明)的話，就可以擁有不錯的文字效果*/
     -webkit-background-clip: text;
     color: transparent;
+}
+
+
+/*Someting interestin*/
+.position-realtive {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.blur {
+    filter: blur(1.5rem);
+}
+.background-parent {
+    position: absolute;
+    border: 3px solid black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/bird.png);
+    background-size: cover;
+}
+.background-child__see {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 30rem;
+    background-image: url(./img/bird.png);
+    background-size: cover;
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: 1;
 }
