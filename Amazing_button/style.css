@@ -924,3 +924,60 @@ h1 {
         transform: scale(1) rotate(-360deg);
     }   
 }
+
+/*background-clip-test*/
+/*用一個標籤做出這樣的內容*/
+.background-clip-test {
+    position: relative;
+    width: 27rem;
+    height: 27rem;
+    background: purple;
+    border: 3rem dashed red;
+}
+.background-clip-test::after {
+    content: '';
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 21rem;
+    height: 21rem;
+    background-color: #fff;
+    /* -webkit-background-clip: padding-box; */
+}
+/* .background-clip-test::before {
+    content: '';
+    position: absolute;
+    width: 15rem;
+    height: 9rem;
+    top:50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    background-color: orange;
+    background-clip: content-box;
+    background-clip: padding-box;
+}
+.background-clip-test::after {
+    content: '';
+    position: absolute;
+    top:50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    width:21rem;
+    height: 15rem;
+    border: 3rem solid #fff;
+} */
+
+/*bacground-clip-text*/ 
+
+.backgroung-clip-text {
+    font-size: 12rem;
+    text-transform: uppercase;
+    background: linear-gradient(120deg,#ff0479,#7c02c2);
+    background-size: 45%;
+
+    /*-webkit-background-clip:text 可以沿者text來裁切背景,text以外的地方都會被裁切掉*/
+    /*再將color設為transparent(透明)的話，就可以擁有不錯的文字效果*/
+    -webkit-background-clip: text;
+    color: transparent;
+}
