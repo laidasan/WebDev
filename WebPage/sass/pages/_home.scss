@@ -1,6 +1,6 @@
 .section-about {
     background-color: $color-gery-light;
-    // height: 100vh;
+    height: 100vh;
     // background: black;
     padding:15rem 0;
     margin-top: -20vh;
@@ -15,6 +15,7 @@
     background-size: cover;
     transform: skewY(-7deg);
     margin-top: -10rem;
+    // height: 95vh;
     
     & > * {
         transform: skewY(7deg);
