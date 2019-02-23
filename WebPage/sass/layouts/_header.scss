@@ -1,0 +1,33 @@
+.header {
+    height: 95vh;
+    background-image:linear-gradient(45deg,
+    rgba($color-primary-light,0.8),
+    rgba($color-primary-dark,0.8)),
+    url(../img/hero.jpg);
+    /*linear-gradient還有可使用 to top|right|bottom|left*/
+    background-size: cover;
+    background-position: top; /*再縮放時看得出差異 top|bottom|center*/
+    clip-path: polygon(0 0,100% 0,100% 75vh,0% 100%);
+    position: relative;
+
+
+    &__logo-box {
+        position: absolute;
+        /* top:42px; */
+        top:4.2rem;
+        /* left:42px; */
+        left:4.2rem;
+    }
+    &__logo {
+        /* height: 36px; */
+        height:3.6rem;
+    }
+    &__text-box {
+        position: absolute;
+        top:40%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        /* border: 3px solid black; */
+    }
+}

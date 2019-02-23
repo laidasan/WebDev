@@ -12,11 +12,12 @@ body {
 
 
 section {
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: center;
     align-items: center;    
     min-height: 100vh;
+    height: 100vh;
     background: #a137bb;
     background: linear-gradient(45deg,#37bb7d,#a137bb);
     background-size: 120% 120%;
@@ -588,15 +589,25 @@ ul li {
     border-radius: 12px;
 }
 .info-box {
+    position: relative;
     width: 24rem;
     height: 30rem;
-    background: #fff;
-    transition: all .6s linear;
-    backface-visibility: hidden;
-    perspective: 80rem;
+    transition: all 1s;
+    transform-style: preserve-3d;
+    perspective: 60rem;
 }
 .info-box:hover {
-    transform: rotateY(90deg);
+    transform: rotateY(180deg);
+}
+.info-card-back {
+    transform: rotateY(180deg); 
+}
+.info-card-back,.info-card {
+    backface-visibility: hidden;
+    background: #fff;
+    position: absolute;
+    width:100%;
+    height: 100%;
 }
 /* CSS原生變數*/
 /*:root {
@@ -829,4 +840,280 @@ h1 {
     border-radius: 100px;
     background-color: #277086;
     margin: 0 0.9rem;
+}
+/*loading-double-circle*/
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.loading-double {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6rem;
+    height: 6rem;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    animation: loading-double-circle 1.5s infinite ease-in-out;
+    opacity: 0.6;
+}
+.bounce1 {
+    background: #fff;
+}
+.bounce2 {
+    background:#fff;
+    animation-delay: -0.75s;
+}
+@keyframes loading-double-circle {
+    0% {
+        /* opacity: 0.9; */
+        transform: translate(-50%,-50%) scale(0);
+    }
+    50% {
+        /* opacity: 0.3; */
+        transform: translate(-50%,-50%) scale(1);
+    }
+    100% {
+        /* opacity: 0.9; */
+        transform: translate(-50%,-50%) scale(0);
+    }
+}
+
+/*loading-line*/
+.rect-container {
+    width: 12rem;
+}   
+.rect {
+    width: 0.6rem;
+    height: 3rem;
+    margin: 0.24rem;
+    background: #fff;
+    animation: loading-line 1s infinite ease-in-out;
+}
+.rect-one {
+    animation-delay: -0.9s;
+}
+.rect-two {
+    
+    animation-delay: -0.8s;
+}
+.rect-three {
+    animation-delay: -0.7s;
+}
+.rect-four {
+    animation-delay: -.6s;
+}
+.rect-five {
+    animation-delay: -.5s;
+    
+}
+@keyframes loading-line {
+    0% {
+        transform:  scaleY(1);
+    }
+    20% {
+        transform:  scaleY(1.6);
+        
+    }
+    40% {
+        transform:  scaleY(1);
+    }
+    100% {
+        transform:  scale(1);
+
+    }
+}
+
+/*翻牌式loading*/
+.loading-polygon {
+    width: 6rem;
+    height: 6rem;
+    background: #fff;
+    perspective: 18rem;
+    animation: loading-polygon 1.2s infinite ease-in-out;
+}
+@keyframes loading-polygon {
+    0% {    
+        perspective: 21rem;
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        perspective: 21rem;
+        transform: rotateX(180deg) rotateY(0deg);
+    }
+    100% {
+        perspective: 21rem;
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+}
+
+
+/*兩個方形loading*/
+.loading-two-polygon-container {
+    width: 4.5rem;
+    height: 4.5rem;
+    /* border: 3px solid black; */
+}
+.loading-two-polygon {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fff;
+}
+.polygon-one {
+    top: 0;
+    left: 0;
+    animation: loading-polygon-one 2.1s infinite ease-in-out;
+}
+.polygon-two {
+    top:100%;
+    left: 100%;
+    animation: loading-polygon-two 2.1s infinite ease-in-out;
+}
+@keyframes loading-polygon-one {
+    0% {
+        top:0;
+        left:0;
+    }
+    25% {
+        top: 0;
+        left:100%;
+        transform: scale(0.6) rotate(-90deg);
+    }
+    50%{
+        top: 100%;
+        left: 100%;
+        transform: scale(1) rotate(-180deg);
+    }
+    75% {
+        top: 100%;
+        left: 0;
+        transform: scale(0.6) rotate(-270deg);
+    }
+    100%{
+        top:0;
+        left:0;
+        transform: scale(1) rotate(-360deg);
+    }   
+}
+@keyframes loading-polygon-two {
+    0% {
+        top:100%;
+        left:100%;
+    }
+    25% {
+        top: 100%;
+        left:0;
+        transform: scale(0.6) rotate(-90deg);
+    }
+    50%{
+        top: 0;
+        left: 0;
+        transform: scale(1) rotate(-180deg);
+    }
+    75% {
+        top: 0;
+        left: 100%;
+        transform: scale(0.6) rotate(-270deg);
+    }
+    100%{
+        top:100%;
+        left:100%;
+        transform: scale(1) rotate(-360deg);
+    }   
+}
+
+/*background-clip-test*/
+/*用一個標籤做出這樣的內容*/
+.background-clip-test {
+    position: relative;
+    width: 27rem;
+    height: 27rem;
+    background: purple;
+    border: 3rem dashed red;
+}
+.background-clip-test::after {
+    content: '';
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 21rem;
+    height: 21rem;
+    background-color: #fff;
+    /* -webkit-background-clip: padding-box; */
+}
+/* .background-clip-test::before {
+    content: '';
+    position: absolute;
+    width: 15rem;
+    height: 9rem;
+    top:50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    background-color: orange;
+    background-clip: content-box;
+    background-clip: padding-box;
+}
+.background-clip-test::after {
+    content: '';
+    position: absolute;
+    top:50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    width:21rem;
+    height: 15rem;
+    border: 3rem solid #fff;
+} */
+
+/*bacground-clip-text*/ 
+.backgroung-clip-text {
+    font-size: 12rem;
+    text-transform: uppercase;
+    background: linear-gradient(120deg,#ff0479,#7c02c2);
+    background-size: 45%;
+
+    /*-webkit-background-clip:text 可以沿者text來裁切背景,text以外的地方都會被裁切掉*/
+    /*再將color設為transparent(透明)的話，就可以擁有不錯的文字效果*/
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+/*Someting interestin*/
+.position-realtive {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.blur {
+    filter: blur(1.5rem);
+}
+.background-parent {
+    position: absolute;
+    border: 3px solid black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/bird.png);
+    background-size: cover;
+}
+.background-child__see {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 30rem;
+    background-image: url(./img/bird.png);
+    background-size: cover;
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: 1;
 }
