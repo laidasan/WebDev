@@ -241,18 +241,83 @@ body {
     transform: translateY(-1.5rem) scale(1.05); }
 
 .section-tours__card {
-  width: 27%;
+  position: relative;
+  width: 30%;
+  height: 39rem;
   perspective: 150rem;
   -webkit-perspective: 150rem;
-  -moz-perspective: 150rem; }
-  .section-tours__card--fount {
+  -moz-perspective: 150rem;
+  transition: all .9s; }
+  .section-tours__card:hover .section-tours__card-side--front {
+    transform: rotateY(-180deg); }
+  .section-tours__card:hover .section-tours__card-side--back {
+    transform: rotateY(0deg); }
+  .section-tours__card-side {
+    position: absolute;
+    top: 0;
+    left: 0;
     font-size: 2.4rem;
-    color: #fff;
-    background-color: blue;
-    height: 33rem;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.15);
     transition: all 0.9s; }
-  .section-tours__card--fount:hover {
-    transform: rotateY(180deg); }
+    .section-tours__card-side--front {
+      backface-visibility: hidden;
+      background-color: #fff;
+      z-index: 1; }
+    .section-tours__card-side--back {
+      transform: rotateY(180deg); }
+      .section-tours__card-side--back-1 {
+        background: linear-gradient(-120deg, #ffb900, #ff7730); }
+  .section-tours__card-picture {
+    background-size: cover;
+    height: 18rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%); }
+    .section-tours__card-picture-1 {
+      background-image: linear-gradient(-120deg, #ffb900, #ff7730), url(../../img/nat-5.jpg); }
+  .section-tours__card-heading {
+    font-size: 2.7rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 7.5rem;
+    right: 1rem;
+    text-align: right;
+    width: 75%; }
+  .section-tours__card-heading-span {
+    padding: .6rem 1.2rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; }
+    .section-tours__card-heading-span--1 {
+      background: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .section-tours__card-details {
+    height: 24rem; }
+    .section-tours__card-details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .section-tours__card-details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .section-tours__card-details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .section-tours__card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .section-tours__card__price-box {
+    text-align: center;
+    margin-bottom: 6rem; }
+  .section-tours__card__price-value {
+    font-size: 6rem;
+    font-size: 300; }
 
 .header {
   height: 95vh;
@@ -332,9 +397,11 @@ body {
 .flex-between {
   justify-content: space-between; }
 
+.flex-center {
+  justify-content: center; }
+
 .section-about {
   background-color: #f7f7f7;
-  height: 100vh;
   padding: 15rem 0;
   margin-top: -20vh; }
 
