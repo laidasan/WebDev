@@ -613,6 +613,7 @@ ul {
 }
 .info-box:hover .info-card-back {
     transform: rotateY(0deg);
+    
 }
 .info-card-side {
     background: #fff;
