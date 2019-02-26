@@ -7,7 +7,13 @@ html {
     font-size: 62.5%;
 }
 body {
+    font-family: 'Lato', sans-serif;
     padding: 30px;
+}
+.container::after {
+    content: '';
+    clear: both;
+    display: table;
 }
 
 
@@ -534,10 +540,11 @@ section {
 .circle-cancel:hover::after,.circle-cancel:hover::before {
     background-color: rgba(255,0,149,0.75);
 }
+
 ul {
     list-style: none;
 }
-ul li {
+.nav li {
     padding: 9px;
 }
 .nav  a,.middle {
@@ -573,7 +580,9 @@ ul li {
     transform: translate(-50%,-50%) rotate(-45deg);
     transform-origin: 0 0;
     left:-1.05px;
-
+}
+.pref:hover .info {
+    opacity: 1;
 }
 .info {
     display: flex;
@@ -587,27 +596,39 @@ ul li {
     left:-75px;
     font-family: "Lucida Sans";
     border-radius: 12px;
+    transition: all .3s;
+    opacity: 0;
 }
+
+/*翻牌卡*/
 .info-box {
     position: relative;
     width: 24rem;
     height: 30rem;
-    transition: all 1s;
-    transform-style: preserve-3d;
-    perspective: 60rem;
+    /* transform-style: preserve-3d; */
+    perspective: 150rem;
 }
-.info-box:hover {
-    transform: rotateY(180deg);
+.info-box:hover .info-card {
+    transform: rotateY(-180deg);
+}
+.info-box:hover .info-card-back {
+    transform: rotateY(0deg);
+}
+.info-card-side {
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    transition: all .9s;
 }
 .info-card-back {
     transform: rotateY(180deg); 
 }
-.info-card-back,.info-card {
+.info-card {
     backface-visibility: hidden;
-    background: #fff;
-    position: absolute;
-    width:100%;
-    height: 100%;
+    z-index: 1;
 }
 /* CSS原生變數*/
 /*:root {
@@ -616,6 +637,8 @@ ul li {
 h1 {
     color:var(--main-color);
 }*/
+
+
 
 /*loading-circle*/
 .loading-jump-circle {
@@ -1116,4 +1139,48 @@ h1 {
     -webkit-background-clip: text;
     color: transparent;
     z-index: 1;
+}
+/* [Hello! items ]*/
+.word {
+    height: 3.3rem;
+    font-weight: 600;
+    font-size: 2.4rem;
+    padding : 0 4.5rem;
+    color: #fff;
+    overflow: hidden;
+}
+.word::before {
+    position: absolute;
+    content: '[';
+    left:0;
+}
+.word::after {
+    position: absolute;
+    content: ']';
+    right: 0;   
+}
+.container-text {
+    display: inline;
+    /* float: left; */
+}
+.word-list {
+    margin-top: -10px;
+    animation: change-word 6s infinite 
+}
+@keyframes change-word {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(-183%);
+    }
+    75% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
