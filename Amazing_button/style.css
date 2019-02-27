@@ -1185,3 +1185,85 @@ h1 {
         transform: translateY(0);
     }
 }
+
+/*cellphone*/
+.cellphone {
+    position: relative;
+    width: 18rem;
+    height: 32rem;
+    margin-top: 9rem;
+    background: rgba(black,.6);
+    transform: rotate(-30deg) skew(24deg);
+}
+.cellphone img {
+    position: absolute;
+    width: 100%;
+    transition: .6s;
+}
+.cellphone:hover img:nth-child(4) {
+    transform: translate(7.5rem,-7.5rem);
+    opacity: 1;
+}
+.cellphone:hover img:nth-child(3) {
+    transform: translate(6rem,-6rem);
+    opacity: .6;
+}
+.cellphone:hover img:nth-child(2) {
+    transform: translate(4.5rem,-4.5rem);
+    opacity: .3;
+}
+.cellphone:hover img:nth-child(1) {
+    transform: translate(2.4rem,-2.4rem);
+    opacity: .1;
+}
+
+/*light-circel*/
+.circle-light {
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    background: #fff;
+    opacity: 0.3;
+    color: #000;
+    transition: all .6s;
+}
+.circle-light span {
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%,-57%);
+    font-size: 3.3rem;
+    text-align: center;
+    font-weight: 600;
+}
+.circle-light:hover {
+    box-shadow: 0px 0px 3px 1px  #fff;
+    opacity: 1;
+}
+.circle-light::before,.circle-light::after {
+    content: '';
+    border-radius: 100%;
+    background: #fff;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.circle-light::before {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.circle-light::after {
+    width: 10.5rem;
+    height: 10.5rem;
+}
+.circle-light:hover::before {
+    opacity: 0.24;
+}
+.circle-light:hover::after {
+    opacity: 0.18;
+}
+
