@@ -43,6 +43,12 @@
         background: $color-while;
         color: #000;
     }
+
+    &--green,
+    &--green::after {
+        background: $color-primary;
+        color: $color-while;
+    }
 }
 
 .btn-text {

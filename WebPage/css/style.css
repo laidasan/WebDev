@@ -59,8 +59,7 @@ body {
   /*行高*/
   color: #777;
   /* padding:30px; */
-  padding: 3rem;
-  box-sizing: border-box; }
+  padding: 3rem; }
 
 .heading-primary {
   /* display: flex;
@@ -127,11 +126,17 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.2rem; }
 
-.width-flexbox-big {
+.u-margin-top-big {
+  margin-top: 7.5rem; }
+
+.u-width-flexbox-big {
   width: 81vw; }
 
-.width-flexbox-medium {
+.u-width-flexbox-medium {
   width: 75vw; }
+
+.u-width-flexbox-small {
+  width: 66vw; }
 
 .btn:link, .btn:visited {
   display: inline-block;
@@ -173,6 +178,10 @@ body {
 .btn--while, .btn--while::after {
   background: #fff;
   color: #000; }
+
+.btn--green, .btn--green::after {
+  background: #55c57a;
+  color: #fff; }
 
 .btn-text:link, .btn-text:visited {
   text-decoration: none;
@@ -323,7 +332,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 87%; }
+    width: 75%;
+    text-align: center; }
+    .section-tours__card__cta .btn {
+      font-size: 1.2rem; }
   .section-tours__card__price-box {
     color: #fff;
     text-align: center;
@@ -334,6 +346,54 @@ body {
   .section-tours__card__price-value {
     font-size: 6rem;
     font-weight: 300; }
+
+.story {
+  width: 81%;
+  margin: 0 auto;
+  padding: 1.2rem 3rem;
+  box-shadow: 0 3rem 6rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background-color: #fff;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story:not(:first-child) {
+    margin-top: 6rem; }
+  .story > * {
+    transform: skewX(12deg); }
+  .story::after {
+    content: '';
+    clear: both;
+    display: table; }
+  .story__shape {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    float: left;
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    transform: translateX(-2.1rem) skewX(12deg);
+    transition: all .3s; }
+  .story__img {
+    height: 100%;
+    transform: translateX(-2.7rem) scale(1.5);
+    transition: all .3s; }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 18%);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.8rem;
+    opacity: 0;
+    transition: all .3s; }
+  .story:hover .story__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1; }
+  .story:hover .story__img {
+    filter: blur(0.9rem) brightness(80%);
+    transform: translateX(-2.7rem) scale(1); }
 
 .header {
   height: 95vh;
@@ -416,6 +476,9 @@ body {
 .flex-center {
   justify-content: center; }
 
+.flex-column {
+  flex-direction: column; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 15rem 0;
@@ -431,9 +494,13 @@ body {
     transform: skewY(7deg); }
 
 .section-tours {
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 6rem 0;
   background-color: #f7f7f7;
   margin-top: -10rem; }
+
+.section-stories {
+  padding: 15rem 0;
+  background-color: #f7f7f7; }
 
 /* .circle {
     width: 100px;
