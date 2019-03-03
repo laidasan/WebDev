@@ -592,22 +592,24 @@ ul li {
     position: relative;
     width: 24rem;
     height: 30rem;
-    transition: all 1s;
-    transform-style: preserve-3d;
-    perspective: 60rem;
+    perspective: 150rem;
 }
-.info-box:hover {
-    transform: rotateY(180deg);
-}
-.info-card-back {
-    transform: rotateY(180deg); 
-}
-.info-card-back,.info-card {
-    backface-visibility: hidden;
+.info-side {
     background: #fff;
     position: absolute;
     width:100%;
     height: 100%;
+    top: 0;
+    left: 0;
+    transition: all .9s;
+}
+.info-side:hover  {
+    transform: rotateY(-180deg)
+}
+
+.info-card {
+    backface-visibility: hidden;
+    z-index: 1;
 }
 /* CSS原生變數*/
 /*:root {
