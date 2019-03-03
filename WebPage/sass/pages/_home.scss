@@ -1,25 +1,27 @@
 .section-about {
+    // @include flexcenter;
     background-color: $color-gery-light;
-    height: 100vh;
+    height: 95vh;
     // background: black;
     padding:15rem 0;
     margin-top: -20vh;
     // clip-path: polygon(0 20vh,100% 0%,100% 87vh,0% 100%);
 }
 .section-features {
+    @include flexcenter;
     padding:15rem 0;
     background-image:linear-gradient(45deg,
     rgba($color-primary-light,0.8),
     rgba($color-primary-dark,0.8)),
     url(../img/nat-4.jpg);
     background-size: cover;
-    transform: skewY(-7deg);
+    // transform: skewY(-7deg);
     margin-top: -10rem;
-    // height: 95vh;
+    height: 75vh;
     
-    & > * {
-        transform: skewY(7deg);
-    }
+    // & > * {
+    //     transform: skewY(7deg);
+    // }
     
     // & > * {
         //     transform: scaleY(7deg);

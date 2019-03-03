@@ -222,8 +222,13 @@ body {
     /*一個photo hover時，其他的photo縮小*/ }
 
 .feature-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
+  height: 100%;
   padding: 2.5rem 0;
   text-align: center;
   width: 21%;
@@ -334,18 +339,19 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  height: 100vh;
+  height: 95vh;
   padding: 15rem 0;
   margin-top: -20vh; }
 
 .section-features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 15rem 0;
   background-image: linear-gradient(45deg, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
-  transform: skewY(-7deg);
-  margin-top: -10rem; }
-  .section-features > * {
-    transform: skewY(7deg); }
+  margin-top: -10rem;
+  height: 75vh; }
 
 .section-tours {
   padding: 25rem 0 50rem 0;
