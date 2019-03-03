@@ -7,7 +7,13 @@ html {
     font-size: 62.5%;
 }
 body {
+    font-family: 'Lato', sans-serif;
     padding: 30px;
+}
+.container::after {
+    content: '';
+    clear: both;
+    display: table;
 }
 
 
@@ -534,10 +540,11 @@ section {
 .circle-cancel:hover::after,.circle-cancel:hover::before {
     background-color: rgba(255,0,149,0.75);
 }
+
 ul {
     list-style: none;
 }
-ul li {
+.nav li {
     padding: 9px;
 }
 .nav  a,.middle {
@@ -573,7 +580,9 @@ ul li {
     transform: translate(-50%,-50%) rotate(-45deg);
     transform-origin: 0 0;
     left:-1.05px;
-
+}
+.pref:hover .info {
+    opacity: 1;
 }
 .info {
     display: flex;
@@ -587,26 +596,37 @@ ul li {
     left:-75px;
     font-family: "Lucida Sans";
     border-radius: 12px;
+    transition: all .3s;
+    opacity: 0;
 }
+
+/*翻牌卡*/
 .info-box {
     position: relative;
     width: 24rem;
     height: 30rem;
+    /* transform-style: preserve-3d; */
     perspective: 150rem;
 }
-.info-side {
+.info-box:hover .info-card {
+    transform: rotateY(-180deg);
+}
+.info-box:hover .info-card-back {
+    transform: rotateY(0deg);
+    
+}
+.info-card-side {
     background: #fff;
     position: absolute;
-    width:100%;
-    height: 100%;
     top: 0;
     left: 0;
+    width:100%;
+    height: 100%;
     transition: all .9s;
 }
-.info-side:hover  {
-    transform: rotateY(-180deg)
+.info-card-back {
+    transform: rotateY(180deg); 
 }
-
 .info-card {
     backface-visibility: hidden;
     z-index: 1;
@@ -618,6 +638,8 @@ ul li {
 h1 {
     color:var(--main-color);
 }*/
+
+
 
 /*loading-circle*/
 .loading-jump-circle {
@@ -1119,3 +1141,129 @@ h1 {
     color: transparent;
     z-index: 1;
 }
+/* [Hello! items ]*/
+.word {
+    height: 3.3rem;
+    font-weight: 600;
+    font-size: 2.4rem;
+    padding : 0 4.5rem;
+    color: #fff;
+    overflow: hidden;
+}
+.word::before {
+    position: absolute;
+    content: '[';
+    left:0;
+}
+.word::after {
+    position: absolute;
+    content: ']';
+    right: 0;   
+}
+.container-text {
+    display: inline;
+    /* float: left; */
+}
+.word-list {
+    margin-top: -10px;
+    animation: change-word 6s infinite 
+}
+@keyframes change-word {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(-183%);
+    }
+    75% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*cellphone*/
+.cellphone {
+    position: relative;
+    width: 18rem;
+    height: 32rem;
+    margin-top: 9rem;
+    background: rgba(black,.6);
+    transform: rotate(-30deg) skew(24deg);
+}
+.cellphone img {
+    position: absolute;
+    width: 100%;
+    transition: .6s;
+}
+.cellphone:hover img:nth-child(4) {
+    transform: translate(7.5rem,-7.5rem);
+    opacity: 1;
+}
+.cellphone:hover img:nth-child(3) {
+    transform: translate(6rem,-6rem);
+    opacity: .6;
+}
+.cellphone:hover img:nth-child(2) {
+    transform: translate(4.5rem,-4.5rem);
+    opacity: .3;
+}
+.cellphone:hover img:nth-child(1) {
+    transform: translate(2.4rem,-2.4rem);
+    opacity: .1;
+}
+
+/*light-circel*/
+.circle-light {
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    background: #fff;
+    opacity: 0.3;
+    color: #000;
+    transition: all .6s;
+}
+.circle-light span {
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%,-57%);
+    font-size: 3.3rem;
+    text-align: center;
+    font-weight: 600;
+}
+.circle-light:hover {
+    box-shadow: 0px 0px 3px 1px  #fff;
+    opacity: 1;
+}
+.circle-light::before,.circle-light::after {
+    content: '';
+    border-radius: 100%;
+    background: #fff;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.circle-light::before {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.circle-light::after {
+    width: 10.5rem;
+    height: 10.5rem;
+}
+.circle-light:hover::before {
+    opacity: 0.24;
+}
+.circle-light:hover::after {
+    opacity: 0.18;
+}
+

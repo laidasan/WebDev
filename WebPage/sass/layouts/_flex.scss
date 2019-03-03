@@ -74,3 +74,10 @@
     justify-content: space-between;
     // align-items: flex-start;
 }
+.flex-center {
+    justify-content: center;
+    // align-items: center;
+}
+.flex-column {
+    flex-direction: column;
+}
