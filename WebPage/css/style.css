@@ -138,7 +138,7 @@ body {
 .u-width-flexbox-small {
   width: 66vw; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   padding: 1.2rem 5.1rem;
@@ -151,9 +151,13 @@ body {
   /*比如說這裡的animation有delay.6s秒，且一開始有translateY，就可以確保在animation開始前在正確位置*/
   transition: all .3s;
   position: relative;
-  text-decoration: none; }
+  text-decoration: none;
+  /*change for <button> element*/
+  border: none;
+  cursor: pointer; }
 
 .btn:hover {
+  box-shadow: 0px 1.2rem 1.2rem 0 #1e8d68;
   transform: translateY(-0.3rem); }
   .btn:hover::after {
     transform: scale(1.5);
@@ -161,6 +165,9 @@ body {
 
 .btn:active {
   transform: translateY(-0.1rem); }
+
+.btn:focus {
+  outline: none; }
 
 .btn::after {
   content: '';
@@ -175,7 +182,7 @@ body {
   opacity: 0;
   transition: all .3s ease; }
 
-.btn--while, .btn--while::after {
+.btn--white, .btn--white::after {
   background: #fff;
   color: #000; }
 
@@ -353,7 +360,7 @@ body {
   padding: 1.2rem 3rem;
   box-shadow: 0 3rem 6rem 0 rgba(0, 0, 0, 0.1);
   border-radius: 3px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   font-size: 1.6rem;
   transform: skewX(-12deg); }
   .story:not(:first-child) {
@@ -394,6 +401,96 @@ body {
   .story:hover .story__img {
     filter: blur(0.9rem) brightness(80%);
     transform: translateX(-2.7rem) scale(1); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: .3;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .bg-video__content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.form__group {
+  margin-top: .9rem; }
+
+.form__input {
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem 2.1rem;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  display: block;
+  width: 90%;
+  transition: all .6s; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1.5rem 2.4rem 0 rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid #28b485; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-left: 2.1rem;
+  margin-top: .9rem;
+  transition: all .6s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-3.9rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block;
+  margin-bottom: 3.6rem; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  position: relative;
+  font-size: 1.5rem;
+  padding-left: 2.4rem;
+  cursor: pointer; }
+
+.form__radio-button {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 100%;
+  border: 3px solid #28b485; }
+  .form__radio-button::after {
+    content: '';
+    position: absolute;
+    height: .9rem;
+    width: .9rem;
+    border-radius: 100%;
+    background-color: #28b485;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .header {
   height: 95vh;
@@ -499,8 +596,24 @@ body {
   margin-top: -10rem; }
 
 .section-stories {
+  position: relative;
+  padding: 15rem 0; }
+
+.section-book {
   padding: 15rem 0;
-  background-color: #f7f7f7; }
+  background: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.book {
+  margin: 0 auto;
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0) 50%), url(../../img/nat-10.jpg);
+  background-size: cover;
+  height: 42rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.3);
+  /*也可以用另一個div達到效果*/ }
+  .book__form {
+    width: 50%;
+    padding: 4.5rem; }
 
 /* .circle {
     width: 100px;

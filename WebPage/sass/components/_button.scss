@@ -1,4 +1,5 @@
 .btn {
+    &,
     &:link
     ,&:visited{
         display: inline-block;
@@ -12,9 +13,14 @@
         transition: all .3s;
         position: relative;
         text-decoration: none;
+
+        /*change for <button> element*/
+        border: none;
+        cursor: pointer;
+        // outline: none;
     }
     &:hover {
-        // box-shadow: 0px 1.2rem 1.2rem 0 #1e8d68;
+        box-shadow: 0px 1.2rem 1.2rem 0 #1e8d68;
         transform: translateY(-0.3rem);
         &::after {
             transform: scale(1.5);
@@ -22,8 +28,11 @@
         }
     }
     &:active {
+        //  box-shadow: 0px 1.2rem 1.2rem 0 #1e8d68;
         transform: translateY(-0.1rem);
-        
+    }
+    &:focus {
+        outline: none;
     }
     &::after {
         content: '';
@@ -38,16 +47,16 @@
         opacity: 0;
         transition: all .3s ease;
     }
-    &--while,
-    &--while::after {
-        background: $color-while;
+    &--white,
+    &--white::after {
+        background: $color-white;
         color: #000;
     }
 
     &--green,
     &--green::after {
         background: $color-primary;
-        color: $color-while;
+        color: $color-white;
     }
 }
 
@@ -64,7 +73,7 @@
     }
     &:hover {
         background: $color-primary;
-        color: $color-while;
+        color: $color-white;
         box-shadow: 0 6px 12px $color-grey-dark; 
         transform: translateY(-2px);
     }
