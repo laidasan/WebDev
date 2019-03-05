@@ -1433,3 +1433,45 @@ h1 {
     }
 }
 
+
+/*text-3d*/ 
+
+.text-3d {
+    position: relative;
+    color: transparent;
+    font-size: 15rem;
+    transform: skewY(-6deg);
+    transform-origin: bottom left;
+    text-shadow:
+
+    0px -1px 10px rgba(255,255,255,.4),
+    -1px -1px 10px rgba(255,255,255,.4),
+    -2px -1px 10px rgba(255,255,255,.4),
+
+    -1px -3px 3px #fff,
+    -2px -3px 3px #fff,
+    -3px -3px 3px #fff,
+
+    -2px -4px 2px #fff,
+    -3px -4px 2px #fff,
+    -4px -4px 2px #fff,
+
+    -3px -5px 1px #fff,
+    -4px -5px 1px #fff,
+    -5px -5px 1px #fff;
+}
+.text-3d::before {
+    content: 'Hello';
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: skewX(30deg);
+    transform-origin: bottom left;
+    z-index: -1;
+    color: transparent;
+    text-shadow: 
+    15px 0 20px rgba(0,0,0,.24),
+    15px 0 20px rgba(0,0,0,.21),
+    15px 0 20px rgba(0,0,0,.18),
+    15px 0 20px rgba(0,0,0,.15);
+}
