@@ -149,7 +149,7 @@
 
             &::before,
             &::after {
-                top: 0;
+                top: 0;   //調回中間
             }
             &::before {
                 transform: rotate(135deg);
