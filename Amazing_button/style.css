@@ -1251,6 +1251,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    transition: all .6s;
 }
 .circle-light::before {
     width: 7.5rem;
@@ -1265,5 +1266,38 @@ h1 {
 }
 .circle-light:hover::after {
     opacity: 0.18;
+}
+
+
+/*:focus Practice & something interesting*/
+.form-container {
+    position: relative;
+    /* border: 3px solid black; */
+}
+.form-container__text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.6rem;
+    border: transparent;
+    background-color: rgba(0,0,0,0);
+    transition: all .6s;
+    z-index: 1;
+}
+.form-container__text:focus {
+    width: 30rem;
+    border: .9px solid rgb(19, 208, 255);
+}
+.form-container__text:focus + .form-container__button{
+    transform: translate(31.5rem,-50%);
+}
+.form-container__button {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 3.6rem;
+    transform: translateY(-50%);
+    transition: all .6s;
 }
 
