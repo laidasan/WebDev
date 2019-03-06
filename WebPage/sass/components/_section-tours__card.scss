@@ -3,7 +3,8 @@
 
     position: relative;
     width: $width-flexitem-1-of-3;
-    height: 39rem;
+    //height: 39rem;  //on notebook computer
+    height:45rem;  //on desktop computer
     // border: 3px solid black;
     // transform-style: preserve-3d;
     
@@ -112,7 +113,7 @@
 
     &-details {
         // border:3px solid black;
-        height: 24rem;
+        height:24rem;
         ul {
             // border: 3px solid black;
             list-style: none;
@@ -122,7 +123,8 @@
                 // color:black;
                 text-align: center;
                 font-size: 1.5rem;
-                padding: 1rem;
+                //padding: 1rem; //on notebook computer
+                padding: 1.5rem; //on desktop computer 
 
                 &:not(:last-child) {
                     border-bottom: 1px solid #eee;
