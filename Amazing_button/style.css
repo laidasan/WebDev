@@ -15,8 +15,17 @@ body {
     clear: both;
     display: table;
 }
+:root {
+    --color-green-light: #1af5c5;
+    --color-black: #000;
+    --color-red: #f00;
+}
 
-
+/* .transform-Y-center {
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+} */
 section {
     /* position: relative; */
     display: flex;
@@ -1106,7 +1115,7 @@ h1 {
 }
 
 
-/*Someting interestin*/
+/*Someting interesting*/
 .position-realtive {
     position: relative;
     width: 100%;
@@ -1301,3 +1310,202 @@ h1 {
     transition: all .6s;
 }
 
+/*form Something interesting with :focus */
+.form__group {
+    /* border: 3px solid black; */
+    position: relative;
+    height: 9rem;
+    width: 42rem;
+}
+.form__name {
+    display: block;
+    position: absolute;
+    height: 50%;
+    width: 0;
+    color: inherit;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    border: none;
+    outline: none;
+    transition: all .6s;
+}
+.form__name:focus {
+    width: 50%;
+    background-color: #fff;
+    border-bottom: 3px solid #18f8a2;
+    box-shadow: 0 1.5rem 3rem 0 rgba(18, 194, 126, .6);
+}
+.form__name:focus ~ .form__button {
+    transform: translate(24rem,-50%);
+}
+.form__name-label {
+    display: inline-block;
+     position: absolute; 
+    height: 50%;
+    width: 6rem;
+    z-index: 1;
+    top: 50%;
+    left: 0; 
+     transform: translate(0,-50%); 
+}
+
+.form__button {
+    display: inline-block; 
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    height: 50%;
+    width: 6rem;
+    transition: all .6s;
+}
+
+/*clock pure css*/
+.clock-container {
+    position: relative;
+    height: 15rem;
+    width: 15rem;
+    /* border: 3px solid var(--color-black); */
+}
+.clock-container::after {
+    position: absolute;
+    top:0;
+    left:0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    /* box-shadow: 0 1.5rem 3.6rem 0 rgba(0,0,0,.6); */
+}
+.clock__main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    border: .6rem solid var(--color-green-light);
+    background-color: #fff;
+}
+.clock__main::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(135deg);
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.1));
+    top: 36%;
+    left: 36%;
+}
+.clock__hour,.clock__minute,.clock__second{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 0;
+    transform: translateX(-50%);
+}
+/*hour*/
+.clock__hour {
+    width: 3px;
+    height: 10.5px;
+    background-color: var(--color-red);
+    animation: clock-rotate 36s linear infinite;
+}
+/*minute*/
+
+.clock__minute {
+    position: absolute;
+    width: 3px;
+    height: 21px;
+    background-color: var(--color-black);
+    animation: clock-rotate 6s linear infinite;
+}
+.clock__second {
+    position: absolute;
+    width: 1.2px;
+    height: 42px;
+    background-color: var(--color-black);
+    animation: clock-rotate 1s linear infinite;
+}
+.clock__top,.clock__bottom {
+    position: absolute;
+    height: 6px;
+    width: 3px;
+    background-color: var(--color-black);
+}
+.clock__top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.clock__bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.clock__right,.clock__left {
+    position: absolute;
+    height: 3px;
+    width: 6px;
+    background-color: var(--color-black);
+}
+.clock__right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.clock__left {
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+@keyframes clock-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        
+        transform: rotate(360deg);
+    }
+}
+
+
+/*text-3d*/ 
+
+.text-3d {
+    position: relative;
+    color: transparent;
+    font-size: 15rem;
+    transform: skewY(-6deg);
+    transform-origin: bottom left;
+    text-shadow:
+
+    0px -1px 10px rgba(255,255,255,.4),
+    -1px -1px 10px rgba(255,255,255,.4),
+    -2px -1px 10px rgba(255,255,255,.4),
+
+    -1px -3px 3px #fff,
+    -2px -3px 3px #fff,
+    -3px -3px 3px #fff,
+
+    -2px -4px 2px #fff,
+    -3px -4px 2px #fff,
+    -4px -4px 2px #fff,
+
+    -3px -5px 1px #fff,
+    -4px -5px 1px #fff,
+    -5px -5px 1px #fff;
+}
+.text-3d::before {
+    content: 'Hello';
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: skewX(30deg);
+    transform-origin: bottom left;
+    z-index: -1;
+    color: transparent;
+    text-shadow: 
+    15px 0 20px rgba(0,0,0,.24),
+    15px 0 20px rgba(0,0,0,.21),
+    15px 0 20px rgba(0,0,0,.18),
+    15px 0 20px rgba(0,0,0,.15);
+}
