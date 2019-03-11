@@ -9,8 +9,62 @@ html {
   font-size: 62.5%; }
 
 body {
+  background-color: #b1b1b1b6; }
+
+body {
   font-family: "Lato",sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  font-size: 1.6rem; }
+
+.heading-primary {
+  text-transform: uppercase;
+  font-size: 6rem;
+  letter-spacing: 3rem;
+  font-weight: 700;
+  color: transparent; }
+
+.heading-secondary {
+  text-transform: uppercase;
+  font-size: 4.5rem;
+  letter-spacing: 1.2rem;
+  color: #ee711d; }
+
+.note__title {
+  width: 100%;
+  text-align: center; }
+
+.note__list {
+  list-style: none; }
+
+.note__item {
+  display: block;
+  padding: .3rem 1.2rem; }
+
+.note__time {
+  display: inline-block;
+  width: 7.2rem; }
+
+.note__style {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #ffa632;
+  margin-top: .3rem; }
+
+.note__date {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #ee711d; }
+
+.note__link:link, .note__link:visited {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 2.1rem; }
+
+.note__link:hover, .note__link:active {
+  color: rgba(0, 0, 0, 0.6); }
 
 .navigation__checkbox {
   display: none; }
@@ -54,7 +108,9 @@ body {
   top: 1.2rem; }
 
 .navigation__nav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
   z-index: 400;
   opacity: 0;
@@ -129,8 +185,8 @@ body {
   border-radius: 50%;
   width: 36rem;
   height: 36rem;
-  box-shadow: 0 0 3.6rem 1.2rem rgba(0, 0, 0, 0.6);
-  border: 1.2px solid #ffa632; }
+  box-shadow: 0 0 3.6rem 1.2rem rgba(255, 255, 255, 0.6);
+  border: 1.5px solid #ffa632; }
   .home-box__list {
     list-style: none;
     position: absolute;
@@ -148,6 +204,26 @@ body {
     text-transform: uppercase;
     color: #fff; }
 
+.header {
+  position: relative;
+  height: 9rem; }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(120deg, #d84878, #b8305d, #f3862d, #ee711d);
+    background-clip: text;
+    -webkit-background-clip: text; }
+
 .home {
   width: 100%;
   height: 100vh; }
+
+.note-box {
+  width: 51%;
+  height: 51rem;
+  margin: 0 auto;
+  background: #dadadab6;
+  box-shadow: 0 0 0.9rem 0.6rem rgba(0, 0, 0, 0.45);
+  border-radius: 3px; }

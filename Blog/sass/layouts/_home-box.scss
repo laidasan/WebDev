@@ -6,8 +6,8 @@
     width: 36rem;
     height: 36rem;
 
-    box-shadow: 0 0 3.6rem 1.2rem rgba($color-black,.6);
-    border: 1.2px solid $color-primary-light;
+    box-shadow: 0 0 3.6rem 1.2rem rgba($color-white,.6);
+    border: 1.5px solid $color-primary-light;
     &__list {
         list-style: none;
         @include center-position;
