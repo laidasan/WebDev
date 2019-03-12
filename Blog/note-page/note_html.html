@@ -18,9 +18,10 @@
         <div class="navigation__background"></div>
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="../index.html" class="navigation__link">首頁</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Note</a></li>
+                <li class="navigation__item"><a href="../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../note-page/note_list.html" class="navigation__link">Note</a></li>
                 <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note-page/note_amazing_effect.html" class="navigation__link">Interesting</a></li>
             </ul>
         </nav>
     </div>
@@ -39,15 +40,65 @@
 
             <div class="note-container">
                 <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
-                <p class="note__content">HTML(Hyper Text Markup Launage)，超文字標記語言</p>
+                <p class="note__content">
+                    HTML(Hyper Text Markup Launage)，超文本標記語言，最重要的就為"Markup"這個字，他就能概括HTML在做的事情了—標記。
+                    首先我們來想想一段文字，要怎麼分"標題"與"內文"呢?或許你會覺得很簡單阿!我就Word打開，處理一下要當標題的地方就好啦!
+                    像個個樣子!!~
+                </p>
+                <img src="../img/HTML/how to distinguish between head & content.PNG" alt="" class="note__img">
+                <p class="note__content">
+                    不過這是在Word裡面可以幫你處理的，但是在文字編輯器裡面，都只是相同的純文字內容，這時候要怎麼區分哪個是標題，哪個是內文(段落)呢?
+                </p>
+                <img src="../img/HTML/how to distinguish between head & content2.PNG" alt="" class="note__img">
+                <p class="note__content">
+                    當然很簡單阿!!直接標註哪個是標題，哪個是段落給別人就很清楚拉!! (Maybe會有很多方法，縮排阿大小等等，但今天是假設大小一樣，且如果文字沒縮排的時候呢?!)
+                </p>
+                <img src="../img/HTML/how to distinguish between head & content3.PNG" alt="" class="note__img">
+                <p class="note__content">
+                     但是今天在純文字編輯器裡面沒有辦法像上面那張圖的一樣標記的方式，那在純文字編輯器裡面我們可以怎麼做嗎?我們可以這樣做
+                </p>
+                <img src="../img/HTML/how to distinguish between head & content4.PNG" alt="" class="note__img">
+                <p class="note__content">
+                    如何?這樣就看得懂了吧!可以知道哪裡是標題，哪裡是內文是不是好棒棒!那我們把中文標示轉換成英文標示呢?
+                    (標題除了title之外，我們可以用h(heading),而內文我們就用p(paragraph)吧)
+                </p>
+                <img src="../img/HTML/how to distinguish between head & content5.PNG" alt="" class="note__img">
+                <p class="note__content">
+                    可是這樣超囉嗦的!!要打start與end，那就把它刪除吧!可是刪除之後要怎麼知道什麼時候結束呢?!所以我們就用反斜線將它打斷，當作結束。
+                </p>
+                <img src="../img/HTML/how to distinguish between head & content6.PNG" alt="" class="note__img">
+                <P class="note__content">
+                    我們再將括號改一下(畢竟小括號很常用到嘛!大括號與中括號也給程適用去了，那我們就用大於跟小於吧!!)
+                </P>
+                <img src="../img/HTML/how to distinguish between head & content7.PNG" alt="" class="note__img">
+                <p class="note__content">
+                    至此，HTML的基本基礎講完囉!!HTML在做的事情就是"Markup"這件事情，也就是所謂的"標記"而已，只不過還有許多的細節需要去注意!
+                    而標題也有分等級，分成六個等級，h1~h6。而在網頁上也會有需多不同的資訊，不只是只有標題跟內文而已!
+                    比如說還有圖片、影片、清單等等的，所以不只會有"h" 與 "P" 標籤喔!!(剛剛我們寫的"h1" "p"等等的，我們就稱之為標籤(tag))!!
+                </p>
+                <h3 class="heading-tertiary u-margin-bottom-small u-margin-top-small">How?---談談標籤這件事</h3>
+                <p class="note__content">
+                    先問問各位，"字形大的一定是標題，而字形小的一定是內文嗎?字形小的就不是標題嗎?"通常我們是視覺上看到畫面進來引發我們腦補那些是標題，那些是內文，
+                    事實上我們看的時候，字大就是標題嗎?，字小就不是標題嗎?，我想答案是否定的。
+                    所以我們在標籤標記的時候，最重要的不是考慮字大字小或是字體顏色，最重要的是要賦予這些"文字"等等、賦予這些"標籤"有什麼樣的意義，
+                    就好比在人生上的任何事物，都是我們去賦予意義的，比如說錢為何是錢?為什麼本質上就只是一張紙上面有圖案，我們卻會認為它是錢，可以用來買東西?
+                    是我們人類去賦予的嘛!
+                    對於賦予標籤什麼意義?該賦予什麼樣的意義?我想賦予什麼意義都可以，只不過如果我們賦予的意義能夠更好的溝通與讓人理解會是一件很棒的事情!!
+                </p>
+                <P class="note__content">
+                    還有件很重要的事情，就是我們是人，能看的到視覺上的網頁，但是如果是我們的google大大呢?它是看不到的吧!既然看不到它在搜尋的時候，要怎麼知道我們的網頁
+                    是在講什麼東西呢?這時候google大哥就會"爬"我們的原始碼，來找找相關的東西(這會影響搜尋排名、SEO等等的)，所以我們標籤下的好(體質好)，賦予的意義好是SEO優化的基本。
+                    想想看，google大哥爬我們的原始碼，今天我們下的標籤跟給予的意義跟google大哥想爬的不一樣，當然就不太好啦(如果想要好好的google大哥溝通的話)。
+                </P>
+
                 <ul style="margin-left: 3rem;">
                     <li>What is html? (最重要的是 Markup)</li>
                     <li>如果今天一個文章要分標題、內容，要如何分辨(用標籤來分辨、先別用html tag來想)</li>
                     <li>標籤的意義? (GOOGEL 盲人網站)</li>
                     <li>網頁的結構( html head body，告訴別人哪裡到哪裡是html head body ("通常"head放的不是給人看得 body"通常"放的是給人看的))</li>
-                    <li>DOCTYPE  (告訴網站解讀的標準 html4.0 -> xhtml -> html5)</li>
-                    <li>lang (頁面主要語言  zh-hant-tw是目前最新使用中文 或是使用zh-tw 英文的話是en，這項設定會影像到google translate解讀、SEO)</li>
-                    <li style="color: #f00;">※ google會爬原始碼資料，為了SEO等等(讓google能更容易解讀我們的原始碼)  標籤用的好影響很大(SEO)</li>
+                    <li>DOCTYPE (告訴網站解讀的標準 html4.0 -> xhtml -> html5)</li>
+                    <li>lang (頁面主要語言 zh-hant-tw是目前最新使用中文 或是使用zh-tw 英文的話是en，這項設定會影像到google translate解讀、SEO)</li>
+                    <li style="color: #f00;">※ google會爬原始碼資料，為了SEO等等(讓google能更容易解讀我們的原始碼) 標籤用的好影響很大(SEO)</li>
                 </ul>
             </div>
         </section>

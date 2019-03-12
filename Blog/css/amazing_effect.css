@@ -1,0 +1,1713 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    padding: 30px;
+}
+.container::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+:root {
+    --color-green-light: #1af5c5;
+    --color-green-dark: #13ac8a;
+    --color-black: #000;
+    --color-red: #f00;
+    --color-white: #fff;
+}
+
+/* .transform-Y-center {
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+} */
+section {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    min-height: 100vh;
+    height: 100vh;
+    background: #a137bb;
+    background: linear-gradient(45deg,#37bb7d,#a137bb);
+    background-size: 120% 120%;
+}
+.button-1 {
+    background: #37bb7d;
+    font-size: 45px;
+    color: #fff;
+    border: none;
+    padding: 0 15px;
+    height: 60px;
+    transition: all .6s ease;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.button-1:hover {
+    background: #fff;
+    color: #37bb7d;
+    border-radius: 6rem;
+}
+.button-1:after {
+    right: inherit;
+    top: inherit;
+    left:0;
+    bottom: 0;
+}
+
+
+/*Lid Button*/
+/* .lid-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    height: 60px;
+    width: 180px;
+    border-radius: 0.25rem;
+    font-size: 45px;
+    box-shadow: 0 1px 2px gray inset;
+    perspective: 30rem;
+} */
+/* .lid-button {
+    position: relative;
+    width: 11.5rem;
+    height:2.1rem;
+    padding: 0.375rem 0.375rem 0;
+    background: #eee;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+.edge {
+    background-color: #20c7f3;
+    top:0.25rem;
+    height:0.25rem;
+    transform:rotateX(90deg);
+    transform-origin: center top;
+}
+.container,.container > * {
+    position: absolute; 
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+.outer,.inner {
+    border-radius: 0.25rem;
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+}
+.outer {
+    background-color: #2ec8fa;
+    transform: translateZ(0.25rem)
+}
+.inner {
+    background-color: #67e2fe;
+}
+.lid-button:hover .container {
+    transform: rotateX(-120deg);
+}
+.lid-button,.lid-button div  {
+    transition-duration: .7s;
+    transition-timing-function: ease;
+}
+.container {
+    transform-origin: center bottom;
+    transform-style: preserve-3d;
+}
+.shadow {
+    position: absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    height:3.2rem;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%);
+    transform:rotateX(90deg);
+    transform-origin: center top;
+    opacity: 0;
+}
+.twitter-button:hover .shadow {
+    transform: rotateX(45deg) scale(0.95);
+    opacity: 1;
+} */
+
+
+/*shiney button 很像是光從左上角亮到右下角結束，但其實是一大片斜光從左邊Overflow部分滑到右邊*/
+/*所以overflow:hidder 目的在於隱藏a標籤之外的光*/
+.shiney a {
+    position: relative;
+    padding: 12px 45px;
+    font-size: 45px;
+    text-decoration: none;
+    color: #37bb7d;
+    display: inline-block;
+    border: 3px solid #37bb7d;
+    border-radius: 0.3rem;
+    overflow: hidden;  /*Overflow隱藏，註解掉後可以看到真面目*/
+    transition: all .3s ease-in-out;   /*a標籤hover的速度*/
+}
+.shiney a:before {
+    content: "";
+    background: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top:0;
+    left:-4.5em;   /*將光移動到<a>左邊*/
+    transform: skewX(-45deg); /*translateX(0);  /*skewX將光變成斜光 這裡translateX可有可無*/
+    transition: none;
+}
+.shiney a:hover {
+    background: #37bb7d;
+    color: #fff;
+    border-bottom: 4.5px solid darken(#37bb7d,10%);
+}
+
+/*shiney a:before 的 hover?*/
+.shiney a:hover:before {
+    transform: skewX(-45deg) translateX(13.5em); 
+    transition: all .6s ease-in-out; 
+    /*上面這行註解掉後，斜光就會直接translate到之後的位置，不會慢慢跑*/  
+}
+
+
+/*before 與 after 是element建立前(before)與建立後(after)加入*/
+/*把加入的屬性給到content，所以寫了before或是after要記得寫上content屬性*/
+/*不然會不起作用的喔!!*/
+.box {
+    position: relative;
+}
+.box::before {
+    content: '';
+    position: absolute;
+    background: red;
+    top: 3px;
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+    transform: translate(-50%,-50%) rotate(45deg);
+    z-index: 2;
+    animation: jump .6s infinite linear;
+}
+.box::after {
+    content:'';
+    position: absolute;
+    background:#eaeaea;
+    top: 57px;
+    width: 57px;
+    height: 3px;
+    transform: translate(-50%,0);
+    border-radius: 100%;
+    z-index: 1;
+    animation: shadow .6s infinite linear;
+}
+
+@keyframes jump {
+    0% {
+        top:3px;
+        transform: translate(-50%,-50%) rotate(90deg);
+    }
+    15% {
+        border-bottom-right-radius: 6px;
+
+    }
+    50% {
+        top: 27px;
+        border-bottom-right-radius: 30px;
+        transform: translate(-50%,-50%) rotate(45deg);
+    }
+    80% {
+        border-bottom-right-radius: 6px;
+
+    }
+    100% {
+        top:3px;
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+@keyframes shadow {
+    0%{
+        width: 51px;
+        transform: translate(-50%,0);
+
+    }
+    50% {
+        width: 63px;
+        height: 6px;
+        background: #eee;
+        transform: translate(-50%,0);
+    }
+    100% {
+        width: 51px;
+        transform: translate(-50%,0);
+    }
+}
+
+/*GOOGLE LOADING*/
+.google-loading {
+    /* position: absolute; */
+    /* border: 3px solid black; */
+    /* background: #fff; */
+    width: 60px;
+    height: 120px;
+    border-radius: 0 60px 60px 0;
+    transform: rotateY(0deg);
+    perspective: 210px;
+    animation: backgroundcolor 4s step-end infinite both, rotate 4s step-start infinite both;
+    /* animation: backgroundcolor 4s step-end infinite both; */
+    transform-origin: 0% 50%;
+}
+@keyframes backgroundcolor {
+    0%{background-color: #41bbe0;}
+    50% {background-color: #f834a0;}
+    100% {background-color: #f834a0;}
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.google-loading::after {
+    content: '';
+    position: absolute;
+    /* background: black; */
+    width:60px;
+    height: 120px;
+    border-radius: 60px 0 0 60px;
+    /* border-radius: 0px 60px 60px 0px; */
+    transform-origin: 0% 50%;
+    transform: translate(-100%,0%);
+    animation: backgroundcolor-after 4s step-end infinite both;
+}
+@keyframes backgroundcolor-after {
+    0% {
+        background: #fac941;
+    }
+    25% {
+        background: #50e02c;
+    }
+    75% {
+        background: #fac941;
+    }
+    100% {
+        background: #fac941;  
+    }
+}
+.google-loading::before {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    /* background: #fff; */
+    width: 60px;
+    height: 120px;
+    border-radius: 0 60px 60px 0;
+    transform-origin: 0% 50%;
+    transform: translateY(0deg), translateX(0deg);
+    animation: flip 4s linear infinite both,flipcolor 4s linear infinite both;
+}
+@keyframes flip {
+    0%{
+        transform: rotateY(0deg);
+    }
+    12.5% {
+        transform: rotateY(90deg);
+    }
+    25% {
+        transform: rotateY(180deg);
+    }
+    37.5% {
+        transform: rotateY(90deg);
+    }
+    50% {
+        transform: rotateY(0deg);
+    }
+    62.5% {
+        transform: rotateY(90deg);
+    }
+    75% {
+        transform: rotateY(180deg);
+    }
+    87.5% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+
+}
+@keyframes flipcolor {
+    0% {
+        background: #fac941;
+    }
+    12.5% {
+        background: #277086;
+    }
+    25% {
+        background: #41bbe0;
+    }
+    37.5%{
+        background: #40b124;
+    }
+    50%{
+        background: #50e02c;
+    }
+    62.5%{
+        background: #c4297e;
+    }
+    75% {
+        background: #f834a0;
+    }
+    82.5%{
+        background: #cfa635;
+    }
+    100% {
+        background: #fac941;
+    }
+}
+
+/* .c {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: black;
+}
+.c::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 100%;
+    border:30px solid;
+    border-color: rgba(0,0,0,0);
+    border-left-color: black;
+} */
+
+
+
+/*      one     */
+/*    -------   */
+/*two |     | three */
+/*    |four |       */
+/*    -------       */
+/*five|     | six   */
+/*    |     |       */
+/*    -------       */
+/*     seven        */
+/* before 是左三角形(水平條)或是上三角型(垂直條) */
+/* after  是右三角形(水平條)或是下三角形(垂直條) */
+/* 水平條為 One four sever */
+/* 垂直條為 two three five six*/
+.colock {
+    width: 60px;
+    height: 120px;
+    position: relative;
+}
+.colock div {
+    position: absolute;
+    background: black;
+}
+/*幫水平直線設定好長寬與背景色*/
+.one,.four,.seven {
+    height: 12px;
+    width: 60px;
+    position: absolute;
+    background: #000;
+}
+/*幫垂直條設定好長寬與背景色*/
+.two,.three,.five,.six {
+    width: 12px;
+    height: 60px;
+    position: absolute;
+    background: #000;
+}
+/*調整位置*/
+.two,.five {
+    left: -18px;
+}
+.two,.three { 
+    top:15px;
+}
+.five,.six {
+    top:90px;
+}
+.three,.six {
+    right: -18px;
+}
+.four {
+    top:75px;
+}
+.seven {
+    top:150px;
+}
+/*水平的左三角形*/
+.one::before,.four::before,.seven::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -12px;
+    border:6px solid;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0);
+    border-right-color: #000;
+
+}
+/*水平的右三型*/
+.one::after,.four::after,.seven::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:0;
+    right: -12px;
+    border:6px solid ;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0); 
+    border-left-color: #000;
+
+}
+/*垂直的上三角形*/
+.two::before,.three::before,.five::before,.six::before {
+    content:'';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -12px;
+    border:6px solid;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0);
+    border-bottom-color: #000;
+}
+/*垂直的下三角形*/
+.two::after,.three::after,.five::after,.six::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -12px;
+    border: 6px solid;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0);
+    border-top-color:#000;
+}
+
+/*圈圈xx*/
+.circle-cancel {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    /* background: rgba(0, 0, 0,0); */
+    border: 6px solid rgba(255,0,149,0.75);
+    /* clip-path: circle(50% at 50% 50%); */
+    transition: all 0.6s ease;
+}
+.circle-cancel::before,.circle-cancel::after{
+    content: '';
+    width: 9px;
+    height: 45px;
+    background-color: #fff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transition: all .6s ease;
+}
+.circle-cancel:hover {
+    transform: rotate(360deg);
+    border-color: rgba(0,0,0,0);
+}
+.circle-cancel::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.circle-cancel::after{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+.circle-cancel:hover::before {
+    transform: translate(-50%,-50%) rotate(315deg);
+}
+.circle-cancel:hover::after {
+    transform: translate(-50%,-50%) rotate(-315deg);
+    transition-delay: 0.15s;
+}
+.circle-cancel:hover::after,.circle-cancel:hover::before {
+    background-color: rgba(255,0,149,0.75);
+}
+
+ul {
+    list-style: none;
+}
+.nav li {
+    padding: 9px;
+}
+.nav  a,.middle {
+    display: block;
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border: 6px solid #000;
+    border-radius: 100%;
+}
+.up {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.up::before,.up::after {
+    content: '';
+    width: 7.5px;
+    height: 15px;
+    top:4.5px;
+    position: absolute;
+    background: #fff;
+    background-size: 30px 30px;
+    border-radius: 15px;
+}
+.up::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+    transform-origin: 100% 0%;
+    left:1.05px;
+}
+.up::after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+    transform-origin: 0 0;
+    left:-1.05px;
+}
+.pref:hover .info {
+    opacity: 1;
+}
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 1.5px 9px;
+    background: #fff;
+    font-size: 18px;
+    top: 4.5px;
+    left:-75px;
+    font-family: "Lucida Sans";
+    border-radius: 12px;
+    transition: all .3s;
+    opacity: 0;
+}
+
+/*翻牌卡*/
+.info-box {
+    position: relative;
+    width: 24rem;
+    height: 30rem;
+    /* transform-style: preserve-3d; */
+    perspective: 150rem;
+}
+.info-box:hover .info-card {
+    transform: rotateY(-180deg);
+}
+.info-box:hover .info-card-back {
+    transform: rotateY(0deg);
+    
+}
+.info-card-side {
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    transition: all .9s;
+}
+.info-card-back {
+    transform: rotateY(180deg); 
+}
+.info-card {
+    backface-visibility: hidden;
+    z-index: 1;
+}
+/* CSS原生變數*/
+/*:root {
+    --main-color:#fff;
+}
+h1 {
+    color:var(--main-color);
+}*/
+
+
+
+/*loading-circle*/
+.loading-jump-circle {
+    position: relative;
+}
+.loading-jump-circle::before {
+    position: absolute;
+    content: '';
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+}
+.loading-jump-circle::after {
+    position: absolute;
+    content: '';
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+}
+.left-two::before {
+    animation-name: loading-jump-2;
+    left:-3rem;
+}
+.left-two::after {
+    animation-name: loading-jump-1;
+    left:-9rem;
+}
+.right-two::before {
+    animation-name: loading-jump-3;
+    left: 3rem;
+}
+.right-two::after {
+    animation-name: loading-jump-4;
+    left: 9rem;
+}
+.left-two::before,.left-two::after,.right-two::before,.right-two::after {
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes loading-jump-1 {
+    0% {
+        top:0;
+    }
+    20% {
+        top: -2.4rem;
+        background: #32e93b;
+    }
+    40% {
+        top: 0;
+    }
+    60% {
+        top: 0;
+    }
+    80% {
+        top:0;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes loading-jump-2 {
+    0% {
+        top:0;
+    }
+    20% {
+        top: 0;
+    }
+    40% {
+        top:-2.4rem;
+        background: #ff0000;
+    }
+    60% {
+        top: 0;
+    }
+    80% {
+        top:0;
+    }
+    100% {
+       top: 0;
+    }
+}
+@keyframes loading-jump-3 {
+    0% {
+        top:0;
+    }
+    20% {
+        top: 0;
+    }
+    40% {
+        top:0;
+    }
+    60% {
+        top: -2.4rem;
+        background: #e5ff00
+    }
+    80% {
+        top:0;
+    }
+    100% {
+       top: 0;
+    }
+}
+@keyframes loading-jump-4 {
+    0% {
+        top:0;
+    }
+    20% {
+        top: 0;
+    }
+    40% {
+        top:0;
+    }
+    60% {
+        top: 0;
+    }
+    80% {
+        top: -2.4rem;
+        background: #41bbe0
+    }
+    100% {
+       top: 0;
+    }
+}
+.loading-circle {
+    position: relative;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 100%;
+    /* opacity: 0; */
+    background-color: #fff;
+    animation: loading-circle 1s infinite linear; 
+    animation-delay: 0.3s;
+    animation-fill-mode: backwards;
+}
+.loading-circle::before {
+    content: '';
+    position: absolute;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 100%;
+    background-color: #fff;
+    top:50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    animation: loading-circle-before .6s normal ease-in;
+}
+@keyframes loading-circle {
+    0% {
+        opacity: 1;
+        transform: scale(0.1);
+        background: rgba(0,0,0,0);
+    }
+    25% {
+        opacity: 0.6;
+        transform: scale(0.4);
+        
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(0.7);
+        
+    }
+    75% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes loading-circle-before {
+    0% {
+        opacity: 1;
+        left:30rem;
+    }
+    50% {
+        opacity:0.6;
+        left:3rem;
+    }
+    100% {
+        opacity: 0;
+        left: 50%;
+    }
+}
+.nav2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 3px solid black; */
+    width: 100%;
+}
+.nav2 ul {
+    list-style: none;
+}
+.navigation li {
+    float: left;
+    padding: 1.2rem;
+    /* display: inline-block; */
+}
+.navigation li a:link{
+    display: inline-block;
+    font-size: 2.4rem;
+    text-decoration: none;
+    color: #fff;
+    /* border: 3px solid black; */
+    border-radius: 100px;
+    background: #c4297e;
+    padding: 0.3rem 1.2rem;
+}
+
+.btn-main:link,
+.btn-hot:link {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    padding: 0.3rem 1.8rem;
+    border-radius: 100px;
+    background-color: #277086;
+    margin: 0 0.9rem;
+}
+/*loading-double-circle*/
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.loading-double {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6rem;
+    height: 6rem;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    animation: loading-double-circle 1.5s infinite ease-in-out;
+    opacity: 0.6;
+}
+.bounce1 {
+    background: #fff;
+}
+.bounce2 {
+    background:#fff;
+    animation-delay: -0.75s;
+}
+@keyframes loading-double-circle {
+    0% {
+        /* opacity: 0.9; */
+        transform: translate(-50%,-50%) scale(0);
+    }
+    50% {
+        /* opacity: 0.3; */
+        transform: translate(-50%,-50%) scale(1);
+    }
+    100% {
+        /* opacity: 0.9; */
+        transform: translate(-50%,-50%) scale(0);
+    }
+}
+
+/*loading-line*/
+.rect-container {
+    width: 12rem;
+}   
+.rect {
+    width: 0.6rem;
+    height: 3rem;
+    margin: 0.24rem;
+    background: #fff;
+    animation: loading-line 1s infinite ease-in-out;
+}
+.rect-one {
+    animation-delay: -0.9s;
+}
+.rect-two {
+    
+    animation-delay: -0.8s;
+}
+.rect-three {
+    animation-delay: -0.7s;
+}
+.rect-four {
+    animation-delay: -.6s;
+}
+.rect-five {
+    animation-delay: -.5s;
+    
+}
+@keyframes loading-line {
+    0% {
+        transform:  scaleY(1);
+    }
+    20% {
+        transform:  scaleY(1.6);
+        
+    }
+    40% {
+        transform:  scaleY(1);
+    }
+    100% {
+        transform:  scale(1);
+
+    }
+}
+
+/*翻牌式loading*/
+.loading-polygon {
+    width: 6rem;
+    height: 6rem;
+    background: #fff;
+    perspective: 18rem;
+    animation: loading-polygon 1.2s infinite ease-in-out;
+}
+@keyframes loading-polygon {
+    0% {    
+        perspective: 21rem;
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        perspective: 21rem;
+        transform: rotateX(180deg) rotateY(0deg);
+    }
+    100% {
+        perspective: 21rem;
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+}
+
+
+/*兩個方形loading*/
+.loading-two-polygon-container {
+    width: 4.5rem;
+    height: 4.5rem;
+    /* border: 3px solid black; */
+}
+.loading-two-polygon {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fff;
+}
+.polygon-one {
+    top: 0;
+    left: 0;
+    animation: loading-polygon-one 2.1s infinite ease-in-out;
+}
+.polygon-two {
+    top:100%;
+    left: 100%;
+    animation: loading-polygon-two 2.1s infinite ease-in-out;
+}
+@keyframes loading-polygon-one {
+    0% {
+        top:0;
+        left:0;
+    }
+    25% {
+        top: 0;
+        left:100%;
+        transform: scale(0.6) rotate(-90deg);
+    }
+    50%{
+        top: 100%;
+        left: 100%;
+        transform: scale(1) rotate(-180deg);
+    }
+    75% {
+        top: 100%;
+        left: 0;
+        transform: scale(0.6) rotate(-270deg);
+    }
+    100%{
+        top:0;
+        left:0;
+        transform: scale(1) rotate(-360deg);
+    }   
+}
+@keyframes loading-polygon-two {
+    0% {
+        top:100%;
+        left:100%;
+    }
+    25% {
+        top: 100%;
+        left:0;
+        transform: scale(0.6) rotate(-90deg);
+    }
+    50%{
+        top: 0;
+        left: 0;
+        transform: scale(1) rotate(-180deg);
+    }
+    75% {
+        top: 0;
+        left: 100%;
+        transform: scale(0.6) rotate(-270deg);
+    }
+    100%{
+        top:100%;
+        left:100%;
+        transform: scale(1) rotate(-360deg);
+    }   
+}
+
+/*background-clip-test*/
+/*用一個標籤做出這樣的內容*/
+.background-clip-test {
+    position: relative;
+    width: 27rem;
+    height: 27rem;
+    background: purple;
+    border: 3rem dashed red;
+}
+.background-clip-test::after {
+    content: '';
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 21rem;
+    height: 21rem;
+    background-color: #fff;
+    /* -webkit-background-clip: padding-box; */
+}
+/* .background-clip-test::before {
+    content: '';
+    position: absolute;
+    width: 15rem;
+    height: 9rem;
+    top:50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    background-color: orange;
+    background-clip: content-box;
+    background-clip: padding-box;
+}
+.background-clip-test::after {
+    content: '';
+    position: absolute;
+    top:50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    width:21rem;
+    height: 15rem;
+    border: 3rem solid #fff;
+} */
+
+/*bacground-clip-text*/ 
+.backgroung-clip-text {
+    font-size: 12rem;
+    text-transform: uppercase;
+    background: linear-gradient(120deg,#ff0479,#7c02c2);
+    background-size: 45%;
+
+    /*-webkit-background-clip:text 可以沿者text來裁切背景,text以外的地方都會被裁切掉*/
+    /*再將color設為transparent(透明)的話，就可以擁有不錯的文字效果*/
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+/*Someting interesting*/
+.position-realtive {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.blur {
+    filter: blur(1.5rem);
+}
+.background-parent {
+    position: absolute;
+    border: 3px solid black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/Amazing_Effect/bird.png);
+    background-size: cover;
+}
+.background-child__see {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 30rem;
+    background-image: url(../img/Amazing_Effect/bird.png);
+    background-size: cover;
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: 1;
+}
+/* [Hello! items ]*/
+.word {
+    height: 3.3rem;
+    font-weight: 600;
+    font-size: 2.4rem;
+    padding : 0 4.5rem;
+    color: #fff;
+    overflow: hidden;
+}
+.word::before {
+    position: absolute;
+    content: '[';
+    left:0;
+}
+.word::after {
+    position: absolute;
+    content: ']';
+    right: 0;   
+}
+.container-text {
+    display: inline;
+    /* float: left; */
+}
+.word-list {
+    margin-top: -10px;
+    animation: change-word 6s infinite 
+}
+@keyframes change-word {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(-183%);
+    }
+    75% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*cellphone*/
+.cellphone {
+    position: relative;
+    width: 18rem;
+    height: 32rem;
+    margin-top: 9rem;
+    background: rgba(black,.6);
+    transform: rotate(-30deg) skew(24deg);
+}
+.cellphone img {
+    position: absolute;
+    width: 100%;
+    transition: .6s;
+}
+.cellphone:hover img:nth-child(4) {
+    transform: translate(7.5rem,-7.5rem);
+    opacity: 1;
+}
+.cellphone:hover img:nth-child(3) {
+    transform: translate(6rem,-6rem);
+    opacity: .6;
+}
+.cellphone:hover img:nth-child(2) {
+    transform: translate(4.5rem,-4.5rem);
+    opacity: .3;
+}
+.cellphone:hover img:nth-child(1) {
+    transform: translate(2.4rem,-2.4rem);
+    opacity: .1;
+}
+
+/*light-circel*/
+.circle-light {
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    background: #fff;
+    opacity: 0.3;
+    color: #000;
+    transition: all .6s;
+}
+.circle-light span {
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%,-57%);
+    font-size: 3.3rem;
+    text-align: center;
+    font-weight: 600;
+}
+.circle-light:hover {
+    box-shadow: 0px 0px 3px 1px  #fff;
+    opacity: 1;
+}
+.circle-light::before,.circle-light::after {
+    content: '';
+    border-radius: 100%;
+    background: #fff;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all .6s;
+}
+.circle-light::before {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.circle-light::after {
+    width: 10.5rem;
+    height: 10.5rem;
+}
+.circle-light:hover::before {
+    opacity: 0.24;
+}
+.circle-light:hover::after {
+    opacity: 0.18;
+}
+
+
+/*:focus Practice & something interesting*/
+.form-container {
+    position: relative;
+    /* border: 3px solid black; */
+}
+.form-container__text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.6rem;
+    border: transparent;
+    background-color: rgba(0,0,0,0);
+    transition: all .6s;
+    z-index: 1;
+}
+.form-container__text:focus {
+    width: 30rem;
+    border: .9px solid rgb(19, 208, 255);
+}
+.form-container__text:focus + .form-container__button{
+    transform: translate(31.5rem,-50%);
+}
+.form-container__button {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 3.6rem;
+    transform: translateY(-50%);
+    transition: all .6s;
+}
+
+/*form Something interesting with :focus */
+.form__group {
+    /* border: 3px solid black; */
+    position: relative;
+    height: 9rem;
+    width: 42rem;
+}
+.form__name {
+    display: block;
+    position: absolute;
+    height: 50%;
+    width: 0;
+    color: inherit;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    border: none;
+    outline: none;
+    transition: all .6s;
+}
+.form__name:focus {
+    width: 50%;
+    background-color: #fff;
+    border-bottom: 3px solid #18f8a2;
+    box-shadow: 0 1.5rem 3rem 0 rgba(18, 194, 126, .6);
+}
+.form__name:focus ~ .form__button {
+    transform: translate(24rem,-50%);
+}
+.form__name-label {
+    display: inline-block;
+     position: absolute; 
+    height: 50%;
+    width: 6rem;
+    z-index: 1;
+    top: 50%;
+    left: 0; 
+     transform: translate(0,-50%); 
+}
+
+.form__button {
+    display: inline-block; 
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    height: 50%;
+    width: 6rem;
+    transition: all .6s;
+}
+
+/*clock pure css*/
+.clock-container {
+    position: relative;
+    height: 15rem;
+    width: 15rem;
+    /* border: 3px solid var(--color-black); */
+}
+.clock-container::after {
+    position: absolute;
+    top:0;
+    left:0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    /* box-shadow: 0 1.5rem 3.6rem 0 rgba(0,0,0,.6); */
+}
+.clock__main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    border: .6rem solid var(--color-green-light);
+    background-color: #fff;
+}
+.clock__main::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(135deg);
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.1));
+    top: 36%;
+    left: 36%;
+}
+.clock__hour,.clock__minute,.clock__second{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 0;
+    transform: translateX(-50%);
+}
+/*hour*/
+.clock__hour {
+    width: 3px;
+    height: 10.5px;
+    background-color: var(--color-red);
+    animation: clock-rotate 36s linear infinite;
+}
+/*minute*/
+
+.clock__minute {
+    position: absolute;
+    width: 3px;
+    height: 21px;
+    background-color: var(--color-black);
+    animation: clock-rotate 6s linear infinite;
+}
+.clock__second {
+    position: absolute;
+    width: 1.2px;
+    height: 42px;
+    background-color: var(--color-black);
+    animation: clock-rotate 1s linear infinite;
+}
+.clock__top,.clock__bottom {
+    position: absolute;
+    height: 6px;
+    width: 3px;
+    background-color: var(--color-black);
+}
+.clock__top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.clock__bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.clock__right,.clock__left {
+    position: absolute;
+    height: 3px;
+    width: 6px;
+    background-color: var(--color-black);
+}
+.clock__right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.clock__left {
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+@keyframes clock-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        
+        transform: rotate(360deg);
+    }
+}
+
+
+/*text-3d*/ 
+
+.text-3d {
+    position: relative;
+    color: transparent;
+    font-size: 15rem;
+    transform: skewY(-6deg);
+    transform-origin: bottom left;
+    text-shadow:
+
+    0px -1px 10px rgba(255,255,255,.4),
+    -1px -1px 10px rgba(255,255,255,.4),
+    -2px -1px 10px rgba(255,255,255,.4),
+
+    -1px -3px 3px #fff,
+    -2px -3px 3px #fff,
+    -3px -3px 3px #fff,
+
+    -2px -4px 2px #fff,
+    -3px -4px 2px #fff,
+    -4px -4px 2px #fff,
+
+    -3px -5px 1px #fff,
+    -4px -5px 1px #fff,
+    -5px -5px 1px #fff;
+}
+.text-3d::before {
+    content: 'Hello';
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: skewX(30deg);
+    transform-origin: bottom left;
+    z-index: -1;
+    color: transparent;
+    text-shadow: 
+    15px 0 20px rgba(0,0,0,.24),
+    15px 0 20px rgba(0,0,0,.21),
+    15px 0 20px rgba(0,0,0,.18),
+    15px 0 20px rgba(0,0,0,.15);
+}
+
+/*interesting navigation*/
+.navigation__button {
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    z-index: 101;
+    cursor: pointer;
+}
+.navigation__background {
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 100%;
+    background: radial-gradient(var(--color-green-light),var(--color-green-dark));
+    z-index: 99;
+
+    transition: all .6s ease-in-out;
+    /* transform: scale(80); */
+}
+
+.navigation__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    /* width: 100%; */
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+
+    transition: all .6s ease-in;
+    width: 0;
+    opacity: 0;
+
+}
+.navigation__checkbox {
+    display: none;
+}
+.navigation__list {
+    list-style: none;
+}
+.navigation__item {
+    /* padding: 1.5rem 3rem; */
+    margin: 1.5rem;
+    display: block;
+}
+
+.navigation__link:link,
+.navigation__link:visited {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 3.6rem;
+    padding: 1.5rem 3rem;
+    color: var(--color-white);
+    background: linear-gradient(120deg,transparent 0%,transparent 50%, var(--color-white) 50%);  
+    background-size: 240%;
+    transition: all .6s;
+}
+.navigation__link:hover,
+.navigation__link:active {
+    background-position: 100%;
+    color: var(--color-green-dark);
+    transform: translateX(3rem);
+}
+
+.navigation__checkbox:checked ~ .navigation__background{
+    transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+    width: 100%;
+    opacity: 1;
+}
+.navigation__icon {
+    position: relative;
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+    /* background-color: transparent; */
+}
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+    display: inline-block;
+    width: 3rem;
+    height: 3px;
+    background-color: var(--color-black);
+    transition: all .6s;
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.navigation__icon::before {top: -.8rem}
+.navigation__icon::after {top: .8rem}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+    background-color: transparent;  
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+    top:0;
+    transform: rotate(135deg);
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+/*MAC DOCK*/
+.dock__container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* border:3px solid black; */
+}
+.dock {
+    /* width: 50%; */
+    /* margin-left: 0 auto; */
+    text-align: center;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 0;     /*解除抖動問題，inline-block的缺點就是有間距*/
+    /* border:3px solid black; */
+}
+.dock li:nth-last-child(n+2){
+    display: inline-block;
+    position: relative;   /*讓li可以被摸到*/
+    z-index: 1;
+    
+    /* outline: 1px solid #f00; */
+    width: 6rem;
+    height: 6rem;
+
+    transition: all .6s;
+
+}
+.dock li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(255,0,0,.45); */
+    border-radius: 50%;
+}
+.dock img {
+    width: 6rem;
+    height: 6rem;
+    transition: width .6s, height .6s;
+}
+.last {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.dock li:nth-last-child(n+2):hover {
+    width: 9rem;
+    height: 9rem;
+}
+.dock li:nth-child(1):hover ~ .last img:nth-child(1),
+.dock li:nth-child(2):hover ~ .last img:nth-child(2),
+.dock li:nth-child(3):hover ~ .last img:nth-child(3),
+.dock li:nth-child(4):hover ~ .last img:nth-child(4),
+.dock li:nth-child(5):hover ~ .last img:nth-child(5),
+.dock li:nth-child(6):hover ~ .last img:nth-child(6) {
+    /* transform: scale(1.5); */
+    width: 9rem;
+    height: 9rem;
+}
+
+.dock li:nth-child(1):hover ~ .last img:nth-child(2),
+.dock li:nth-child(6):hover ~ .last img:nth-child(5),
+.dock li:nth-child(2):hover ~ .last img:nth-child(1),
+.dock li:nth-child(2):hover ~ .last img:nth-child(3),
+.dock li:nth-child(3):hover ~ .last img:nth-child(2),
+.dock li:nth-child(3):hover ~ .last img:nth-child(4),
+.dock li:nth-child(4):hover ~ .last img:nth-child(3),
+.dock li:nth-child(4):hover ~ .last img:nth-child(5),
+.dock li:nth-child(5):hover ~ .last img:nth-child(4),
+.dock li:nth-child(5):hover ~ .last img:nth-child(6){width: 7.5rem;height: 7.5rem;}
+

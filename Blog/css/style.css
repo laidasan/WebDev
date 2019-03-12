@@ -9,7 +9,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: #b1b1b1b6; }
+  background-color: #afafafb6; }
 
 body {
   font-family: "Lato",sans-serif;
@@ -35,6 +35,9 @@ body {
 
 .u-margin-bottom-small {
   margin-bottom: 2.1rem; }
+
+.u-margin-top-small {
+  margin-top: 2.1rem; }
 
 .note__title {
   width: 100%;
@@ -80,6 +83,10 @@ body {
   line-height: 2.4rem;
   font-size: 1.8rem;
   font-weight: 300; }
+
+.note__img {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem; }
 
 .navigation__checkbox {
   display: none; }
@@ -236,10 +243,9 @@ body {
   height: 100vh; }
 
 .note-box {
-  width: 51%;
-  height: 51rem;
+  width: 60%;
   margin: 0 auto;
-  background: #dadadab6;
+  background: rgba(216, 216, 216, 0.714);
   box-shadow: 0 0 0.9rem 0.6rem rgba(0, 0, 0, 0.45);
   border-radius: 3px; }
 
