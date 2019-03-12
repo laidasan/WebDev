@@ -1,0 +1,33 @@
+.home-box {
+    @include center-position;
+    background-color: $color-primary;
+    border-radius: 50%;
+
+    width: 36rem;
+    height: 36rem;
+
+    box-shadow: 0 0 3.6rem 1.2rem rgba($color-white,.6);
+    border: 1.5px solid $color-primary-light;
+    &__list {
+        list-style: none;
+        @include center-position;
+    }
+
+    &__item {
+        display: block;
+        font-size: 3.6rem;
+        text-align: center;
+        margin-bottom: 1.5rem; 
+    }
+
+    &__link {
+        &:link,
+        &:visited    {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            color: $color-white;
+        }
+    }
+}

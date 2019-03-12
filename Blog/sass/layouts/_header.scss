@@ -1,0 +1,12 @@
+.header {
+    position: relative;
+    height: 9rem;
+    
+    &__text-box {
+        @include center-position;
+        background: linear-gradient(120deg,$color-header-text,$color-header-text-dark,$color-primary,$color-primary-dark);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+}
+
