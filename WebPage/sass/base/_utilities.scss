@@ -21,6 +21,9 @@
 
 .u-width-flexbox-big{
     width: 81vw;
+    @include respond(tab-port) {
+        width: 100%;
+    }
 }
 .u-width-flexbox-medium {
     width: 75vw;

@@ -21,6 +21,16 @@
     
     & > * {
         transform: skewY(7deg);
+
+        @include respond(tab-port) {
+            transform: skewY(0deg);
+        }
+    }
+
+    @include respond(tab-port) {
+        margin-top: 21rem;
+        height: 100vh;
+        transform: skewY(0deg);
     }
     }
     

@@ -13,7 +13,8 @@
     border-radius: 3px;
     box-shadow: 0 1.5rem 4.5rem rgba(black,.15);
     transition: all .3s;
-
+    
+    
     &__icon {
         font-size: 6rem;
         margin-bottom: .5rem;
@@ -21,9 +22,25 @@
         background: linear-gradient(to right,$color-primary-light,$color-primary-dark);
         -webkit-background-clip: text;
         color: transparent;
+
+        @include respond(tab-port) {
+            transition: all .3s;
+        }
     }
     &:hover {
         transform: translateY(-1.5rem) scale(1.05); 
+    }
+    @include respond(tab-port) {
+        width: 100%;
+        &:not(:last-child) {
+            margin-bottom: 1.2rem;
+        }
+        &:hover {
+            transform: translateY(0rem) scale(1);
+        }
+        &:hover &__icon {
+            transform: scale(1.5);
+        }
     }
     &__text {
         // margin-top: 3rem;
