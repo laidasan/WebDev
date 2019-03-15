@@ -9,12 +9,23 @@
     font-size: 1.6rem;
     transform: skewX(-12deg);
 
+    @include respond(tab-port) {
+        width: 100%;
+    }
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
     &:not(:first-child) {
         margin-top: 6rem;
     }
     
     & > * {
         transform:skewX(12deg);
+
+        @include respond(phone) {
+            transform:skewX(0);
+        }
     }
     @include clearfix;
     &__shape {
@@ -28,6 +39,10 @@
         -webkit-clip-path: circle(50% at 50% 50%);
         transform: translateX(-2.1rem) skewX(12deg);
         transition: all .3s;
+
+        @include respond(phone) {
+            transform: translateX(-2.1rem) skewX(0);
+        }
         
         // &:hover .story__caption {
             //     opacity: 1;
@@ -38,10 +53,6 @@
             height: 100%;
             transform: translateX(-2.7rem) scale(1.5);
             transition: all .3s;
-        }
-        &__text {
-            // clear: left;
-            // float: right;
         }
         
         &__caption {

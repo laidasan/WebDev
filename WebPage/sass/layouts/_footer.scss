@@ -2,9 +2,16 @@
     background-color: $color-black;
     padding: 9rem 0;
     font-size: 1.5rem;
+
+
+
     &__container {
         width: $width-flexitem-1-of-2;
         // border: 3px solid #000;
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
     &__logo-box {
         margin: 0 auto;
@@ -20,10 +27,18 @@
         color: $color-gery-light;
         border-top: 1px solid $color-grey-dark;
         padding-top: 1.5rem;
+        @include respond(tab-port) {
+            padding: 1.5rem;
+        }
     }
     &__navigation {
         border-top: 1px solid $color-grey-dark;
         padding-top: 1.5rem;
+
+        @include respond(tab-port) {
+            padding: 1.5rem;
+        }
+
     }
     &__list {
         list-style: none;

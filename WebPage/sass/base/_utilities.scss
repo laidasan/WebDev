@@ -3,6 +3,10 @@
 }
 .u-margin-bottom-big {
     margin-bottom: 7.5rem;
+
+    @include respond(tab-port) {
+        margin-bottom: 3rem;
+    }
 }
 .u-margin-bottom-medium {
     margin-bottom: 4.5rem;

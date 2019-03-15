@@ -7,7 +7,6 @@
     height:45rem;  //on desktop computer
     // border: 3px solid black;
     // transform-style: preserve-3d;
-    
     perspective: 150rem;
     -webkit-perspective: 150rem;
     -moz-perspective: 150rem;
@@ -18,13 +17,6 @@
     }
     &:hover &-side--back{
         transform: rotateY(0deg);
-    }
-
-    @include respond(tab-port) {
-        width: 100%;
-        &:not(:last-child) {
-            margin-bottom: 2.7rem;
-        }
     }
 
     
@@ -132,14 +124,21 @@
                 text-align: center;
                 font-size: 1.5rem;
                 //padding: 1rem; //on notebook computer
-                padding: 1.5rem; //on desktop computer 
+                padding: 1.5rem //on desktop computer 
 
-                &:not(:last-child) {
-                    border-bottom: 1px solid #eee;
-                }
+
+                // &:not(:last-child) {
+                //     border-bottom: 1px solid #eee;
+                // }
+
+            }
+            li:not(:last-child) {
+                border-bottom: 1px solid #eee;
             }
         }
     }
+
+
     &__cta {
         position: absolute;
         top:50%;
@@ -165,5 +164,71 @@
         font-size: 6rem;
         font-weight: 300;
 
+    }
+
+
+    /*screen <= 900px */
+    @include respond(tab-port) {
+        width: 100%;
+        height: auto;
+        background-color: $color-white;
+        border-radius: 3px;
+        &:not(:last-child) {
+            margin-bottom: 2.4rem;
+        }
+        // border: 3px solid black;
+        // transform-style: preserve-3d;
+
+        &:hover &-side--front {
+            transform: rotateY(0deg);
+        }
+        &:hover &-side--back{
+            transform: rotateY(0deg);
+        }
+    
+        transition: all .9s;
+        
+        &-side {
+            position: relative;
+            width: 100%;
+            box-shadow: none;
+            &--back {
+                height: auto;
+                transform: rotateY(0deg);
+                // margin-top: -3rem;
+                clip-path: polygon(0 15%,100% 0,100% 100%,0 100%);
+                -webkit-clip-path: polygon(0 15%,100% 0,100% 100%,0 100%);
+                // z-index: 2;
+            }
+        } 
+        &-details {
+            // margin-bottom: 3rem;
+            // height: 24rem;
+        }
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 3.6rem 0;
+            // border: 3px solid black;
+            .btn {
+                font-size: 1.2rem;
+            }
+        }
+        &__price-box {
+            color: #fff;
+            text-align: center;
+            margin-bottom: .9rem;
+        }
+        &__price-only {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+        &__price-value {
+            font-size: 4rem;
+            font-weight: 300;
+        }
     }
 }

@@ -13,6 +13,10 @@
     border-radius: 3px;
     box-shadow: 0 1.5rem 4.5rem rgba(black,.15);
     transition: all .3s;
+
+    @include respond(tab-port) {
+        padding: 2.1rem 0;
+    }
     
     
     &__icon {
@@ -25,13 +29,17 @@
 
         @include respond(tab-port) {
             transition: all .3s;
+            margin-bottom: 0;
         }
     }
+
+
     &:hover {
         transform: translateY(-1.5rem) scale(1.05); 
     }
+
     @include respond(tab-port) {
-        width: 100%;
+        width: 60%;
         &:not(:last-child) {
             margin-bottom: 1.2rem;
         }
