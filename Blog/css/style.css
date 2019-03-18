@@ -80,9 +80,9 @@ body {
 .note__content {
   word-break: break-all;
   max-width: 100%;
-  line-height: 2.4rem;
-  font-size: 1.8rem;
-  font-weight: 300; }
+  font-size: 1.65rem;
+  font-weight: 300;
+  line-height: 2.1rem; }
 
 .note__img {
   margin-top: 1.2rem;
