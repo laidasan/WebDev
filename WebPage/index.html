@@ -130,7 +130,8 @@
                         <div class="section-tours__card-picture section-tours__card-picture-1">&nbsp;</div>
                         <h4 class="section-tours__card-heading">
                             <span class="section-tours__card-heading-span section-tours__card-heading-span--1">
-                                 The Sea <br> Exploer    <!-- on desktop computer add <br>  -->
+                                The Sea <br> Exploer
+                                <!-- on desktop computer add <br>  -->
                             </span>
                         </h4>
                         <div class="section-tours__card-details">
@@ -320,7 +321,12 @@
 
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+
+            <picture class="footer__logo">
+                <source srcset="./img/logo-green-small-1x.png 1x, ./img/logo-green-small-2x.png 2x"
+                    media="(max-width): 600px">
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x," alt="Full logo">
+            </picture>
         </div>
         <div class="flexbox u-width-flexbox-big flex-between">
             <div class="footer__container">
@@ -336,7 +342,9 @@
             </div>
             <div class="footer__container">
                 <p class="footer__copyright">
-                    Build bRa bra...
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae expedita praesentium, vel, molestiae
+                    error deleniti modi ratione ducimus fugiat aperiam sint, non animi odit ipsa inventore impedit
+                    suscipit officia fugit.
                 </p>
             </div>
         </div>
@@ -351,13 +359,14 @@
             <div class="popup__right">
                 <a href="#section-tours" class="popup__close">&times;</a>
                 <h2 class="heading-secondary u-margin-bottom-medium">Start booking now</h2>
-                <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
+                <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before
+                    booking</h3>
                 <p class="popup__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
                 <a href="" class="btn btn--green u-margin-top-medium">Book now</a>
             </div>
