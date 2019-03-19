@@ -30,19 +30,33 @@
     @include clearfix;
     &__shape {
         position: relative;
+        float: left;
         width: 12rem;
         height: 12rem;
-        float: left;
-        // shape-outside: circle(50% at 50% 50%);
-        // -webkit-shape-outside: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
-        -webkit-clip-path: circle(50% at 50% 50%);
         transform: translateX(-2.1rem) skewX(12deg);
         transition: all .3s;
+        
+        /*fix */
+        overflow: hidden;
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            clip-path: circle(50% at 50% 50%);
+            -webkit-clip-path: circle(50% at 50% 50%);
+
+            /*shape-outside只能搭配的float(浮動物件)使用，效果很像clip-path，可以把下兩行拿掉看看變化*/
+            /*注意文繞圖的部分，即文字與圖片接觸的地方，會有不同*/
+            shape-outside: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+
+            width: 12rem;
+            height: 12rem;
+        }
+        /*fix*/
 
         @include respond(phone) {
             transform: translateX(-2.1rem) skewX(0);
         }
+
+
         
         // &:hover .story__caption {
             //     opacity: 1;

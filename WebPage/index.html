@@ -7,10 +7,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/icon-font.css">
+    <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-    <link rel="stylesheet" href="css/icon-font.css" type="text/css">
+    <!-- <link rel="stylesheet" href="css/icon-font.css" type="text/css"> -->
 
     <title>Natours | Exciting tours for adventurous people</title>
 </head>
@@ -74,9 +74,24 @@
                 </div>
                 <div class="flexbox-img">
                     <div class="composition">
-                        <img src="img/nat-1-large.jpg" alt="" class="composition__photo composition__photo--p1">
+                        <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+                        sizes="(max-width: 900px) 40vw, (max-width: 600px) 27vw, 300px"
+                        src="img/nat-1-large.jpg" 
+                        alt="photo-1" class="composition__photo composition__photo--p1">
+
+                        <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" 
+                        sizes="(max-width: 900px) 40vw, (max-width: 600px) 27vw, 300px"
+                        src="img/nat-2-large.jpg" 
+                        alt="photo-2" class="composition__photo composition__photo--p2">
+
+                        <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" 
+                        sizes="(max-width: 900px) 40vw, (max-width: 600px) 27vw, 300px"
+                        src="img/nat-3-large.jpg" 
+                        alt="photo-3" class="composition__photo composition__photo--p3">
+                        
+                        <!-- <img src="img/nat-1-large.jpg" alt="" class="composition__photo composition__photo--p1">
                         <img src="img/nat-2-large.jpg" alt="" class="composition__photo composition__photo--p2">
-                        <img src="img/nat-3-large.jpg" alt="" class="composition__photo composition__photo--p3">
+                        <img src="img/nat-3-large.jpg" alt="" class="composition__photo composition__photo--p3"> -->
                     </div>
                 </div>
             </div>
@@ -321,11 +336,10 @@
 
     <footer class="footer">
         <div class="footer__logo-box">
-
             <picture class="footer__logo">
                 <source srcset="./img/logo-green-small-1x.png 1x, ./img/logo-green-small-2x.png 2x"
-                    media="(max-width): 600px">
-                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x," alt="Full logo">
+                    media="(max-width: 600px)">
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" src="img/logo-green-2x.png">
             </picture>
         </div>
         <div class="flexbox u-width-flexbox-big flex-between">
