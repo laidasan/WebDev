@@ -91,6 +91,23 @@ body {
   margin-top: 1.2rem;
   margin-bottom: 1.2rem; }
 
+.note__codepen:link, .note__codepen:visited {
+  display: inline-block;
+  padding: .9rem 1.2rem;
+  border: 0.9px solid #000;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 2.1rem;
+  letter-spacing: .3rem;
+  color: rgba(0, 0, 0, 0.3);
+  transition: all .45s; }
+
+.note__codepen:hover {
+  border-color: transparent;
+  box-shadow: 0.9px 1.5px 9px 0 rgba(0, 0, 0, 0.6);
+  color: #000;
+  background-color: #ccccce; }
+
 .navigation__checkbox {
   display: none; }
 

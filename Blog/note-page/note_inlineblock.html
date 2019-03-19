@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <style>
+        .wrap {
+            background-color: #eeeeee;
+            padding: .9rem;
+            margin: .9rem 0;
+        }
+
+        strong {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        .h1-inline,
+        .p-inline {
+            display: inline;
+        }
+
+        .a-inline-block {
+            display: inline-block;
+            width: 9rem;
+            height: 6rem;
+            background-color: #afa;
+        }
+
+        .a-padding {
+            padding: 2.7rem;
+            background-color: #ffa;
+        }
+
+        .menu {
+            background-color: #fa0;
+            text-align: center;
+        }
+
+        .item:link,
+        .item:visited {
+            display: inline-block;
+
+            color: #fff;
+            /* background-color: #000; */
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 9px 12px;
+        }
+
+        .menu__font-size {
+            font-size: 0;
+        }
+
+        .item__font-size {
+            font-size: 16px;
+        }
+
+        .item:hover {
+            background-color: #000;
+        }
+
+        .bkcolor-black {
+            background-color: #000;
+        }
+    </style>
+    <title>Note Home List</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon"></span>
+        </label>
+        <div class="navigation__background"></div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note-page/note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="header">
+            <div class="header__text-box">
+                <h1 class="heading-primary">My Note</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="note-box">
+            <div class="note__title">
+                <h2 class="heading-secondary">Inline & Block</h2>
+            </div>
+            <div class="note-container">
+                <h3 class="heading-tertiary">What?</h3>
+                <P class="note__content u-margin-bottom-p">
+                    今天來談談兩個重量級角色，但不先介紹是哪兩位了(其實標題就已經寫出來了)，在進入今天主題之前有個問題先問大家，
+                    為什麼當我們的"h1"標籤跟"p"標籤不會排在一起啊?
+                    <div class="wrap">
+                        <h1>Title</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tempora possimus obcaecati
+                            magni veniam dolorem deserunt fugiat recusandae at nostrum placeat officiis eaque soluta
+                            ipsum quam numquam, necessitatibus dolorum neque?</p>
+                    </div>
+                    明明Title的字很短，為什麼沒有跟"p"標籤並排阿? 我們再p標籤裡面塞個"span"標籤與"a"標籤看看!
+                    <div class="wrap">
+                        <h1>Title</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur <a href="#">adipisicing</a> elit. Veritatis tempora
+                            possimus obcaecati
+                            magni veniam dolorem deserunt fugiat recusandae at nostrum placeat officiis eaque soluta
+                            ipsum quam numquam <span>span span span span span span span span</span></p>
+                    </div>
+                    咦?為什麼"a"標籤跟"span"標籤就會跟"p"標籤並排阿?這就跟我們今天的兩大主角有關拉!! 讓我們來進主題吧!!
+                </P>
+                <h3 class="heading-tertiary u-margin-top-small">How?</h3>
+                <p class="note__content u-margin-bottom-p">
+                    今天的兩位主角，<strong>Inline</strong>與<strong>Block</strong>，這兩位跟會不會並排有什麼關係阿?
+                    可有關係了，簡單來說<strong>block</strong>就是一個區塊，不管如何它多胖多瘦，就一定會佔據一整行的空間，而
+                    <strong>inline</strong>就不會，我喜歡把block比喻成老大，而這位老大坐火車總是喜歡一個人做，不管那一排座位還有
+                    多少張椅子，就是不給其他人坐，總是把整排位置包下來(好有錢)，而inline就像我們普通人一樣，一次只買、只坐一個座位，
+                    所以就會有可能跟別人並坐囉!
+                </p>
+                <P class="note__content">
+                    但老大有可能變沒錢，普通人也有可能買一排座位的喔!我們可以設定標籤為inline或是block，設定方式就是為
+                    <strong>"display:值"</strong>下面就讓我們來試試看吧!把剛剛的"h1"與"p"並排。
+                    我們先把title的display設為inline試試看
+                    <div class="wrap">
+                        <h1 class="h1-inline">Title</h1>
+
+                        <p>Lorem ipsum dolor sit amet consectetur <a href="#">adipisicing</a> elit. Veritatis tempora
+                            possimus obcaecati
+                            magni veniam dolorem deserunt fugiat recusandae at nostrum placeat officiis eaque soluta
+                            ipsum quam numquam <span>span span span span span span span span</span></p>
+                    </div>
+                    咦?為什麼還是沒有並排阿?其實"p"標籤也是老大拉!!剛剛說block的特性是什麼還記得嗎?是的，會佔據一整行，所以即使title是
+                    inline還是沒辦法跟"p"並排(除非是在"p"標籤裡面)，我們再把"p"標籤改成inline吧!
+                    <div class="wrap">
+                        <h1 class="h1-inline">Title</h1>
+
+                        <p class="p-inline">Lorem ipsum dolor sit amet consectetur <a href="#">adipisicing</a> elit.
+                            Veritatis tempora
+                            possimus obcaecati
+                            magni veniam dolorem deserunt fugiat recusandae at nostrum placeat officiis eaque soluta
+                            ipsum quam numquam <span>span span span span span span span span</span></p>
+                    </div>
+                    看吧!!"h1"跟"p"標籤並排了，這就是inline跟block的特性之一。
+                </P>
+                <p class="note__content">
+                    還有一個很重要很重要的特性是:<strong>inline沒有長寬</strong>可以自己試試看把inline物件設定長與寬，結果是沒有用的，
+                    inline像是線，block像是有面積的物件，線只有長度(隨著內容增長)。
+                </p>
+                <P class="note__content">
+                    那今天我們想要標籤去並排，同時又要可以有長度與寬度該怎麼辦呢?!我們其實還有一個inline與block的混血兒--> <strong>inline-block</strong>
+                </P>
+                <p class="note__content">
+                    試著把a標籤設為inline-block後，設定長寬看看!
+                    <div class="wrap">
+                        <h1 class="h1-inline">Title</h1>
+                        <p class="p-inline">Lorem ipsum dolor sit amet consectetur <a href="#"
+                                class="a-inline-block">adipisicing</a> elit.
+                            Veritatis tempora
+                            possimus obcaecati
+                            magni veniam dolorem deserunt fugiat recusandae at nostrum placeat officiis eaque soluta
+                            ipsum quam numquam <span>span span span span span span span span</span></p>
+                    </div>
+                    <p class="u-margin-bottom-p">它的寬度跟長度就出來囉!!</p>
+                </p>
+                <p class="note__content">
+                    我們再做一件事情，我們把本是inline的a標籤設padding看看
+                    <div class="wrap">
+                        <h1 class="h1-inline">Title</h1>
+                        <p class="p-inline">Lorem ipsum dolor sit amet consectetur <a href="#"
+                                class="a-padding">adipisicing</a> elit.
+                            Veritatis tempora
+                            possimus obcaecati
+                            magni veniam dolorem deserunt fugiat recusandae at nostrum placeat officiis eaque soluta
+                            ipsum quam numquam <span>span span span span span span span span</span></p>
+                    </div>
+                    你會發現a標籤看起來好像有了跟長度跟寬度一樣，但是實際上是沒有的，真的有長度跟寬度的話，會是像設定了inline-block的a標籤一樣，
+                    會把長度撐開來，把下面那行文字往下擠，這才是實際上有的長與寬。
+                    inline-block會很常用到導覽列等等上，像是這個樣子。
+                </p>
+                <div class="menu">
+                    <a href="#" class="item">link</a>
+                    <a href="#" class="item">link</a>
+                    <a href="#" class="item">link</a>
+                </div>
+                <p class="note__content">
+                    但是專案上會有個問題，我們把link的背景色調為黑色來看看!
+                    <div class="menu">
+                        <a href="#" class="item bkcolor-black">link</a>
+                        <a href="#" class="item bkcolor-black">link</a>
+                        <a href="#" class="item bkcolor-black">link</a>
+                    </div>
+                    你會發現在a標籤之間會有空隙，這些空隙呢其實是空白字元，其實只要在html裡的a標籤之間沒有空白的話，就不會有這些空隙。
+                    那我們也可以這樣做，首先這個空白字元呢是在a標籤之間，是在menu裡面，要去控制它的話我們可以控制我們的menu，控制menu的font-size。
+                    先把menu的font-size設為0，在這時a標籤的字體大小也會變成0(繼承的父層的字體大小)，之後我們在設定a標籤的font-size，這樣空隙問題就解決囉!!
+                    <div class="menu menu__font-size">
+                        <a href="#" class="item bkcolor-black item__font-size">link</a>
+                        <a href="#" class="item bkcolor-black item__font-size">link</a>
+                        <a href="#" class="item bkcolor-black item__font-size">link</a>
+                    </div>
+                    這樣就正常囉!!
+                    <div class="menu menu__font-size">
+                        <a href="#" class="item item__font-size">link</a>
+                        <a href="#" class="item item__font-size">link</a>
+                        <a href="#" class="item item__font-size">link</a>
+                    </div>
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
