@@ -1711,3 +1711,33 @@ h1 {
 .dock li:nth-child(5):hover ~ .last img:nth-child(4),
 .dock li:nth-child(5):hover ~ .last img:nth-child(6){width: 7.5rem;height: 7.5rem;}
 
+
+/*等比例*/
+/*內嵌Youtube影片的時候很好用*/
+.wrap {
+    height: 0;
+    width: 40%;
+    padding-bottom: 40%;
+    background-color: #ccc;
+}
+.wrap div {
+    width: 40%;
+    height: 0;
+    padding-bottom: 40%;
+    background-color: #ffa;
+}
+
+.wrap2 {
+    width: 46.66666666%;
+    height: 0;
+    padding-bottom: 26.25%;
+    background-color: #ccc;
+    position: relative;
+}
+.wrap2 div {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    background-color: #faa;
+}
+
