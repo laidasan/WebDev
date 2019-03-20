@@ -1133,7 +1133,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./img/bird.png);
+    background-image: url(../img/Amazing_Effect/bird.png);
     background-size: cover;
 }
 .background-child__see {
@@ -1146,7 +1146,7 @@ h1 {
     width: 100%;
     height: 100%;
     font-size: 30rem;
-    background-image: url(./img/bird.png);
+    background-image: url(../img/Amazing_Effect/bird.png);
     background-size: cover;
     -webkit-background-clip: text;
     color: transparent;
