@@ -11,6 +11,10 @@ html {
 body {
   background-color: #afafafb6; }
 
+strong {
+  font-weight: 700;
+  font-size: 2.4rem; }
+
 body {
   font-family: "Lato",sans-serif;
   font-weight: 400;
@@ -35,6 +39,12 @@ body {
   letter-spacing: .6rem;
   font-weight: 600; }
 
+.heading-fourth {
+  font-size: 2.7rem;
+  letter-spacing: .6rem;
+  font-weight: 600;
+  margin-left: 1.5rem; }
+
 .u-margin-bottom-small {
   margin-bottom: 2.1rem; }
 
@@ -43,6 +53,9 @@ body {
 
 .u-margin-top-small {
   margin-top: 2.1rem; }
+
+.u-color-primary-dark {
+  color: #ee711d; }
 
 .note__title {
   width: 100%;

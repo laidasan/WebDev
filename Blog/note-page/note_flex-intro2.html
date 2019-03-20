@@ -5,8 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/reset.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <!-- <link rel="stylesheet" href="/css/reset.css" type="text/css"> -->
+    <style>
+        .note__point-list {
+            list-style: initial;
+            margin-left: 1.5rem;
+        }
+
+        .note__point {
+            padding: .6rem;
+            color: #f00;
+            font-weight: 600;
+        }
+        .red {
+            color: #f00;
+        }
+    </style>
     <title>Note Home List</title>
 </head>
 
@@ -20,9 +35,11 @@
         <nav class="navigation__nav">
             <ul class="navigation__list">
                 <li class="navigation__item"><a href="../index.html" class="navigation__link">Home</a></li>
-                <li class="navigation__item"><a href="../note-page/note_list.html" class="navigation__link">Note</a></li>
+                <li class="navigation__item"><a href="../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
                 <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
-                <li class="navigation__item" title="關於我"><a href="../note-page/note_amazing_effect.html" class="navigation__link">Interesting</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note-page/note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
             </ul>
         </nav>
     </div>
@@ -36,9 +53,50 @@
     <main>
         <section class="note-box">
             <div class="note__title">
-                <h2 class="heading-secondary">HTML</h2>
+                <h2 class="heading-secondary">Flex-詳介</h2>
             </div>
             <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-p">What? For?</h3>
+                <p class="note__content u-margin-bottom-small">
+                    上篇已經很簡單的使用flex,也感受到他的方便了，這篇就來詳詳細細的介紹它的原理以及更多的介紹吧!!
+                </p>
+                <h3 class="heading-tertiary u-margin-bottom-p">How?</h3>
+                <p class="note__content u-margin-bottom-p">
+                    Flex最最最重要就三個大重點:
+                    <ul class="note__point-list u-margin-bottom-small">
+                        <li class="note__point">container & item (容器與內容器;父層與子層)</li>
+                        <li class="note__point">Flexbox module (主軸與副軸)</li>
+                        <li class="note__point">flex-grow;flex-shrink;flex-basis</li>
+                    </ul>
+                </p>
+                <h4 class="heading-fourth u-margin-bottom-p">Flexbox module</h4>
+                <p class="note__content">
+                    我們先來看看Flexbox module吧!其實他相當簡單!下面這張圖就是flexbox module。
+                </p>
+                <div class="note__img">
+                    <img src="../img/flex-intro_2/flexbox module.jpg" alt="Flexbox module">
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    我們先來看 <strong class="u-color-primary-dark">main axis</strong> 與 <strong class="u-color-primary-dark">cross axis</strong>，
+                    main axis就是主軸的意思，而cross axis就是副軸，那什麼是主軸?什麼是副軸呢?我們最一開始我們可能會想:恩?阿不就是X軸跟Y軸嗎?
+                    其實不是喔!雖然現在看到圖片上的主軸跟副軸可能跟X軸Y軸的方向一樣，<strong>但是!!</strong>flex的主軸與副軸不是這樣分的。
+                </p>
+                <p class="note__content">
+                    <strong class="note__point-word u-color-primary-dark">主軸指的是當前flex排列的方向 ; 副軸指相對於主軸的縱向軸。</strong>
+                </p>
+                <p class="note__content u-margin-bottom-small">
+                    像圖片上看到的主軸為橫向的，那副軸就是縱向，而我們可以去更改排列的方式[row(橫、行) or col(縱、列)]，如果這時候排列的方像是縱向的，那主軸就是縱向，而副軸就是橫向，
+                    這非常非常重要喔!要記起來!!
+                </p>
+                <h4 class="heading-fourth u-margin-bottom-p">Container $ item</h4>
+                <p class="note__content u-margin-bottom-p">
+                    接下來就可以講講屬性了，在講屬性之前，我們先把屬性分類一下，大致上分為兩種，一種是給container的，也就是父層容器，一種是給item的，也就是父層容器內的內容物，再父層容器設置的大多是將item如何排列，
+                    例如排列的方向為橫向或是縱向、是否要換行、主軸與副軸的對其方式，而內容的設置大多是當父層寬度伸縮時item自己本身要如何伸展等等!
+                </p>
+                <p class="note__content">
+                    OK!接下來就可以來講講屬性了!!
+                </p>
+                
             </div>
         </section>
     </main>
