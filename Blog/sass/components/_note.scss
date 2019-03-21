@@ -96,4 +96,13 @@
             background-color: #ccccce;
         }
     }
+
+    &__point-list {
+        list-style: initial;
+        margin-left: 1.5rem;
+    }
+    &__point {
+        padding: .6rem;
+        font-weight: 600;
+    }
 }

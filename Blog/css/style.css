@@ -1,8 +1,6 @@
 *,
 *::before,
 *::after {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box; }
 
 html {
@@ -45,6 +43,12 @@ body {
   font-weight: 600;
   margin-left: 1.5rem; }
 
+.heading-fifth {
+  font-size: 2.1rem;
+  letter-spacing: .3rem;
+  font-weight: 600;
+  margin-left: 2.7rem; }
+
 .u-margin-bottom-small {
   margin-bottom: 2.1rem; }
 
@@ -56,6 +60,9 @@ body {
 
 .u-color-primary-dark {
   color: #ee711d; }
+
+.u-color-red {
+  color: #f00; }
 
 .note__title {
   width: 100%;
@@ -122,6 +129,14 @@ body {
   box-shadow: 0.9px 1.5px 9px 0 rgba(0, 0, 0, 0.6);
   color: #000;
   background-color: #ccccce; }
+
+.note__point-list {
+  list-style: initial;
+  margin-left: 1.5rem; }
+
+.note__point {
+  padding: .6rem;
+  font-weight: 600; }
 
 .navigation__checkbox {
   display: none; }
