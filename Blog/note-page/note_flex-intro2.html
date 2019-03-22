@@ -98,6 +98,48 @@
         .flex-wrap-reverse {
             flex-wrap: wrap-reverse;
         }
+
+
+        .flex-end {
+            justify-content: flex-end;
+        }
+
+        .flex-center {
+            justify-content: center;
+        }
+
+        .flex-between {
+            justify-content: space-between;
+        }
+
+        .flex-around {
+            justify-content: space-around;
+        }
+
+        .flex-evenly {
+            justify-content: space-evenly;
+        }
+
+
+        .flex-align-start {
+            align-items: flex-start;
+        }
+
+        .flex-align-end {
+            align-items: flex-end;
+        }
+
+        .flex-align-center {
+            align-items: center;
+        }
+
+        .flex-align-stretch {
+            align-items: stretch;
+        }
+
+        .flex-align-baseline {
+            align-items: baseline;
+        }
     </style>
     <title>Note Home List</title>
 </head>
@@ -319,7 +361,7 @@
                 <h5 class="heading-fifth u-margin-bottom-p u-color-primary-dark">justify-content</h5>
                 <p class="note__content u-margin-bottom-p">
                     justify-content是決定了內容的<strong>"主軸排列方式"</strong>，回到最上的flex box module，有兩個點分別為"main start"與"main
-                    end",justify-content就是利用這兩個點來計算排列方式的，能夠設定的值有以下午六種。
+                    end",justify-content就是利用這兩個點來計算排列方式的，能夠設定的值有以下六種。
                 </p>
                 <ul class="note__point-list">
                     <li class="note__point">flex-start (Default)</li>
@@ -329,6 +371,88 @@
                     <li class="note__point">space-around</li>
                     <li class="note__point">space-enenly</li>
                 </ul>
+                <div class="wrap ">
+                    <div class="item" style="height:210px;">
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">3</div>
+                    </div>
+                    <div class="item flex-end">
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">3</div>
+                    </div>
+                    <div class="item flex-center">
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;margin:0 6px;">3</div>
+                    </div>
+                </div>
+                <div class="wrap" style="height:210px;">
+                    <div class="item flex-between">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                    </div>
+                    <div class="item flex-around">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                    </div>
+                    <div class="item flex-evenly">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-p" style="text-align: center;">
+                    flex-start(default);flex-end;flex-center</p>
+                <p class="note__content u-margin-bottom-small" style="text-align: center;">
+                    flex-between;flex-around;flex-evenly</p>
+                <h5 class="heading-fifth umargin-bottom-p u-color-primary-dark">align-items</h5>
+                <p class="note__content">
+                    剛剛排列完主軸的方向了，現在該換副軸囉!align-items就是決定內容的 <strong>"副軸排列方式"</strong>，一樣是兩個點分別為"cross start"與"cross
+                    end"，總共有五種。
+                </p>
+                <ul class="note__point-list">
+                    <li class="note__point">flex-start</li>
+                    <li class="note__point">flex-end</li>
+                    <li class="note__point">center</li>
+                    <li class="note__point">flex-stretch (default)</li>
+                    <li class="note__point">flex-baseline</li>
+                </ul>
+                <div class="wrap" style="height:210px">
+                    <div class="item flex-evenly flex-align-start">
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                    </div>
+                    <div class="item flex-evenly flex-align-end">
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+
+                    </div>
+                    <div class="item flex-evenly flex-align-center">
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                    </div>
+                    <div class="item flex-evenly flex-align-baseline" style="padding: 27px 0;">
+                        <div class="item2 bk-red" style="width:50px; padding: 30px 0;">1</div>
+                        <div class="item2 bk-green" style="width:50px; padding: 45px 0;">2</div>
+                        <div class="item2 bk-blue" style="width:50px; padding: 60px 0;">3</div>
+                    </div>
+                    <div class="item flex-evenly flex-align-stretch">
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                    </div>
+                </div>
+                <p class="note__content" style="text-align:center">flex-start;flex-end;center;baseline;stretch</p>
+                <p class="note__contetn">
+                    flex-start會對齊cross-start;flex-end則是會對齊cross-end，center很簡單，就是在中間;預設的stretch則是會自動填滿剩餘的空間!!baseline就感覺似乎看不出來，讓我來畫條線給你看。
+                </p>
             </div>
         </section>
     </main>
