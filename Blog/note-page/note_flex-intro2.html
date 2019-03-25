@@ -32,11 +32,12 @@
 
         .item {
             width: 100%;
+            /* width: 33.3333333%; */
         }
 
         .wrap {
             width: 75%;
-            margin: 0 auto;
+            margin: 1.2rem auto 1.8rem;
             display: flex;
             /* border: .9px solid #000; */
             box-shadow: 0 0 9px 6px rgba(0, 0, 0, .3);
@@ -51,6 +52,13 @@
 
             background-color: #fff;
             border: .9px solid #000;
+
+        }
+
+        @media screen and (max-width:900px) {
+            .wrap {
+                flex-wrap: wrap;
+            }
         }
 
 
@@ -139,6 +147,45 @@
 
         .flex-align-baseline {
             align-items: baseline;
+        }
+
+
+
+        .align-content-around {
+            align-content: space-around;
+        }
+        .align-content-between {
+            align-content: space-between;
+        }
+        .align-content-end {
+            align-content: flex-end;
+        }
+        .align-content-start {
+            align-content: flex-start;
+        }
+        .align-content-center {
+            align-content: center;
+        }
+        .align-content-stretch {
+            align-content: stretch;
+        }
+
+
+        .align-self-baseline {
+            align-self: baseline;
+        }
+
+
+        .order-1 {
+            order: 1;
+        }
+
+        .order-2 {
+            order: 2;
+        }
+
+        .order-3 {
+            order: 3;
         }
     </style>
     <title>Note Home List</title>
@@ -252,6 +299,8 @@
                         </ul>
                     </div>
                 </div>
+                <p class="note__content u-margin-bottom-small">左邊是給父層容器，而右邊是給子元素的。</p>
+
                 <h4 class="heading-fourth u-margin-bottom-p">容器的屬性</h4>
                 <p class="note__content u-margin-bottom-small">
                     剛剛有提到的三大點之一 <strong>container & item</strong>，我們剛剛分了兩類屬性，而左邊那排就是給 <strong>Container(容器)</strong>的。
@@ -409,7 +458,15 @@
                     flex-start(default);flex-end;flex-center</p>
                 <p class="note__content u-margin-bottom-small" style="text-align: center;">
                     flex-between;flex-around;flex-evenly</p>
-                <h5 class="heading-fifth umargin-bottom-p u-color-primary-dark">align-items</h5>
+                <h5 class="heading-fifth u-margin-bottom-small u-color-primary-dark">align-items</h5>
+                <p class="note__content">
+                    在說align-items之前先把align-content提出來說，align-items跟align-content都是在設定副軸的排列方式的，差別就只在於:
+                    <ul class="note__point-list">
+                        <li class="note__point">align-items <strong>(針對僅單行子物件)</strong></li>
+                        <li class="note__point">align-content <strong>(針對具多行子物件)</strong></li>
+                    </ul>
+                </p>
+
                 <p class="note__content">
                     剛剛排列完主軸的方向了，現在該換副軸囉!align-items就是決定內容的 <strong>"副軸排列方式"</strong>，一樣是兩個點分別為"cross start"與"cross
                     end"，總共有五種。
@@ -450,9 +507,136 @@
                     </div>
                 </div>
                 <p class="note__content" style="text-align:center">flex-start;flex-end;center;baseline;stretch</p>
-                <p class="note__contetn">
+                <p class="note__contetn u-margin-bottom-p">
                     flex-start會對齊cross-start;flex-end則是會對齊cross-end，center很簡單，就是在中間;預設的stretch則是會自動填滿剩餘的空間!!baseline就感覺似乎看不出來，讓我來畫條線給你看。
                 </p>
+                <div class="u-margin-bottom-small"><img src="../img/flex-intro_2/baseline.PNG" alt="" class="note__img">
+                </div>
+                <h5 class="heading-fifth u-margin-bottom-p">align-content</h5>
+                <p class="note__content u-margin-bottom-p">
+                    剛剛在提到align-items前，有提到align-content是 <strong>針對具多行子物件</strong>的父層容器屬性，也就是有多行子物件時，副軸的排列方式。有以下幾種:
+                </p>
+                <ul class="note__point-list">
+                    <li class="note__point">flex-start</li>
+                    <li class="note__point">flex-end</li>
+                    <li class="note__point">center</li>
+                    <li class="note__point">space-between</li>
+                    <li class="note__point">space-around</li>
+                    <li class="note__point">flex-stretch (default)</li>
+                    <li class="note__point">flex-baseline</li>
+                </ul>
+                <div class="wrap" style="height:450px">
+                    <div class="item flex-wrap flex-around align-content-start">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">4</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">5</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">6</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">7</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">8</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">9</div>
+                    </div>
+                    <div class="item flex-wrap flex-around align-content-end">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">4</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">5</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">6</div>
+                    </div>
+                    <div class="item flex-wrap flex-around align-content-center">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">4</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">5</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">6</div>
+                    </div>
+                </div>
+                <div class="wrap" style="height:450px">
+                    <div class="item flex-wrap flex-around align-content-around">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">4</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">5</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">6</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">7</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">8</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">9</div>
+                    </div>
+                    <div class="item flex-wrap flex-around align-content-between">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">4</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">5</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">6</div>
+                    </div>
+                    <div class="item flex-wrap flex-around align-content-stretch">
+                        <div class="item2 bk-red" style="width:50px;height:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">2</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">3</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">4</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">5</div>
+                        <div class="item2 bk-red" style="width:50px;height:50px;">6</div>
+                    </div>
+                </div>
+                <h4 class="heading-fourth u-margin-bottom-small">子元素的屬性</h4>
+                <h5 class="heading-fifth u-margin-bottom-p">align-self</h5>
+                <p class="note__content u-margin-bottom-small">
+                    align-self也是在設定副軸的對齊方式，對齊的方式也跟align-items一樣，依靠cross-start與cross-end。
+                    但是align-self雖然也是設定副軸的對其方式，不過 <strong>目的不一樣</strong>，align-self的設定目的在於複寫已經套用align-items的子元素。
+                </p>
+                <div class="wrap" style="height:210px">
+                    <div class="item flex-evenly flex-align-start">
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red align-self-baseline" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                    </div>
+                    <div class="item flex-evenly flex-align-end">
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red align-self-baseline" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+
+                    </div>
+                    <div class="item flex-evenly flex-align-center">
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red align-self-baseline" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                    </div>
+                    <div class="item flex-evenly flex-align-baseline" style="padding: 27px 0;">
+                        <div class="item2 bk-red" style="width:50px; padding: 30px 0;">1</div>
+                        <div class="item2 bk-green" style="width:50px; padding: 45px 0;">2</div>
+                        <div class="item2 bk-blue" style="width:50px; padding: 60px 0;">3</div>
+                    </div>
+                    <div class="item flex-evenly flex-align-stretch">
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                        <div class="item2 bk-red align-self-baseline" style="width:50px;">1</div>
+                        <div class="item2 bk-red" style="width:50px;">1</div>
+                    </div>
+                </div>
+                <p class="note__content" style="text-align:center">將中間的子元素align-self設定為baseline</p>
+                <h5 class="heading-fifth u-margin-bottom-p">order</h5>
+                <p class="note__content">
+                    order是設定子元素的排列順序的(例如用在rwd上，當螢幕小到一定程度的時候，下列排列方式就換換成column，而且main會在正中間，排列到第二個!)，設定數字是由小排到大的排列順序!
+                    下列的main order為1，other1為1，other2為3，試著將螢幕縮小至900px以下的時候，就會看出main被排列到最上方。
+                </p>
+                <div class="wrap" style="height:210px;">
+                    <div class="item order-2" style="background-color: #ffa;">main</div>
+                    <div class="item order-1" style="background-color: #faa;">other1</div>
+                    <div class="item order-3" style="background-color: #aff;">other2</div>
+                </div>
+                <p class="note__content">而沒有設定order的話。</p>
+                <div class="wrap" style="height:210px;">
+                    <div class="item" style="background-color: #ffa;">main</div>
+                    <div class="item" style="background-color: #faa;">other1</div>
+                    <div class="item" style="background-color: #aff;">other2</div>
+                </div>
+
+                <h5 class="heading-fifth u-margin-bottom-p">flex-grow;flex-shrink;flex-basis</h5>
+                <p class="note__content">這三個是</p>
             </div>
         </section>
     </main>
