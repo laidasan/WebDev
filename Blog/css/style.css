@@ -288,6 +288,9 @@ body {
     background: linear-gradient(120deg, #d84878, #b8305d, #f3862d, #ee711d);
     background-clip: text;
     -webkit-background-clip: text; }
+    @media only screen and (max-width: 1120px) {
+      .header__text-box {
+        text-align: center; } }
 
 .home {
   width: 100%;
