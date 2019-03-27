@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <style>
+        html,
+        body {
+            position: relative;
+        }
+        .a,
+        .b,
+        .c {
+            padding: 40px;
+            border: 3px solid #f00;
+            font-size: 36px;
+        }
+
+        /* .b {
+            background-color: #ffa;
+        }
+        .c {
+            background-color: #faa;
+        } */
+        .c-2 {
+            padding: 20px;
+            border: 3px solid #00f;
+            right: 0;
+            bottom: 0;
+        }
+
+
+        .f,
+        .d {
+            padding:30px;
+            border: 3px solid #0f0;
+            font-size: 36px;
+            top: 0;
+            left: 0;
+        }
+        .f {
+            border: 3px solid #a0a;
+        }
+        .position-absolute {
+            position: absolute;
+        }
+
+        .position-relative {
+            position: relative;
+        }
+    </style>
+    <title>Note Home List</title>
+</head>
+<!-- <div class="f position-absolute">f</div> -->
+<body>
+    <!-- <div class="d position-absolute">d</div> -->
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon"></span>
+        </label>
+        <div class="navigation__background"></div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note-page/note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="header">
+            <div class="header__text-box">
+                <h1 class="heading-primary">My Note</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="note-box">
+            <div class="note__title">
+                <h2 class="heading-secondary">absolute</h2>
+            </div>
+            <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
+                <p class="note__content u-margin-bottom-p">之前我們談了fixed與relative了，現在來談談"absolute"的定位模式吧!!</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">How?</h3>
+                <p class="note__content u-margin-bottom-p">我們直接來看個例子:現在我有三個Div</p>
+                <div class="a">a
+                    <div class="b">b
+                        <div class="c">c</div>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-p">現在我把c做成absolute定位看看會發生什麼事情</p>
+                <div class="a">a
+                    <div class="b">b
+                        <div class="c position-absolute">c</div>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-p" style="margin-top:45px;">
+                    你會發現C變了，其實設定成absolute的時候，會做的第一件事情跟fixed一樣，會先把資料抽離、抽出，用Codepen來看會更清楚一點
+                    <a href="https://codepen.io/asiaschool/pen/mogrLX" class="note__codepen">←Codepen</a>
+                </p>
+                <p class="note__content u-margin-bottom-p">那現在問題來了，absolute雖是說絕對定位，但是到底是怎麼定位的阿?定位在誰的身上呢?我們先直接對C來定位看看
+                    <a href="https://codepen.io/asiaschool/pen/vPMyOr" class="note__codepen">←Codepen</a>
+                </p>
+                <p class="note__content u-margin-bottom-p">
+                    這裡我把它定位成"top:0"、"bottom:0"，你會發現乍看之下好像是定位在視窗的最左下角了，但是滑動螢幕看看，其實它並不會跟著跑動，這裡是跟fixed的差別，同樣都是定位在視窗的左下角，但是absolute只做一次，而且不會一定在視線範圍內喔!
+                </p>
+                <p class="note__content u-margin-bottom-p">接下來我們把b做成relative定位看看會發生什麼事情?
+                    <a href="https://codepen.io/asiaschool/pen/NJmbxQ" class="note__codepen">←Codepen</a>
+                </p>
+                <p class="note__content u-margin-bottom-p">會發現C跑到B裡面了，這個就是absolute定位模式的原理:
+                    <strong>往上找有做定位的父層，並定位在找到"第一個有做定位的父層"上</strong>，什麼是有做定位的父層呢?就是有做relative、fixed、absolute任意種定位模式的父層，而這裡c往上一層找到b，而b有做定位，所以就會定位在b身上囉!這裡我們把left:0改成right:0看看(同時也把c改小一點，也比較容易看清楚)
+                </p>
+                <div class="a">a
+                    <div class="b position-relative">b
+                        <div class="c-2 position-absolute">c</div>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    唉唷!c就跑到右邊去了，而且也確實在b上，那這時再把a做成relative定位呢?這裡就留給正在看這篇筆記的你去試試看囉!!結果會是跟上面一樣的，因為C往上找到B就已經找到有做定位的爸爸了，就不會定在A身上囉!
+                </p>
+                <p class="note_content u-margin-bottom-p">
+                    這裡要再提一個問題，最一開始的沒有幫B或是A做定位，也只對C做absolute定位卻沒有給top、left等等的值的時候，C會定位在哪裡?
+                    答案是會定位在資料原本的位置上，並且資料會被抽離抽出(跟fixed一樣)，那這時候再幫給它top或是left等等做設定的時候，它的定位會定位在誰身上呢?在body身上?在html標籤身上?
+                    這裡直接給你一個例子:
+                </p>
+                <div class="a">a
+                    <div class="b">b
+                        <div class="c position-absolute" style="left:0;bottom:0;">c</div>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-p">你有發現到左下角有個C方塊嗎? 那個就是這裡的C方塊，當我C做absolute定位也給top right left bottom值的時候，其實它不是去定位在body上，也不是定位在html上，而是定位在視窗上，但是跟fixed不同的是，它只會做一次，不會像fixed那樣隨著視窗的滑動固定在左下角。</p>
+                <p class="note__content u-margin-bottom-p">這裡在做一個有趣的嘗試，我們試著把方塊定位在body上與html上看看會有什麼樣子(不做reset的情況下)
+                    <a href="../absolute_bodyandhtml01.html" class="note__link" target="_blank">看這裡</a>與
+                    <a href="../absolute_bodyandhtml02.html" class="note__link" target="_blank">看這裡</a>
+                </p>
+                <p class="note__content u-margin-bottom-small">第一個是定位在html上的，第二個是定位在body上的，會發現其實body跟html有些許差異的喔!!!原理說完來看看簡單的應用例子吧!
+                    假設我在做一個購物網站，一個三欄式的排版，有照片跟文字敘述，與右上角有一個標籤tag，tag我們就可以用absolute達到我們想要的效果。
+                    <a href="https://codepen.io/asiaschool/pen/rRbyyB" class="note__codepen">←Codepen</a>
+                </p>
+                
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

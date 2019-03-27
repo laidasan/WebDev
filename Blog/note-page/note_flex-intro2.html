@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <style>
         .red {
             color: #f00;
@@ -32,6 +32,7 @@
 
         .item {
             width: 100%;
+            margin: 0 .3rem 0;
             /* width: 33.3333333%; */
         }
 
@@ -58,7 +59,7 @@
         @media screen and (max-width:900px) {
             .wrap {
                 flex-wrap: wrap;
-                margin:1.2rem auto 12rem;
+                margin: 1.2rem auto 12rem;
             }
         }
 
@@ -85,6 +86,7 @@
             text-align: center;
             padding-top: 17px;
             color: #fff;
+            border: .3px solid #000;
         }
 
 
@@ -193,13 +195,21 @@
         .order-other2 {
             order: 3;
         }
+
         @media only screen and (max-width:900px) {
             .order-main {
                 order: 2;
             }
+
             .order-other1 {
                 order: 1;
             }
+        }
+
+
+        .grow-item:first-letter {
+            font-size: 36px;
+            color: #0fe;
         }
     </style>
     <title>Note Home List</title>
@@ -256,7 +266,8 @@
                     我們先來看看Flexbox module吧!其實他相當簡單!下面這張圖就是flexbox module。
                 </p>
                 <div class="note__img">
-                    <img src="../img/flex-intro_2/flexbox module.jpg" alt="Flexbox module" style="width:100%;height:100%;">
+                    <img src="../img/flex-intro_2/flexbox module.jpg" alt="Flexbox module"
+                        style="width:100%;height:100%;">
                 </div>
                 <p class="note__content u-margin-bottom-p">
                     我們先來看 <strong class="u-color-primary-dark">main axis</strong> 與 <strong
@@ -599,30 +610,48 @@
                         <div class="item2 bk-red" style="width:50px;height:50px;">6</div>
                     </div>
                 </div>
-                <p class="note__content u-margin-bottom-p">這裡把align-items與align-content放在一起使用，且做出不同高度的item，會更清楚明白什麼是"針對單行"、"針對多行"</p>
+                <p class="note__content u-margin-bottom-p">
+                    這裡把align-items與align-content放在一起使用，且做出不同高度的item，會更清楚明白什麼是"針對單行"、"針對多行"</p>
                 <div class="wrap" style="height:600px">
                     <div class="item flex-wrap flex-around flex-align-end align-content-around">
-                        <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                        <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit.  </div>
-                        <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                        <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                        <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                        <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing
+                            elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing
+                            elit. </div>
                     </div>
                 </div>
-                <p class="note__content u-margin-bottom-small">這裡是由外層設置justify-content與align-content為space-around，而align-items為flex-end，這裡可以看到不同高度的item是對齊其它div的底部的，
+                <p class="note__content u-margin-bottom-small">
+                    這裡是由外層設置justify-content與align-content為space-around，而align-items為flex-end，這裡可以看到不同高度的item是對齊其它div的底部的，
                     如果去修改成flex-start的話就會對齊其它item的頂部。(齊頭、齊底)
                 </p>
                 <div class="wrap" style="height:600px">
-                        <div class="item flex-wrap flex-around flex-align-start align-content-around">
-                            <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                            <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit.  </div>
-                            <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                            <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                            <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                            <div class="item2 bk-red" style="width:30%;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. </div>
-                        </div>
+                    <div class="item flex-wrap flex-around flex-align-start align-content-around">
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing
+                            elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. </div>
+                        <div class="item2 bk-red" style="width:30%;">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing
+                            elit. </div>
                     </div>
+                </div>
                 <h4 class="heading-fourth u-margin-bottom-small">子元素的屬性</h4>
                 <h5 class="heading-fifth u-margin-bottom-p">align-self</h5>
                 <p class="note__content u-margin-bottom-small">
@@ -674,9 +703,112 @@
                     <div class="item" style="background-color: #faa;">other1</div>
                     <div class="item" style="background-color: #aff;">other2</div>
                 </div>
-                <p class="note__content u-margin-bottom-small">第一行原本的order-main為1,order-other1為2,order-other2為3，而畫面小於900px的時候main就改為2,other1改為1</p>
+                <p class="note__content u-margin-bottom-small">
+                    第一行原本的order-main為1,order-other1為2,order-other2為3，而畫面小於900px的時候main就改為2,other1改為1</p>
                 <h5 class="heading-fifth u-margin-bottom-p">flex-grow;flex-shrink;flex-basis</h5>
-                <p class="note__content">這三個是</p>
+                <p class="note__content u-margin-bottom-small">
+                    試想一下，今天你把小東西放到大箱子裡面，很有可能還是會有剩餘空間的吧!!使用flex做排版的時候也可能發生這種事情，
+                    會有剩餘的空間，flex-grow就是如何給子元素分配剩餘空間的方式喔!而flex-shrink則是相反，當箱子太小不夠放下東西的時候，就必須把東西壓縮，flex-shrink就是控制如何壓縮。
+                    flex-basis等等再談，讓我們先來談談flex-grow。
+                    來看個例子:
+                </p>
+                <h5 class="heading-fifth u-margin-bottom-p u-color-primary-dark">flex-grow</h5>
+                <div class="wrap u-margin-bottom-small">
+                    <div class="item flex-wrap flex-center">
+                        <div class="item2 grow-item" style="width:20%;background-color: #333;">1Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a architecto
+                            eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit expedita iste
+                            dicta ullam.</div>
+                        <div class="item2 grow-item" style="width:20%;background-color: #333;">2Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a architecto
+                            eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit expedita iste
+                            dicta ullam.</div>
+                        <div class="item2 grow-item" style="width:20%;background-color: #333;">3Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a architecto
+                            eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit expedita iste
+                            dicta ullam.</div>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    上面這個大箱子裡面有三個小箱子，會發現還會有很多剩餘的空白空間吧!!這時候我們可以利要flex-grow來去分配剩餘的空間，比如說我把剩下的空間切成9份，再分配給第一個五份;第二個2份;第三個2份。
+                </p>
+                <div class="wrap u-margin-bottom-small">
+                    <div class="item flex-wrap flex-center">
+                        <div class="item2 grow-item" style="width:20%;background-color: #333;flex-grow: 5">1Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a
+                            architecto eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit
+                            expedita iste dicta ullam.</div>
+                        <div class="item2 grow-item" style="width:20%;background-color: #333;flex-grow: 2">2Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a
+                            architecto eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit
+                            expedita iste dicta ullam.</div>
+                        <div class="item2 grow-item" style="width:20%;background-color: #333;flex-grow: 2">3Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a
+                            architecto eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit
+                            expedita iste dicta ullam.</div>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-small">
+                    就會變成這個樣子!超方便的我天，排版毒品。下面再說一個例子，比如說總共有四個小箱子，可是最後一個箱子因為空間不夠，所以被擠到下一行去了，而這是如果用flex-grow的話，會如何呢?這裡先假設他回的來，所以把剩餘空間切成12份，分配給第一個六份後，剩餘的平均分配。
+                </p>
+                <div class="wrap u-margin-bottom-small">
+                    <div class="item flex-wrap flex-center">
+                        <div class="item2 grow-item" style="width:27%;background-color: #333;flex-grow: 6;">1Lorem ipsum
+                            dolor sit
+                            amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a architecto
+                            eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit expedita iste
+                            dicta ullam.</div>
+                        <div class="item2 grow-item" style="width:27%;background-color: #333;flex-grow: 2;">2Lorem ipsum
+                            dolor sit
+                            amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a architecto
+                            eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit expedita iste
+                            dicta ullam.</div>
+                        <div class="item2 grow-item" style="width:27%;background-color: #333;flex-grow: 2;">3Lorem ipsum
+                            dolor sit
+                            amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a architecto
+                            eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit expedita iste
+                            dicta ullam.</div>
+                        <div class="item2 grow-item" style="width:27%;background-color: #333;flex-grow: 2;">4Lorem ipsum
+                            dolor sit
+                            amet, consectetur adipisicing elit. Molestiae non, nisi iure unde aliquam a architecto
+                            eligendi corporis quasi dolore autem reprehenderit eos magnam eius suscipit expedita iste
+                            dicta ullam.</div>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-small">
+                    你會發現!!咦!他回不來拉!!!有此得知，被擠下去的不會因為使用了伸展而排回到第一行，而是變成屬於下一行，在下一行的剩餘空間去分配，而這裡第二行只有他一個，所以就佔據掉整個剩餘空間囉!!</p>
+                <h5 class="heading-fifth u-margin-bottom-small u-color-primary-dark">flex-shrink</h5>
+                <p class="note__content u-margin-bottom-small">待整理!!</p>
+                <h5 class="heading-fifth u-margin-bottom-small u-color-primary-dark">flex-basis</h5>
+                <p class="note__content u-margin-bottom-p">
+                    flex-basis跟width很像，但它不是指定寬度，而是<strong>主軸方向的長度</strong>，比如說今天我的排列方式(flex-decoration)是row，那flex-basis就會是寬度(左右);反之如果主軸排列方式為col，那flex-basis就是指定高度了。
+                </p>
+                <p class="note__content u-margin-bottom-small red">※如果同時設定了width與flex-basis，會以basis優先喔!!</p>
+                <!-- <div class="wrap">
+                    <div class="item flex-wrap">
+                        <div class="item2 " style="background-color:#ffa;color:#f00;width:27%;flex-grow: 8;">Lorem
+                            ipsum, dolor sit amet consectetur adipisicing elit. Quo beatae ab fugit, quidem quisquam
+                            dolore tempore eaque mollitia exercitationem vel dicta, maxime non magnam pariatur vero id
+                            quia commodi blanditiis.</div>
+                        <div class="item2 " style="background-color:#ffa;color:#f00;width:27%;flex-grow: 2;">Lorem
+                            ipsum, dolor sit amet consectetur adipisicing elit. Quo beatae ab fugit, quidem quisquam
+                            dolore tempore eaque mollitia exercitationem vel dicta, maxime non magnam pariatur vero id
+                            quia commodi blanditiis.</div>
+                        <div class="item2 " style="background-color:#ffa;color:#f00;width:27%;flex-grow: 2;">Lorem
+                            ipsum, dolor sit amet consectetur adipisicing elit. Quo beatae ab fugit, quidem quisquam
+                            dolore tempore eaque mollitia exercitationem vel dicta, maxime non magnam pariatur vero id
+                            quia commodi blanditiis.</div>
+                        <div class="item2 " style="background-color:#ffa;color:#f00;width:27%;">Lorem ipsum, dolor sit
+                            amet consectetur adipisicing elit. Quo beatae ab fugit, quidem quisquam dolore tempore eaque
+                            mollitia exercitationem vel dicta, maxime non magnam pariatur vero id quia commodi
+                            blanditiis.</div>
+                    </div>
+                </div> -->
+                <h3 class="heading-tertiary u-margin-bottom-small">End</h3>
+                <p class="note__content u-margin-bottom-p">flex的介紹就先到這裡拉!之後有更多的應用會在分享給大家，在寫成筆記。flex對於單列式的排版真的非常好用，比起用float方便許多，不會有父層抓不到子元素而失去高度的問題(不用再clearfix拉!!萬歲)
+                    雖然flex好用，但到今日為止還是有些舊瀏覽器不支援flex，或是舊網站都是用比較傳統(老)的方式去做排版的，所以還是需要會使用float等等以前的排版方式喔!除非真的不去支援舊瀏覽器拉哈哈，不過能夠把瀏覽器都Hen斗住也是很爽的一件事情!
+                </p>
+
             </div>
         </section>
     </main>
