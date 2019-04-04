@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <style>
+        .form-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .form {
+            border: 3px solid #aaa;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .form__input {
+            display: block;
+            border: none;
+            border-radius: 6px;
+
+            padding: 6px 15px 6px;
+            margin-bottom: 21px;
+
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .form__button,
+        .form__button3 {
+            width: 90%;
+            font-size: 21px;
+            color: #666;
+            padding: 6px 12px 6px;
+            border-radius: 6px;
+            box-shadow: 3px 6px 9px rgba(0, 0, 0, 0.3);
+            margin: 6px 0 9px;
+
+        }
+
+        .button-block {
+            display: block;
+        }
+
+        .form__button2 {
+            margin: 6px auto 9px;
+        }
+
+        .form__button4 {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .form__button5-1,
+        .form__button5-2 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .form__button5-2 {
+            top: 45px;
+        }
+
+
+        .form__input-focus--outline:focus {
+            outline: none;
+        }
+
+        .form__input-focus--valid:focus:valid {
+            border-bottom: 3px solid #0a9;
+            margin-bottom: 18px;
+        }
+        
+        .form__input-focus--invalid:focus:invalid {
+            border-bottom: 3px solid #e60;
+            margin-bottom: 18px;
+        }
+
+        .group-button-flex {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border: 3px solid #aaa;
+        }
+
+        .group-button-relative {
+            position: relative;
+            height: 60px;
+        }
+
+        /* .input__username:focus::placeholder {
+            color: #f57;
+        } */
+
+        .input__username-holder::placeholder {
+            color: #f57;
+        }
+        .input__email-focus:invalid {
+            border-bottom: 3px solid #e60;
+        }
+
+        .input__email-focus:focus:valid {
+            border-bottom: 3px solid #0a9;
+        }
+
+        .label-username {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 12px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            padding: 6px 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #333;
+            transition: all .3s;
+            cursor: pointer;
+        }
+
+        .label-username::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: all .6s;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .label-username:hover {
+            box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.3);
+            transform: translate(-3px, -3px);
+        }
+
+        .label-username:hover::after {
+            animation: label-username .3s ease;
+        }
+
+
+        .group-input {
+            /* border: 1px solid #aaa; */
+        }
+
+
+
+        .label-username2 {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .input__username2 {
+            display: inline-block;
+            width: 0;
+            opacity: 0;
+            padding: 0;
+            margin: 0;
+            transition: all .6s;
+            /* position: absolute; */
+        }
+        .input__username2:focus {
+            padding: initial;
+            width:120px;
+            margin-right: 6px;
+            opacity: 1;
+        }
+
+
+        @keyframes label-username {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
+        }
+
+        /* .form {
+            border: 3px solid #aaa;
+        }
+
+        .form-container {
+            border: 3px solid #aaa;
+        } */
+    </style>
+    <title>Note--Input</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon"></span>
+        </label>
+        <div class="navigation__background"></div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note-page/note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="header">
+            <div class="header__text-box">
+                <h1 class="heading-primary">My Note</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="note-box">
+            <div class="note__title">
+                <h2 class="heading-secondary">Input</h2>
+            </div>
+            <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
+                <p class="note__content u-margin-bottom-p">在登入或登出的時候，我們會看到「表單」，而表單裡面就會有需要我們輸入帳號(username or email
+                    etc...)與密碼，還有個登入按鈕，我們可以使用Input來做填入帳號密碼的格子喔!比如說
+                </p>
+                <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id="" class="form__input  input__username">
+                            <input type="email" name="" id="" class="form__input  input__email">
+                            <input type="password" name="" id="" class="form__input  input__password">
+                        </div>
+                        <div class="group-button">
+                            <button class="form__button">Creat Account</button>
+                        </div>
+                    </form>
+                </div>
+
+                <p class="note__content u-margin-bottom-p">
+                    很簡單的一個表單，總共有三個Input與Button，也做一些美化(border圓角的部分)，Input中有個attribute叫做"type"，這是個蠻重要的屬性，可以去<a
+                        href="https://www.w3schools.com/tags/att_input_type.asp" class="note__link">這裡</a>看看有哪些，
+                    這裡呢我由上而下依序使用了"text","email","password"，type屬性規定input元素的類型?還是聽不懂嗎?在中間的欄位上面打上一些字(不含@)，屬標久停在欄位上後會出現不符合規格的資訊(email規格式xxx@gmail.com
+                    etc...)，這就是type的作用之一。
+                </p>
+                <p class="note__content u-margin-bottom-p">
+                    不過現在可能會覺得欄位上不知道要填什麼內容吧?總是要告知使用著欄位裡面要填些什麼，這時我們可以使用"placholder"，效果像是下面這個樣子。
+                    (直接寫在input的attribute裡)
+                </p>
+                <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id="" class="form__input  input__username"
+                                placeholder="username">
+                            <input type="email" name="" id="" class="form__input  input__email" placeholder="email">
+                            <input type="password" name="" id="" class="form__input  input__password"
+                                placeholder="password">
+                        </div>
+                        <div class="group-button">
+                            <button class="form__button">Creat Account</button>
+                        </div>
+                    </form>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    而我們可以用偽類(pseudo-class):placeholder來控制placeholder的字體顏色或是大小等等，比如說我可以把第一個username改成粉紅色。
+                </p>
+                <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id="" class="form__input  input__username input__username-holder"
+                                placeholder="username">
+                            <input type="email" name="" id="" class="form__input  input__email" placeholder="email">
+                            <input type="password" name="" id="" class="form__input  input__password"
+                                placeholder="password">
+                        </div>
+                        <div class="group-button">
+                            <button class="form__button">Creat Account</button>
+                        </div>
+                    </form>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    接下來我們來玩":focus"這個偽類，不單只是可以用字input上而已，也可以用在任何標籤上(常使用像是用a標籤的時候)，但在這裡用input來玩，focus有"集中;焦點"的意思，比如說上面的表單的我們想要Input滑鼠點擊後(focus在上面時)不要有邊框(outline)，這時就可以利用focus來指定。
+                </p>
+                <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id=""
+                                class="form__input  input__username input__username-holder form__input-focus--outline"
+                                placeholder="username">
+                            <input type="email" name="" id=""
+                                class="form__input  input__email form__input-focus--outline" placeholder="email">
+                            <input type="password" name="" id=""
+                                class="form__input  input__password form__input-focus--outline" placeholder="password">
+                        </div>
+                        <div class="group-button">
+                            <button class="form__button">Creat Account</button>
+                        </div>
+                    </form>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    看吧!這樣就不會有醜醜的外框框了!還有一個是我們會看到，當我們輸入資料不符合格式的時候，下方會有一條紅色的線，而正確的時候會是綠色的，這個效果要怎麼做呢?!
+                    其實很簡單啦，就是使用border而已，但是要怎麼指定"<span class="u-color-red">符合格式時</span>"與"<span
+                        class="u-color-red">不符合格式</span>"時呢?!就是使用"<span class="u-color-red">:valid</span>"與<span
+                        class="u-color-red">:invalid</span></p>
+                <p class="note__content u-margin-bottom-small">
+                    vaild可以說是符合格式的時候;invalid是不符合格式的時候，以中間的email為例，目前正常的email格式是都會有個"@"，所以沒有"@"的時候底下就是為紅色的線(格式不符合)，反之綠色。
+                </p>
+                <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id=""
+                                class="form__input  input__username input__username-holder form__input-focus--outline"
+                                placeholder="username">
+                            <input type="email" name="" id=""
+                                class="form__input  input__email form__input-focus--outline form__input-focus--valid form__input-focus--invalid"
+                                placeholder="email">
+                            <input type="password" name="" id=""
+                                class="form__input  input__password form__input-focus--outline" placeholder="password">
+                        </div>
+                        <div class="group-button">
+                            <button class="form__button">Creat Account</button>
+                        </div>
+                    </form>
+                </div>
+                <p class="note__content">還有一個是"<span
+                        class="u-color-red">required</span>"，直接來看看效果(email)，在裡面填入不符合格式的字後按下button看看!!</p>
+                <div class="form-container u-margin-bottom-p">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id=""
+                                class="form__input  input__username input__username-holder form__input-focus--outline"
+                                placeholder="username">
+                            <input type="email" name="" id=""
+                                class="form__input  input__email form__input-focus--outline form__input-focus--valid form__input-focus--invalid"
+                                placeholder="email" required>
+                            <input type="password" name="" id=""
+                                class="form__input  input__password form__input-focus--outline" placeholder="password">
+                        </div>
+                        <div class="group-button">
+                            <button class="form__button">Creat Account</button>
+                        </div>
+                    </form>
+                </div>
+                <p class="note__content u-margin-bottom-small">推薦個網站叫做<a href="https://css-tricks.com/"
+                        class="note__link" target="_blank"><strong>CSS Trick</strong></a>，可以找到很多學習的資訊資料，可以看看<a
+                        href="https://css-tricks.com/almanac/selectors/r/required/" class="note__link"
+                        target="_blank"><strong>required</strong> </a></p>
+                <p class="note__content">我們再來談談另外一個東西，叫做"label"，來看下面的例子，點擊Inut-username下的username。</p>
+                <div class="form-container u-margin-bottom-p">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id="username"
+                                class="form__input  input__username input__username-holder form__input-focus--outline"
+                                placeholder="username">
+                            <label for="username" class="label-username">USERNAME</label>
+                            <input type="email" name="" id=""
+                                class="form__input  input__email form__input-focus--outline form__input-focus--valid form__input-focus--invalid"
+                                placeholder="email" required>
+                            <input type="password" name="" id=""
+                                class="form__input  input__password form__input-focus--outline" placeholder="password">
+                        </div>
+                        <div class="group-button">
+                            <button class="form__button">Creat Account</button>
+                        </div>
+                    </form>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    點擊後就可以連動到input-urername了，這個是label的作用之一!使用方法也很簡單，給好Input的ID後，相通的寫在label的"for"
+                    attribute即可!!使用input、label、focus，可以做出有趣的效果，比如說:</p>
+                <div class="group-input">
+                    <input type="text" name="" id="username2" class="form__input input__username2 form__input-focus--outline">
+                    <label for="username2" class="label-username2">search</label>
+                </div>
+
+                <h3 class="heading-tertiary">Input介紹差不多就先介紹這樣子!改天新增些東西!</h3>
+                <!-- <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id="" class="form__input  input__username">
+                            <input type="email" name="" id="" class="form__input  input__email">
+                            <input type="password" name="" id="" class="form__input  input__password">
+                        </div>
+                        <div class="group-button">
+                            <button class="form__button form__button2 button-block">Creat Account</button>
+                            <button class="form__button form__button2 button-block">Creat Account2</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id="" class="form__input  input__username">
+                            <input type="email" name="" id="" class="form__input  input__email">
+                            <input type="password" name="" id="" class="form__input  input__password">
+                        </div>
+                        <div class="group-button group-button-flex">
+                            <button class="form__button form__button3 button-block">Creat Account</button>
+                            <button class="form__button form__button3 button-block">Creat Account2</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id="" class="form__input  input__username">
+                            <input type="email" name="" id="" class="form__input  input__email">
+                            <input type="password" name="" id="" class="form__input  input__password">
+                        </div>
+                        <div class="group-button group-button-relative">
+                            <button class="form__button form__button4 button-block">Creat Account</button>
+                            <button class="form__button form__button4 button-block">Creat Account2</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="form-container u-margin-bottom-small">
+                    <form action="" class="form">
+                        <div class="group-input">
+                            <input type="text" name="" id="" class="form__input  input__username">
+                            <input type="email" name="" id="" class="form__input  input__email">
+                            <input type="password" name="" id="" class="form__input  input__password">
+                        </div>
+                        <div class="group-button group-button-relative">
+                            <button class="form__button form__button5-1 button-block">Creat Account</button>
+                            <button class="form__button form__button5-2 button-block">Creat Account2</button>
+                        </div>
+                    </form>
+                </div> -->
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
