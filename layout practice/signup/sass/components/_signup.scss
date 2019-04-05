@@ -8,12 +8,14 @@
     font-size: 18px;
     color: #fff;
 
-    z-index: -2;
+    z-index: 9999;
 
     &__group {
         position: relative;
         // border: 3px solid #fff;
     }
+
+
     &__form {
     padding: 0px 150px;
     margin-top: -60px;
@@ -92,7 +94,15 @@
     }
 
     &__bt-create {
-
+        font-size: 21px;
+        background: #ff0060;
+        color: #fff;
+    }
+    &__bt-login {
+        padding: .6rem 2.1rem;
+        background-color: transparent;
+        color: #00a;
+        box-shadow: 0 0 0 1px #aaa;
     }
 
 

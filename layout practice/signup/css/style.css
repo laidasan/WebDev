@@ -7,6 +7,17 @@ body {
 body {
   font-family: "Lato",sans-serif; }
 
+.button {
+  display: block;
+  border-radius: 36px;
+  border: none;
+  color: #000;
+  font-size: 21px;
+  padding: .6rem 5.1rem;
+  width: 260px;
+  margin-bottom: .6rem;
+  box-sizing: border-box; }
+
 .signup {
   width: 600px;
   padding: 60px 0;
@@ -15,7 +26,7 @@ body {
   background: linear-gradient(135deg, #fff100 15%, #ff0060 100%);
   font-size: 18px;
   color: #fff;
-  z-index: -2; }
+  z-index: 9999; }
   .signup__group {
     position: relative; }
   .signup__form {
@@ -65,3 +76,18 @@ body {
     font-family: inherit; }
     .signup__input::-webkit-input-placeholder {
       color: #fff; }
+  .signup__bt-create {
+    font-size: 21px;
+    background: #ff0060;
+    color: #fff; }
+  .signup__bt-login {
+    padding: .6rem 2.1rem;
+    background-color: transparent;
+    color: #00a;
+    box-shadow: 0 0 0 1px #aaa; }
+
+.group-button {
+  width: 100%; }
+
+.group-input {
+  z-index: 9999; }
