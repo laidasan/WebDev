@@ -151,9 +151,6 @@
         }
 
 
-        .group-input {
-            /* border: 1px solid #aaa; */
-        }
 
 
 
@@ -175,6 +172,65 @@
             width:120px;
             margin-right: 6px;
             opacity: 1;
+        }
+
+
+        .group-input2 {
+            /* position: relative; */
+            overflow: hidden;
+            /* border: 3px solid #aaa; */
+        }
+
+        .input__username3 {
+            display: inline-block;
+            position: relative;
+            left: -210px;
+            opacity: 0;
+            /* top:50%; */
+            /* left: -20px; */
+            /* left: 0px; */
+            /* visibility: hidden; */
+            /* width: 0; */
+            /* padding: 0; */
+            /* opacity: 0; */
+        }
+        .label-username3 {
+            position: relative;
+            left: -200px;
+            display: inline-block;
+        }
+        .input__username3,.label-username3 {
+            transition: all .6s;
+        }
+
+
+        .input__username3:focus {
+            opacity: 1;
+            left: 0;
+        }
+        .input__username3:focus + label {
+            left:0;
+        }
+        
+        
+        .group-input3 {
+            overflow: hidden;
+        }
+        .input__username4 {
+            display: inline-block;
+            margin-left: -30px;
+            opacity: 0;
+            width:0;
+            transition: all .6s;
+        }
+        .label-username4 {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .input__username4:focus {
+            margin-left: 0px;
+            opacity: 1;
+            width: 240px;
         }
 
 
@@ -382,11 +438,20 @@
                 <p class="note__content u-margin-bottom-p">
                     點擊後就可以連動到input-urername了，這個是label的作用之一!使用方法也很簡單，給好Input的ID後，相通的寫在label的"for"
                     attribute即可!!使用input、label、focus，可以做出有趣的效果，比如說:</p>
-                <div class="group-input">
+                <div class="group-input u-margin-bottom-small">
                     <input type="text" name="" id="username2" class="form__input input__username2 form__input-focus--outline">
                     <label for="username2" class="label-username2">search</label>
                 </div>
-
+                
+                <div class="group-input2">
+                    <input type="text" name="" id="username3" class="form__input input__username3 form__input-focus--outline">
+                    <label for="username3" class="label-username3">search</label>
+                </div>
+                
+                <div class="group-input3">
+                    <input type="text" name="" id="username4" class="form__input input__username4 form__input-focus--outline">
+                    <label for="username4" class="label-username4">search</label>
+                </div>
                 <h3 class="heading-tertiary">Input介紹差不多就先介紹這樣子!改天新增些東西!</h3>
                 <!-- <div class="form-container u-margin-bottom-small">
                     <form action="" class="form">
