@@ -7,6 +7,13 @@
         background: linear-gradient(120deg,$color-header-text,$color-header-text-dark,$color-primary,$color-primary-dark);
         background-clip: text;
         -webkit-background-clip: text;
+        
+        &--javascript {
+            background: linear-gradient(120deg,$color-header-text,$color-header-text-dark,$color-secondary,$color-secondary-light);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
         @media only screen and (max-width:1120px) {
             text-align: center;
         }

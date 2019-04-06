@@ -20,6 +20,10 @@ body {
     
     color: $color-primary-dark;
     font-weight: 600;
+
+    &--javascript {
+        color: $color-secondary-dark;
+    }
 }
 .heading-tertiary {
     font-size: 3.6rem;

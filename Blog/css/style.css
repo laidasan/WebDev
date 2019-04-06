@@ -31,6 +31,8 @@ body {
   letter-spacing: 1.2rem;
   color: #ee711d;
   font-weight: 600; }
+  .heading-secondary--javascript {
+    color: #009999; }
 
 .heading-tertiary {
   font-size: 3.6rem;
@@ -64,13 +66,17 @@ body {
 .u-color-red {
   color: #f00; }
 
+.note-box {
+  padding: 40px; }
+
 .note__title {
   width: 100%;
   text-align: center;
   border-bottom: 0.9px solid #777; }
 
 .note__list {
-  list-style: none; }
+  list-style: none;
+  margin-left: -30px; }
 
 .note__item {
   display: block;
@@ -85,13 +91,19 @@ body {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-  background-color: #ffa632;
   margin-top: .3rem; }
+  .note__style-htmlcss {
+    background-color: #ffa632; }
+  .note__style-javascript {
+    background-color: #00aaaa; }
 
 .note__date {
   display: inline-block;
-  font-size: 1.5rem;
-  color: #ee711d; }
+  font-size: 1.5rem; }
+  .note__date-htmlcss {
+    color: #ee711d; }
+  .note__date-javascript {
+    color: #00aaaa; }
 
 .note__link:link, .note__link:visited {
   text-decoration: none;
@@ -290,6 +302,10 @@ body {
     background: linear-gradient(120deg, #d84878, #b8305d, #f3862d, #ee711d);
     background-clip: text;
     -webkit-background-clip: text; }
+    .header__text-box--javascript {
+      background: linear-gradient(120deg, #d84878, #b8305d, #00aaaa, #00e9e9);
+      background-clip: text;
+      -webkit-background-clip: text; }
     @media only screen and (max-width: 1120px) {
       .header__text-box {
         text-align: center; } }
