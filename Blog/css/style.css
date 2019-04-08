@@ -66,6 +66,15 @@ body {
 .u-color-red {
   color: #f00; }
 
+.u-color-white {
+  color: #fff; }
+
+.u-text-indent-p {
+  text-indent: 30px; }
+
+.u-text-indent-code {
+  text-indent: 15px; }
+
 .note-box {
   padding: 40px; }
 
@@ -151,6 +160,10 @@ body {
   padding: .6rem;
   font-weight: 600; }
 
+.note__code {
+  width: 100%;
+  background-color: #333; }
+
 .navigation__checkbox {
   display: none; }
 
@@ -200,8 +213,8 @@ body {
   z-index: 400;
   opacity: 0;
   width: 0;
-  visibility: hidden;
-  transition: all .9s; }
+  overflow: hidden;
+  transition: opacity .9s,width .9s; }
 
 .navigation__background {
   position: fixed;
@@ -260,8 +273,7 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__nav {
   width: 100%;
-  opacity: 1;
-  visibility: visible; }
+  opacity: 1; }
 
 .home-box {
   position: absolute;

@@ -19,11 +19,14 @@
         <div class="navigation__background"></div>
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                    <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
-                    <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
-                    <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html" class="navigation__link">Interesting</a></li>
-                    <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool effect</a></li>
+                <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
             </ul>
         </nav>
     </div>
@@ -40,9 +43,116 @@
                 <h2 class="heading-secondary heading-secondary--javascript">var,let,const</h2>
             </div>
             <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    在javascript裡面有到現在(ES6以上)，除了var宣告變數的方式之外，還多出了兩個新的方式—— <span class="u-color-red">let與const</span>
+                    ，到底傳統的方式與新的方式不同在哪裡?為什麼有var了還要用到let與const呢?它們的差別到底在哪裡?我們先來介紹如何宣告變數吧!!</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">How?</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">變數我們可以像下面這個樣子去宣告:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">var name = 'joe';</p>
+                    <p class="note__content u-color-white u-text-indent-code">let name = 'john';</p>
+                    <p class="note__content u-color-white u-text-indent-code">const name = 'eric';</p>
+                </div>
+                <p class="note__content u-margin-bottom-small">
+                    以上這三種方法都可行，也都console的出來，我們可能就會想，既然這三種都可以使用，那我們要選擇哪個呢?以目前來說，現在都用let去宣告會比較好，可以規避掉一些問題(比如變量提升，for迴圈用var的問題)，那到底是可以規避掉哪種與哪些問題呢?這我們晚點談，我們先來談談
+                    <strong>變數的作用區域!</strong></p>
+                <h3 class="heading-tertiary u-margin-bottom-small">變數的作用區域</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">再說之前，我們來解釋一下什麼叫做<span
+                        class="u-color-red">"區域"</span>，通常我們在程式裡面會很常看到大括弧{}，然後中間夾雜著程式，比如說:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function takename(value){</p>
+                    <p class="note__content u-color-white  u-text-indent-p">var name = value || 'Eric';</p>
+                    <p class="note__content u-color-white  u-text-indent-p">console.log(name);</p>
+                    <p class="note__content u-color-white  u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">在這個大括號之間就算是一個<span
+                        class="u-color-red">"區域"</span>，或著是for迴圈、if判斷這些都算是個區域，了解了區域之後我們來談談用var宣告變數跟不用var(or
+                    let,const)宣告差別在哪吧!</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">我們可以這樣宣告</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">name = 'Eric';</p>
+                    <p class="note__content u-color-white u-text-indent-code">var newname = 'Joe'</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">這兩個有什麼差別呢?如果我們直接指定某個名稱的值，該名稱就會自動變成為<span
+                        class="u-color-red">全域範圍</span>，變成了<span class="u-color-red">全域變數</span>，其實也就是在全域物件上建立特性!
+                    這很方便也很危險，因為是在全域物件上建立特性，如果是在瀏覽器上就是windows物件上，所以我們可以使用this來取得，比如說我們可以這樣取得name值:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">this.name</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">還是不太懂嗎?沒關係，讓我們來跟var比較一下就知道了，你可試試看用 <span
+                        class="u-color-red">"this.newname"</span>看看，是取得不到的，我們再來看個例子</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function test(){</p>
+                    <p class="note__content u-color-white u-text-indent-p">var name = 'Eric';</p>
+                    <p class="note__content u-color-white u-text-indent-p">newName = 'Joe';</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(name);</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(newName);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">你會發現第一個console會出錯，而第二個就能順利取出，這就是這兩者之間的差別，而我們通常把這兩個分別稱為:</p>
+                <ul class="note__point-list u-margin-bottom-p">
+                    <li class="note__point-item u-margin-bottom-p">全域變數</li>
+                    <li class="note__point-item">函式變數 (用var宣告)</li>
+                </ul>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    全域變數就是將全域物件上設定特性，直接將名稱指定一個值，特色就是能夠在任何地方取得到;而用var宣告的為 <span
+                        class="u-color-red">函式變數</span>，所以用var宣告的變數只能在函式裡面使用嗎?不是喔!不是這樣的，這讓我們來看看下面這個例子:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function test(){</p>
+                    <p class="note__content u-color-white u-text-indent-p">var x = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <br>
+                    <p class="note__content u-color-white u-text-indent-code">if (true) {</p>
+                    <p class="note__content u-color-white u-text-indent-p">var y = 20;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">test();</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(y);</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(x);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">看看例子先想想看，最後面的console結果會是如何?</p>
+                <p class="note__content u-margin-bottom-p">
+                    答案是y能夠正常顯示，而取得x時會出錯，這是因為var的在作用域是在整個函式中時(也就是在function中的時候)，此變數只存在function區塊中唷，在function之外的地方是取得不到的，而在
+                    <span class="u-color-red">非function中</span>的"if"或是"for迴圈"中，在大括號以外的區域還是取得的到，
+                    簡單說就是<span
+                        class="u-color-red">在function區塊中宣告的var變數，只存在於function當中，而在非function區塊中的var變數，幾乎在任何地方都能取得到。</span>所以他才會叫做<span
+                        class="u-color-red">函式變數</span>!!
+                </p>
+
+                <h3 class="heading-tertiary u-margin-bottom-small">var與let的差別</h3>
+                <p class="note__content u-margin-bottom-p">直接來看例子:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">var a = 3;</p>
+                    <p class="note__content u-color-white u-text-indent-code">var a = 4;</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(a);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">想想看，上面這個例子會出錯嗎?</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    在javascript裡面是會通過編譯的喔!如果是在Java裡面絕對行不通的啦!!上面這個例子其實實際上使用的話不是很好，想想看今天我們程式上百上千行，這樣子的宣告方式會很容易出錯，很容易就重複宣告變數，結果程式跑出來的結果不是我們想要的，但是編譯上也沒有出錯，就會很難除臭蟲(Bug)。
+                </p>
+                <p class="note__content u-margin-bottom-p">但是用let去宣告的話就不可行了，在編譯時就會出錯誤!</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let a = 3;</p>
+                    <p class="note__content u-color-white u-text-indent-code">let a = 4;</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(a);</p>
+                </div>
+                <h4 class="heading-fourth">變量提升</h4>
+                <p class="note__content u-margin-bottom-p">什麼叫做變量提升，來看看下面這段程式碼</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">console.log(name);</p>
+                    <p class="note__content u-color-white u-text-indent-code">var name = 'joe';</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">這樣會編譯出錯嗎?我們都知道電腦讀程式碼的時候，是一行一行往下讀的，那上面這段程式碼就很奇怪啦!明明還沒有宣告name我們就直接拿來用了，所以編譯會出錯吧!很神奇的時在javascript裡面編譯會通過，只是結果通常不是我們要的而已!!</p>
+                <p class="note__content u-margin-bottom-p">什麼?!編譯會通過也太奇怪了吧!那結果是什麼呢?</p>
+                <p class="note__content u-color-red">
+                    <strong>好的習慣去寫程式很重要，可以幫助我們規避一些問題，也可以更好的與別人溝通(團隊時可以更容易讓別人看懂程式碼)，也幫助我們更容易去除臭蟲</strong></p>
             </div>
         </section>
     </main>
 </body>
 
 </html>
+
+<script src="./app.js"></script>

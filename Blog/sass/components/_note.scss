@@ -71,6 +71,7 @@
         }
     }
     
+
     &__content {
         word-break: break-all;
         max-width: 100%;
@@ -117,5 +118,11 @@
     &__point {
         padding: .6rem;
         font-weight: 600;
+    }
+
+
+    &__code {
+        width: 100%;
+        background-color: $color-note-background-code;
     }
 }
