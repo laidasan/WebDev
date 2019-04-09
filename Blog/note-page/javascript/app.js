@@ -78,17 +78,21 @@ function takename(value) {
 //     console.log(c + 10);
 // }
 // hoisting();
-console.log(c);
-var c = 10;
+
+
+// console.log(c);
+// var c = 10;
+
+
 //實際上 ↓
 //var c;
 //console.log(c);
-c = 10;
+// c = 10;
 // console.log(e);
 
 
-console.log(d);
-let d = 20;
+// console.log(d);
+// let d = 20;
 
 
 
@@ -117,3 +121,41 @@ let d = 20;
 // person.show;
 // console.log(person.age);
 // person.Show;
+
+//function hositing
+// test();
+// function test() {
+//     console.log('Joe');
+// }
+// // ↓
+
+// // function test() {
+// //     console.log('Joe');
+// // }
+// // test();
+
+
+// console.log(function2);
+// var function2 = function () {
+//     console.log('John');
+// }
+// ↓
+//var function2;
+// console.log(function2);
+// function2 = function () {
+//     console.log('John');
+// }
+
+
+//block scope vs function scope
+// if(true) {
+//     var a = 10;
+//     let b = 20;
+//     if(true) {
+//         console.log(b);
+//         let c = 30;
+//     }
+//     console.log(c);
+// }
+// console.log(a);
+// console.log(b);

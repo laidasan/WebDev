@@ -69,11 +69,14 @@ body {
 .u-color-white {
   color: #fff; }
 
-.u-text-indent-p {
+.u-text-indent-p, .u-text-indent-code2 {
   text-indent: 30px; }
 
 .u-text-indent-code {
   text-indent: 15px; }
+
+.u-text-indent-code3 {
+  text-indent: 45px; }
 
 .note-box {
   padding: 40px; }

@@ -144,10 +144,103 @@
                     <p class="note__content u-color-white u-text-indent-code">console.log(name);</p>
                     <p class="note__content u-color-white u-text-indent-code">var name = 'joe';</p>
                 </div>
-                <p class="note__content u-margin-bottom-p">這樣會編譯出錯嗎?我們都知道電腦讀程式碼的時候，是一行一行往下讀的，那上面這段程式碼就很奇怪啦!明明還沒有宣告name我們就直接拿來用了，所以編譯會出錯吧!很神奇的時在javascript裡面編譯會通過，只是結果通常不是我們要的而已!!</p>
-                <p class="note__content u-margin-bottom-p">什麼?!編譯會通過也太奇怪了吧!那結果是什麼呢?</p>
-                <p class="note__content u-color-red">
+                <p class="note__content u-margin-bottom-p">
+                    這樣會編譯出錯嗎?我們都知道電腦讀程式碼的時候，是一行一行往下讀的，那上面這段程式碼就很奇怪啦!明明還沒有宣告name我們就直接拿來用了，所以編譯會出錯吧!很神奇的時在javascript裡面編譯會通過，只是結果通常不是我們要的而已!!
+                </p>
+                <p class="note__content u-margin-bottom-p">什麼?!編譯會通過也太奇怪了吧!那結果是什麼呢? <span
+                        class="u-color-red">console出來的結果會是"undefined"</span>，undefined是javascript資料型態的一種，關於這個可以看看 <a
+                        href="./note__datatype.html" class="note__link">這篇-關於資料型態</a>，看了之後會更清楚這裡再說什麼,
+                    "undefined"會出現再我們宣告了變數，卻還沒有給予值的時候，像是這個樣子
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">var x;</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(x);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">這時候console出來的就是"undefined"， <span
+                        class="u-color-red">在javascript有兩個特殊值，一個是"undefined"，另一個是"null"</span>，日後我們會再說這兩者的差別，回歸正題，那為什麼一開始的那段程式碼，明明我們沒有先宣告就console，但是出來的結果還是"undefined"呢?因為javascript在遇到那種情況，會自動幫我們看成:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">var name;</p>
+                    <p class="note__content u-color-white u-text-indent-code">conosle.log(name);</p>
+                    <p class="note__content u-color-white u-text-indent-code">name = 'joe';</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">所以在console的時候才會得到undefined，而function也會hoisting(變量提升)喔，例如:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">test();</p>
+                    <p class="note__content u-color-white u-text-indent-code">function test() {</p>
+                    <p class="note__content u-color-white u-text-indent-p">console.log('Joe');</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">整塊function都會hoisting上去:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function test() {</p>
+                    <p class="note__content u-color-white u-text-indent-p">console.log('Joe');</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">test();</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">但如果是這樣的:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">console.log(function2);</p>
+                    <p class="note__content u-color-white u-text-indent-code">var function2 = function {</p>
+                    <p class="note__content u-color-white u-text-indent-p">console.log('Joe');</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">它就會hoisting成:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">var function2;</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(function2);</p>
+                    <p class="note__content u-color-white u-text-indent-code">function2 = function {</p>
+                    <p class="note__content u-color-white u-text-indent-p">console.log('Joe');</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <h4 class="heading-fourth u-margin-bottom-small">let 與 var 的作用域</h4>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">let 與 var的作用域不同，上面有提到
+                    <spanclass="u-color-red">
+                        var為函式變數</span>，在函式裡宣告的時候只存在函式裡，因個人一開始學語言的時候是學Java，所以習慣了嚴格的規則，除了不能重複宣告外，也很習慣了
+                        <span class="u-color-red">block
+                            scope(區域變數)</span>的方式，區域變數什麼意思呢?一樣都是存在於大括號裡面的變數，但是var只有在函式內宣告時，而區域變數則是在任何的大括號內</p>
+                <ul class="note__point-list">
+                    <li class="note__point">函式作用域 (function scope) : 僅在function內宣告變數時，function外無法存取變數!</li>
+                    <li class="note__point">區域作用域 (block scope) : 在任何的block內(大括號內)宣告變數，大括號外的世界就無法存取變數!</li>
+                </ul>
+                <p class="note__content u-margin-bottom-p u-color-red">不要用硬記的，去理解!!</p>
+                <p class="note__content u-margin-bottom-p">來看個例子:</p>
+                <div class="note__code">
+                    <p class="note__content u-color-white u-text-indent-code">if(true) {</p>
+                    <p class="note__content u-color-white u-text-indent-p">var a = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-p">let b = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(a);</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(b);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">試試看這段程式碼會有什麼樣的結果?</p>
+                <img src="../../img/javascript/variable/scope.PNG" alt="" class="note__img">
+                <p class="note__content u-margin-bottom-p">是的會出錯，而且給的錯誤是" b is not
+                    defined"，也就是b還沒有被"定義"的意思，由此可知在這個例子中let宣告的變數只存在if的大括號中，在if的區塊外的無法存取變數</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">在考考大家下面這兩種情況:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">if(true) {</p>
+                    <p class="note__content u-color-white u-text-indent-p">let b = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-p">if(true) {</p>
+                    <p class="note__content u-color-white u-text-indent-code3">console.log(b);</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">if(true) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">if(true) {</p>
+                    <p class="note__content u-color-white u-text-indent-code3">let b = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code3">console.log(b);</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-small">上面的會正常輸出，而下面的也會得到"b is not defined"的結果喔!因為第二種情況的"b"只存在裡面的if區域裡面，所以之外的地方是存取不到的!</p>
+                <p class="note__content u-color-red u-margin-bottom-small">
                     <strong>好的習慣去寫程式很重要，可以幫助我們規避一些問題，也可以更好的與別人溝通(團隊時可以更容易讓別人看懂程式碼)，也幫助我們更容易去除臭蟲</strong></p>
+                <h3 class="heading-tertiary u-margin-bottom-small">好習慣</h3>
+                <ul class="note__point-list">
+                    <li class="note__point">先宣告變數，在使用變數</li>
+                </ul>
             </div>
         </section>
     </main>
