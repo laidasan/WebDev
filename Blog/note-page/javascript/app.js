@@ -159,3 +159,20 @@ function takename(value) {
 // }
 // console.log(a);
 // console.log(b);
+
+
+
+//const
+// const PI = 3.14;
+// console.log(PI);
+// PI = 5;
+const person = {
+    name: 'Joe',
+    age: 40
+}
+console.log(person.name);
+person.name = 'John';
+console.log(person.name);
+person = {
+    name: "John"
+}

@@ -235,6 +235,26 @@
                     <p class="note__content u-color-white u-text-indent-code">}</p>
                 </div>
                 <p class="note__content u-margin-bottom-small">上面的會正常輸出，而下面的也會得到"b is not defined"的結果喔!因為第二種情況的"b"只存在裡面的if區域裡面，所以之外的地方是存取不到的!</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">Const</h3>
+                <p class="note__content u-margin-bottom-p">Const宣告就像是Java裡面的final，一樣的都是宣告後一定要給值，不然會編譯錯誤，而且在宣告之後就不能在改變了，之後改值的話會編譯錯誤，來看看例子吧!</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content  u-color-white u-text-indent-code">const PI = 3.14;</p>
+                    <p class="note__content  u-color-white u-text-indent-code">PI = 5;</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">這樣子就不可行了，會編譯錯誤!不過如果是物件的話，可以修改物件內的內容:(強烈建議看看 <a href="./note__datatype.html" class="note__link">資料型態</a>後回來看!</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name: 'Joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age: 40</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(person.name);</p>
+                    <p class="note__content u-color-white u-text-indent-code">person.name = 'John';</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(person.name);</p>
+                </div>
+                <p class="note__content u-margin-bottom-small">向上面這個樣子就不會編譯出錯喔!但是下面這樣就不行</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">person = 'joe';</p>
+                </div>
                 <p class="note__content u-color-red u-margin-bottom-small">
                     <strong>好的習慣去寫程式很重要，可以幫助我們規避一些問題，也可以更好的與別人溝通(團隊時可以更容易讓別人看懂程式碼)，也幫助我們更容易去除臭蟲</strong></p>
                 <h3 class="heading-tertiary u-margin-bottom-small">好習慣</h3>
