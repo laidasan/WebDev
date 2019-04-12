@@ -1,0 +1,24 @@
+
+.concat {
+
+    &__list {
+        list-style: none;
+        font-size: 0;
+        text-align: center;
+    
+    
+        &-item {
+            display: inline-block;
+            padding: 1.2rem 1.8rem;
+            border: 3.3px solid $color-black;
+        }
+    
+        &-link {
+            text-decoration: none;
+            color: $color-black;
+            font-weight: bold;
+            font-size: 2.4rem;
+        }
+    }
+    
+}
