@@ -1,10 +1,62 @@
 html {
   font-size: 62.5%; }
 
-.page {
-  width: 100%;
-  height: 100vh;
-  background: url("../../img/bg-home.jpg") no-repeat scroll center top; }
+body {
+  background: url("../img/bg-home.jpg") no-repeat scroll center top;
+  background-color: #000; }
+
+.heading-primary {
+  font-size: 7.5rem;
+  letter-spacing: .3rem; }
+
+.heading-secondary {
+  font-size: 3rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase; }
+
+.u-margin-top-small {
+  margin-top: 1.5rem; }
+
+.button:link, .button:visited {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: #000;
+  font-size: 2.1rem;
+  color: #ccc;
+  text-transform: uppercase;
+  text-decoration: none; }
+
+.button:hover, .button:active {
+  color: #fff;
+  background-color: #aa0066; }
+
+.projects {
+  position: relative;
+  bottom: 35px;
+  width: 940px;
+  margin: 0 auto;
+  padding-top: 10px;
+  text-align: center;
+  background-color: rgba(139, 69, 19, 0.6); }
+  .projects__list {
+    list-style: none;
+    font-size: 0;
+    margin-top: 15px; }
+  .projects__item:nth-last-child(n+2) {
+    display: inline-block;
+    position: relative;
+    z-index: 335; }
+  .projects__last {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0; }
+  .projects__link:link, .projects__link:visited {
+    display: block;
+    width: 235px;
+    height: 156px; }
+  .projects__link:hover, .projects__link:active {
+    background-color: rgba(139, 69, 19, 0.6); }
 
 .header {
   background-color: rgba(0, 0, 0, 0.3); }
@@ -12,9 +64,11 @@ html {
     display: flex;
     justify-content: space-around;
     width: 50%;
+    height: 60px;
     margin: 0 auto; }
   .header__logo-box {
-    width: 304px; }
+    width: 304px;
+    height: 60px; }
   .header__logo {
     width: 100%;
     height: 100%;
@@ -40,5 +94,34 @@ html {
     background-color: #aa3366; }
 
 .top-title {
-  width: 60%;
-  margin: 0 auto; }
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; }
+
+.top__img-box {
+  width: 414px;
+  height: 484px;
+  z-index: 555; }
+
+.top__img {
+  width: 100%;
+  height: 100%; }
+
+.top-text__box {
+  color: #fff;
+  text-align: center;
+  padding-top: 150px;
+  margin-left: -30px;
+  text-transform: uppercase; }
+
+.top__text {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 5rem; }
+
+.section-mission {
+  margin-top: -35px;
+  padding: 5rem 0;
+  background-color: #ff00ff;
+  text-align: center;
+  color: #fff; }
