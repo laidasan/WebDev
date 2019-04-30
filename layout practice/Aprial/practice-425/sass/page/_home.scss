@@ -1,0 +1,16 @@
+.section-title {
+    width: 960px;
+    margin: 1.5rem auto 0;
+    outline: 1px solid $color-white;
+    box-shadow: 0 1px 3px 0 $color-black;
+    background-color: rgb(233, 233, 233);
+    @include clearfix;
+}
+
+.section-intro {
+    width: 100%;
+    padding: 2.1rem 0 3rem;
+    // border: 3px solid #000;
+    background-color: #eeeeee;
+    margin: 0 auto;
+}

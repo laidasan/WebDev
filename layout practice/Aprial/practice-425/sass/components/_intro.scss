@@ -1,0 +1,16 @@
+.intro {
+    &__wrap {
+        width: 940px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left {
+        width: 70%;
+    }
+    &__right {
+        width: 30%;
+    }
+
+}

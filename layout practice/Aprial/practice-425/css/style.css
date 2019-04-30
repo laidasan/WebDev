@@ -2,7 +2,15 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: #cac7b4; }
+  background-color: #dddddd; }
+
+.heading-primary {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.5; }
+
+.u-margin-bottom-small {
+  margin-bottom: .3rem; }
 
 .navigation__list {
   list-style: none;
@@ -18,6 +26,39 @@ body {
   color: #fff; }
   .navigation__link:not(last-child) {
     margin-left: 30px; }
+
+.title__text-box {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-top: 90px;
+  left: 24px;
+  width: 366px;
+  color: rgba(0, 0, 0, 0.6); }
+
+.title__img-box {
+  width: 594px;
+  float: right; }
+
+.title__img {
+  width: 100%;
+  height: 100%; }
+
+.title__slogon {
+  font-size: 2.4rem;
+  line-height: 2; }
+
+.intro__wrap {
+  width: 940px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; }
+
+.intro__left {
+  width: 70%; }
+
+.intro__right {
+  width: 30%; }
 
 .header {
   background-color: #253228;
@@ -41,3 +82,20 @@ body {
   .header__nav {
     margin-top: 30px;
     float: right; }
+
+.section-title {
+  width: 960px;
+  margin: 1.5rem auto 0;
+  outline: 1px solid #fff;
+  box-shadow: 0 1px 3px 0 #000;
+  background-color: #e9e9e9; }
+  .section-title::after {
+    content: '';
+    clear: both;
+    display: block; }
+
+.section-intro {
+  width: 100%;
+  padding: 2.1rem 0 3rem;
+  background-color: #eeeeee;
+  margin: 0 auto; }
