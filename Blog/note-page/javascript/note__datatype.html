@@ -19,11 +19,14 @@
         <div class="navigation__background"></div>
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                    <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
-                    <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
-                    <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html" class="navigation__link">Interesting</a></li>
-                    <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool effect</a></li>
+                <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
             </ul>
         </nav>
     </div>
@@ -37,12 +40,132 @@
     <main>
         <section class="note-box">
             <div class="note__title">
-                <h2 class="heading-secondary heading-secondary--javascript">var,let,const</h2>
+                <h2 class="heading-secondary heading-secondary--javascript">DataType</h2>
             </div>
             <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    今天來講講在Javascript裡面，資料的型態有哪些，為何要了解資料的型態呢?其實電腦或是網頁等等說白了就是處理一堆資料後在視覺話出來，而我們也必須告訴電腦資料的型態與定義讓他們好去處理吧!
+                    就像我們人類在溝通一樣，我們知道什麼是數字，進而以做數子的相加，我們知道是句子，我們才能夠將句子做變化、造樣造句等等。
+                </p>
+                <h3 class="heading-tertiary u-margin-bottom-small">How?</h3>
+                <p class="note__content">主要分成兩種型態</p>
+                <ul class="note__point-list">
+                    <li class="note__point">基本型態--primitaive Data Type</li>
+                    <li class="note__point">複合型態--Reference Type</li>
+                </ul>
+                <p class="note__content">還有幾種特殊值</p>
+                <ul class="note__point-list">
+                    <li class="note__point">null</li>
+                    <li class="note__point">undefined</li>
+                    <li class="note__point">NaN</li>
+                </ul>
+                <p class="note__content">基本型態--primitive data type有下列幾種</p>
+                <ul class="note__point-list u-margin-bottom-small">
+                    <li class="note__point">string--字串</li>
+                    <li class="note__point">number--數字</li>
+                    <li class="note__point">boolean--布林值</li>
+                </ul>
+                <h4 class="heading-fourth">number</h4>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">在Javascript裡面沒有整數與浮點數的分別，通通都是number，數值都是IEEE
+                    754標準64位元浮點數，可表示的數字最小值為Number.MIN_VALUE，最大為Number.MAX_VALUE。</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    跟其他程式語言一樣，都是用實字來表示，預設是十進位整數，也可以用"0"開頭來表示八進位，"0x"開頭來表示16進位。</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let num1 = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code">let num2 = 010;</p>
+                    <p class="note__content u-color-white u-text-indent-code">let num3 = 0x10</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">如果要使用浮點數可以直接寫上，或是用科學記號</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let float1 = 3.12</p>
+                    <p class="note__content u-color-white u-text-indent-code">let float2 = 5.312E13</p>
+                    <p class="note__content u-color-white u-text-indent-code">let float2 = 5.312E-13</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    數值也有幾個特殊值，分別為無限大"+Infinity";負無限大"-Infinity"，也可以使用"Number.POSITIVE_INFINITY;Number.NEGATIVE_INFINITY"來取得。
+                </p>
+                <p class="note__content u-margin-bottom-p">還有一個是NaN--Not a
+                    Number，就跟字面上意思一樣，不是數字，這個很常出現在運算的時候，比如說我們將1除上字串就會得到NaN</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-text-indent-code u-color-white">let num = 1 / 'two';</p>
+                    <p class="note__content u-text-indent-code u-color-white">let nan = NaN;</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">對於NaN有些事情需要注意，<span class="u-color-red">NaN
+                        不等於 NaN</span>，但是可以使用 <span class="u-color-red">isNaN</span>來檢查是不是NaN</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-text-indent-code u-color-white">let nan = NaN;</p>
+                    <p class="note__content u-text-indent-code u-color-white">nan == NaN<span
+                            style="margin-left:30px;">//false</span></p>
+                    <p class="note__content u-text-indent-code u-color-white">isNaN(nan) <span
+                            style="margin-left:30px;">//ture</span></p>
+                </div>
+
+
+                <h4 class="heading-fourth">string</h4>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    string也是基本型態之一，可以使用雙引號或是單引號來宣告，在Javascript裡沒有字元的型態(char),所以用單引號刮上一個字的話，型態也還是string</p>
+
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-text-indent-code u-color-white">let str1 = 'joe';</p>
+                    <p class="note__content u-text-indent-code u-color-white">let str2 = '';</p>
+                    <p class="note__content u-text-indent-code u-color-white">typeof str1 <span
+                            style="margin-left:30px;">//string</span></p>
+                    <p class="note__content u-text-indent-code u-color-white">typeof str2 <span
+                            style="margin-left:30px;">//string</span></p>
+                </div>
+                <p class="note__content u-text-indent-p">"typeof"可以用來檢測資料的型態，比如說位數值始就會回傳number，字串就會回傳string。</p>
+                <p class="note__content u-margin-bottom-p">通常我們在使用上會使用單引號比較多，會把雙引號留給Html使用(像是class=" ")。</p>
+                <h4 class="heading-fourth">boolean</h4>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">boolean就比較簡單了，就只有true與false兩種，但之後會提到其實在javascript裡面所有的型態都可以轉換成boolean。</p>
+                <h3 class="heading-tertiary u-margin-bottom-p">複合型態</h3>
+                <ul class="note__point-list">
+                    <li class="note__point">Object literal</li>
+                    <li class="note__point">Object(實例)</li>
+                    <li class="note__point">Array</li>
+                    <li class="note__point">function</li>
+                    <li class="note__point">Data</li>
+                    <li class="note__point">etc....</li>
+                </ul>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">這裡會簡單的提到，而function與Array之後會在細談</p>
+                <div class="note__code u-margin-bottom-p">
+                        <p class="note__content u-text-indent-code u-color-white">let obj = new Object();</p>
+                        <p class="note__content u-text-indent-code u-color-white">let person = { }</p>
+                        <p class="note__content u-text-indent-code u-color-white">let ary = [1,2,3];</p>
+                        <p class="note__content u-text-indent-code u-color-white">let date = new Date() <span style="margin-left:30px;">//Date是時間的API</span></p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">以上這些typeof都會回傳object喔!除了typeof之外還可以使用"instanceof"來檢測，更詳細的instanceof是用來檢測constructor.prototype是否存在於某個原型鍊上(之後會再詳細談談prototype)，簡單來說"instanceof"可以用來檢測物件是誰的實例</p>
+                <div class="note__code u-margin-bottom-small">
+                        <p class="note__content u-text-indent-code u-color-white">let ary = [1,2,3];</p>
+                        <p class="note__content u-text-indent-code u-color-white">ary instanceof Array <span style="margin-left:30px;">//true</span></p>
+                        <p class="note__content u-text-indent-code u-color-white">ary instanceof Object <span style="margin-left:30px;">//true</span></p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">接下來我們會談談在javascript裡面特殊的兩個值，<span class="u-color-red">null</span> v.s <span class="u-color-red">undefined</span>。</p>
+                <h3 class="heading-tertiary u-margin-bottom-p">null</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">null表示沒有任何東西</p>
+                <div class="note__code u-margin-bottom-small">
+                        <p class="note__content u-text-indent-code u-color-white">let nul = null;</p>
+                        <p class="note__content u-text-indent-code u-color-white">nul == null <span style="margin-left:30px;">//true</span></p>
+                        <p class="note__content u-text-indent-code u-color-white">typeof nul;<span style="margin-left:30px;">//Object</span></p>
+                        <p class="note__content u-text-indent-code u-color-white">nul instanceof Object <span style="margin-left:30px;">//false</span></p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-color-red">※這一行很重要，null有一個bug，就是用typeof的話會回傳Object，但實際上null不是Object喔!!!</p>
+                <h3 class="heading-tertiary u-margin-bottom-p">undefined</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">undefined會在我們宣告變數卻沒有給值的時候，或是function沒有return時etc....。</p>
+                <div class="note__code u-margin-bottom-small">
+                        <p class="note__content u-text-indent-code u-color-white">let x;</p>
+                        <p class="note__content u-text-indent-code u-color-white">function note( ) { }</p>
+                        <p class="note__content u-text-indent-code u-color-white">console.log(x); <span style="margin-left:30px;">//undefined</span></p>
+                        <p class="note__content u-text-indent-code u-color-white">console.log(note()); <span style="margin-left:30px;">//undefined</span></p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-color-red">※這一行很重要，假如是 "let x = null"，x參考一個值null，所有x不是undefined喔!!</p>
+                
             </div>
         </section>
     </main>
 </body>
 
 </html>
+
+
+<script src="./app.js"></script>

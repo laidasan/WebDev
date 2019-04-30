@@ -1,9 +1,9 @@
-function takename(value) {
-    var name = value || 'Eric';
-    var name2 = 'Dolphin';
-    newName = 'Joe';
-    // console.log(name);
-}
+// function takename(value) {
+//     var name = value || 'Eric';
+//     var name2 = 'Dolphin';
+//     newName = 'Joe';
+//     console.log(name);
+// }
 
 // globalName = 'Shelly';
 // console.log(this.globalName);
@@ -166,13 +166,64 @@ function takename(value) {
 // const PI = 3.14;
 // console.log(PI);
 // PI = 5;
-const person = {
-    name: 'Joe',
-    age: 40
+// const person = {
+//     name: 'Joe',
+//     age: 40
+// }
+// console.log(person.name);
+// person.name = 'John';
+// console.log(person.name);
+// person = {
+//     name: "John"
+// }
+
+
+/*function*/
+//first
+function note() {
+
+
 }
-console.log(person.name);
-person.name = 'John';
-console.log(person.name);
-person = {
-    name: "John"
+//second
+let note2 = function(){
+
 }
+
+//tertiary
+// (function() {
+//     console.log('any');
+// })();
+console.log(typeof note);
+console.log(note instanceof Object);
+let num1 = 10;
+let num2 = 010;
+let num3 = 0x10;
+console.log(num1);
+console.log(num2);
+console.log(num3);
+
+let float1 = 3.12;
+let float2 = 5.12E13;
+let float3 = 5.12E-12;
+
+console.log(float1);
+console.log(float2);
+console.log(float3);
+
+let num = 1 / 'two';
+let nan = NaN;
+console.log(num);
+console.log(nan);
+console.log(isNaN(nan));
+
+let ary = [1,2,3];
+console.log(typeof ary);
+let ary2 = new Array();
+console.log(typeof ary2);
+console.log(ary instanceof Array);
+console.log(ary instanceof Object);
+
+
+console.log(note());
+let data = new Date;
+console.log(data);
