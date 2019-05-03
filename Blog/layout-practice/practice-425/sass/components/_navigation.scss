@@ -1,0 +1,26 @@
+.navigation {
+    &__list {
+        list-style: none;
+        font-size: 0;
+    }
+
+    &__item {
+        display: inline-block;
+        font-size: 1.8rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            display: inline-block;
+            text-transform: uppercase;
+            color: $color-nav;
+            text-shadow: 1px 1px 0px #000;
+        }
+        
+
+        &:not(last-child) {
+            margin-left: 30px;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.navigation {
+       
+        &-list {
+            list-style: none;
+            font-size: 0;
+        }
+        &-item {
+            display: inline-block;
+            padding: 1.5rem 2.1rem;
+            font-size: 2.1rem;
+        }
+        &-link {
+            &:link,
+            &:visited {
+                text-decoration: none;
+                color: $color-black;
+                font-weight: 600;
+            }
+            &:hover,
+            &:active {
+                color: #00aa99;
+            }
+        }
+    }

@@ -1,0 +1,13 @@
+.content {
+    position: relative;
+    padding: 15rem 0 0;
+
+    &-concat {
+        margin-bottom: 12rem;
+    }
+    &-intro {
+        padding: 9rem 0 3rem;
+        text-align: center;
+        background-color: rgba($color-primary,.8);
+    }
+}

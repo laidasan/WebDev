@@ -1,0 +1,95 @@
+/*base*/
+html {
+    font-size: 62.5%;
+}
+body {
+    padding: 3rem;
+}
+.base-wrap-item {
+    width: 450px;
+    height: 150px;
+    margin: 10px;
+}
+/*typography*/
+.heading-primary {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin: 1.2rem 0rem ; 
+}
+
+/*sample1*/
+.wrap,.wrap-2,.wrap-3,.wrap-4,.base-wrap {
+    width: 940px;
+    margin: 0 auto;
+    border: 3px solid #000;
+}
+.wrap::after {
+    content: '';
+    clear: both;
+    /* display: table; */
+    display: block;
+}
+.side,.main {
+    width: 450px;
+    height: 150px;
+    /* padding: 10px; */
+    margin: 10px;
+}
+.side {
+    float: left;
+}
+.main {
+    float: right;
+}
+.side-bkcolor {
+    background-color: #fa0;
+}
+.main-bkcolor {
+    background-color: #af0;
+}
+.clearfix {
+    clear: both;
+}
+
+/*sample2*/
+.wrap-2 {
+    overflow: hidden;
+}
+
+/*sample3*/
+.wrap-3 {
+    display: flex;
+    justify-content: space-around;
+}
+.side-3,.main-3 {
+    width: 450px;
+    height: 150px;
+    margin: 10px;
+}
+
+/*sample4*/
+.side-4,.main-4 {
+    width: 450px;
+    height: 150px;
+    margin: 10px;
+}
+.side-4 {
+    float: left;
+}
+.main-4{
+    overflow: hidden;
+}
+
+/*sample5*/
+.side-5 {
+    width: 450px;
+    height: 150px;
+    float: left;
+    margin: 10px;
+}
+.main-5 {
+    width: 450px;
+    height: 150px;;
+    margin-left: 480px;
+}
