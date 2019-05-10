@@ -1,3 +1,4 @@
+
 // function takename(value) {
 //     var name = value || 'Eric';
 //     var name2 = 'Dolphin';
@@ -180,50 +181,89 @@
 
 /*function*/
 //first
-function note() {
+// function note() {
 
 
-}
+// }
 //second
-let note2 = function(){
+// let note2 = function(){
 
-}
+// }
 
 //tertiary
 // (function() {
 //     console.log('any');
 // })();
-console.log(typeof note);
-console.log(note instanceof Object);
-let num1 = 10;
-let num2 = 010;
-let num3 = 0x10;
-console.log(num1);
-console.log(num2);
-console.log(num3);
+// console.log(typeof note);
+// console.log(note instanceof Object);
+// let num1 = 10;
+// let num2 = 010;
+// let num3 = 0x10;
+// console.log(num1);
+// console.log(num2);
+// console.log(num3);
 
-let float1 = 3.12;
-let float2 = 5.12E13;
-let float3 = 5.12E-12;
+// let float1 = 3.12;
+// let float2 = 5.12E13;
+// let float3 = 5.12E-12;
 
-console.log(float1);
-console.log(float2);
-console.log(float3);
+// console.log(float1);
+// console.log(float2);
+// console.log(float3);
 
-let num = 1 / 'two';
-let nan = NaN;
-console.log(num);
-console.log(nan);
-console.log(isNaN(nan));
+// let num = 1 / 'two';
+// let nan = NaN;
+// console.log(num);
+// console.log(nan);
+// console.log(isNaN(nan));
 
-let ary = [1,2,3];
-console.log(typeof ary);
-let ary2 = new Array();
-console.log(typeof ary2);
-console.log(ary instanceof Array);
-console.log(ary instanceof Object);
+// let ary = [1,2,3];
+// console.log(typeof ary);
+// let ary2 = new Array();
+// console.log(typeof ary2);
+// console.log(ary instanceof Array);
+// console.log(ary instanceof Object);
 
 
-console.log(note());
-let data = new Date;
-console.log(data);
+// console.log(note());
+// let data = new Date;
+// console.log(data);
+
+let str = '1';
+let str2 = '2';
+let i = 2;
+console.log(str + i);
+console.log(str2 - str);
+console.log(typeof (str2 - str));
+console.log(parseInt('010',10));
+console.log(parseInt('010',8));
+
+console.log(str2 == i);
+console.log(str2 === i);
+
+// let blen = '';
+
+// if(i) {
+//     console.log('true');
+// }else {
+//     console.log('false');
+// }
+
+console.log(typeof (i.toString() ) );
+console.log((10).toString());
+let text = 'joe';
+console.log(text.toUpperCase());
+console.log('john'.toUpperCase());
+
+console.log(7/3);
+
+const person = {
+    name: 'Joe',
+    age: 22
+}
+
+if(person.age) {
+    console.log('have');
+}else {
+    console.log('do not have');
+}

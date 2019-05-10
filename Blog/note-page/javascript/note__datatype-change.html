@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <title>Note Home List</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon"></span>
+        </label>
+        <div class="navigation__background"></div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="header">
+            <div class="header__text-box header__text-box--javascript">
+                <h1 class="heading-primary">My Note</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="note-box">
+            <div class="note__title">
+                <h2 class="heading-secondary heading-secondary--javascript">型態轉換</h2>
+            </div>
+            <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
+                <p class="note__content u-text-indent-p u-margin-bottom-small">在前一篇裡面我們有講到了DataType(資料型態)的部分，可以知道主要分成兩種
+                    <strong>"Primitive type"(基本型態)</strong>與<strong>"Reference
+                        type(複合型態)"</strong>，接下來我們來介紹不同的形態之間在做運算或是型態轉換(比如說string轉int)時有哪些需要注意的地方。</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">How?</h3>
+                <p class="note__content u-text-indent-p u-margin-bottom-p">
+                    在像是Java這種強型別語言裡面，對於型態是非常嚴格的，比如說在Java裡面將字串與數字相減的時候編譯就會出錯</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">String str = "1";</p>
+                    <p class="note__content u-color-white u-text-indent-code">int i = 1; </p>
+                    <p class="note__content u-color-white u-text-indent-code">System.out.println(str - i);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">要能夠正常相減的話就必須將String轉換成int才行</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">String str = "1";</p>
+                    <p class="note__content u-color-white u-text-indent-code">int i = 1; </p>
+                    <p class="note__content u-color-white u-text-indent-code">System.out.println(Integer.parseInt(str)
+                        -i);</p>
+                </div>
+                <p class="note__content">如果是在javascript裡面就可以直接做(會自動轉換型態)</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let str = '1';</p>
+                    <p class="note__content u-color-white u-text-indent-code">let i = 1; </p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(str - i);</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(typeof (str - i) );</p>
+                </div>
+                <p class="note__content u-margin-bottom-small">我們也可以用typeof來看看轉換型態後是什麼型態(number)。</p>
+                <p class="note__content u-text-indent-p u-margin-bottom-p">
+                    javascript的基本型態number,string,boolean會在必要的時候，自動型態轉換為對應的包裹物件Number,Stgring,Boolean。</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let num = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code">num.toString();</p>
+                    <p class="note__content u-color-white u-text-indent-code">(10).toString();</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    num指定變數10型態是number，但是在操作toString是使用物件上的方法(number本身沒有)，這個時候就會自動使用Number實例來包裹number10，因此才能操作toString()這個動作，實字(10)亦相同。
+                </p>
+                <p class="note__content">類似的在string上面也會有這種情況發生。</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let text = 'joe';</p>
+                    <p class="note__content u-color-white u-text-indent-code">text.toUpperCase();</p>
+                    <p class="note__content u-color-white u-text-indent-code">'joe'.toUpperCase();</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    同樣的toUpperCase()方法只存在物件上面，string基本型態上是沒有的，這時候就會用String實例來包裹string型態，才可以操作toUpperCase()</p>
+                <p class="note__content u-margin-bottom-p">或是我們可以自己創建實例</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let num = new Number(10);</p>
+                    <p class="note__content u-color-white u-text-indent-code">let text = new String('joe');</p>
+                </div>
+                <p class="note__content u-margin-bottom-small">
+                    以上兩個num,text使用typeof出來的話都是Object歐!!至於使用function實例出來的這種方式我們留到以後再說。至於更多的Number,String,Boolean物件的方法可以去查詢API!!
+                </p>
+                <p class="note__content u-text-indent-p u-margin-bottom-small">
+                    我們也可以使用parseInt()、parseFloat()將字串轉為數值，好處是會自動忽略字串尾端非數字部分。</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">parseInt('10 years old');</p>
+                    <p class="note__content u-color-white u-text-indent-code">parseInt('3.14159.....')</p>
+                    <p class="note__content u-color-white u-text-indent-code">parseInt('010',10);</p>
+                    <p class="note__content u-color-white u-text-indent-code">parseInt('010',8);</p>
+                </div>
+                <p class="note__content  u-margin-bottom-p">好玩的是parseInt可以指定要使用10進位或是8進位。</p>
+                <h4 class="heading-fourth">運算</h4>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    型態的轉換很常在需要運算的時候(不管是自動轉換或是我們手動轉換)，運算就包括上了+,-,*,/，等等會介紹下當不同型態再做加減乘除的時候</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let str1 = '6'</p>
+                    <p class="note__content u-color-white u-text-indent-code">let str2 = '3'</p>
+                    <p class="note__content u-color-white u-text-indent-code">str1 + str2</p>
+                    <p class="note__content u-color-white u-text-indent-code">str1 - str2</p>
+                    <p class="note__content u-color-white u-text-indent-code">str1 * str2</p>
+                    <p class="note__content u-color-white u-text-indent-code">str1 / str2</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">可以試著實做看看上面的結果為如何。當為加法的時候會優先做字串相加，所以str1 +
+                    str2的結果是62(string)，減乘除的時候才做數字上的運算</p>
+                <p class="note__content u-margin-bottom-p">也可以和boolean做運算</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">1 + true;</p>
+                    <p class="note__content u-color-white u-text-indent-code">1 + false;</p>
+                </div>
+                <p class="note__content">在做+,-,*,/的運算的時候，true會被當作1，false會被當作0</p>
+                <p class="note__content u-margin-bottom-p">有一個很有趣的是，在javascript裡，任何東西都可以變成boolean值，<span class="u-color-red"style="font-weight:600;">0,NaN,null,undefined,''</span>，以上這些轉換成boolean時都會轉換成false，所以他們有個稱呼叫做"FalseFamily"</p>
+                <p class="note__content">這裡有個小技巧，若某物件上不存在某個特性，直接取用該特性的話會回傳undefined，爾後我們可以利用undefined轉換成false的原理來知道該物件上有沒有某個特性，比如說</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name: 'Joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age: 22</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">if(person.age) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log('have')</p>
+                    <p class="note__content u-color-white u-text-indent-code">}else {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log('do not have')</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
+<script src="./app.js"></script>
