@@ -8,9 +8,13 @@
 }
 
 .section-intro {
+    position: relative;
     width: 100%;
-    padding: 2.1rem 0 3rem;
-    // border: 3px solid #000;
     background-color: #eeeeee;
     margin: 0 auto;
+    border-bottom: 1px solid $color-white;
+}
+
+.section-whose {
+    border: 1px solid $color-white;
 }

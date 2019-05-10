@@ -7,11 +7,15 @@
 @import "base/utilities";
 
 
-@import "components/navigation";
-@import "components/title";
+@import "components/button";
 @import "components/intro";
+@import "components/navigation";
+@import "components/section";
+@import "components/title";
 
 
+@import "layout/flexbox";
+@import "layout/footer";
 @import "layout/header";
 
 
