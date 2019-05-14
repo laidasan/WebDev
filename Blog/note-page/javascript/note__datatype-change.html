@@ -124,8 +124,8 @@
                     <p class="note__content u-color-white u-text-indent-code">1 + false;</p>
                 </div>
                 <p class="note__content">在做+,-,*,/的運算的時候，true會被當作1，false會被當作0</p>
-                <p class="note__content u-margin-bottom-p">有一個很有趣的是，在javascript裡，任何東西都可以變成boolean值，<span class="u-color-red"style="font-weight:600;">0,NaN,null,undefined,''</span>，以上這些轉換成boolean時都會轉換成false，所以他們有個稱呼叫做"FalseFamily"</p>
-                <p class="note__content">這裡有個小技巧，若某物件上不存在某個特性，直接取用該特性的話會回傳undefined，爾後我們可以利用undefined轉換成false的原理來知道該物件上有沒有某個特性，比如說</p>
+                <p class="note__content u-margin-bottom-p">有一個很有趣的是，在javascript裡，任何東西都可以變成boolean值，<span class="u-color-red"style="font-weight:600;">0,NaN,null,undefined,''</span>，以上這些轉換成boolean時都會轉換成false，其他都是true,所以他們有個稱呼叫做"FalseFamily"</p>
+                <p class="note__content">可以運用這個小技巧，若某物件上不存在某個特性，直接取用該特性的話會回傳undefined，爾後我們可以利用undefined轉換成false的原理來知道該物件上有沒有某個特性，比如說</p>
                 <div class="note__code u-margin-bottom-p">
                     <p class="note__content u-color-white u-text-indent-code">const person = {</p>
                     <p class="note__content u-color-white u-text-indent-code2">name: 'Joe',</p>
@@ -137,6 +137,21 @@
                     <p class="note__content u-color-white u-text-indent-code2">console.log('do not have')</p>
                     <p class="note__content u-color-white u-text-indent-code">}</p>
                 </div>
+                <p class="note__content u-margin-bottom-small">因為person上是有age特性的，所以回傳不會是undefined，當轉換成boolean的時候會轉換成true，所以if裡面的"console.log('have')就會觸發囉!!</p>
+                <p class="note__content">我們還可以使用==來比較兩邊是不是相等，比如說</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let str1 = 'joe'</p>
+                    <p class="note__content u-color-white u-text-indent-code">let str2 = 'joe'</p>
+                    <p class="note__content u-color-white u-text-indent-code">let num = 3</p>
+                    <p class="note__content u-color-white u-text-indent-code">let strn = '3'</p>
+                    <p class="note__content u-color-white u-text-indent-code">str1 == str2</p>
+                    <p class="note__content u-color-white u-text-indent-code">num == strn</p>
+                    <p class="note__content u-color-white u-text-indent-code">num === strn</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">str1跟str2的比較簡單，兩個都是字串也都是joe，理所當然是回傳true囉!但是可以注意一下，在javascript裡面除了<strong>==</strong>之外，還有<strong>===</strong>三等號喔!三等號事完全等於的意思，除了值要相同，型態也需要相同才會回傳true喔!
+                    "num == strn"會回傳true，"num === strn"會回傳false，其原理是只用==來做比較的話，如果兩邊型態不同，javascript會幫我們嘗試轉換成相同的型態看看，試試看是否會相等，而===三等號就不會了，就一定要兩邊型態與值都相同才會回傳true囉!!
+                </p>
+                <p class="note__content">至於物件的以較，我們留到下一篇再說囉!</p>
             </div>
         </section>
     </main>
