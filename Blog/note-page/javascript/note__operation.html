@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <title>Note Home List</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon"></span>
+        </label>
+        <div class="navigation__background"></div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="header">
+            <div class="header__text-box header__text-box--javascript">
+                <h1 class="heading-primary">My Note</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="note-box">
+            <div class="note__title">
+                <h2 class="heading-secondary heading-secondary--javascript">運算</h2>
+            </div>
+            <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
+                <p class="note__content u-margin-bottom-p">
+                    上一篇我們有聊到邏輯運算與比較運算的部分，最後說了==與===的差別，不過都只在基本型態上而已，今天會來談談如果是在物件的比較或是邏輯運算上會如何處理!!</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">How?</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    除了+,-,*,/與==,===外，其實還有>=,>,&lt;,&lt;=,!=,!==這些運算，驚嘆號是相反的意思，!=也就是不等於的意思。</p>
+                <P class="note__content u-margin-bottom-p">
+                    上一篇我們都是用基本型態來做運算，現在我們來試試看用物件形態上的運算吧!在物件的運算上，我們會需要兩種特性，一個是<strong>valueOf</strong>,一個是<strong>toString</strong>，valueOf會是在用在轉換成數字時用到，而toString就是轉換成字串的時候拉!比如說:
+                </P>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name: 'joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age: 40,</p>
+                    <p class="note__content u-color-white u-text-indent-code2">valueOf: function() {</p>
+                    <p class="note__content u-color-white u-text-indent-code3">return 40;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">let num = 20;</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(person + num);</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(person > num);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    在上面的例子裡面，在person裡面設定了一個valeOf特性，為一個function且回傳40,最後的兩個console出來的結果為"60"與"true"，在第一個做加法的時候，會嘗試轉換成數值，嘗試使用valueOf方法，所以回傳為40，而40+20=60，第二個依此類推。
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">至於toString</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name: 'joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age: 40,</p>
+                    <p class="note__content u-color-white u-text-indent-code2">toString: function() {</p>
+                    <p class="note__content u-color-white u-text-indent-code3">return 'My name is ' + this.name;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log('Hi,' + person);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">出來的結果是"Hi,My name is joe"。</p>
+                <p class="note__content u-margin-bottom-small u-color-red">
+                    要注意的一件事:valueOf()預設會回傳toString()的回傳值，所以如果沒有重新定義valueOf的話就會使用toString的回傳值。</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    這邊我們在提一個事情，如果在基本型態時做>=,>,&lt;,&lt;=的時候，一邊是字串一邊是數字的時候要怎麼辦，這個時候字串如果部分為數字的話，則會轉換成數字在進行比較，如果字串都沒有數字的話則會轉換成NaN，如果兩邊都是字串，則會逐字元依Unicode編碼值進行比較。
+                </p>
+                <p class="note__content u-margin-bottom-small u-color-red">
+                    ※這邊還很不了解的是，當valueOf與toString同時存在的時候，都會使用到valueOf的方法，還需要去了解背後原因。</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    接下來我們來講<strong>&&</strong>與<strong>||</strong>吧!，直接用例子來說明更清楚!</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let num1 = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code">let num2 - 20;</p>
+                    <p class="note__content u-color-white u-text-indent-code">let num3 = 30;</p>
+                    <p class="note__content u-color-white u-text-indent-code">if( num3 > num1 && num3 > num2){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log('num3 is biggest');</p>
+                    <p class="note__content u-color-white u-text-indent-code">}else {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log('oh no!');</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <P class="note__content u-margin-bottom-p">出來的結果是"num3 is biggest"喔!在這裡&&要兩邊都為true才回傳true喔!先看左邊num3 >
+                    num1，答案是true所以繼續往右邊看num3 > num2，結果也為true，所以&&的結果就回傳true囉!!</P>
+                <p class="note__content u-margin-bottom-p">
+                    而<strong>||</strong>只要其中一邊是true就會回傳true囉!以最簡單的白話來講，假如小明去圖書館的條件是"禮拜三，而且要是個大晴天"才去，而小華則是"禮拜三，或是大晴天"，小明就很像是&&，要禮拜三<span
+                        class="u-color-red">"且"</span>又是大晴天才去，而小華就像||，禮拜三<span class="u-color-red">"或者"</span>大晴天。</p>
+                <p class="note__content u-margin-bottom-p">
+                    在直觀的直覺上是這樣子沒錯，但對電腦運算來說是有真面目的，在進行&&的時候，會先從最左邊開始判斷，如果是true就繼續往下一個(右邊)進行判斷，直到判斷全結束或是判斷到某個false就停住，比如說:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">console.log(20 && 30 && 10);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    這裡console出來的結果會是10，為何呢?之前我們有提到過在javascript中任何東西都可以轉換成boolean值，除了false
+                    family之外的都是true，而依照剛剛&&邏輯來判斷，首先先從最左邊30來看，是true，再來看20，是true,再來看10，是true，所有判斷都結束了，指標指在10上，所以回傳10!再來看下面這個:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">console.log(30 && undefined && 10);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    這個conosle出來的結果是undefined喔!!我們再來看一次，首先先從最左邊30開始看，true，看下一個，undefined為false，判斷就到此為止，不會繼續往下判斷了(可以把他想像為因為&&都要是true才是對的，那麼是不是找到一個false就代表過不了拉!!所以如果找到false就直接停止就好了)，而停下後判斷指標在undefined上，所以就回傳undefined，所以console的結果是undefined!
+                </p>
+                <p class="note__content">至於||剛好是與&&相反的唷!只要找到一個true就會停止往下判斷並回傳，比如說:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">console.log(undefined || 20 || null);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    這裡console出來的結果是20，首先先從最左邊開始判斷，undefined為false所以繼續往下，到了20為true，所以停止往下繼續判斷並回傳。</p>
+                <p class="note__content">我們可以運用這個技巧來給預設值，比如說:</p>
+                <div class="note__code u-margin-bottom-p">
+                        <p class="note__content u-color-white u-text-indent-code">function show(x) {</p>
+                        <p class="note__content u-color-white u-text-indent-code2">return x || 20;</p>
+                        <p class="note__content u-color-white u-text-indent-code">}</p>
+                        <p class="note__content u-color-white u-text-indent-code">console.log(show(100));</p>
+                        <p class="note__content u-color-white u-text-indent-code">console.log(show());</p>
+                    </div>
+                    <p class="note__content u-margin-bottom-small">第一個結果是100，而第二個結果是20，在show這個function中如果我們有給X的話就會回傳X，如果沒有給的話X就為undefined，繼續往下判斷20為true，所以回傳20。我們會很常使用這個方法當使用者沒有給值的時候，我們就會給預設值的時候，是個很方便的技巧!!</p>
+                    <h3 class="heading-tertiary u-margin-bottom-p">End</h3>
+                    <p class="note__content u-margin-bottom-p u-text-indent-p">這篇就先講到這裡，而下一篇開始我們會開始講物件、陣列、與function，其實在javascript裡面沒有真正的陣列，只是有個外觀很像陣列的物件而已，也很像是Map一樣，有"key"與"value"。
+                    </p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+<script src="./app.js"></script>

@@ -4,12 +4,20 @@
 
 @import "base/base";
 @import "base/typography";
+@import "base/utilities";
 
 
+@import "components/button";
+@import "components/intro";
 @import "components/navigation";
+@import "components/section";
+@import "components/title";
 
 
+@import "layout/flexbox";
+@import "layout/footer";
 @import "layout/header";
 
 
 @import "page/home";
+@import "page/about";   

@@ -1,0 +1,14 @@
+.footer {
+
+    &__wrap {
+        width: 960px;
+        padding: 3rem 0;
+        margin: 0 auto;
+    }
+
+    &__item {
+        width: 320px;
+        height: 150px;
+        outline: 1px solid #f00;
+    }
+}

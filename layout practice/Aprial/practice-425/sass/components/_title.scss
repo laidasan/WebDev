@@ -1,0 +1,27 @@
+.title {
+
+
+    &__text-box {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        margin-top: 90px;
+        left: 24px;
+        width: 366px;
+        color: rgba($color-black,.6);
+        // background-color: #0f0;
+    }
+    &__img-box {
+        width: 594px;
+        float: right;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__slogon {
+        font-size: 2.4rem;
+        line-height: 2;
+    }
+}

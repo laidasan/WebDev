@@ -1,0 +1,48 @@
+.intro {
+
+    &__wrap {
+        position: relative;
+        width: 940px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 2.1rem 0 3rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 99%;
+            left: 67%;
+            top: 0;
+            transform: translate(-50%,0);
+            border: 1px dotted #626262;
+        }
+
+    }
+
+    &__left {
+        position: relative;
+        width: 66%;
+        color: $color-intro;
+    }
+    &__right {
+        width: 30%;
+        color: $color-intro-sec;
+    }
+
+    &__paragraph {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        letter-spacing: .6px;
+    }
+
+    &__sign {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1.6rem;
+    }
+
+   
+
+}

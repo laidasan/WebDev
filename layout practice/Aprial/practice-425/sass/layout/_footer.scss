@@ -1,0 +1,49 @@
+.footer {
+
+    &__wrap {
+        position: relative;
+        width: 960px;
+        padding: 3rem 0;
+        margin: 0 auto;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 310px;
+            height: 100%;   
+            border: 1px solid #cccccc;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 630px;
+            height: 100%;   
+            border: 1px solid #cccccc;
+        }
+    }
+
+    &__item {
+        width: 320px;
+        height: 150px;
+
+        color: #626262;
+    }
+
+    &__paragraph {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        margin-left: 1px;
+    }
+
+    &__bar {
+        padding: 1.2rem 0;
+        background-color: #687756;
+
+        &-paragraph {
+            text-align: center;
+            color: $color-white;    
+        }
+    }
+}

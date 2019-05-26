@@ -1,0 +1,43 @@
+.projects {
+    position: relative;
+    bottom: 35px;
+    width: 940px;
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
+    background-color: rgba(#8B4513,.6);
+
+    &__list {
+        list-style: none;
+        font-size: 0;
+        margin-top: 15px;
+    }
+    &__item {
+        &:nth-last-child(n+2) {
+            display: inline-block;
+            position: relative;
+            z-index: 335;
+        }
+    }
+
+    &__last {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            display: block;
+            width: 235px;
+            height: 156px;
+        }
+        &:hover,
+        &:active {
+            background-color: rgba(#8B4513,.6);
+        }
+    }
+
+}

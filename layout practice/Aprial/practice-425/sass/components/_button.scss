@@ -1,0 +1,23 @@
+.button {
+    &:link,
+    &:visited {
+        display: inline-block;
+        padding: .6rem 2.1rem;
+        border-radius: 3px;
+
+        text-decoration: none;
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+        color: $color-white;
+        
+        box-shadow: 0 1px 3px 0 $color-black;
+    }
+    &--grey {
+        background-color: $color-grey-dark;
+    }
+
+    &:hover,
+    &:active {
+        background-color: $color-grey-dark2;
+    }
+}
