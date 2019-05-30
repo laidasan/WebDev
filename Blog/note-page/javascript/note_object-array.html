@@ -51,13 +51,139 @@
                 <div class="note__code u-margin-bottom-p">
                     <p class="note__content u-color-white u-text-indent-code">let obj = new Object()</p>
                 </div>
-                <p class="note__content">但我們通常不會這麼做</p>
+                <p class="note__content u-margin-bottom-p">但我們通常不會這麼做，我們會這樣做，會更有效率:</p>
                 <div class="note__code u-margin-bottom-p">
                     <p class="note__content u-color-white u-text-indent-code">let obj = {} </p>
                 </div>
+                <p class="note__content">然後呢我們可以像這樣在裡面放入一些東西:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let person = { </p>
+                    <p class="note__content u-color-white u-text-indent-code2">name:'Joe,</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age:40</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content">這些東西呢我們稱為「物件的特性」，這些特性我們可以這樣取得:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">person.name</p>
+                    <p class="note__content u-color-white u-text-indent-code">person[name]</p>
+                </div>
+                <p class="note__content">我們可能會說我們就用第一行的方式取得就可以拉，為什麼還要使用第二行的方式[]?如果說有一個特性名稱是這樣:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let person = { </p>
+                    <p class="note__content u-color-white u-text-indent-code2">'name.second' = 'Shelly'</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content">這時候用第一種方式就取不出來了!所以這時就可以用第二種方式囉!這只是使用這個方式的之一:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">person['name.second']</p>
+                </div>
+                <p class="note__content">可以這樣增加特性:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">person.birth = '1996,8,15';</p>
+                </div>
+                <p class="note__content">除了增加特性，我們也可以用delete來刪除特性，比如說我們可以這樣刪除上面person的age:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">delete person.age;</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-color-red">※delete再刪除非物件的性或是變數的時候，是return true歐!</p>
+                <p class="note__content">在取得物件特行的時候，如果物件上沒有該特性的話，會return
+                    undefined，我們可以利用這個來做一個檢測該物件是否有特性喔!比如說這樣來檢測有沒有name特性</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">if(person.name) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(person.name);</p>
+                    <p class="note__content u-color-white u-text-indent-code">}else {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log('No Name')</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">偵測也可以搭配著||使用，來當沒有該特性的時候，會回預設值，比如說:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">const obj = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">x : 10,</p>
+                    <p class="note__content u-color-white u-text-indent-code2">y : 20</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">const option = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">x = obj.x || 10,</p>
+                    <p class="note__content u-color-white u-text-indent-code2">y = obj.y || 20,</p>
+                    <p class="note__content u-color-white u-text-indent-code2">z = obj.z || 30</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">option的z會因為沒有obj.z的特性所以回傳undefined(轉換成boolean是false，可以參考<a
+                        href='./note__datatype-change.html' class="note__link">這篇</a>)，進而將z設為30(||的方式參考 <a
+                        href="./note__operation.html" class="note__link">這裡</a>)</p>
+
+                <p class="note__content u-margin-bottom-p">如果想要知道物件上有哪些自定義的特性(比如說上面person的name、age)等等，可以用for in語法</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">for(let prop in person) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(prop)</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(typeof prop)</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">你會發現特性名稱都是String型態!!也就是為什麼我們上面用[]取得特性的時候，裡面要用字串的型態原因。</p>
+                <p class="note__content u-margin-bottom-p">在javascript本質上，物件是個特性與值得群集(Collection)，很像是Java的Map物件。我們可以用for
+                    in來一一取得物件上的特性跟值</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">for(let prop in person) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(prop + ':' + person[prop]);
+                    </p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    再來說說<strong>valueOf()</strong>與<strong>toString()</strong>這兩個方法，javascript是弱型別語言，當需要轉換成數值的時候，就會呼叫valueOf()方法:
+                </p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age:40,</p>
+                    <p class="note__content u-color-white u-text-indent-code2">valueOf:function(){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">return this.age;}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code"></p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(60 + person)</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">上面最後console出來的值會是100，至於toString()方法則是需要轉字串的時候會呼叫的方法:</p>
+                <div class="note__code u-margin-bottom-small">
+                        <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                        <p class="note__content u-color-white u-text-indent-code2">name: 'Joe',</p>
+                        <p class="note__content u-color-white u-text-indent-code2">toString():function(){</p>
+                        <p class="note__content u-color-white u-text-indent-code3">return this.name;}</p>
+                        <p class="note__content u-color-white u-text-indent-code">}</p>
+                        <p class="note__content u-color-white u-text-indent-code"></p>
+                        <p class="note__content u-color-white u-text-indent-code">console.log('My name: ' + person)</p>
+                    </div>
+                <p class="note__content u-margin-bottom-p">最後conosle輸出是:My name: Joe。</p>
+                <p class="note__content u-margin-bottom-p u-color-red">※當valueOf與toString同時存在的時候，沒有指定用哪個方法的話，似乎是會套用valueOf方法，即便是需要轉字串時(比如上例子)，也是使用valueOf方法</p>
+                <p class="note__content u-margin-bottom-p">再來就是關於「比較是否為相同」的情況，我們知道有「==」與「===」兩種比較是否相同的方式，之前我們用在變數上沒問題，但如果是用在物件上呢?假如說:</p>
+                <div class="note__code u-margin-bottom-small">
+                        <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                        <p class="note__content u-color-white u-text-indent-code2">name: 'Joe'</p>
+                        <p class="note__content u-color-white u-text-indent-code">}</p>
+                        <p class="note__content u-color-white u-text-indent-code">const obj = {</p>
+                        <p class="note__content u-color-white u-text-indent-code2">x : 10;</p>
+                        <p class="note__content u-color-white u-text-indent-code">}</p>
+                        <p class="note__content u-color-white u-text-indent-code">const person2 = {</p>
+                        <p class="note__content u-color-white u-text-indent-code2">name: 'Joe'</p>
+                        <p class="note__content u-color-white u-text-indent-code">}</p>
+                        <p class="note__content u-color-white u-text-indent-code">const perosn3 = person;</p>
+                        <p class="note__content u-color-white u-text-indent-code">console.log(perosn == obj) //false</p>
+                        <p class="note__content u-color-white u-text-indent-code">console.log(perosn == person2) //false</p>
+                        <p class="note__content u-color-white u-text-indent-code">console.log(perosn == person3) //true</p>
+                    </div>
+                <p class="note__content u-margin-bottom-p">「person == obj」很理所當然的是false囉!那為何「person == person2」是false呢?明明兩者內容都一樣，而「person == person3」卻是true</p>
+                <p class="note__content u-margin-bottom-p">再用「==」與「===」比較物件的時候，不是比較內容是否相同，而是比較是否參考同一物件，如果我們要比較兩個物件實際上是否為同一物件，我們可以自己定義專屬方法，這個方法名稱沒有規範，例如我們可以定義個equals()方法</p>
+                <div class="note__code u-margin-bottom-p">
+                        <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                        <p class="note__content u-color-white u-text-indent-code2">name: 'Joe',</p>
+                        <p class="note__content u-color-white u-text-indent-code2">equals:function(other){</p>
+                        <p class="note__content u-color-white u-text-indent-code3">return this.name == other.name</p>
+                        <p class="note__content u-color-white u-text-indent-code2">}</p>
+                        <p class="note__content u-color-white u-text-indent-code">person.equals(person2);</p>
+                    </div>
+                <p class="note__content u-margin-bottom-p">這樣輸出的結過就是true囉!</p>
             </div>
         </section>
     </main>
 </body>
 
 </html>
+
+<script src="./app.js"></script>

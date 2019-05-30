@@ -273,16 +273,16 @@
 // console.log(testn == testnr);
 // console.log(testn === testnr);
 
-const person = {
-    name: 'joe',
-    age: 40,
-    toString: function () {
-        return 'My name is ' + this.name;
-    },
+// const person = {
+//     name: 'joe',
+//     age: 40,
+//     toString: function () {
+//         return 'My name is ' + this.name;
+//     },
     // valueOf: function() {
     //     return 40;
     // }
-}
+// }
 // let num = 20;
 // let numr = '20 is good';
 // console.log(num >= numr);
@@ -292,7 +292,46 @@ const person = {
 // console.log(20 && undefined && 10);
 // console.log(undefined || 20 || null);
 
-function show(x) {
-    return x;
+// function show(x) {
+//     return x;
+// }
+// console.log(show());
+
+const person = {
+    name: 'joe'
+    // 'name.second': 'Shelly',
+    // age:40,
+    // valueOf:function() {
+    //     return this.age;
+    // },
+    // toString:function() {
+    //     return this.name;
+    // }
 }
-console.log(show());
+const person2 = {
+    name: 'Joe'
+}
+const obj = {
+    x : 10
+}
+const person3 = person;
+console.log(person == obj);
+console.log(person == person2);
+console.log(person == person3);
+
+// console.log(person['name.second']);
+
+// console.log(delete person.age);
+// console.log(person.age);
+
+// if(person.name) {
+//     console.log(person.name)
+// }else {
+//     console.log('No Name');
+// }
+// for (let prop in person) {
+//     console.log(prop);
+//     console.log(typeof prop);
+// }
+// console.log(60 + person);
+
