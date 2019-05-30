@@ -479,7 +479,24 @@ footer > .container {
 
 
 
-
+/* animation */
+.event,.photo {
+    opacity: 0;
+    visibility: hidden;
+    
+    transition: all 3s
+}
+.event {
+    transform: translateY(90px);
+}
+.photo {
+    transform: translateX(-120px);
+}
+.animation {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0,0);
+}
 
 
 
