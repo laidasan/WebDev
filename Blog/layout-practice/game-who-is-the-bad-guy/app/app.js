@@ -68,12 +68,12 @@
     <p class="player-info u-margin-bottom-medium">點擊看謎底，再點擊隱藏給下一位玩家</p>`;
 
     let page_gaming = `<div class="player-wrap u-margin-bottom-medium">
-    <div class="player u-margin-bottom-medium">玩家1</div>
-    <div class="player u-margin-bottom-medium">玩家2</div>
-    <div class="player u-margin-bottom-medium">玩家3</div>
-    <div class="player u-margin-bottom-medium">玩家4</div>
-    <div class="player ">玩家5</div>
-    <div class="player">玩家6</div>
+    <a href="#" class="player u-margin-bottom-medium">玩家1</a>
+    <a href="#" class="player u-margin-bottom-medium">玩家2</a>
+    <a href="#" class="player u-margin-bottom-medium">玩家3</a>
+    <a href="#" class="player u-margin-bottom-medium">玩家4</a>
+    <a href="#" class="player ">玩家5</a>
+    <a href="#" class="player">玩家6</a>
     </div>`;
 
 
