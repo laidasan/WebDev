@@ -6,12 +6,18 @@
     let pre_href;
     let player_conunt = 0;
     let ischecked = false;
+    let count = 0; //show出謎底給玩家看時紀數
 
     let group = document.querySelector('.group');
     let range_ary = document.querySelectorAll('.range');
     let range_val_ary = document.querySelectorAll('.range-value');
 
     let game_info = []; //gamers bad white [custom(0) or default(1)]
+
+    const answer_default = ['橘子,柳丁', '機車,汽車'];
+    const answer_checkit = []; //[臥底,平民]
+    const player = [];  //人數六人中誰為民誰為臥
+
 
     /*previous button*/
     let button_previous = document.createElement('a');
@@ -31,7 +37,7 @@
     /*check player-ans*/
     let p_ans = document.createElement('p');
     p_ans.className = 'player-ans u-margin-bottom-medium';
-    p_ans.innerText = '橘子';
+    // p_ans.innerText = '橘子';
     /*checkt player-ans*/
 
     let page_answer = `<form class="form">
@@ -70,6 +76,124 @@
     <div class="player">玩家6</div>
     </div>`;
 
+
+    /*取亂數 0~value_range*/
+    function getRandom(value_range) {
+        value_range = value_range || 20;
+        return Math.floor(Math.random() * (value_range + 1));
+    }
+
+
+
+
+    /*決定玩家謎底(誰是臥底)*/
+    function checkit() {
+        let bad_count = 0;
+        let good_count = 0;
+        let notfull = true;
+
+        // const answer = answer_default[getRandom(answer_default.length - 1)];
+        const decide = [];
+        for (let i = 0; i < game_info[0]; i++) {
+            console.log('first roop');
+            if (bad_count == game_info[1] || good_count == (game_info[0] - game_info[1])) {
+                console.log('break');
+                break;
+            } else {
+                console.log('decide');
+                /*決定是否為臥地--取10個變數*/
+                for (let j = 0; j < 10; j++) {
+                    decide.push(getRandom(100));  //取0~100Random 10個，一半超過50為臥底
+                }
+                let decide_ans = decide.filter(function (value) {
+                    return value > 50;
+                })
+                if (decide_ans.length > 5) {
+                    player.push(1);
+                    bad_count++;
+                } else {
+                    player.push(0);
+                    good_count++;
+                }
+                decide.length = 0;
+            }
+        }
+
+        /*沒有填滿的話填滿*/
+        while (notfull) {
+            if (player.length == game_info[0]) {
+                notfull = false;
+                console.log('isfull');
+            } else if (bad_count == 2) {
+                player.push(0);
+            } else {
+                player.push(1);
+            }
+        }
+        return player;
+    }
+
+
+    /*決定謎底*/
+    function decideAnswer() {
+        let an = [];
+        if (game_info[3] == 1) {
+            an = answer_default[getRandom(answer_default.length - 1)].split(',');
+            return an;
+        } else {
+            console.log('custom');
+            an = answer_default[getRandom(answer_default.length - 1)].split(',');
+            return an;
+        }
+    }
+    // console.log(decideAnswer());
+    // console.log(decideAnswer()[0]);
+
+    /*決定謎底哪個詞為臥底*/
+    function decideBadguy() {
+        let an = decideAnswer();
+        let an1 = []
+        let an2 = []
+        for (let i = 0; i < 100; i++) {
+            an1.push(i);
+            an2.push(i);
+        }
+        an1_up = an1.filter(function (value) {
+            return value > 50;
+        })
+        an2_up = an2.filter(function (value) {
+            return value > 50;
+        })
+        if (an1_up.length >= an2_up.length) {
+            answer_checkit.push(an[0]);
+            answer_checkit.push(an[1]);
+        } else if (an1_up.length < an2_up.length) {
+            answer_checkit.push(an[1]);
+            answer_checkit.push(an[0]);
+        }
+        an1.length = 0;
+        an2.length = 0;
+        console.log('decideBadguy');
+        return answer_checkit;
+    }
+
+    /*Show出玩家的謎底*/
+    function showPlayer(count) {
+        switch (player[count]) {
+            case 1:
+                p_ans.innerText = answer_checkit[1];
+                page_container.insertBefore(p_ans, page_container.children[1]);
+                break;
+            case 0:
+                p_ans.innerText = answer_checkit[0];
+                page_container.insertBefore(p_ans, page_container.children[1]);
+                break;
+            default:
+                console.log("fail");
+                break;
+        }
+    }
+
     /*切換畫面處理*/
     function render(e) {
         e.preventDefault();
@@ -99,25 +223,33 @@
                         game_info[index] = ragne.value;
                         console.log(game_info);
                     });
+                    game_info[3] = '1';
+                    checkit();
+                    console.log(typeof player[0]);
                     console.log('answer');
+
                     break;
                 case '#checkit':
                     pre_href = target.getAttribute('href');
                     target.setAttribute('href', '#checkit');
+                    console.log(decideBadguy());
                     button_group.innerHTML = '';
                     button_group.appendChild(button_next);
                     // page_previous = document.querySelector('.container').innerHTML;
                     // page_previous_array.push(page_previous);
                     page_container.innerHTML = page_checkit2;
                     console.log('checkit');
+                    // console.log(game_info);
                     break;
                 case '#next':
                     if (player_conunt < ((6 * 2) - 1)) {
                         player_conunt++;
                         console.log(player_conunt);
-                        if (ischecked != true) {
+                        if (ischecked != true && count <= game_info[0]) {
                             ischecked = true;
-                            page_container.insertBefore(p_ans, page_container.children[1]);
+                            showPlayer(count);
+                            // page_container.insertBefore(p_ans, page_container.children[1]);
+                            count++
                             console.log('checked');
                         } else {
                             ischecked = false;
@@ -213,5 +345,6 @@
         def();
         button_group.addEventListener('click', render, false);
         page_container.addEventListener('change', range_change, false);
+
     });
 }
