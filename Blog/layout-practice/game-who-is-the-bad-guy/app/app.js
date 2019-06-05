@@ -83,9 +83,6 @@
         return Math.floor(Math.random() * (value_range + 1));
     }
 
-
-
-
     /*決定玩家謎底(誰是臥底)*/
     function checkit() {
         let bad_count = 0;
@@ -124,10 +121,12 @@
             if (player.length == game_info[0]) {
                 notfull = false;
                 console.log('isfull');
-            } else if (bad_count == 2) {
+            } else if (bad_count == game_info[1]) {
                 player.push(0);
+                console.log('放入民');
             } else {
                 player.push(1);
+                console.log('放入臥底');
             }
         }
         return player;
@@ -155,15 +154,19 @@
         let an1 = []
         let an2 = []
         for (let i = 0; i < 100; i++) {
-            an1.push(i);
-            an2.push(i);
+            an1.push(getRandom(100));
+            an2.push(getRandom(100));
         }
+        console.log(an1);
+        console.log(an2);
         an1_up = an1.filter(function (value) {
             return value > 50;
         })
         an2_up = an2.filter(function (value) {
             return value > 50;
         })
+        console.log(an1_up.length);
+        console.log(an2_up.length);
         if (an1_up.length >= an2_up.length) {
             answer_checkit.push(an[0]);
             answer_checkit.push(an[1]);
@@ -194,6 +197,12 @@
         }
     }
 
+    function showAll() {
+        player.forEach(function(answer,index){
+            console.log('player' + (index+1) + ':' + answer_checkit[answer] );
+        })
+    }
+
     /*切換畫面處理*/
     function render(e) {
         e.preventDefault();
@@ -203,7 +212,8 @@
                 case '#previous':
                     target.nextElementSibling.setAttribute('href', pre_href);
                     page_container.innerHTML = page_previous_array.pop();
-                    console.log(page_previous_array);
+                    def();
+                    // console.log(page_previous_array);
                     if (button_previous.nextElementSibling.getAttribute('href') === '#answer') {
                         button_group.firstElementChild.remove();
                     }
@@ -239,10 +249,11 @@
                     // page_previous_array.push(page_previous);
                     page_container.innerHTML = page_checkit2;
                     console.log('checkit');
+                    showAll();
                     // console.log(game_info);
                     break;
                 case '#next':
-                    if (player_conunt < ((6 * 2) - 1)) {
+                    if (player_conunt < (( game_info[0] * 2) - 1)) {
                         player_conunt++;
                         console.log(player_conunt);
                         if (ischecked != true && count <= game_info[0]) {
