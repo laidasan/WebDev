@@ -7,10 +7,16 @@
     let player_conunt = 0;
     let ischecked = false;
 
+    let group = document.querySelector('.group');
+    let range_ary = document.querySelectorAll('.range');
+    let range_val_ary = document.querySelectorAll('.range-value');
+
+    let game_info = []; //gamers bad white [custom(0) or default(1)]
+
     /*previous button*/
     let button_previous = document.createElement('a');
     button_previous.setAttribute('href', '#previous');
-    button_previous.style = 'margin-right:30px;';
+    button_previous.style = 'margin-right:15px;';
     button_previous.className = 'button';
     button_previous.innerText = 'pre';
     /*previous button*/
@@ -41,7 +47,7 @@
                             <div class="group">
                                 <div class="wrap u-margin-bottom-medium">
                                     <h2 class="heading-secondary">預設</h2>
-                                    <input type="radio" name="radio" id="default" class="radio-button radio-default">
+                                    <input type="radio" name="radio" id="default" class="radio-button radio-default" checked>
                                     <label for="default" class="radio-label default"></label>
                                 </div>
                             </div>
@@ -64,6 +70,7 @@
     <div class="player">玩家6</div>
     </div>`;
 
+    /*切換畫面處理*/
     function render(e) {
         e.preventDefault();
         let target = e.target;
@@ -79,13 +86,19 @@
                     console.log('previous');
                     break;
                 case '#answer':
+                    /*處理了button之後處理畫面render*/
+                    /*view render將當前的畫面存到陣列裡，以便previous時回復*/
                     pre_href = target.getAttribute('href');
                     target.setAttribute('href', '#checkit');
                     button_group.insertBefore(button_previous, button_group.childNodes[0]);
                     page_previous = document.querySelector('.container').innerHTML;
                     page_previous_array.push(page_previous);
-                    console.log(page_previous_array[0]);
+                    // console.log(page_previous_array[0]);
                     page_container.innerHTML = page_answer;
+                    range_ary.forEach(function (ragne, index) {
+                        game_info[index] = ragne.value;
+                        console.log(game_info);
+                    });
                     console.log('answer');
                     break;
                 case '#checkit':
@@ -99,7 +112,7 @@
                     console.log('checkit');
                     break;
                 case '#next':
-                    if (player_conunt < 11) {
+                    if (player_conunt < ((6 * 2) - 1)) {
                         player_conunt++;
                         console.log(player_conunt);
                         if (ischecked != true) {
@@ -111,17 +124,94 @@
                             page_container.removeChild(p_ans);
                         }
                     } else {
-                        button_group.innerHTML='';
+                        button_group.innerHTML = '';
                         page_container.innerHTML = page_gaming;
                         console.log('game start');
                     }
-
                     break;
             }
         }
     }
 
+    /*白板開關轉換*/
+    function isopen(value) {
+        let isopen_str;
+        switch (value) {
+            case '0':
+                // range_val_white.innerText = '關';
+                isopen_str = '關';
+                break;
+            case '1':
+                // range_val_white.innerText = '開';
+                isopen_str = '開';
+                break;
+            default:
+                console.log('檢查傳入型態(需為字串)，或是傳入值不為0或1');
+                break;
+        }
+        return isopen_str;
+    }
+
+    /*選擇人數--改變range後數字*/
+    function range_change(e) {
+        let target = e.target;
+        if (target.classList[0] === 'range') {
+            switch (target.getAttribute('name')) {
+                case 'gamers':
+                    range_val_ary[0].innerText = target.value;
+                    break;
+                case 'bad':
+                    range_val_ary[1].innerText = target.value;
+                    break;
+                case 'white':
+                    range_val_ary[2].innerText = isopen(target.value);
+                    break;
+            }
+            console.log('change sucess');
+        } else if (target.getAttribute('name') === 'radio') {
+            switch (target.getAttribute('id')) {
+                case 'custom':
+                    game_info[3] = '0';
+                    console.log('custom');
+                    break;
+                case 'default':
+                    game_info[3] = '1';
+                    console.log('default');
+                    break;
+                default:
+                    game_info[3] = '1';
+                    console.log('we can find');
+                    break;
+            }
+            console.log(game_info);
+        } else {
+            console.log('change fail');
+        }
+    }
+
+    /*一開始預設設定*/
+    function def() {
+        let range_ary_white = range_ary[range_ary.length - 1];
+        let range_val_white = range_val_ary[range_val_ary.length - 1];
+        range_ary.forEach(function (range, index) {
+            range_val_ary[index].innerText = range.getAttribute('value');
+        });
+
+        /*處理白板開關*/
+        switch (range_ary[range_ary.length - 1].value) {
+            case '0':
+                range_val_white.innerText = isopen(range_ary_white.value);
+                break;
+            case '1':
+                range_val_white.innerText = isopen(range_ary_white.value);
+                break;
+        }
+
+    }
+
     $(document).ready(function () {
+        def();
         button_group.addEventListener('click', render, false);
+        page_container.addEventListener('change', range_change, false);
     });
 }

@@ -36,11 +36,20 @@
                 display: inline-block;
             }
         }
+
+        .range-value {
+            display: inline-block;
+            position: relative;
+            left: 15px;
+            width: 30px;
+            
+        }
     }
 
     .wrap{
         display: inline-block;
         position: relative;
+        left: -21px;
         // box-shadow: 0 0 0 1px #ffffff;
         .radio {
 

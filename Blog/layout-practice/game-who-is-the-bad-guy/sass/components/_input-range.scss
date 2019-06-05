@@ -4,6 +4,7 @@ input[type="range"] {
     outline: none;
     overflow: hidden;
     position: relative;
+    left: 10px;
 
     &::before {
         content: '';
