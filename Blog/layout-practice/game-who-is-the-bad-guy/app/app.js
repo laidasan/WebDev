@@ -129,6 +129,7 @@
                 console.log('放入臥底');
             }
         }
+        console.log(player);
         return player;
     }
 
@@ -198,8 +199,8 @@
     }
 
     function showAll() {
-        player.forEach(function(answer,index){
-            console.log('player' + (index+1) + ':' + answer_checkit[answer] );
+        player.forEach(function (answer, index) {
+            console.log('player' + (index + 1) + ':' + answer_checkit[answer]);
         })
     }
 
@@ -217,6 +218,8 @@
                     if (button_previous.nextElementSibling.getAttribute('href') === '#answer') {
                         button_group.firstElementChild.remove();
                     }
+                    console.log(range_val_ary[0]);
+                    console.log(game_info[0]);
                     console.log('previous');
                     break;
                 case '#answer':
@@ -253,7 +256,7 @@
                     // console.log(game_info);
                     break;
                 case '#next':
-                    if (player_conunt < (( game_info[0] * 2) - 1)) {
+                    if (player_conunt < ((game_info[0] * 2) - 1)) {
                         player_conunt++;
                         console.log(player_conunt);
                         if (ischecked != true && count <= game_info[0]) {
@@ -295,6 +298,16 @@
         return isopen_str;
     }
 
+    //清空
+    function clearInfo() {
+        player.length = 0;
+        player_conunt = 0;
+        count = 0;
+        ischecked = false;
+        answer_checkit.length = 0;
+        console.log('clear');
+    }
+
     /*選擇人數--改變range後數字*/
     function range_change(e) {
         let target = e.target;
@@ -302,6 +315,7 @@
             switch (target.getAttribute('name')) {
                 case 'gamers':
                     range_val_ary[0].innerText = target.value;
+                    console.log('change span');
                     break;
                 case 'bad':
                     range_val_ary[1].innerText = target.value;
@@ -311,6 +325,10 @@
                     break;
             }
             console.log('change sucess');
+            // console.log(target.value);
+            console.log(range_val_ary[0]);
+            // console.log(target.nextElementSibling);
+
         } else if (target.getAttribute('name') === 'radio') {
             switch (target.getAttribute('id')) {
                 case 'custom':
@@ -334,8 +352,15 @@
 
     /*一開始預設設定*/
     function def() {
+        //清空資料
+        clearInfo();
+        //存儲range 與 range_value  (ragge bar & ragne span)
+        range_ary = document.querySelectorAll('.range');
+        range_val_ary = document.querySelectorAll('.range-value');
+        //找白板的range 與 span
         let range_ary_white = range_ary[range_ary.length - 1];
         let range_val_white = range_val_ary[range_val_ary.length - 1];
+        //range.vaule抓進span
         range_ary.forEach(function (range, index) {
             range_val_ary[index].innerText = range.getAttribute('value');
         });
