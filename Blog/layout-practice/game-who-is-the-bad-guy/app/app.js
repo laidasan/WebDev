@@ -16,7 +16,7 @@
 
     const answer_default = ['橘子,柳丁', '機車,汽車'];
     const answer_checkit = []; //[臥底,平民]
-    const player = [];  //人數六人中誰為民誰為臥
+    const player = [];  //人數六人中誰為民誰為臥 0 民;1 臥
 
 
     /*previous button*/
@@ -67,14 +67,7 @@
     let page_checkit2 = `<h2 class="heading-secondary u-margin-bottom-medium">玩家1</h2>
     <p class="player-info u-margin-bottom-medium">點擊看謎底，再點擊隱藏給下一位玩家</p>`;
 
-    let page_gaming = `<div class="player-wrap u-margin-bottom-medium">
-    <a href="#" class="player u-margin-bottom-medium">玩家1</a>
-    <a href="#" class="player u-margin-bottom-medium">玩家2</a>
-    <a href="#" class="player u-margin-bottom-medium">玩家3</a>
-    <a href="#" class="player u-margin-bottom-medium">玩家4</a>
-    <a href="#" class="player ">玩家5</a>
-    <a href="#" class="player">玩家6</a>
-    </div>`;
+    let page_gaming = `<div class="player-wrap u-margin-bottom-medium"></div>`;
 
 
     /*取亂數 0~value_range*/
@@ -204,80 +197,7 @@
         })
     }
 
-    /*切換畫面處理*/
-    function render(e) {
-        e.preventDefault();
-        let target = e.target;
-        if (target.className = 'button') {
-            switch (target.getAttribute('href')) {
-                case '#previous':
-                    target.nextElementSibling.setAttribute('href', pre_href);
-                    page_container.innerHTML = page_previous_array.pop();
-                    def();
-                    // console.log(page_previous_array);
-                    if (button_previous.nextElementSibling.getAttribute('href') === '#answer') {
-                        button_group.firstElementChild.remove();
-                    }
-                    console.log(range_val_ary[0]);
-                    console.log(game_info[0]);
-                    console.log('previous');
-                    break;
-                case '#answer':
-                    /*處理了button之後處理畫面render*/
-                    /*view render將當前的畫面存到陣列裡，以便previous時回復*/
-                    pre_href = target.getAttribute('href');
-                    target.setAttribute('href', '#checkit');
-                    button_group.insertBefore(button_previous, button_group.childNodes[0]);
-                    page_previous = document.querySelector('.container').innerHTML;
-                    page_previous_array.push(page_previous);
-                    // console.log(page_previous_array[0]);
-                    page_container.innerHTML = page_answer;
-                    range_ary.forEach(function (ragne, index) {
-                        game_info[index] = ragne.value;
-                        console.log(game_info);
-                    });
-                    game_info[3] = '1';
-                    checkit();
-                    console.log(typeof player[0]);
-                    console.log('answer');
 
-                    break;
-                case '#checkit':
-                    pre_href = target.getAttribute('href');
-                    target.setAttribute('href', '#checkit');
-                    console.log(decideBadguy());
-                    button_group.innerHTML = '';
-                    button_group.appendChild(button_next);
-                    // page_previous = document.querySelector('.container').innerHTML;
-                    // page_previous_array.push(page_previous);
-                    page_container.innerHTML = page_checkit2;
-                    console.log('checkit');
-                    showAll();
-                    // console.log(game_info);
-                    break;
-                case '#next':
-                    if (player_conunt < ((game_info[0] * 2) - 1)) {
-                        player_conunt++;
-                        console.log(player_conunt);
-                        if (ischecked != true && count <= game_info[0]) {
-                            ischecked = true;
-                            showPlayer(count);
-                            // page_container.insertBefore(p_ans, page_container.children[1]);
-                            count++
-                            console.log('checked');
-                        } else {
-                            ischecked = false;
-                            page_container.removeChild(p_ans);
-                        }
-                    } else {
-                        button_group.innerHTML = '';
-                        page_container.innerHTML = page_gaming;
-                        console.log('game start');
-                    }
-                    break;
-            }
-        }
-    }
 
     /*白板開關轉換*/
     function isopen(value) {
@@ -305,7 +225,52 @@
         count = 0;
         ischecked = false;
         answer_checkit.length = 0;
+        game_info.length = 0;
         console.log('clear');
+    }
+
+
+    //add gaming player 
+    function addPlayer() {
+        function player(player_str) {
+            let player_a = document.createElement('a');
+            player_a.className = 'player u-margin-bottom-medium';
+            player_a.setAttribute('href', '#');
+            player_a.textContent = player_str;
+            return player_a;
+        }
+
+        let player_wrap = document.querySelector('.player-wrap');
+        console.log(player_wrap);
+        for (let i = 0; i < game_info[0]; i++) {
+            let player_str = '玩家';
+            player_str = player_str + (i + 1).toString();
+            player_wrap.appendChild(player(player_str));
+            console.log('addSucess');
+        }
+    }
+    //show player who was killed.
+    function kill(e) {
+        let target = e.target;
+        if (target.classList[0] === 'player') {
+            let player_str = target.textContent;
+            if(window.confirm('really? you sure?')) {
+                let player_num = player_str.split('玩家')[1];
+                switch(player[player_num -1]) {
+                    case 0:
+                        target.textContent = '平民';
+                        break;
+                    case 1:
+                        target.textContent = '臥底';
+                        break;
+                    default:
+                        console.log('殺');
+                        break;
+                }
+            }else {
+                console.log('不殺了不殺了');
+            }
+        }
     }
 
     /*選擇人數--改變range後數字*/
@@ -377,10 +342,89 @@
 
     }
 
+
+    /*切換畫面處理*/
+    function render(e) {
+        e.preventDefault();
+        let target = e.target;
+        if (target.className = 'button') {
+            switch (target.getAttribute('href')) {
+                case '#previous':
+                    target.nextElementSibling.setAttribute('href', pre_href);
+                    page_container.innerHTML = page_previous_array.pop();
+                    def();
+                    // console.log(page_previous_array);
+                    if (button_previous.nextElementSibling.getAttribute('href') === '#answer') {
+                        button_group.firstElementChild.remove();
+                    }
+                    console.log(range_val_ary[0]);
+                    console.log(game_info[0]);
+                    console.log('previous');
+                    break;
+                case '#answer':
+                    /*處理了button之後處理畫面render*/
+                    /*view render將當前的畫面存到陣列裡，以便previous時回復*/
+                    pre_href = target.getAttribute('href');
+                    target.setAttribute('href', '#checkit');
+                    button_group.insertBefore(button_previous, button_group.childNodes[0]);
+                    page_previous = document.querySelector('.container').innerHTML;
+                    page_previous_array.push(page_previous);
+                    // console.log(page_previous_array[0]);
+                    page_container.innerHTML = page_answer;
+                    range_ary.forEach(function (ragne, index) {
+                        game_info[index] = ragne.value;
+                        console.log(game_info);
+                    });
+                    game_info[3] = '1';
+                    checkit();
+                    console.log(typeof player[0]);
+                    console.log('answer');
+
+                    break;
+                case '#checkit':
+                    pre_href = target.getAttribute('href');
+                    target.setAttribute('href', '#checkit');
+                    console.log(decideBadguy());
+                    button_group.innerHTML = '';
+                    button_group.appendChild(button_next);
+                    // page_previous = document.querySelector('.container').innerHTML;
+                    // page_previous_array.push(page_previous);
+                    page_container.innerHTML = page_checkit2;
+                    console.log('checkit');
+                    showAll();
+                    // console.log(game_info);
+                    break;
+                case '#next':
+                    if (player_conunt < ((game_info[0] * 2) - 1)) {
+                        player_conunt++;
+                        console.log(player_conunt);
+                        if (ischecked != true && count <= game_info[0]) {
+                            ischecked = true;
+                            showPlayer(count);
+                            // page_container.insertBefore(p_ans, page_container.children[1]);
+                            count++
+                            console.log('checked');
+                        } else {
+                            ischecked = false;
+                            page_container.removeChild(p_ans);
+                            console.log('removeChild');
+                        }
+                    } else {
+                        button_group.innerHTML = '';
+                        page_container.innerHTML = page_gaming;
+                        addPlayer();
+                        console.log('game start');
+                    }
+                    break;
+            }
+        }
+    }
+
+
     $(document).ready(function () {
         def();
         button_group.addEventListener('click', render, false);
         page_container.addEventListener('change', range_change, false);
-
+        page_container.addEventListener('click', kill, false);
     });
 }

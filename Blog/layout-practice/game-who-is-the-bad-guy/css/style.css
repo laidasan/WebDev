@@ -145,6 +145,9 @@ input[type="range"] {
     font-size: 6rem;
     line-height: 150px;
     text-decoration: none;
-    color: #fff; }
+    color: #fff;
+    transition: all .6s; }
     .game .player-wrap .player:link:nth-child(odd), .game .player-wrap .player:visited:nth-child(odd) {
       margin-right: 30px; }
+  .game .player-wrap .player:hover, .game .player-wrap .player:visited {
+    background-color: #ee4540; }
