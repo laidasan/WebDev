@@ -17,6 +17,9 @@
     const answer_default = ['橘子,柳丁', '機車,汽車'];
     const answer_checkit = []; //[臥底,平民]
     const player = [];  //人數六人中誰為民誰為臥 0 民;1 臥
+    let bad_remaining;
+    let good_remaining;
+    let gameover = false;
 
 
     /*previous button*/
@@ -70,6 +73,13 @@
     let page_gaming = `<div class="player-wrap u-margin-bottom-medium"></div>`;
 
 
+    let teacherA;
+    let teacherB;
+    function test() {
+        console.log(teacherA + ', ' + teacherB);
+    };
+    test();
+
     /*取亂數 0~value_range*/
     function getRandom(value_range) {
         value_range = value_range || 20;
@@ -77,7 +87,7 @@
     }
 
     /*決定玩家謎底(誰是臥底)*/
-    function checkit() {
+    function decideSpy() {
         let bad_count = 0;
         let good_count = 0;
         let notfull = true;
@@ -143,7 +153,7 @@
     // console.log(decideAnswer()[0]);
 
     /*決定謎底哪個詞為臥底*/
-    function decideBadguy() {
+    function decideBadAnswer() {
         let an = decideAnswer();
         let an1 = []
         let an2 = []
@@ -226,6 +236,7 @@
         ischecked = false;
         answer_checkit.length = 0;
         game_info.length = 0;
+        gameover = false;
         console.log('clear');
     }
 
@@ -249,30 +260,63 @@
             console.log('addSucess');
         }
     }
+
+
+    //check game is over?
+    function checkWinner(bad_remaining, good_remaining) {
+        if (bad_remaining == 0 || (bad_remaining == 1 && good_remaining == 1)) {
+            window.alert('平民獲勝\n' + '平民:' + answer_checkit[0] + '\n臥底:' + answer_checkit[1]);
+            gameover = true;
+        } else if (good_remaining == 0) {
+            window.alert('臥底獲勝');
+            gameover = true;
+        } else {
+            console.log('game continute!');
+        }
+    }
+
+    
+
     //show player who was killed.
     function kill(e) {
+
         let target = e.target;
+        e.preventDefault();
         if (target.classList[0] === 'player') {
             let player_str = target.textContent;
-            if(window.confirm('really? you sure?')) {
+            console.log(bad_remaining);
+            console.log(good_remaining);
+            if (window.confirm('really? you sure?')) {
                 let player_num = player_str.split('玩家')[1];
-                switch(player[player_num -1]) {
+                switch (player[player_num - 1]) {
                     case 0:
                         target.textContent = '平民';
+                        good_remaining--;
                         break;
                     case 1:
                         target.textContent = '臥底';
+                        bad_remaining--;
                         break;
                     default:
                         console.log('殺');
                         break;
                 }
-            }else {
+            } else {
                 console.log('不殺了不殺了');
             }
         }
+        checkWinner(bad_remaining,good_remaining);
     }
 
+    //CheckGameOver
+    function checkGameOver(e) {
+        if(gameover != true) {
+            kill(e);
+        }else {
+            console.log('Game is over!');
+        }
+    }
+    
     /*選擇人數--改變range後數字*/
     function range_change(e) {
         let target = e.target;
@@ -376,7 +420,9 @@
                         console.log(game_info);
                     });
                     game_info[3] = '1';
-                    checkit();
+                    decideSpy();
+                    bad_remaining = game_info[1];
+                    good_remaining = game_info[0] - game_info[1];
                     console.log(typeof player[0]);
                     console.log('answer');
 
@@ -384,7 +430,7 @@
                 case '#checkit':
                     pre_href = target.getAttribute('href');
                     target.setAttribute('href', '#checkit');
-                    console.log(decideBadguy());
+                    console.log(decideBadAnswer());
                     button_group.innerHTML = '';
                     button_group.appendChild(button_next);
                     // page_previous = document.querySelector('.container').innerHTML;
@@ -425,6 +471,12 @@
         def();
         button_group.addEventListener('click', render, false);
         page_container.addEventListener('change', range_change, false);
-        page_container.addEventListener('click', kill, false);
+        page_container.addEventListener('click', checkGameOver, false);
     });
+
+    window.onbeforeunload = function(e) {
+        let leave = '確定離開?資料將會遺失!';
+        e.returnValue = leave;
+        return leave;
+    }
 }
