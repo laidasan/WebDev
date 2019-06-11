@@ -298,15 +298,15 @@
 // console.log(show());
 
 const person = {
-    name: 'joe'
+    name: 'joe',
     // 'name.second': 'Shelly',
     // age:40,
     // valueOf:function() {
     //     return this.age;
     // },
-    // toString:function() {
-    //     return this.name;
-    // }
+    toString:function() {
+        return this.name;
+    }
 }
 const person2 = {
     name: 'Joe'
@@ -335,3 +335,10 @@ console.log(person == person3);
 // }
 // console.log(60 + person);
 
+function test(num1,num2) {
+    for(let i = 0;i < arguments.length;i++){
+        console.log(arguments[i]);
+    }
+}
+// test(10,20,30);
+console.log(person.toString());
