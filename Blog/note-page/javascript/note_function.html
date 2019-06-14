@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <title>Note Home List</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon"></span>
+        </label>
+        <div class="navigation__background"></div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="header">
+            <div class="header__text-box header__text-box--javascript">
+                <h1 class="heading-primary">My Note</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="note-box">
+            <div class="note__title">
+                <h2 class="heading-secondary heading-secondary--javascript">function</h2>
+            </div>
+            <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
+                <p class="note__content u-margin-bottom-p">在上一篇<a href="./note_object-array.html"
+                        class="note__link">物件與陣列裡</a>或是在更之前的文章裡面會看到function...等等的函式，今天就來介紹「function」到底是什麼東西來著!!</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">function宣告</h3>
+                <p class="note__content u-margin-bottom-p">故事</p>
+                <p class="note__content u-margin-bottom-p">我們可以這樣有名字的宣告:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function test(){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log('test');</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    通常我們為需要用到函式的時候，就是需要重複執行某些內容的時候，就猶如撰寫Java把重複的內容封裝成一個方法，優化程式碼，function也可以做到這樣的事情，除此之外，函式也可以傳入引數，比如說:
+                </p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">return num1 + num2;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(test(10,20) );</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">這邊可以注意一下，如果function沒有return東西的話，那麼在就會回傳undefined，但上們我們有return
+                    num1 + num2，所以console出來是30唷!可以試試看console出沒有return的function(return undefined)!</p>
+                <p class="note__content u-margin-bottom-p">我們再來試一下，如果傳入的引數只有一個呢?</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">return num1 + num2;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(test(10) );</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">我們會得到「NaN」，奇怪勒?會什麼會是NaN呀!我們把num1與num2都console出來看看!</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(num1);</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(num2);</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(test(10) );</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    console出來的結果會是「10」還有「undefined」，也就是說傳入較少的引數是可行的，只不過不足的部分是undefined，那如果傳入較多的引數呢?比如說:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(num1);</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(num2);</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(test(10,20,30) );</p>
+                </div>
+                <p class="note__content">會發現程式還是跑得起來，不過出來的結果是「10」與「20」，奇怪了!那第三個引數跑哪去了呢?</p>
+                <p class="note__content u-margin-bottom-p">
+                    其實，在函式內會自動宣告一個arguments名稱參考至具陣列外觀的物件(之前有提過javascript裡沒有真正的陣列(Array)物件，只不過是外觀相像而已)，而它帶有所有傳入的引數，所以我們可以這樣:
+                </p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">for(let i = 0;i &lt;
+                        arguments.length;i++){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">console.log(arguments[i]);</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">test(10,20,30);</p>
+                </div>
+                <p class="note__content u-margin-bottom-small">這樣就會看到我們所有傳入的引數囉!!</p>
+                <h3 class="heading-tertiary u-margin-bottom-p">This</h3>
+                <p class="note__content u-margin-bottom-small">上一篇 <a href="./note_object-array.html"
+                        class="note__link">物件與陣列</a>裡或是更之前的文章，我們有使用到「this」，像是:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">const person = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name: 'Joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">toString: function(){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">return this.name;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(person.toString());</p>
+                </div>
+                <p class="note__content u-margin-bottom-small">這裡的this是什麼意思呢?</p>
+            </div>
+        </section>
+    </main>
+    <script src="./app.js"></script>
+</body>
+
+</html>

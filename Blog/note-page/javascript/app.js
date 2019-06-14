@@ -298,15 +298,15 @@
 // console.log(show());
 
 const person = {
-    name: 'joe'
+    name: 'joe',
     // 'name.second': 'Shelly',
     // age:40,
     // valueOf:function() {
     //     return this.age;
     // },
-    // toString:function() {
-    //     return this.name;
-    // }
+    toString:function() {
+        return this.name;
+    }
 }
 const person2 = {
     name: 'Joe'
@@ -315,9 +315,9 @@ const obj = {
     x : 10
 }
 const person3 = person;
-console.log(person == obj);
-console.log(person == person2);
-console.log(person == person3);
+// console.log(person == obj);
+// console.log(person == person2);
+// console.log(person == person3);
 
 // console.log(person['name.second']);
 
@@ -335,3 +335,68 @@ console.log(person == person3);
 // }
 // console.log(60 + person);
 
+// function test(num1,num2) {
+//     for(let i = 0;i < arguments.length;i++){
+//         console.log(arguments[i]);
+//     }
+// }
+// test(10,20,30);
+// console.log(person.toString());
+
+
+
+
+const cashCard1 = {
+    id: 1,
+    money: 2000
+}
+const cashCard2 = {
+    id:2,
+    money:3000
+}
+
+let addMondey = 600;
+
+
+/* no function */
+// if(cashCard1.money >= 0) {
+//     cashCard1.money += addMondey;
+//     console.log('CashCard1:' + cashCard1.money);
+// }else {
+//     console.log('fail');
+// }
+
+// if(cashCard2.money >= 0) {
+//     cashCard2.money += addMondey;
+//     console.log('CashCard1:' + cashCard2.money);
+// }else {
+//     console.log('fail');
+// }
+
+
+/* use function */
+// function add(cashCard) {
+//     let addMondey = 500;
+//     if(cashCard.money >=0){
+//         cashCard.money += addMondey;
+//         console.log('success! your money is ' + cashCard.money + ' now!');
+//     }else {
+//         console.log('fail');
+//     }
+// }
+
+// add(cashCard1);
+
+/* this */
+// function add () {
+//     let addMondey = 600;
+//     this.money += addMondey;
+//     console.log(this.money);
+// }
+// function add(addMondey) {
+//     this.money += addMondey;
+//     console.log(this.money);
+// }
+/* call() & apply() */
+// add.call(cashCard1,600);
+// add.apply(cashCard1,[600]);
