@@ -261,7 +261,7 @@
         }
     }
 
-
+    
     //check game is over?
     function checkWinner(bad_remaining, good_remaining) {
         if (bad_remaining == 0 || (bad_remaining == 1 && good_remaining == 1)) {

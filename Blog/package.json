@@ -6,12 +6,14 @@
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "compile:sass": "node-sass sass/main.scss css/style.css",
-    "layout:sass": "node-sass layout-practice/practice-526/sass/main.scss layout-practice/practice-526/css/style.css"
+    "layout:sass": "node-sass layout-practice/game-who-is-the-bad-guy/sass/main.scss layout-practice/game-who-is-the-bad-guy/css/style.css -w",
+    "uglify:js": "uglifyjs layout-practice/game-who-is-the-bad-guy/app/app.js -o layout-practice/game-who-is-the-bad-guy/app2/index.js -c"
   },
   "author": "laidasan",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "uglify-js": "^3.6.0"
   },
   "dependencies": {
     "jquery": "^3.3.1"
