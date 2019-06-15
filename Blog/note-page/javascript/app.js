@@ -400,3 +400,29 @@ let addMondey = 600;
 /* call() & apply() */
 // add.call(cashCard1,600);
 // add.apply(cashCard1,[600]);
+
+/* constructor */
+function CashCard(ID,money) {
+    this.id = ID;
+    this.money = money;
+    this.toString = function() {
+        return 'ID: ' + this.id + '\nMoney: ' + this.money;
+    }
+}
+
+let cashcard3 = new CashCard('0100','1000');
+// console.log(cashcard3.toString() );
+
+
+/* prototype */
+function CashCard_pro(ID,money) {
+    this.id = ID;
+    this.money = money;
+}
+CashCard_pro.prototype.toString = function() {
+    // return '[' + this.id + ',' + this.money + ']';
+    return 'ID: ' + this.id + '\nMoney: ' + this.money;
+}
+
+let cashcard4 = new CashCard_pro('0101','1000');
+console.log(cashcard4.toString() );
