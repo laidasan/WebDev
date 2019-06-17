@@ -348,7 +348,10 @@ const person3 = person;
 
 const cashCard1 = {
     id: 1,
-    money: 2000
+    money: 2000,
+    addMoney: function(mPlus) {
+        return this.money += mPlus;
+    }
 }
 const cashCard2 = {
     id:2,
@@ -426,3 +429,13 @@ CashCard_pro.prototype.toString = function() {
 
 let cashcard4 = new CashCard_pro('0101','1000');
 console.log(cashcard4.toString() );
+
+
+function test(mPlus) {
+    // let mPlus = 500;
+    console.log(this.money);
+    return this.money += mPlus;
+}
+console.log(test.call(cashCard1,500));
+
+console.log(cashCard1.addMoney.call(cashCard2,10000));

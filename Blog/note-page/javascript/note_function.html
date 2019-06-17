@@ -46,33 +46,92 @@
                 <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
                 <p class="note__content u-margin-bottom-p">在上一篇<a href="./note_object-array.html"
                         class="note__link">物件與陣列裡</a>或是在更之前的文章裡面會看到function...等等的函式，今天就來介紹「function」到底是什麼東西來著!!</p>
-                <h3 class="heading-tertiary u-margin-bottom-small">function宣告</h3>
-                <p class="note__content u-margin-bottom-p">故事</p>
-                <p class="note__content u-margin-bottom-p">我們可以這樣有名字的宣告:</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">Function宣告</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    故事是這樣的，小明是個對寫coding有那麼點興趣的小小工程師，目前正在練習寫javasciprt，某天他寫著寫著寫出了下面這些東西:</p>
                 <div class="note__code u-margin-bottom-small">
-                    <p class="note__content u-color-white u-text-indent-code">function test(){</p>
-                    <p class="note__content u-color-white u-text-indent-code2">console.log('test');</p>
+                    <p class="note__content u-color-white u-text-indent-code">const CashCard1 = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">ID : '0100',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">money : 300</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code"></p>
+                    <p class="note__content u-color-white u-text-indent-code">const CashCard2 = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">ID : '0101'</p>
+                    <p class="note__content u-color-white u-text-indent-code2">money : 500</p>
                     <p class="note__content u-color-white u-text-indent-code">}</p>
                 </div>
-                <p class="note__content u-margin-bottom-p">
-                    通常我們為需要用到函式的時候，就是需要重複執行某些內容的時候，就猶如撰寫Java把重複的內容封裝成一個方法，優化程式碼，function也可以做到這樣的事情，除此之外，函式也可以傳入引數，比如說:
+                <p class="note__content u-margin-bottom-p">這裡有兩張CashCard，都各有自己的ID與餘額，之後小名又寫了方法，來增加這兩張卡片的餘額，最一開始他是這樣寫的
                 </p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">let mPlus = 500;</p>
+                    <p class="note__content u-color-white u-text-indent-code">if(CashCard1.money >=0){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">CashCard1.money += mPlus;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">if(CashCard2.money >=0){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">CashCard2.money += mPlus;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    但小明很快了的就發現了個問題:「重複的程式碼太多了，且做了相同的事情」，重複對於程式碼來說是個不好聞的味道(臭)，小明就去山里的瀑布底下，誠心思考了七天，突然靈光乍現!「只要把相同的地方包裝起來，需要的時候再呼叫不叫好了嗎?」回家後把程式碼改成下面這個樣子:
+                </p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">functin addMoney(cashcard,mPlus){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">if(cashcard.money >= 0){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">cashcard.money += mPlus</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code"></p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    這樣子將重複的部分包起來，變成了一個名為"addMoney"的方法，當我們需要補充餘額的時候只需要呼叫這個方法，並傳入我們要充值的卡片與額度就可拉!!這就是function的"使用方式之一"噢!
+                </p>
+                <p class="note__content u-margin-bottom-p">我們除了上面那樣子有名子的宣告函式外，也可以這樣的宣告:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">let addMoney = function() {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">//do Something</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">或許也會看過像是這樣子的結構，不過這樣的方式我們之後再說明為何這麼做:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">(function(){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">//do Something</p>
+                    <p class="note__content u-color-white u-text-indent-code">})()</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">
+                    function也能夠return，這樣直接呼叫函式時就會回傳return的值，比如下面呼叫name()，console出來的結果是Joe:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function name(){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">return 'Joe';</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.loe(name());</p>
+                </div>
+                <p class="note__content u-margin-bottom-small u-color-red u-text-indent-p">
+                    這邊可以注意一下，如果function沒有return的話，就會return "undefined"。</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">Function 引數</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    通常我們為需要用到函式的時候，就是需要重複執行某些內容的時候，就猶如撰寫Java把重複的內容封裝成一個方法，優化程式碼，function也可以做到這樣的事情。
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    小明使用的function傳入的cashcard與mPlus，我們可以稱作為引數(其實不必太在意名字，可以想像成是我們需要什麼東西，把它傳進來的一個動作，就如他人需要剪刀的時候，你把剪刀傳遞給他的一個動作一樣)
+                </p>
+                <p class="note__content u-margin-bottom-p">假如我們有下面這個函式，用來相加兩個數字用的:</p>
                 <div class="note__code u-margin-bottom-small">
                     <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
                     <p class="note__content u-color-white u-text-indent-code2">return num1 + num2;</p>
                     <p class="note__content u-color-white u-text-indent-code">}</p>
                     <p class="note__content u-color-white u-text-indent-code">console.log(test(10,20) );</p>
                 </div>
-                <p class="note__content u-margin-bottom-p">這邊可以注意一下，如果function沒有return東西的話，那麼在就會回傳undefined，但上們我們有return
-                    num1 + num2，所以console出來是30唷!可以試試看console出沒有return的function(return undefined)!</p>
-                <p class="note__content u-margin-bottom-p">我們再來試一下，如果傳入的引數只有一個呢?</p>
+                <p class="note__content u-margin-bottom-p">當我們需要使用的時候就像console裡面的直接呼叫並傳入我們需要相加的兩個數字就好， <span
+                        class="u-color-red">test(10,20)</span>。</p>
+                <p class="note__content">但是小明是個很健忘的人，有一次他只傳入的一個數字</p>
                 <div class="note__code u-margin-bottom-small">
                     <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
                     <p class="note__content u-color-white u-text-indent-code2">return num1 + num2;</p>
                     <p class="note__content u-color-white u-text-indent-code">}</p>
-                    <p class="note__content u-color-white u-text-indent-code">console.log(test(10) );</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log( test(10) );</p>
                 </div>
-                <p class="note__content u-margin-bottom-p">我們會得到「NaN」，奇怪勒?會什麼會是NaN呀!我們把num1與num2都console出來看看!</p>
+                <p class="note__content u-margin-bottom-p">結果得到了「NaN」這個回傳值，奇怪勒?會什麼會是NaN呀於我們幫小明把num1與num2都console出來看看!
+                </p>
                 <div class="note__code u-margin-bottom-small">
                     <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
                     <p class="note__content u-color-white u-text-indent-code2">console.log(num1);</p>
@@ -89,9 +148,9 @@
                     <p class="note__content u-color-white u-text-indent-code">}</p>
                     <p class="note__content u-color-white u-text-indent-code">console.log(test(10,20,30) );</p>
                 </div>
-                <p class="note__content">會發現程式還是跑得起來，不過出來的結果是「10」與「20」，奇怪了!那第三個引數跑哪去了呢?</p>
-                <p class="note__content u-margin-bottom-p">
-                    其實，在函式內會自動宣告一個arguments名稱參考至具陣列外觀的物件(之前有提過javascript裡沒有真正的陣列(Array)物件，只不過是外觀相像而已)，而它帶有所有傳入的引數，所以我們可以這樣:
+                <p class="note__content u-margin-bottom-p">會發現程式還是跑得起來，不過出來的結果是「10」與「20」，奇怪了!那第三個引數跑哪去了呢?</p>
+                <p class="note__content u-margin-bottom-p  u-text-indent-p">
+                    其實，在函式內會自動宣告一個"arguments"名稱參考至具陣列外觀的物件(之前有提過javascript裡沒有真正的陣列(Array)物件，只不過是外觀相像而已)，而它帶有所有傳入的引數，所以我們可以這樣來console出所有傳入的引數:
                 </p>
                 <div class="note__code u-margin-bottom-small">
                     <p class="note__content u-color-white u-text-indent-code">function test(num1,num2){</p>
@@ -102,20 +161,72 @@
                     <p class="note__content u-color-white u-text-indent-code">}</p>
                     <p class="note__content u-color-white u-text-indent-code">test(10,20,30);</p>
                 </div>
-                <p class="note__content u-margin-bottom-small">這樣就會看到我們所有傳入的引數囉!!</p>
-                <h3 class="heading-tertiary u-margin-bottom-p">This</h3>
-                <p class="note__content u-margin-bottom-small">上一篇 <a href="./note_object-array.html"
-                        class="note__link">物件與陣列</a>裡或是更之前的文章，我們有使用到「this」，像是:</p>
+                <p class="note__content u-margin-bottom-p">這樣就會看到我們所有傳入的引數囉!!</p>
+                <p class="note__content u-margin-bottom-small u-color-red" style="font-size: 30px;">至於答案為什麼是NaN可以想想看噢!
+                </p>
+
+                <h3 class="heading-tertiary u-margin-bottom-p">Function This</h3>
+                <p class="note_content u-margin-bottom-p u-text-indent-p">
+                    小明後來想了想，「既然這方法是專門來弄CashCard的，那不如我就寫在CashCard裡面吧!」</p>
                 <div class="note__code u-margin-bottom-small">
-                    <p class="note__content u-color-white u-text-indent-code">const person = {</p>
-                    <p class="note__content u-color-white u-text-indent-code2">name: 'Joe',</p>
-                    <p class="note__content u-color-white u-text-indent-code2">toString: function(){</p>
-                    <p class="note__content u-color-white u-text-indent-code3">return this.name;</p>
+                    <p class="note__content u-color-white u-text-indent-code">const CashCard1 = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">ID : '0100',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">money : 300</p>
+                    <p class="note__content u-color-white u-text-indent-code2">addMoney : function(mPlus){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">if(CashCard1.money >=0){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">CashCard1.money += mPlus;</p>
+                    <p class="note__content u-color-white u-text-indent-code3">}</p>
                     <p class="note__content u-color-white u-text-indent-code2">}</p>
                     <p class="note__content u-color-white u-text-indent-code">}</p>
-                    <p class="note__content u-color-white u-text-indent-code">console.log(person.toString());</p>
                 </div>
-                <p class="note__content u-margin-bottom-small">這裡的this是什麼意思呢?</p>
+                <p class="note__content u-margin-bottom-p">以後呢要充值卡片，直接 <span
+                        class="u-color-red">CashCard1.addMoney(500)</span>呼叫即可使用</p>
+                <p class="note_content u-margin-bottom-p">不過小明想了想，寫在function裡面的CashCard1太費力了，直接按照他之前所學的寫成this吧!</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">const CashCard1 = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">ID : '0100',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">money : 300</p>
+                    <p class="note__content u-color-white u-text-indent-code2">addMoney : function(mPlus){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">if(this.money >=0){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">this.money += mPlus;</p>
+                    <p class="note__content u-color-white u-text-indent-code3">}</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content  u-text-indent-p">不過真正的"this"是什麼意思呢?是指CashCard1的意思嗎?</p>
+                <p class="note__content ">
+                    很可惜的答對了一半，在這裡的確是指CashCard1，但在javascript裡面addMoney不過是CashCard1的一種特性而已，並指向一個function函式，不像是Java的void一樣屬於物件的(javascript也不是物件導向)。
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    javascript也沒有像Java一樣的類別繼承，javascript使用的繼承方式是使用<strong
+                        class="u-color-red">prototype-原型鍊</strong>，原型鍊的部分之後會再說明，在這裡我們先了解this的真正意義</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    既然addMoney是指向一個fucntion的，那麼這個function也可以獨立寫出來:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function addMoney(mPlus){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">if(this.money >= 0){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">this.money += mPlus;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content  u-text-indent-p">此時addMoney已經不再CashCard1裡了，那麼這裡的this是指向什麼呢?試著把this.money
+                    console出來看看結果會得到undefined，也就說明"this.money"這個東西還沒有被定義!"this.money"並不屬於CashCard1。</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">我們可以使用function物件的"call()"方法，要怎麼使用呢?我們可以像這個樣子:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">addMoney.call(<span style="color: #00aaff;">CashCard1</span>,<span style="color: #cc6600 ">500</span>);</p>
+                </div>
+                <p class="note__content u-text-indent-p"><strong style="color:#00aaff;">藍色</strong>的部分傳入我們需要用到的物件，後面<strong style="color: #cc6600">橘色</strong>的部分則是傳入我們需要使用到的引數。</p>
+                <p class="note__content u-margin-bottom-p ">這樣就能夠把CashCard1的錢充值500囉!如果傳入的是CashCard2，那麼就是CashCard2充值500的意思!</p>
+                <p class="note__content u-margin-bottom-p ">依照這個原理，其實原本寫在CashCard1也是以用call()方法來呼叫，我們可以來試試:</p>
+                <div class="note__code u-margin-bottom-p">
+                        <p class="note__content u-color-white u-text-indent-code">CashCard1.addMoney(500);</p>
+                        <p class="note__content u-color-white u-text-indent-code">CashCard1.addMoney.call(<span style="color: #00aaff;">CashCard2</span>,<span style="color: #cc6600 ">60000</span>);</p>
+                    </div>
+                <p class="note__content u-margin-bottom-p ">這樣子是誰被充值了呢?第一個是CashCard1充值了沒錯，但第二個是CashCard2充值了噢!!不是CashCard1!</p>
+                <p class="note__content u-margin-bottom-small u-text-indent-p">經過上面的測試，我們可以發現"this"雖然是指"這個"的意思沒錯，但是"這個"不是指寫在物件特性的物件，而是指我們傳入的引數喔噢!</p>
+                <h3 class="heading-tertiary u-margin-bottom-p">End</h3>
+                <p class="note__content u-text-indent-p">小明的故事就先講到這裡，雖然小明在後面還是碰到了許多問題，但這個故事我們留到之後再繼續說下去，下回小明會遇到<strong class="u-color-red">兩個CashCard的充值方法重複到的問題</strong>，為解決這問題我們可提到javascript的繼承原理<strong class="u-color-red">prototype--原型鍊</strong>而且兩個CashCard的內容都一樣，都是id與money，這樣每次創建一個新的CashCard的時候太麻煩了，所以下回也會講到<strong class="u-color-red">Constructor--建構式</strong></p>
             </div>
         </section>
     </main>
