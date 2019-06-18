@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <style>
+        .outer {
+            width: 180px;
+            height: 300px;
+            box-sizing: border-box;
+            border: 3px solid #ff0000;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner {
+            position: relative;
+            box-sizing: border-box;
+            width: 150px;
+            height: 240px;
+            border: 3px solid #0000ff;
+        }
+
+        .outer>p {
+            position: absolute;
+            top: 5px;
+            font-size: 21px;
+            font-weight: 600;
+            color: #f00000;
+        }
+
+        .inner>p {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 21px;
+            color: #0000ff;
+        }
+    </style>
+    <title>Note Home List</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon"></span>
+        </label>
+        <div class="navigation__background"></div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="header">
+            <div class="header__text-box header__text-box--javascript">
+                <h1 class="heading-primary">My Note</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="note-box">
+            <div class="note__title">
+                <h2 class="heading-secondary heading-secondary--javascript">function-2</h2>
+            </div>
+            <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">What?</h3>
+                <p class="note__content u-margin-bottom-small u-text-indent-p">
+                    今天呢!我們有個新主角「小華」，他是小明的親梅竹馬，也看見小明這在學習寫程式，自己也打算一起來試試看，畢竟有個人一起練功，是多麼棒的事情!!下面我們就開始今天的故事吧!!</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">Scope</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    小華是小明的親梅竹馬，也因為小明在寫code的關係自己也有了興趣，想要嘗試看看!某天小華正想著要寫些什麼來玩玩，突然看到自家養的小狗與小貓，心理出現個念頭!「我來寫個小狗與小貓的計數器好了!!」於是呢就寫出:
+                </p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">let count = 0;</p>
+                    <p class="note__content u-color-white u-text-indent-code">function dog() {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">count++;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(count);</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">dog();</p>
+                    <p class="note__content u-color-white u-text-indent-code">dog();</p>
+                </div>
+                <p class="note__content u-margin-bottom-p">現在這個樣子很正常的在運作了!小華很高興也繼續往下寫小貓的計數器:</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">let count = 0;</p>
+                    <p class="note__content u-color-white u-text-indent-code">function dog() {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">count++;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(count);</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">dog();</p>
+                    <p class="note__content u-color-white u-text-indent-code">dog();</p>
+                    <p class="note__content u-color-white u-text-indent-code">function cat() {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">count++;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(count);</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">cat();</p>
+                </div>
+                <p class="note__content u-margin-bottom-small u-text-indent-p">
+                    很快的小華發現了問題，心中的如意算盤破滅，原本心裏想的count並不如心中所想，兩者的count用到了同一個，以至於無法分開去計數(到cat()的時候count結果是3，不是預想中的1)，遇到瓶頸的小華決定去找小明解決方法!!
+                    果不其然，小明之前也碰過這樣的問題，於是開始跟小華分享之前的解決之道:
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    小明開始畫圖，共畫了兩個方形，一個上頭寫了x，一個上頭寫了y，小明:「現在我這了畫了兩個箱子，<span style="color:#ff0000;">最外層的箱子</span>裏頭放了一個<span
+                        style="color:#ff0000;font-size:24px">x</span>,而裡面的<span
+                        style="color:#0000ff;">第二個箱子</span>呢放了<span
+                        style="color:#0000ff;font-size:24px;">y</span>，這些箱子有很特別的地方，就是呢外面的箱子看不到裡面的箱子，就如同隔著牆壁一般，但是裡面的箱子看的到外面的箱子，如隔著一層玻璃一般那樣。」
+                </p>
+                <div class="outer u-margin-bottom-p">
+                    <p>x</p>
+                    <div class="inner">
+                        <p>y</p>
+                    </div>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">小華這就不明白了!詢問小明為什麼要跟我這些呢?!
+                    小明繼續解釋，其實這些箱子在程式裡頭我們可以稱為叫做Scope(範圍、區域)，簡單來看就是兩個大括號括住的地方就是一個Scope，而箱子內的環境我們可以稱為Execution
+                    context(執行環境)，拿你寫的計數器來說明，你的dog()函式用兩個大括號括住的地方就是一個Scope，而在其中的執行環境我們可以稱為Function Execution
+                    context，這樣還是很抽象，我們來舉個例子吧!比如現在有:
+                </p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">function outer() {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">let x = 1;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">function inner() {</p>
+                    <p class="note__content u-color-white u-text-indent-code3">let y = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code3">console.log(x);</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(y) <span
+                            style="color:#00aaff">//這裡會出錯</span></p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">現在可以看到有outer函式裡面放了一個inner函式，而outer函式被Global
+                    context(全域環境)所包裹住。剛剛說過，裡面的箱子是看的到外面的箱子的，也就是裡面可以存取到外面的變數，自然可以console出x，但是外面的箱子看不到裡面，所以outer要console出y變數的時候就會出錯了!!
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">那如果inner函式裡面有x變數呢?</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function outer() {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">let x = 1;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">function inner() {</p>
+                    <p class="note__content u-color-white u-text-indent-code3">let x = 30;</p>
+                    <p class="note__content u-color-white u-text-indent-code3">let y = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code3">console.log(x);</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    答案是會console出30，也就是本身在inner函式裡面的x變數，其實，查找時會先在自己的context裡面找，如果沒有的話就會往外層context繼續找，直到找到全域context為止，而這樣的查找動作就形成像鍊子般，所以我們稱為Scope
+                    chain。</p>
+                <p class="note__content u-margin-bottom-small u-text-indent-p u-color-red">
+                    ※全域context??就是在指在函式function以外的環境。在let還沒出現之前都是使用var，var除了在function內無法被外部存取之外，在其他任何地方都可以存取，在全域中的變數也稱為全域變數。
+                </p>
+                <h3 class="heading-tertiary u-margin-bottom-small">Closure-閉包</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">小華邊聽邊理解，也做了點重點整理:</p>
+                <ul class="note__point-list">
+                    <li class="note__point">裡面看的到外面，外面看不到裡面;裡面存取的到外面的變數，外面存取不到裡面的變數</li>
+                    <li class="note__point">查找變數的時候會先從目前的context尋找，若找不到就往外層context尋找，直到全域context為止。</li>
+                </ul>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    華有些聽明白了，但是還是不懂為何跟自己碰上的問題有關，小明提醒道，我們遇到的問題就是count共用到了對吧?那如果我們能把狗與貓的count分開來，不就解決了嗎?
+                    小華頓時醒悟，奔回家中開始修改:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function dogHouse() {</p>
+                    <p class="note__content u-color-white u-text-indent-code">let count = 0;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">function dogCount(){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">count++;</p>
+                    <p class="note__content u-color-white u-text-indent-code3">console.log(count);</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">return dogCount</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">let dog = dogHouse();</p>
+                    <p class="note__content u-color-white u-text-indent-code">dog();</p>
+                    <p class="note__content u-color-white u-text-indent-code">//間隔</p>
+                    <p class="note__content u-color-white u-text-indent-code">function catHouse() {</p>
+                    <p class="note__content u-color-white u-text-indent-code">let count = 0;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">function catCount(){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">count++;</p>
+                    <p class="note__content u-color-white u-text-indent-code3">console.log(count);</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">return catCount</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">let cat = catHouse();</p>
+                    <p class="note__content u-color-white u-text-indent-code">cat();</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    這樣就能將count分離拉!!但問題又來，重複的東西很多，對於程式來說是個不好聞的味道，所以可以再更簡短一些，其實我們只需要一份狗狗或是貓貓那樣的閉包fucntion就好，再來return改成回傳匿名fucntion:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function createCount() {</p>
+                    <p class="note__content u-color-white u-text-indent-code">let count = 0;</p>
+                    <p class="note__content u-color-white u-text-indent-code">return function(){</p>
+                    <p class="note__content u-color-white u-text-indent-code2">count++;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">console.log(count);</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">let dogCount = createCount();</p>
+                    <p class="note__content u-color-white u-text-indent-code">let catCount = createCount();</p>
+                    <p class="note__content u-color-white u-text-indent-code">dogCount();</p>
+                    <p class="note__content u-color-white u-text-indent-code">catCount();</p>
+                </div>
+                <p class="note__content u-margin-bottom-small u-text-indent-p">
+                    這樣就簡短了很多!原本的問題也就解決囉!!
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p u-color-red">
+                    ※其實原本count的生命週期，本來是應該要在執行完createCount後就結束了，但是在內部函式中的count是捕捉外部函式的count而來，建立了Closure，也就是把count變數關入(Close)了自己的範圍(也就是叫做Closure的由來)，如果形成Closure的函式物件持續存活，原本應該生命週期要結束的count就會持續存活(被關入的變數)。
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p u-color-red">
+                    ※如果是自行使用new來建立Function，如果有查找變數，一定查找全域物件中的特性(找全域變數)!</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let x = 10;</p>
+                    <p class="note__content u-color-white u-text-indent-code">function test() {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">let x = 30;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">let f = new Function('return x;');</p>
+                    <p class="note__content u-color-white u-text-indent-code2">return f();</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">
+                        console.log(test());&emsp;&emsp;//consoe.log出來結果會是30</p>
+                </div>
+                <h3 class="heading-tertiary u-margin-bottom-small">End</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    原本這篇是要講Constructor(建構式)與prototype(原型鍊)的，但後來在看了一下內容，決定還是先更改講關於Scope與閉包，對於Scope有在寫程式的人應該都不會太陌生，以Java來說每個大括號內就是一個Scope，而且存在於Scope內的變數，不管是迴圈或是判斷式，只存在於自己層Scope內，Scope外部存取不到，都統稱為區域變數。
+                </p>
+                <p class="note__content u-text-indent-p">
+                    下一篇就會正式開始講建構式與原型鍊了!!一樣是以小明的cashcard為範例往外擴散出去，遇到問題就解決問題，再從中了解背後的目的或是原因，在了解與熟練其使用方法，練習、思考當然都需要時間，會遇到瓶頸、挫折是一定的，但還是要無止盡的去思考、行動，才能真正化為養分讓自己吸收，「你不需要很厲害才開始，要開始了才會很厲害」最後用這句話來鼓勵自己，也鼓勵各位剛畢業，人生正要開始起飛的畢業生們!!
+                </p>
+            </div>
+        </section>
+    </main>
+    <script src="function_2.js"></script>
+</body>
+
+</html>
