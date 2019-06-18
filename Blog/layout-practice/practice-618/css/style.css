@@ -1,0 +1,111 @@
+html {
+  font-size: 62.5%; }
+
+.heading-primary {
+  font-size: 6rem;
+  font-weight: 600; }
+
+.heading-secondary {
+  font-size: 3rem;
+  font-weight: 300; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.2rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 3.6rem; }
+
+.button:link, .button:visited {
+  padding: .9rem 2.4rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 2.1rem; }
+
+.button__blue:link, .button__blue:visited {
+  background-color: #0033aa;
+  color: #ffff00;
+  transition: all .6s; }
+
+.button__blue:hover, .button__blue:active {
+  background-color: #ffff00;
+  color: #0033ff; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffcc00;
+  padding: 3rem; }
+  .header__logo {
+    display: inline-block;
+    margin-left: 24rem;
+    font-size: 2.7rem;
+    font-weight: 800; }
+    .header__logo a {
+      color: #000; }
+  .header-nav {
+    display: inline-block; }
+  .header__list {
+    font-size: 0; }
+  .header__item {
+    display: inline-block;
+    font-size: 2.1rem; }
+  .header__link:link, .header__link:visited {
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    color: #000;
+    transition: all .6s; }
+  .header__link:hover, .header__link:active {
+    color: #0000ff; }
+  .header__phone {
+    display: inline-block;
+    margin-left: 15rem;
+    font-size: 2.7rem;
+    color: #000; }
+
+.title {
+  width: 100%;
+  padding: 12rem 0;
+  margin: 8.1rem auto 0;
+  background-image: url("../img/title.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 0%;
+  background-size: cover; }
+  .title__wrap {
+    margin: 0 0 3rem 24rem; }
+  .title__text-box {
+    margin: 3rem 0 9rem;
+    text-transform: uppercase;
+    color: #fff; }
+  .title__info {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem; }
+  .title__phone {
+    font-size: 6rem; }
+
+.service {
+  background-color: #0066ee;
+  padding: 6rem 0;
+  text-align: center;
+  font-size: 0;
+  color: #fff; }
+  .service__wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto; }
+  .service__item {
+    font-size: 1.5rem;
+    width: 240px;
+    display: inline-block; }
+  .service__logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin: 0 auto 1.2rem; }
+  .service__link:link, .service__link:visited {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #eeee00; }
