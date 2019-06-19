@@ -4,6 +4,7 @@
 
 
 @import "components/button";
+@import "components/title-img";
 
 
 .header {
@@ -100,7 +101,12 @@
     }
 }
 
-
+.section {
+    padding: 6rem 0;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
 .service {
     background-color: #0066ee;
     padding: 6rem 0;
@@ -141,5 +147,114 @@
             text-decoration: none;
             color: #eeee00
         }
+    }
+}
+
+.who {
+    color: #fff;
+    text-align: center;
+    &__title {
+        color:#eeee00;
+        text-transform: uppercase;
+    }
+    &__intro {
+        font-size: 1.8rem;
+    }
+}
+
+.customer {
+    background-color: #fff;
+    h1 {
+        text-align: center;
+        color: #003366;
+    }
+    .group {
+        position: relative;
+        // box-shadow: 0 0 0 1px #ff0000;
+        margin-top: 6rem;
+        width: 450px;
+
+        // display: flex;
+        // justify-content: space-between;
+    }
+    .wrap {
+        position: absolute;
+        top: -15px;
+        left: -120px;
+    }
+    &__intro {
+        font-size: 1.8rem;
+    }
+    &__link {
+        &:link,
+        &:visited {
+            display: block;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: #006699;
+            text-align: right;
+        }
+    }
+    &_1 {
+        top: 21px;
+        margin-left: 54%;
+    }
+    &_2 {
+        margin-left: 15%;
+    }
+}
+
+.contact {
+    background-color: #004466;
+    padding: 12rem 0;
+
+    h1 {
+        color:#00aaee;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .group {
+        display: flex;
+        justify-content: space-between;
+        width: 960px;
+        margin: 0 auto;
+        padding: 1.5rem 0;
+        // box-shadow: 0 0 0 1px #ff0000;
+        height: 150px;
+        color: #fff;
+        h2 {
+        text-transform: uppercase;
+        }
+    }
+
+    &__info {
+        font-size: 1.5rem;
+    }
+
+    .form {
+        max-width: 960px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        input {
+            display: block;
+            margin: 0 auto 1rem;;
+            width: 520px;
+            height: 30px;;
+            &:last-child {
+                height: 300px;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+
+    &__info {
+        font-size: 2.4rem;
     }
 }

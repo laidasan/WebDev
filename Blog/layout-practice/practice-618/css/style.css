@@ -30,6 +30,32 @@ html {
   background-color: #ffff00;
   color: #0033ff; }
 
+.title-img {
+  position: relative;
+  display: inline-block;
+  margin-left: 3px;
+  left: 30px;
+  width: 24px;
+  height: 24px;
+  background-color: #003366; }
+  .title-img::before {
+    content: '';
+    position: absolute;
+    top: -24px;
+    width: 24px;
+    height: 24px;
+    background-color: #003366;
+    border-radius: 24px  0 0 0; }
+  .title-img::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: 0;
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px 0 0 0; }
+
 .header {
   position: fixed;
   top: 0;
@@ -85,6 +111,12 @@ html {
   .title__phone {
     font-size: 6rem; }
 
+.section {
+  padding: 6rem 0;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto; }
+
 .service {
   background-color: #0066ee;
   padding: 6rem 0;
@@ -109,3 +141,78 @@ html {
     font-size: 1.8rem;
     text-decoration: none;
     color: #eeee00; }
+
+.who {
+  color: #fff;
+  text-align: center; }
+  .who__title {
+    color: #eeee00;
+    text-transform: uppercase; }
+  .who__intro {
+    font-size: 1.8rem; }
+
+.customer {
+  background-color: #fff; }
+  .customer h1 {
+    text-align: center;
+    color: #003366; }
+  .customer .group {
+    position: relative;
+    margin-top: 6rem;
+    width: 450px; }
+  .customer .wrap {
+    position: absolute;
+    top: -15px;
+    left: -120px; }
+  .customer__intro {
+    font-size: 1.8rem; }
+  .customer__link:link, .customer__link:visited {
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #006699;
+    text-align: right; }
+  .customer_1 {
+    top: 21px;
+    margin-left: 54%; }
+  .customer_2 {
+    margin-left: 15%; }
+
+.contact {
+  background-color: #004466;
+  padding: 12rem 0; }
+  .contact h1 {
+    color: #00aaee;
+    text-align: center;
+    text-transform: uppercase; }
+  .contact .group {
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    height: 150px;
+    color: #fff; }
+    .contact .group h2 {
+      text-transform: uppercase; }
+  .contact__info {
+    font-size: 1.5rem; }
+  .contact .form {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center; }
+    .contact .form input {
+      display: block;
+      margin: 0 auto 1rem;
+      width: 520px;
+      height: 30px; }
+      .contact .form input:last-child {
+        height: 300px; }
+
+.footer {
+  background-color: #fff;
+  padding: 3rem 0;
+  text-align: center; }
+  .footer__info {
+    font-size: 2.4rem; }

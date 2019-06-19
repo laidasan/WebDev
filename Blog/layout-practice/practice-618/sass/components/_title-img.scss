@@ -1,0 +1,29 @@
+.title-img {
+    position: relative;
+    display: inline-block;
+    margin-left: 3px; 
+    left: 30px;
+    width: 24px;
+    height: 24px;
+    background-color: #003366;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -24px;
+        width: 24px;
+        height: 24px;
+        background-color: #003366;
+        border-radius: 24px  0 0 0;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: -15px;
+        right: 0;
+        background-color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 15px 0 0 0;
+    }
+}

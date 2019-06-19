@@ -7,6 +7,7 @@
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "compile:sass": "node-sass sass/main.scss css/style.css",
     "layout:sass": "node-sass layout-practice/game-who-is-the-bad-guy/sass/main.scss layout-practice/game-who-is-the-bad-guy/css/style.css -w",
+    "practice:sass": "node-sass layout-practice/practice-618/sass/main.scss layout-practice/practice-618/css/style.css -w",
     "uglify:js": "uglifyjs layout-practice/game-who-is-the-bad-guy/app/app.js -o layout-practice/game-who-is-the-bad-guy/app2/index.js -c"
   },
   "author": "laidasan",
