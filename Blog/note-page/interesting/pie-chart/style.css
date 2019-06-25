@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+.html {
+    font-size: 62.5%;
+}
+
+.contain {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.circle {
+    position: relative;
+    width: 50px;
+    height: 100px;
+    /* background-color:  #00ccee; */
+    /* border-radius: 100%; */
+    border-radius: 0 50px 50px 0;
+    /* box-shadow: 0 0 0 6px #000; */
+    overflow: hidden;
+    margin-bottom: 3rem;
+
+    animation: circle-a 6s infinite linear;
+}
+.circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px 50px 0 0;
+    background-color: #eeaa00;
+    transform-origin: 50px 50px;
+    transform: rotate(-90deg);
+    /* box-shadow: 0 0 0 3px #000; */
+    z-index: 1;
+
+    animation: circle-before 6s infinite linear;
+}
+.circle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px 50px 0 0;
+    transform-origin: 50px 50px;
+    transform: rotate(90deg);
+    background-color: #eeaa00;
+    /* box-shadow: 0 0 0 3px #000; */
+
+    opacity: 0;
+    z-index: 2;
+    animation: circle-after 6s infinite linear;
+}
+@keyframes circle-a {
+    0% {
+        margin-right: 0px;
+        width: 50px;
+        border-radius: 0 50px 50px 0;
+    }
+    49.99% {
+        margin-right: 0px;
+        width: 50px;
+        border-radius: 0 50px 50px 0;
+    }
+    50% {
+        margin-right: 50px;
+        width: 100px;
+        border-radius: 100%;
+    }
+    100% {
+        margin-right: 50px;
+        width: 100px;
+        border-radius: 100%;
+    }
+}
+@keyframes circle-before {
+    0% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+@keyframes circle-after {
+    0% {
+        opacity: 0;
+    }
+    49.99% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+input[type="range"] {
+    display: block;
+    margin-right: 50px;
+}

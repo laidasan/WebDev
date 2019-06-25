@@ -1,15 +1,21 @@
-// function CashCard(id,money) {
-//     this.id =id;
-//     this.money = money;
+function CashCard(id,money) {
+    this.id =id;
+    this.money = money;
     // this.toString = function () {
     //     return 'id: ' + this.id + '\nmoney:' + this.money;
     // }
-// }
+}
 
-// function toString() {
-//     return 'id: ' + this.id + '\nmoney:' + this.money;
-// }
-// cashcard1 = new CashCard('0100',500);
+function toString() {
+    return 'id: ' + this.id + '\nmoney:' + this.money;
+}
+function addMoney(mPlus) {
+    this.money += mPlus;
+}
+cashcard1 = new CashCard('0100',500);
+cashcard1.addMoney = addMoney;
+cashcard1.addMoney(500);
+console.log(cashcard1.money);
 // cashcard1.toString = toString;
 
 
@@ -76,5 +82,7 @@ console.log(CashCard.prototype);
 // Object.setPrototypeOf(WhitePerson,Person);
 // console.log(WhitePerson.name);
 
+let bool = false;
+console.log(Object.getPrototypeOf(bool));
 
 

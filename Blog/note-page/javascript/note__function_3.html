@@ -19,11 +19,14 @@
         <div class="navigation__background"></div>
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                    <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
-                    <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
-                    <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html" class="navigation__link">Interesting</a></li>
-                    <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool effect</a></li>
+                <li class="navigation__item"><a href="../../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="../../note-page/note_list.html" class="navigation__link">Note</a>
+                </li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About me</a></li>
+                <li class="navigation__item" title="關於我"><a href="../note_amazing_effect.html"
+                        class="navigation__link">Interesting</a></li>
+                <li class="navigation__item"><a href="../../cool-effect/cool_list.html" class="navigation__link">Cool
+                        effect</a></li>
             </ul>
         </nav>
     </div>
@@ -40,6 +43,161 @@
                 <h2 class="heading-secondary heading-secondary--javascript">function_3</h2>
             </div>
             <div class="note-container">
+                <h3 class="heading-tertiary u-margin-bottom-small">前言</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    在前面一個的筆記中，我們有講到了Scope與function的閉包，是關於小華故事，今天我們繼續來講小明的故事了，依然小明在繼續撰寫CashCard的程式碼，讓我們來看看接下來會有什麼樣的故事吧!!
+                </p>
+                <h3 class="heading-tertiary u-margin-bottom-small">Constructor-建構式</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">下面是小明在上回最後程式碼的樣子</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">const CashCard1 = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">ID : '0100',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">money : 300</p>
+                    <p class="note__content u-color-white u-text-indent-code2">addMoney : function(mPlus){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">if(this.money >=0){</p>
+                    <p class="note__content u-color-white u-text-indent-code3">this.money += mPlus;</p>
+                    <p class="note__content u-color-white u-text-indent-code3">}</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    但每次都需要寫這麼長一大串來建立我們的物件，實在是太費神費力了，不過還好我們可以使用建構式來建立物件，什麼是建構式呢?我們可以把CashCard改成:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function CashCard(id,money) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">this.id = id;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">this.money = money;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">this.addMoney = function() {</p>
+                    <p class="note__content u-color-white u-text-indent-code3">if (this.money >=0) {</p>
+                    <p class="note__content u-color-white u-text-indent-code4">this.money += mPlus;}</p>
+                    <p class="note__content u-color-white u-text-indent-code2">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">let cashcard = new
+                        CashCard('0100',300);&emsp;&emsp;//寫好CashCard建構式之後就可以用new來建立一個物件</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    這樣CashCard的函示我們就稱為建構式Constructor，如果學過Java就肯定不陌生!!(像我就是學Java出生的)，當我們有需求需要創建物件的時候，就可以使用建構式。而其實使用建構式的時候，有一部份的動作是會先建立一個空的物件，然後把呼叫建構式並回傳物件本身，看起來會很像是:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let obj = {}</p>
+                    <p class="note__content u-color-white u-text-indent-code">CashCard.call(obj,'0100',500)</p>
+                </div>
+                <p class="note__content u-text-indent-p u-margin-bottom-small">這只是其中一部份，等等說明原型鍊的時候，會有更完善的說明。</p>
+                <h3 class="heading-tertiary u-margin-bottom-small">prototype-原型</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    小明使用了建構式之後，發現真的有輕鬆許多，可是卻發現效能上面有些問題，是什麼問題呢?每個CashCard都有屬於自己的id與money很正常，但是充值(addMoney)的方法大家卻是一樣的，如果像上面的建構式建立100個物件的話，那麼就會有100個addMoney，改善這個問題我們可以這樣做:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">function addmoney(mPlus) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">this.money += mPlus;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">function CashCard(id,money) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">this.id = id;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">this.money = money;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">this.addMoney = addmoney;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">let cashcard = new CashCard('0100',500);
+                    </p>
+                    <p class="note__content u-color-white u-text-indent-code">cashcard.addMoney = addMoney;</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    這樣可以改善效能的問題，但是有沒有其他方法呢?有的，就是我們這篇筆記的重點中的重點「原型鍊」，具體來說可以這麼做:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">CashCard.prototype.addMoney =
+                        function(mPlus) {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">this.money += mPlus;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">這樣子就能夠解決剛剛的問題了!現在你一定看得霧煞煞，就讓我們一步一步來講解吧!</p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    其實用new建立物件的時候，物件上會有個隱藏的特性，”prototype”，而protoype則是物件了原型(等等會說明得更詳細)，會指向使用函式prototype屬性所指向的物件(但不代表function的原型物件，而是建立函式的時候會自動生成prototype屬性，而這個屬性指向一個物件，之後我們就稱為prototype物件)，這個物件會有一個預設的特性=>Constructor，會指向自己(function)，當我們用new創立物件的時候會先創立一個空物件，再來空物件的prototype特性
+                    指向函式的prototype物件，最後在呼叫建構式，看起來很是下面這個樣子:
+                </p>
+                <div class="note__img-box">
+                    <img src="./docs/img/prototype-1.PNG" alt="">
+                </div>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let obj = {};</p>
+                    <p class="note__content u-color-white u-text-indent-code">obj.__proto__ = CashCard.prototype;</p>
+                    <p class="note__content u-color-white u-text-indent-code">CashCard.call(obj,'0100',500);</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">__proto__是在ECMAScript 6
+                    規範，被加入了附錄的，可以用來取得實例被建立的被設定的原型，不過在ES5增加了一個Object.getprototypeof()可以取得物件的原型，例如我們來看一下用建構式new出來的cashcard的原型
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">Object.getPrototypeOf(cashcard);</p>
+                </div>
+                <h3 class="heading-tertiary u-margin-bottom-small">談談繼承</h3>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    要談原型呢，就一定要來談談繼承了，繼承是什麼意思?就是自表面上的意思，也可以用繼承遺產的「繼承」了解意思，簡單打個比方:今天我有一件武器，每當我斬殺一個敵人，武器都能夠繼承敵人的能力，「他人所擁有的，我也都會有」。
+                    舉例說今天我們寫了一個Person物件，Person有名字跟年齡，所以我們加上了name與age:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">const Person = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name:'Joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age : 40;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    但很快的我們發現這需求不夠，世界上有那麼多皮膚顏色不一樣的人，所以我們又寫了WhitePerson與BlackPerson:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">const Person = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name:'Joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age : 40;</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">const WhilePerson = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name:'Joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age : 40;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">color : white</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">const BlackPerson = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">name:'Joe',</p>
+                    <p class="note__content u-color-white u-text-indent-code2">age : 40;</p>
+                    <p class="note__content u-color-white u-text-indent-code2">color : black</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                </div>
+                <p class="note__content u-text-indent-p">
+                    於是我們又發現了一個問題，這Person、whitePerson、BlackPerson每個物件上都有name與age，只不過皮膚顏色物一樣而已，這樣子寫很耗時也很耗資源，而且不管是黑人還是白人都是人類，要怎麼做才能夠簡短又不失去邏輯呢?
+                </p>
+                <p class="note__content u-margin-bottom-p">如果是用Java來寫的話，我們只需要寫一個Person
+                    class類別，並讓其他兩個繼承Person類別(但不加上name與age)，這樣子黑人與白人類別就會繼承了Person類別所擁有的屬性與方法了(不論隱私性)，但我們今天寫的是javascirpt，javascript是怎麼設計繼承這件事情的呢?
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">如果是用Java來寫的話，我們只需要寫一個Person
+                    class類別，並讓其他兩個繼承Person類別(但不加上name與age)，這樣子黑人與白人類別就會繼承了Person類別所擁有的屬性與方法了(不論隱私性)，但我們今天寫的是javascirpt，javascript是怎麼設計繼承這件事情的呢?
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    答案就是prototype，用建構式出來的實例，或是幾乎所有的物件上都會有prototype屬性，用上面的例子來說，我們可以用Objeck.setPrototypeOf()方法來設定物件的原型:
+                </p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">const WhilePerson = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">color : white</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">const BlackPerson = {</p>
+                    <p class="note__content u-color-white u-text-indent-code2">color : black</p>
+                    <p class="note__content u-color-white u-text-indent-code">}</p>
+                    <p class="note__content u-color-white u-text-indent-code">
+                        WhilePerson.setPrototypeOf(WhilePerson,Person)&emsp;&emsp;//(需要設定的物件,原型)</p>
+                    <p class="note__content u-color-white u-text-indent-code"></p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    這樣子就算WhietePerson上沒有寫上name或是age屬性也都可以找到了，那怎麼能夠找到呢?原理是這樣的，當查找屬性的時候會在自己身上找，當自己身上找不到的時候就會去prototype物件上面找，如果一直到最後都找不到的話，就會回傳undefined，而這樣的查找過程像是一條一條的鍊子把物件串在一起，所以我們就稱為「原型鍊」了
+                </p>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    也可以找到我們創建陣列的prototype喔!包括String物件或是Boolean物件等等都有:</p>
+                <div class="note__code u-margin-bottom-p">
+                    <p class="note__content u-color-white u-text-indent-code">let bool = false;</p>
+                    <p class="note__content u-color-white u-text-indent-code">console.log(Object.getPrototypeOf(bool));
+                    </p>
+                </div>
+                <p class="note__content u-margin-bottom-p u-text-indent-p">
+                    我們也可以檢測看看，用建構式new出來的cashcard與CashCard的prototype特性所指向的物件，是不是一樣的</p>
+                <div class="note__code u-margin-bottom-small">
+                    <p class="note__content u-color-white u-text-indent-code">
+                        console.log(Object.getPrototypeOf(cashcard) === CashCard.prototype);</p>
+                </div>
+                <h3 class="heading-tertiary u-margin-bottom-small">End</h3>
+            <p class="note__content u-margin-bottom-p u-text-indent-p">這篇筆記就先到這邊，以上就是原形鍊的基本。到這裡為止我們都學會了javascript的基本，變數、物件、陣列、函式、判斷、迴圈等等，那到底我們要怎麼要去用javascript上輸出「Hello!World!
+                」呢!!相信這是很多學網頁前端開發的時候會遇到的問題，不急，在接下來的筆記，我們就會介紹如何去操控網頁內容，還有瀏覽器是怎麼去解析網頁(HTML文件)的，敬請期待吧!
+            </p>
             </div>
         </section>
     </main>
