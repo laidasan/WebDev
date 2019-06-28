@@ -18,11 +18,21 @@ let btn = document.querySelector('.btn');
 
 /*    e.preventDefault()    */
 //阻擋預設事件
-btn.addEventListener('click',function(e) {
+// btn.addEventListener('click',function(e) {
     // e.preventDefault();
+//     console.log('Go To Google');
+//     return false;
+// })
+btn.addEventListener('click',show,false);
+console.log(show);
+var show = function(e) {
+    e.preventDefault();
     console.log('Go To Google');
-    return false;
-})
+}
+// function show(e) {
+//     e.preventDefault();
+//     console.log('Go To Google');
+// }
 
 
 
@@ -71,3 +81,9 @@ item_4.textContent = 'item';
 
 mylist.appendChild(item_4);
 console.log(mylist);
+
+var a = 3;
+a = 50;
+console.log(window.a);
+console.log(delete a);
+console.log(a);
