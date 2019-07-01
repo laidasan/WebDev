@@ -1,0 +1,268 @@
+html {
+  font-size: 62.5%; }
+
+.heading-primary {
+  font-size: 5.1rem;
+  font-weight: 800;
+  letter-spacing: .3rem; }
+
+.heading-tertiary {
+  font-size: 2.7rem;
+  font-weight: 600; }
+
+.heading-forth {
+  font-size: 2.1rem; }
+
+.button:link, .button:visited {
+  display: inline-block;
+  padding: .6rem 3.6rem;
+  text-align: right;
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.1rem;
+  letter-spacing: .75px;
+  transition: all .6s; }
+
+.button-green:link, .button-green:visited {
+  background-color: #41b7c4; }
+
+.button-green:hover, .button-green:active {
+  background-color: #163d41; }
+
+.header {
+  padding: 1.2rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative; }
+  .header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: transparent;
+    box-shadow: 1px 3px 12px 3px rgba(0, 0, 0, 0.15); }
+  .header_logo-img--box {
+    display: inline-block;
+    width: 37px;
+    height: 35px; }
+  .header_logo-img {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%; }
+  .header_logo-text {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #00305b; }
+  .header .navigation_list {
+    font-size: 0;
+    list-style: none; }
+    .header .navigation_list .item {
+      display: inline-block; }
+    .header .navigation_list .link:link, .header .navigation_list .link:visited {
+      display: inline-block;
+      padding: .6rem 1.2rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .1px;
+      color: #004a80; }
+
+.section-top {
+  padding: 21rem 0 42rem;
+  position: relative;
+  color: #fff;
+  z-index: 1;
+  background-image: url("../img/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .section-top .text-box {
+    margin-left: calc(100%/3 - 10%); }
+  .section-top .text {
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+    margin-top: 1.2rem; }
+    @media screen and (max-width: 1330px) {
+      .section-top .text {
+        font-size: 1.8rem; } }
+  .section-top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(100%/3 + 10%);
+    background-color: rgba(0, 48, 91, 0.75);
+    z-index: -1; }
+
+.section-practiceareas {
+  padding: 12rem 0 36rem;
+  position: relative;
+  color: #00305b;
+  z-index: 1; }
+  .section-practiceareas .title {
+    display: inline-block;
+    position: absolute;
+    margin-left: calc(100%/3 - 10%); }
+    @media screen and (max-width: 1330px) {
+      .section-practiceareas .title {
+        font-size: 4.2rem; } }
+  .section-practiceareas .section-practiceareas-right {
+    position: absolute;
+    right: 0;
+    width: calc(90% - 100%/3); }
+  .section-practiceareas .container {
+    max-width: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap; }
+  .section-practiceareas .group {
+    width: 250px;
+    position: relative;
+    margin: 0 0 3rem 3.6rem; }
+    .section-practiceareas .group::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: -24px;
+      width: 12px;
+      height: 12px;
+      background-color: #41b7c4; }
+  .section-practiceareas_intro {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    color: #0f4c85; }
+  .section-practiceareas::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(100%/3 + 10%);
+    background-color: #eaf4f6;
+    z-index: -1; }
+
+.section-ourvision {
+  padding: 6rem 0;
+  background-color: #00305b;
+  color: #fff;
+  text-align: center; }
+  .section-ourvision_intro {
+    width: 50%;
+    margin: 3rem auto 0;
+    font-size: 2rem;
+    line-height: 1.5; }
+
+.section-office {
+  padding: 36rem 0;
+  background-image: url("../img/office.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.section-ourattorneys {
+  padding: 6rem 0;
+  background-color: #eaf4f6;
+  text-align: center;
+  color: #00305b; }
+  .section-ourattorneys .title {
+    margin-bottom: 6rem; }
+  .section-ourattorneys .container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; }
+  .section-ourattorneys .attorneys {
+    width: 300px; }
+    .section-ourattorneys .attorneys_name, .section-ourattorneys .attorneys_job {
+      margin-bottom: 1.2rem; }
+    .section-ourattorneys .attorneys_img-box {
+      margin: 0 auto 1.2rem;
+      width: 192px;
+      height: 222px; }
+    .section-ourattorneys .attorneys_img {
+      width: 100%;
+      height: 100%; }
+    .section-ourattorneys .attorneys_name {
+      text-transform: uppercase; }
+    .section-ourattorneys .attorneys_job {
+      position: relative;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #004a80; }
+      .section-ourattorneys .attorneys_job::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 75%;
+        height: 1px;
+        background-color: #0f4c85; }
+    .section-ourattorneys .attorneys_phone {
+      margin-top: 2.7rem; }
+    .section-ourattorneys .attorneys_phone, .section-ourattorneys .attorneys_email {
+      font-size: 1.8rem; }
+
+.section-concat {
+  position: relative;
+  padding: 12rem 0 15rem;
+  color: #fff;
+  background: -webkit-linear-gradient(left, rgba(0, 48, 91, 0.75) 0%, rgba(0, 48, 91, 0.75) 45%, rgba(0, 48, 91, 0.6) 45%), url("../img/concat.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .section-concat .title {
+    float: left;
+    margin-left: calc(100%/3); }
+  .section-concat .container {
+    float: left;
+    margin-left: 4.5rem;
+    margin-top: .3rem; }
+  .section-concat .concat_info-box {
+    margin: 3rem 0 6rem;
+    font-size: 1.8rem; }
+  .section-concat .concat_address, .section-concat .concat_email, .section-concat .concat_tel {
+    margin-top: .6rem; }
+  .section-concat .concat_little-title {
+    font-weight: 600; }
+  .section-concat .concat_form-info {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem; }
+  .section-concat .concat_form {
+    position: relative; }
+    .section-concat .concat_form-container {
+      display: inline-block; }
+    .section-concat .concat_form-message {
+      vertical-align: top;
+      margin-top: .6rem;
+      height: 135px;
+      padding: 0rem 4.5rem 0 .3rem; }
+    .section-concat .concat_form input {
+      display: block;
+      padding: .9rem 12rem .9rem .6rem;
+      margin-top: .6rem; }
+  .section-concat .wrap {
+    text-align: right; }
+  .section-concat_backtotop {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #00305b; }
+  .section-concat::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.footer {
+  padding: 3rem 0;
+  text-align: center; }
+  .footer_info {
+    font-size: 1.5rem; }
