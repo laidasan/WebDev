@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body {
+    background: #036;
+}
+
+.wrap {
+    width: 100%;
+    padding: 15px 0px;
+    background: #e08;
+    box-shadow: 0 5px 5px 0 rgba(210, 0, 90, .6);
+}
+.breadcrump {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+.breadcrump a:link,.breadcrump a:visited {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 12px;
+}
+.breadcrump li + li:before {
+    content: ">";
+    color: #fff;
+    /* position: absolute; */
+}
+.breadcrump li:last-child a {
+    color: #ff0;
+}
