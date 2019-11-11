@@ -8,6 +8,7 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
+    
 }
 .wrap {
     /* max-width: 1200px; */
@@ -29,6 +30,7 @@ body {
     position: relative;
     box-shadow: 0 0 3px 3px rgba(0, 30, 80, .6);
     border: 1px solid #036;
+    border-radius: 20px;
 
     /* display: flex;
     flex-direction: column; */
@@ -80,6 +82,7 @@ body {
     /*置中方式--2*/
     /* left: 50%; 
     transform: translateX(-50%);  */
+
 }
 .item .txt {
     text-align: center;
@@ -97,13 +100,12 @@ body {
     line-height: 1.2;
 }
 .icon {
-    position: absolute;
+    position: absolute; 
     top: 42%;
     left: 50%;
     margin-top: 21px;
     transform: translate(-50%,-50%);
-    /* background: ; */
-
+    
     color: #036;
     font-size: 90px;
 }
