@@ -62,7 +62,7 @@ input[type="checkbox"]:checked ~ .side-menu .menu-button i {
     bottom: 0;
     left: 0;
     background: linear-gradient(90deg,#036,#306);
-    padding: 54px 30px;
+    padding: 54px 0px;
     /* padding: 54px 0; */
 
     /* left: -270px; */
@@ -101,48 +101,85 @@ input[type="checkbox"]:checked ~ .side-menu .menu-button i {
     border-bottom: 1px solid #ccc;
     border-radius: 0 12px 12px 0;
 }
-
-.nav {
-    /* border: 1px solid #fff; */
+.side-menu form {
+    padding: 0 30px;
 }
-.nav nav {
-    /* display: flex;
-    flex-direction: column; */
-    /* padding: 12px; */
-}
-nav a:link,nav a:visited {
+.nav-first .list-item > a:link,.nav-first .list-item> a:visited {
     display: block;
-    padding: 15px 18px;
+    padding: 15px 51px;
     
 
     text-decoration: none;
     color: #fff;
     font-size: 21px;
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
+    /* background: #fff; */
 
     overflow: hidden;
-
-    /* position: relative; */
+    position: relative;
 }
-/* nav a + a::before {
+.nav-first .list-item:hover > a {
+    background: rgb(0, 30, 70,.6);
+}
+nav a:hover {
+    /* background: #fff; */
+}
+.nav-first .list-item + .list-item > a::before {
     content: '';
     position: absolute;
     left:15px;
     right: 15px;
     border-bottom: 1px solid #fff;
     top: 0;
-} */
-nav a:last-child{
+}
+.nav-first .list-item:last-child > a{
     border-bottom: 0;
 }
-nav a i {
+.nav-first .list-item > a i {
     /* font-size: 0; */
     transform: scale(0);
     margin-left: -16px;
     transition: all .3s;
 }
-nav a:hover i {
+.nav-first .list-item:hover > a i {
     /* font-size: 18px; */
     transform: scale(1);
     margin-right: 12px;
+}
+
+.list-item {
+    position: relative;
+}
+.nav-twice {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 15px;
+    background: #ccc;
+    box-shadow: 12px 12px 12px rgba(0,0,0,.6);
+    transform: translateX(100%);
+
+
+    z-index: 1;
+
+
+    opacity: 0;
+    display: none;
+}
+.nav-twice a:link,.nav-twice a:visited {
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    padding: 12px 24px;
+    border: 1px solid #fff;
+
+}
+.nav-twice a:hover {
+    background: #999;
+}
+
+.nav-first .list-item:hover .nav-twice {
+    display: block;
+    opacity: 1;
 }
