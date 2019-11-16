@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,body {
+    width: 100%;
+}
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.timeline{
+    width: 960px;
+
+    padding: 12px 0px;
+    margin: 0 auto;
+    font-size: 0;
+    position: relative;
+}
+.timeline::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.timeline::before {
+    content: '';
+    width: 0px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+.item {
+    width: 50%;
+    position: relative;
+}
+.item::before {
+    content: '';
+    position: absolute;
+    border: 1px solid #ccc;
+    height: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto 0;
+}
+.left::after,
+.right::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ccc;
+    top: 0;
+    bottom: 0;
+    /* right: -10px; */
+    margin: auto 0;
+}
+.left::after {
+    right: -10px;
+}
+.right::after {
+    left: -10px;
+}
+.txt {
+    max-width: 360px;
+    display: inline-block;
+    padding: 30px 60px;
+    background: #fff;
+    box-shadow: 0 0 1px rgba(0,0,0,.6);
+    position: relative;
+}
+.left {
+    clear: right;
+}
+.right {
+    text-align: right;
+    float: right;
+}
+.item h4 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+.item p {
+    font-size: 18px;
+}

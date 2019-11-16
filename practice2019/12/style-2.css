@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html,body {
+    width: 100%;
+}
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.timeline{
+    width: 960px;
+    padding: 12px 0px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 0 1px 0 #000;
+
+    position: relative;
+}
+.timeline::before {
+    content: '';
+    width: 0px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+.item {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+    /* box-shadow: 0 0 1px #000; */
+}
+.timeline .right {
+    /* box-shadow: 0 0 1px #000; */
+    align-self: flex-end;;
+}
+.item .txt {
+    max-width: 360px;
+    box-shadow: 0 0 1px #000;
+    display: inline-block;
+    background: #fff;
+}
+.right .txt {
+    align-self: flex-end;
+}
+.item::before {
+    content: '';
+    position: absolute;
+    border: 1px solid #ccc;
+    height: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    margin: auto 0;
+}
+.left::after,
+.right::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ccc;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.left::after {
+    right: -10px;
+}
+.right::after {
+    left: -10px;
+}
