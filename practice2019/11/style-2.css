@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html,body {
+    width: 100%;
+}
+body {
+    height: 100vh;
+    display: flex;
+}
+.dialogue {
+    width: 600px;
+    margin: auto;
+    padding: 12px 30px;
+    box-shadow: 0 0 12px 0 rgb(0, 51, 102,.6);
+}
+
+.user {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: flex-start;
+}
+.remote {
+
+}
+.local {
+    justify-content: flex-end;
+}
+.avatar {
+    flex-shrink: 0;
+}
+.avatar .pic {
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.img {
+    width: 100%;
+    vertical-align: middle;
+}
+.avatar .name {
+    text-align: center;
+}
+
+.txt {
+    /* display: inline-block; */
+    color: #fff;
+    background: #046;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+}
+.user .txt::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    border-radius: 30px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+.remote .txt::before {
+    left: -21px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid #046;
+}
+.local .txt::before {
+    right: -21px;
+    border-left: 15px solid #046;
+    border-right: 15px solid transparent;
+}
+.remote .txt {
+    margin-left: 12px;
+    margin-right: 90px;
+}
+.local .txt {
+    order: -1;
+    margin-left: 90px;
+    margin-right: 12px;
+}

@@ -45,6 +45,8 @@ body {
 .group {
     display: flex;
     flex-direction: column;
+
+
     margin: 12px 0;
     color: #fff;
     font-size: 15px;
@@ -57,7 +59,7 @@ body {
     margin-top: 6px;
 }
 .group label {
-    
+    /* display: block; */
 }
 .btn:link,.btn:visited {
     text-decoration: none;

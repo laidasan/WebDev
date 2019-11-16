@@ -1,0 +1,95 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html,body {
+    width: 100%;
+}
+body {
+    display: flex;
+    height: 100vh;
+
+    background: #ccc;
+}
+.wrap {
+    width: 960px;
+    padding: 18px 30px;
+    margin: auto;
+
+    box-shadow: 0 0 12px 1px rgba(0,0,0,.6);
+}
+
+.person {
+    position: relative;
+    margin: 12px 0;
+}
+.person-right {
+    direction: rtl;
+}
+
+.head-group {
+    display: inline-block;
+    text-align: center;
+}
+.headimg-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.head {
+    width: 100%;
+    /* height: 100%; */
+    vertical-align: middle;    
+}
+
+
+.message {
+    display: inline-block;
+    vertical-align: top;
+    /* position: absolute; */
+    top: 15px;
+    padding: 6px 12px;
+    border-radius: 9px;
+    text-align: left;
+    background: #036;
+
+    max-width: 80%;
+    position: relative;
+    font-size: 18px;
+}
+
+.message::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    border-radius: 30px;
+
+}
+.message-left {
+    /* left: 70px;  when message position: absolute*/
+    left: 6px;
+}
+.message-left::before {
+    left:-21px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid #036;
+}
+.message-right {
+    /* right: 70px; when message position: absolute */
+    right: 6px;
+}
+.message-right::before {
+    right: -21px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #036;
+    border-right: 15px solid transparent;
+}
