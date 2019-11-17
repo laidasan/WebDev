@@ -74,7 +74,7 @@ body {
     display: inline-block;
     padding: 30px 60px;
     background: #fff;
-    box-shadow: 0 0 1px rgba(0,0,0,.6);
+    box-shadow: 0 0 12px 3px rgba(0,0,0,.6);
     position: relative;
 }
 .left {

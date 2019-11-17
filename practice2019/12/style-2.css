@@ -14,12 +14,12 @@ body {
 
 .timeline{
     width: 960px;
-    padding: 12px 0px;
+    padding: 60px 0px 0 ;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 
-    box-shadow: 0 0 1px 0 #000;
+    /* box-shadow: 0 0 1px 0 #000; */
 
     position: relative;
 }
@@ -48,9 +48,19 @@ body {
 }
 .item .txt {
     max-width: 360px;
-    box-shadow: 0 0 1px #000;
+    box-shadow: 3px 3px 10px #000;
     display: inline-block;
     background: #fff;
+    cursor: pointer;
+    padding: 6px 12px;
+}
+.item .txt:hover {
+    background: #09a;
+    color:#fff;
+}
+.txt h4 {
+    margin-bottom: 12px;
+    font-size: 24px
 }
 .right .txt {
     align-self: flex-end;
