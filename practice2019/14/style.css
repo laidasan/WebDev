@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.banner {
+    height: 600px;
+    background: url("./james-adams-QvRzgCx8LN8-unsplash.jpg") center center / cover;
+}
+
+
+.container {
+    width: 960px;
+    padding: 100px 0;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+.item {
+    width: 0;
+    flex-grow: 1;
+    padding: 12px 24px;
+    margin: 0 auto;
+}
+.item h2 {
+    margin-bottom: 12px;
+}
+.section {
+    position: relative;
+}
+.section::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: #fff;
+    
+    box-shadow: 200px 0 0 -30px #fff,
+                150px 0 0 -30px #fff,
+                230px 0 0 -40px #fff,
+                450px 30px 0 0 #fff,
+                600px 45px 0 0 #fff,
+                720px 10px 0 -15px #fff,
+                330px 0 0 -60px #fff,
+                
+                -150px 0 0 -30px #fff,
+                -270px 30px 0 -15px #fff,
+                -400px -15px 0 15px #fff,
+                -728px -9px 0 0 #fff,
+                -600px 9px 0 15px #fff,
+                
+                
+                210px -15px 0 -21px  rgba(0,0,0,.6),
+                300px -55px 0 -27px  rgba(0,0,0,.5),
+                420px -40px 0 -27px  rgba(0,0,0,.6),
+                540px -20px 0 -21px  rgba(0,0,0,.3),
+                700px -20px 0 0px  rgba(0,0,0,.6),
+
+                -100px -54px 0 -12px rgba(0,0,0,.6),
+                -210px -15px 0 -21px  rgba(0,0,0,.6),
+                -300px -55px 0 -27px  rgba(0,0,0,.5),
+                -420px -40px 0 -27px  rgba(0,0,0,.6),
+                -540px -60px 0 -21px  rgba(0,0,0,.6),
+                -700px -50px 0 30px  rgba(0,0,0,.8);
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background: #fff;
+    top: 0;
+    left:0;
+    z-index: 1;
+}
