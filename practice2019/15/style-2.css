@@ -1,0 +1,39 @@
+* {
+    padding:0;
+    margin: 0;
+    list-style: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.container {
+    width: 1200px;
+    padding: 100px 0;
+    margin: 0 auto;
+}
+.container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.container h1 {
+    max-width: 400px;
+    text-align: right;
+    padding: 30px 15px;
+    border-right: 3px solid #000;
+    margin-right: 15px;
+    float: left;
+    font-size: 42px;
+}
+.container .txt {
+    /* max-width: 800px; */
+
+    /* column-count: 2;
+    column-gap: 30px; */
+    font-size: 18px;
+    padding: 15px;
+    /* margin-left: 15px; */
+}

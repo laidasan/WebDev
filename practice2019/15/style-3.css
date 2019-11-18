@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.container {
+    width: 1200px;
+    padding: 100px 0;
+    margin: 0 auto;
+}
+.container h1 {
+    padding: 0px 15px;
+    margin-bottom: 30px;
+    font-size: 99px;
+    color: #aaa;
+    position: relative;
+}
+.container h1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    right:0;
+    top: 50px;
+    bottom: 0;
+    z-index: -1;
+    background: #ccc;
+    /* height: 70px; */
+}
+.container .txt {
+    padding: 15px 15px;
+    box-sizing: border-box;
+
+    column-count: 2;
+    column-gap: 30px;
+}
+.container .txt p {
+    padding: 12px 21px;
+}
+.container .txt p::after  {
+    content: '';
+    display: block;
+    clear: both;
+}
+.container .txt p::first-letter {
+    font-size: 42px;
+    padding-right: 15px;
+    float: left;
+}

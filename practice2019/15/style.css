@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.container {
+    width: 1200px;
+    padding: 100px 0;
+    margin: 0 auto;
+    display: flex;
+}
+.container h1 {
+    max-width: 400px;
+    width: 0;
+    flex-grow: 1;
+    text-align: right;
+    padding: 0px 15px;
+    background: #D5C7B9;
+    margin-right: 15px;
+    /* box-sizing: border-box; */
+}
+.container h1::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 3em;
+    background: #000;
+    /* margin-left: auto; */
+    margin: 0 0 0 auto;
+}
+.container .txt {
+    width: 0;
+    flex-grow: 2;
+    max-width: 800px;
+
+    column-count: 2;
+    column-gap: 30px;
+}
