@@ -4,6 +4,9 @@
     list-style: none;
 }
 
+img {
+    vertical-align: middle;
+}
 .main-header {
     background: rgba(0,0,0,1);
 }
@@ -109,12 +112,13 @@
     max-width: 960px;
     margin: auto;
 }
-.section .txt {
+.section .container > .txt {
     padding: 12px 30px;
     margin-bottom: 4.5em;
+
     text-align: center;
 }
-.section .txt h1 {
+.section .container > .txt h1 {
     font-size: 60px;
     margin-bottom: .3em;
     display: flex;
@@ -144,8 +148,9 @@
 .section-intro .card-wrap .item{
     display: inline-block;
     width: calc(90% / 3);
-    /* box-shadow: 0 0 3px 6px #036; */
+    box-shadow: 0 0 3px 1px rgb(0, 24, 70,.6);
     border: 6px solid #036;
+    border-radius: 12px;
     font-size: 21px;
     padding: 60px 0 12px;
     position: relative;
@@ -201,9 +206,89 @@
     /* box-shadow: 0 0 1px #000; */
 }
 .card2-wrap .item {
-    margin: 0 3%;
     flex-grow: 1;
     text-align: center;
+    display: flex;
+    margin: 0 12px;
+    box-shadow: 0 0 12px 0 #0043cd;
+}
+.card2-wrap .img-box {
+    width: 0;
+    flex-grow: 1;
+}
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+.card2-wrap .txt {
+    padding: 6px 12 px;
+    width: 0;
+    flex-grow: 1;
+    margin: auto;
+}
+.card2-wrap .txt h2 {
+    font-size: 24px;
+    margin-bottom: .3em;
+}
+.card2-wrap .txt p {
+    font-size: 15px;
 }
 
+
+.card3-wrap {
+    font-size: 0;
+}
+
+.card3-wrap .item {
+    display: inline-block;
+    padding: 0 0 12px;
+    font-size:24px;
+    width: calc(90% / 3);
+    position: relative;
+
+    cursor: pointer;
+}
+.card3-wrap .item:nth-child(2) {
+    margin:0 5%;
+}
+.card3-wrap .item .txt {
+    font-size: 18px;
+    padding: 0;
+    text-align: center;
+}
+.card3-wrap h2 {
+    margin: 0 0 12px;
+    position: relative;
+}
+.card3-wrap h2::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: -3px;
+    border-bottom: 1px solid #000;
+}
+.card3-wrap h2::before {
+    content: '';
+    position: absolute;
+    top:1px;
+    left: 0;
+    border-left: 174px solid #fff;
+    border-right: 174px solid #fff;
+    border-top: 50px solid transparent;
+    transform: translateY(-100%);
+}
+.card3-wrap .item:hover .txt{
+    background: #036;
+    color:#fff;
+}
+.card3-wrap .item:hover h2::before {
+    border-left: 174px solid #036;
+    border-right: 174px solid #036;
+}
+.card3-wrap .item:hover h2::after {
+    border-bottom: 1px solid #fff;
+}
 
