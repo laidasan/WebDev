@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body {
+    background: #000;
+}
+.wrap {
+    margin-top: 100px;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    color:#fff;
+    text-align: center;
+}
+.container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.container h1 {
+    color: #f00;
+    font-size: 7.5em;
+    position: relative;
+    border-top: 1px solid #f00;
+    border-bottom: 1px solid #f00;
+}
+.container .txt {
+    padding: 12px 30px;
+}
+.txt p {
+    margin-bottom: 15px;
+    font-size: 21px ;
+}
+.txt p:first-child::first-letter {
+    font-size: 70px;
+    float: left;
+    padding-right: 15px;
+}

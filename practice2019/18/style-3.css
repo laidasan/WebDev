@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.wrap {
+    margin-top: 100px;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 30px 0px #ccc;
+    position: relative;
+    overflow: hidden;
+}
+.container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.container h1 {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    font-size: 225px;
+    line-height: .6em;
+    box-sizing: border-box;
+    padding:0 60px;
+    color: #fff;
+    text-shadow: 9px 3px 1px  #ccc;
+    z-index: -1;
+    user-select: none;
+}
+.container .txt {
+    width: 50%;
+    float: right;
+    padding: 12px 30px;
+
+    column-count: 2;
+    column-gap: 30px;
+}
+.txt p {
+    margin-bottom: 15px;
+    font-size: 21px ;
+}
+.txt p:first-child::first-letter {
+    font-size: 70px;
+    float: left;
+    padding-right: 15px;
+}
