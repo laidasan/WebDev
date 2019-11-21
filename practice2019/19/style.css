@@ -247,6 +247,7 @@ img {
     font-size:24px;
     width: calc(90% / 3);
     position: relative;
+    box-shadow: 0 0 3px 3px rgba(0,30,70,.6);
 
     cursor: pointer;
 }
@@ -280,7 +281,7 @@ img {
     border-top: 50px solid transparent;
     transform: translateY(-100%);
 }
-.card3-wrap .item:hover .txt{
+.card3-wrap .item:hover{
     background: #036;
     color:#fff;
 }
@@ -291,4 +292,42 @@ img {
 .card3-wrap .item:hover h2::after {
     border-bottom: 1px solid #fff;
 }
+
+.footer {
+    padding: 60px 0;
+    color: #fff;
+    background: linear-gradient(115deg,#036,#0af);
+}
+.footer .container {
+    min-width: 960px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+
+}
+.footer .item {
+    width: 0;
+    flex-grow: 1;
+    margin: auto;
+    padding: 0 6px;
+}
+.list-item {
+    padding: 6px 12px 6px 0px;
+}
+.list-item i {
+    font-size: 18px;
+}
+.list-link:link,
+.list-link:visited {
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+}
+.footer h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+
+
+
 
