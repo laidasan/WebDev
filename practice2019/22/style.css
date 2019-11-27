@@ -15,18 +15,19 @@ body {
 }
 .circle {
     /* font-size: 0; */
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     margin: 0 auto;
     border: 6px solid #333;
 
-    background-size: 50px 50px;
+    background-size: 150px 150px;
     background-position: top right,top left,bottom right,bottom left;
     background-repeat: no-repeat;
     background-image: 
-                     -webkit-radial-gradient(0px 50px,circle farthest-side,rgba(255,205,0,1) 70%,rgba(255,255,160,1) 95%),
-                     -webkit-radial-gradient(50px 50px,circle farthest-side,rgba(0,0,0,1) 70%,rgba(80,80,80,1) 95%),
+                     /* -webkit-radial-gradient(0px 150px,circle farthest-side,rgba(255,205,0,1) 70%,rgba(255,255,160,1) 95%), */
+                     radial-gradient(circle farthest-side at 0px 150px,rgba(255,205,0,1) 70%,rgba(255,255,160,1) 95%),
+                     -webkit-radial-gradient(150px 150px,circle farthest-side,rgba(0,0,0,1) 70%,rgba(80,80,80,1) 95%),
                      -webkit-radial-gradient(0px 0px,circle farthest-side,rgba(0,0,0,1) 70%,rgba(80,80,80,1) 95%),
-                     -webkit-radial-gradient(50px 0px,circle farthest-side,rgba(255,205,0,1) 70%,rgba(255,255,160,1) 95%);
+                     -webkit-radial-gradient(150px 0px,circle farthest-side,rgba(255,205,0,1) 70%,rgba(255,255,160,1) 95%);
 }

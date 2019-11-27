@@ -1,0 +1,93 @@
+* {
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+
+html,body {
+    width: 100%;
+}
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.BicycleWrap {
+    margin: auto;
+}
+
+
+.bicycle-wheel {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+
+    border: 6px solid #000;
+
+    background-size: 120px 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg,#ccc 0%,#ccc 100%);
+
+    animation: wheel 1s infinite linear;
+}
+.bicycle-wheel--point {
+    /* width: 30px;
+    height: 30px; */
+    width: 12px;
+    height: 12px;
+    border: 12px solid #333;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+   
+    /* top: 45px;
+    left: 45px; */
+}
+
+/* 
+.bicycle-wheel--point {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border: 9px solid #333;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(45px,45px);
+} */
+
+
+.bicycle-wheel::after,
+.bicycle-wheel::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    top: .6px;
+    bottom: .6px;
+    left: 0;
+    right:0;
+    margin: 0 auto;
+    z-index: -1;
+    transform-origin: 50% 50%;
+    transform: rotate(30deg);
+    background: #ccc;
+}
+.bicycle-wheel::before {
+    transform: rotate(-30deg);
+}
+
+
+@keyframes wheel {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
