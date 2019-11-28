@@ -17,13 +17,16 @@ body {
 }
 
 
+.bicycle {
+    position: relative;
+}
 .bicycle-wheel {
     width: 120px;
     height: 120px;
     margin: 0 auto;
     border-radius: 50%;
-    position: relative;
-
+    position: absolute;
+    
     border: 6px solid #000;
 
     background-size: 120px 15px;
@@ -33,7 +36,15 @@ body {
 
     animation: wheel 1s infinite linear;
 }
-.bicycle-wheel--point {
+.bicycle-wheel--back {
+    top:51px;
+    left: -108px;
+}
+.bicycle-wheel--front {
+    right: -42px;
+    top: 51px;
+}
+.bicycle-wheel__point {
     /* width: 30px;
     height: 30px; */
     width: 12px;
@@ -82,7 +93,40 @@ body {
     transform: rotate(-30deg);
 }
 
+.bicycle-body {
+    width: 360px;
+    height: 108px;
+    background-repeat: no-repeat;
+    background: linear-gradient(90deg,#fff 0%,#fff 60%,#cd0000 60%,#cd0000 66%,#fff 66%,#fff 100%);
+    box-shadow: 0 0 0px 15px #cd0000;
+    position: relative;
+    transform: skew(-30deg);
+}
+.bicycle-body::after {
+    content: '';
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    /* width: 0; */
+    /* height: 0; */
+    border-top: 72px solid #fff;
+    border-right: 72px solid #fff;
+    border-left: 72px solid transparent;
+    border-bottom: 72px solid transparent;
+    z-index: 1;
+}
+.bicycle-body::before {
+    content: '';
+    position: absolute;
+    right: 120px;
+    bottom: -15px;
+    width: 21px;
+    height: 300px;
+    z-index: 2;
 
+    transform: skew(45deg);
+    background: #cd0000;
+}
 @keyframes wheel {
     0% {
         transform: rotate(0deg);
