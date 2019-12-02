@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body {
+    background: url("./bk.jpg");
+}
+.img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+.share {
+    padding: 60px 120px;
+    box-shadow: 0 0 1px #cd0000;
+}
+.share__container {
+    overflow-y: hidden;
+    overflow-x: visible;
+    white-space: nowrap;
+    padding-bottom: 240px;
+    margin-bottom: -300px;
+    font-size: 0;
+}
+
+.share-wrap {
+    width: 600px;
+    float: left;
+}
+.share__img-box {
+    width: 100%;
+    height: 300px;
+}
+.share__item:link,
+.share__item:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,.3);
+    border: 1px solid #fff;
+
+    margin-bottom: 15px;
+}
+.share__item__img-box {
+
+}
+.share__item__txt {
+
+}
+.share__item__info {
+    text-align: center;
+    font-size: 18px;
+}
