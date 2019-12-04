@@ -7,6 +7,10 @@
     font-size: 60px;
     font-weight: 400;
 }
+.heading-fourth {
+    font-size: 27px;
+    font-weight: 400;
+}
 
 
 
@@ -165,10 +169,12 @@
 /* banner-background */
 .banner-bk {
     position: fixed;
-    top: -30px;
+    /* top: -30px; */
+    /* bottom: -120px; */
+    top:-30px;
+    bottom: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
     overflow: hidden;
     opacity: .3;
     z-index: -1;
@@ -180,7 +186,7 @@
 
 /* banner */
 .banner {
-    padding: 90px 0;
+    padding: 90px 0 0;
 }
 .banner__txt {
     width: 600px;
@@ -209,6 +215,45 @@
 .btn:hover {
     background: linear-gradient(115deg,rgba(0, 102, 153,.15),rgba(0, 170, 255,.15));
 }
+
+
+/* banner__feature */
+.banner__feature {
+    background: rgba(255,255,255,.6);
+    padding: 90px 0;
+    margin-top: 150px;
+}
+.banner__feature__container {
+    min-width: 960px;
+    max-width: 1200px;
+    margin:0 auto;
+    display: flex;
+}
+.banner__feature__item {
+    width: 0;
+    flex: 1;
+    margin: 0 auto;
+    text-align: center;
+    padding: 12px 21px;
+}
+.banner__feature__item__icon i {
+    font-size: 30px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    line-height: 90px;
+    color: #09f;
+    border: 3px solid #09f;
+    /* box-shadow: 0 0 3px #069; */
+}
+.banner__feature__item p {
+    font-size: 18px;
+}
+.banner__feature__item h3 {
+    margin: 15px 0;
+}
+
+
 
 .section {
     /* padding: 120px 0; */
