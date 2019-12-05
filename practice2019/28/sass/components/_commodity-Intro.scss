@@ -1,7 +1,7 @@
 .commodity {
     &__container {
         &-txt {
-            padding: 180px 0;
+            padding: 180px 0 90px;
             background: $color-primary;
         }
         &-intro {
@@ -30,7 +30,7 @@
     
     &__tabList {
         // border: 1px solid #cd0000;
-        padding: 0 10%;
+        padding: 0 15%;
         overflow: hidden;
         position: relative;
         &-tab {
@@ -49,6 +49,7 @@
             }
             span {
                 user-select: none;
+                font-size: 24px;
             }
 
 
@@ -62,7 +63,6 @@
             top: 0;
             bottom: 0;
             cursor: pointer;
-            // background: #cd0000;
         }
 
         &::before {
@@ -75,7 +75,6 @@
             top: 0;
             bottom: 0;
             background: $color-primary;
-            // background: #000;
             z-index: 0;
 
         }
@@ -83,29 +82,169 @@
     }
 
     &__content-group {
-        // background: #0fa;
+        position: relative;
+        padding: 270px 0;
     }
 
     &__content {
-        padding: 90px 10%;
-        box-shadow: 0 0 1px #cd0000;
+        padding: 90px 15%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left:0;
+
+        /* animation */
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s ease-in;
+
+        /* 有效果，但做出來似乎沒有，試著快出慢進，或是用animation*/
+
+
+
+        /* flex */
+        display: flex;
+
+        &__txt-wrap {
+            width: 0;
+            flex: 1;
+            position: relative;
+
+            // transition: all 1s;
+            // opacity: 0;
+
+            /*  flex */
+            display: flex;
+            flex-direction: column;
+            
+            &:nth-child(1) {
+                margin-right: 45px;
+                padding-right: 60px;
+                text-align: right;
+            }
+            &:last-child {
+                margin-left: 45px;
+                padding-left: 60px;
+            }
+
+
+        }
+
+        &__txt-wrap::before {
+            content: '';
+            position: absolute;
+            left:0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+
+            height: 0;
+            border-top: 1px solid #ccc;
+        }
+        &__txt-wrap:first-child::before {
+            right: 60px;
+        }
+        &__txt-wrap:last-child::before {
+            left: 60px;
+        }
+
+
+        &-txt {
+            font-size: 15px;
+            margin: auto;
+            // position: relative;
+
+            p {
+                margin: 15px 0;
+            }
+        }
+        // &-txt + &-txt::before {
+        //     content: '';
+        //     position: absolute;
+        //     left: 0;
+        //     right: 0;
+            // top: -50%;
+
+            // height: 1px;
+            // background: #ccc;
+
+            // height: 0;
+            // border-top: 1px solid #ccc;
+        // }
+
+        &__img-box {
+            width: 270px;
+            height: 270px;
+            flex-shrink: 0;
+            margin: auto;
+            
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        &__img {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+            object-fit: cover;
+        }
     }
 
 
     &__radio{
         display: none;
 
-        &-one:checked {
-            ~.commodity__tabList .commodity__tabList-tab:nth-child(1){
-                background: #fff;
-                color: $color-primary;
+        &-one {
+            &:checked ~ .commodity__tabList{
+                .commodity__tabList-tab:nth-child(1) {
+                    background: #fff;
+                    color: $color-primary;
+                }
+            }
+            &:checked ~ .commodity__content-group {
+                .commodity__content:nth-child(1) {
+                    visibility: visible;
+                    opacity: 1;
+                    .commodity__content__txt-wrap {
+                        // opacity: 1;
+                    }
+                }
             }
         }
         &-two {
-
+            &:checked ~ .commodity__tabList{
+                .commodity__tabList-tab:nth-child(2) {
+                    background: #fff;
+                    color: $color-primary;
+                }
+            }
+            &:checked ~ .commodity__content-group {
+                .commodity__content:nth-child(2) {
+                    visibility: visible;
+                    opacity: 1;
+                    .commodity__content__txt-wrap {
+                        // opacity: 1;
+                    }
+                }
+            }
         }
         &-three {
-
+            &:checked ~ .commodity__tabList{
+                .commodity__tabList-tab:nth-child(3) {
+                    background: #fff;
+                    color: $color-primary;
+                }
+            }
+            &:checked ~ .commodity__content-group {
+                .commodity__content:nth-child(3) {
+                    // visibility: visible;
+                    // opacity: 1;
+                    .commodity__content__txt-wrap {
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 
