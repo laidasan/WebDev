@@ -1,0 +1,112 @@
+.commodity {
+    &__container {
+        &-txt {
+            padding: 180px 0;
+            background: $color-primary;
+        }
+        &-intro {
+            // box-shadow: 0 0 0px 3px #cd0000;
+            overflow: hidden;
+            background: #fff;
+            // position: relative;
+        }
+    }
+
+    &__txt {
+        max-width: 600px;
+        margin: 0 auto;
+        color: #fff;
+        text-align: center;
+
+        p {
+            font-size: 21px;
+            line-height: 1.5;
+            margin: 15px 0;
+            color: rgba(255,255,255,.75);
+        }
+    }
+
+   
+    
+    &__tabList {
+        // border: 1px solid #cd0000;
+        padding: 0 10%;
+        overflow: hidden;
+        position: relative;
+        &-tab {
+            width: 33%;
+            float: left;
+            padding: 30px 0;
+            // box-shadow: 0 0 1px #000;
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            background: $color-primary;
+            &:nth-child(1) {
+                background: $color-primary;
+                color: #fff;
+            }
+            span {
+                user-select: none;
+            }
+
+
+          
+        }
+
+        &-label {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            cursor: pointer;
+            // background: #cd0000;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: $color-primary;
+            // background: #000;
+            z-index: 0;
+
+        }
+
+    }
+
+    &__content-group {
+        // background: #0fa;
+    }
+
+    &__content {
+        padding: 90px 10%;
+        box-shadow: 0 0 1px #cd0000;
+    }
+
+
+    &__radio{
+        display: none;
+
+        &-one:checked {
+            ~.commodity__tabList .commodity__tabList-tab:nth-child(1){
+                background: #fff;
+                color: $color-primary;
+            }
+        }
+        &-two {
+
+        }
+        &-three {
+
+        }
+    }
+
+}

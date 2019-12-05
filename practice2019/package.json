@@ -1,0 +1,15 @@
+{
+  "name": "for-practice-compile-sass",
+  "version": "1.0.0",
+  "description": "compile sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:css": "node-sass 28/sass/main.scss 28/style-compile.css -w"
+  },
+  "author": "Yuri",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
