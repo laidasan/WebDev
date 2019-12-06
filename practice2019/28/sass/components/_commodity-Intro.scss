@@ -97,9 +97,11 @@
         /* animation */
         visibility: hidden;
         opacity: 0;
-        transition: all 1s ease-in;
+        transition: opacity 1s 1s;
 
         /* 有效果，但做出來似乎沒有，試著快出慢進，或是用animation*/
+        /*用了content與txt-wrap、img-box的transition不同，做出效果，但有BUG，快速切換的時候上一個tab還沒有效果，試想*/
+        /*●可以用js來解決，切換tab幾秒內不能夠切換*/
 
 
 
@@ -111,8 +113,8 @@
             flex: 1;
             position: relative;
 
-            // transition: all 1s;
-            // opacity: 0;
+            transition: all .15s;
+            opacity: 0;
 
             /*  flex */
             display: flex;
@@ -182,6 +184,9 @@
             
             border-radius: 50%;
             overflow: hidden;
+
+            transition: all .15s;
+            opacity: 0;
         }
         &__img {
             width: 100%;
@@ -207,7 +212,10 @@
                     visibility: visible;
                     opacity: 1;
                     .commodity__content__txt-wrap {
-                        // opacity: 1;
+                        opacity: 1;
+                    }
+                    .commodity__content__img-box {
+                        opacity: 1;
                     }
                 }
             }
@@ -224,7 +232,10 @@
                     visibility: visible;
                     opacity: 1;
                     .commodity__content__txt-wrap {
-                        // opacity: 1;
+                        opacity: 1;
+                    }
+                    .commodity__content__img-box {
+                        opacity: 1;
                     }
                 }
             }
@@ -238,11 +249,15 @@
             }
             &:checked ~ .commodity__content-group {
                 .commodity__content:nth-child(3) {
-                    // visibility: visible;
-                    // opacity: 1;
+                    visibility: visible;
+                    opacity: 1;
                     .commodity__content__txt-wrap {
                         opacity: 1;
                     }
+                    .commodity__content__img-box {
+                        opacity: 1;
+                    }
+                    
                 }
             }
         }
