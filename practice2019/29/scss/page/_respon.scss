@@ -1,0 +1,59 @@
+.About {
+    @include respon(phone) {
+        .btn {
+            &:link,&:visited {
+                display: block;
+                max-width: 120px;
+                margin: 0 auto;
+                padding: 3px 6px;
+                background: $color-primary;
+                color: #fff;
+                box-shadow: 3px 3px 6px rgba($color-primary,.6);
+                transform: none;
+                border: none;
+                transition: none;
+            }
+        }
+    }
+}
+.about {
+    @include respon(phone) {
+        &__content {
+            padding: 0;
+            &__txt-wrap {
+                float: none;
+                width: initial;
+                padding: 0 45px;
+            }
+
+            &__txt {
+                h3 {
+                    font-size: 21px;
+                }
+            }
+            &__img-wrap {
+                float: none ;
+                width: initial;
+                margin: 30px auto;
+
+                &:hover .about__content__img-box:not(:hover){
+                    transform: none;
+                }
+
+            }
+
+            &__img-box{
+                width: 300px;
+                margin: 21px auto;
+                &:hover {
+                    transform: none;
+                    outline: none;
+                }
+
+                &:nth-child(n) {
+                    position: initial;
+                }
+            }
+        }
+    }
+}
