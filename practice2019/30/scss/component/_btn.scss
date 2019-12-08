@@ -1,0 +1,19 @@
+.btn {
+    &:link,&:visited {
+        display: inline-block;
+        text-decoration: none;
+    }
+    &--banner:link,&--banner:visited{
+        color: #fff;
+        display: block;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        margin: 0 auto;
+        line-height: 90px;
+        font-size: 45px;
+        transform: scaleY(-1);
+
+    }
+}

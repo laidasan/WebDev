@@ -1,0 +1,19 @@
+.banner {
+    padding: 150px;
+    &__txt {
+        padding: 0 12%;
+        text-align: center;
+        color: #fff;
+
+        p {
+            font-size: 24px;
+            line-height: 1.8;
+            margin-bottom: 60px;
+        }
+
+
+    }
+    &__title {
+        padding: 0 15%;
+    }
+}
