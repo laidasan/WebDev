@@ -70,25 +70,35 @@
 
             text-align: center;
             line-height: 180px;
+            color: #fff;
+            font-size: 60px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,.6);
+            border: 3px solid $color-circle-2;
 
-            &::after {
-                content: '';
-                position: absolute;
+            // &::after {
+            //     content: '';
+            //     position: absolute;
                 // top: -12px;
                 // bottom: -12px;
                 // right: -12px;
-                left: -12px;
-                padding: 90px;
-                border-radius: 50%;
-                background: linear-gradient(90deg,$color-circle,$color-circle-2,$color-circle-3);
-                background-clip: content-box;
+                // top: 0;
+                // left: -12px;
+                // padding: 90px;
+                // border-radius: 50%;
+                // background: linear-gradient(90deg,$color-circle,$color-circle-2,$color-circle-3);
+                // background-clip: content-box;
                 // -webkit-background-clip: content-box;
                 // z-index: -1;
-            }
+            // }
         }
 
 
         &__txt {
+            position: relative;
+            top: 50%;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,.6);
+
 
         }
     }

@@ -78,12 +78,13 @@ body {
     top: -45px;
     left: -210px;
     text-align: center;
-    line-height: 180px; }
-    .pagecover__subscribe__circle::after {
-      content: '';
-      position: absolute;
-      left: -12px;
-      padding: 90px;
-      border-radius: 50%;
-      background: linear-gradient(90deg, #D1AB4D, #65655E, #242F40);
-      background-clip: content-box; }
+    line-height: 180px;
+    color: #fff;
+    font-size: 60px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    border: 3px solid #65655E; }
+  .pagecover__subscribe__txt {
+    position: relative;
+    top: 50%;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); }
