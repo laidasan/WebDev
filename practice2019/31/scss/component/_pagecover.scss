@@ -73,23 +73,26 @@
             color: #fff;
             font-size: 60px;
             text-shadow: 3px 3px 6px rgba(0,0,0,.6);
-            border: 3px solid $color-circle-2;
+            // border: 3px solid $color-circle-2;
+            background: url("../../Img/body-bk.jpg")fixed center center / cover;
 
-            // &::after {
-            //     content: '';
-            //     position: absolute;
+            &::after {
+                content: '';
+                position: absolute;
                 // top: -12px;
                 // bottom: -12px;
                 // right: -12px;
-                // top: 0;
-                // left: -12px;
-                // padding: 90px;
-                // border-radius: 50%;
-                // background: linear-gradient(90deg,$color-circle,$color-circle-2,$color-circle-3);
-                // background-clip: content-box;
-                // -webkit-background-clip: content-box;
-                // z-index: -1;
-            // }
+                top: 0;
+                bottom: 0;
+                left: -3px;
+                right: 0;
+                margin: auto;
+                width: 186px;
+                height: 186px;
+                border-radius: 50%;
+                background: linear-gradient(90deg,$color-circle,$color-circle-2,$color-circle-3);
+                z-index: -1;
+            }
         }
 
 

@@ -82,7 +82,20 @@ body {
     color: #fff;
     font-size: 60px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-    border: 3px solid #65655E; }
+    background: url("../../Img/body-bk.jpg") fixed center center/cover; }
+    .pagecover__subscribe__circle::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -3px;
+      right: 0;
+      margin: auto;
+      width: 186px;
+      height: 186px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, #D1AB4D, #65655E, #242F40);
+      z-index: -1; }
   .pagecover__subscribe__txt {
     position: relative;
     top: 50%;
