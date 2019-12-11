@@ -7,7 +7,7 @@
     //     clear: both;
     // }
     padding: 15px 0;
-    background: rgba(0,0,0,.3);
+    // background: rgba(0,0,0,.3);
     &__logo {
         color: #fff;
         font-size: 24px;
@@ -27,7 +27,7 @@
 
 
         &__checkbox {
-            // display: none;
+            display: none;
         }
         &__label {
             font-size: 24px;
