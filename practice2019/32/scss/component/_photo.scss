@@ -24,7 +24,7 @@
             margin-right: 5%;
         }
         &:not(:nth-child(n+3)) {
-            margin-bottom: 90px;
+            margin-bottom: 42px;
         }
     }
     &__img {
@@ -32,5 +32,19 @@
         height: 100%;
         object-fit: cover;
         vertical-align: middle;
+    }
+
+
+    @include respon(phone) {
+        &-container {
+            padding: 0 12%;
+        }
+        &__img-box {
+            float: none;
+            width: auto;
+            &:nth-child(n) {
+                margin: 9px 0;
+            }
+        }
     }
 }

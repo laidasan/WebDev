@@ -84,6 +84,11 @@
         &:nth-child(5) {
             background: url("../../img/banner-bk/banner_nature5.jpg") no-repeat fixed center 66% / cover;
         }
+
+        @include respon(landscape) {
+            &:nth-child(1) {background: url("../../img/banner-bk/banner_nature1.jpg") no-repeat fixed center 80% / cover;}
+            &:nth-child(3) {background: url("../../img/banner-bk/banner_nature3.jpg") no-repeat fixed right bottom / cover;}
+        }
     }
 
 

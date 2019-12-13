@@ -2,6 +2,10 @@
     // height: 300px;
     padding: 120px 0;
     background: #eee;
+
+    @include respon(phone) {
+        padding: 0;
+    }
 }
 
 .section-MiddleBanner {

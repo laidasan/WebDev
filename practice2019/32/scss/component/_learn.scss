@@ -2,6 +2,8 @@
     &-container {
         padding: 0 15%;
         display: flex;
+
+       
     }
 
     &__card {
@@ -54,6 +56,40 @@
             text-align: left;
             font-size: 18px;
             color: #aaa;
+        }
+    }
+
+    @include respon(landscape) {
+        &-container {
+            display: block;
+        }       
+        &__card {
+            width: auto;
+            margin: 15px 0;
+            padding: 60px;
+
+
+            &__info {
+                margin: 24px 0 36px;
+            }
+        }
+    }
+    @include respon(phone) {
+        &-container {
+            padding: 0;
+        }
+        &__card {
+            margin: 0;
+            position: relative;
+            & + &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 1px;
+                background: #ccc;
+            }
         }
     }
 }

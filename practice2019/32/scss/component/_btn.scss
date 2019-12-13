@@ -11,5 +11,10 @@
         &:hover {
             background: #eee;
         }
+        @include respon(landscape) {
+            &:hover {
+                background: none;
+            }
+        }
     }
 }

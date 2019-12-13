@@ -4,9 +4,20 @@
 
         &--photo {
             margin-bottom: 60px;
+            
         }
         p {
             color: #999;
+        }
+
+        @include respon(phone) {
+            &--photo {
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 15px;
+            }
         }
     }
     &__title {
