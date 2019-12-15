@@ -1,0 +1,99 @@
+.imgshow {
+    &-container {
+        overflow: hidden;
+        // overflow-y: hidden;
+        // overflow-x: scroll;   
+    }
+
+    
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+        &-wrap {
+            font-size: 0;
+            white-space: nowrap;
+            // overflow: hidden;
+            // position: relative;
+
+            //可以滾
+            overflow-y: hidden;
+            overflow-x: auto;
+            //隱藏滾軸
+            padding-bottom: 60px;
+            margin-bottom: -60px;
+            
+            // &::after {
+            //     content: '';
+            //     display: block;
+            //     clear: both;
+            // }
+            // transform: translateX(-50%);
+        }
+        &-box {
+            display: inline-block;
+            width: 450px;
+            height: 300px;
+            margin: 15px 30px;
+            // float: left;
+            position: relative;
+        }
+
+        &__label {
+            position: absolute;
+            top: 0;   
+            bottom: 0;
+            left: 0;
+            right: 0;
+            cursor: pointer;
+            background: rgba(255,255,255,.3);
+        }
+    }
+    &__list {
+        min-width: 210px;
+        max-width: 270px;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+        &__item {
+            flex: 1;
+            margin: 0 6px;
+            text-align: center;
+        }
+        &__button {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px #666;
+            cursor: pointer;
+            &:hover {
+                background: rgba($color-primary-rose,.6);
+                box-shadow: 0 0 0 1px rgba($color-primary-rose,.6);
+            }
+        }
+    }
+
+    &__RadioButton {
+        display: none;
+
+        &:nth-child(1):checked ~ .imgshow__list .imgshow__list__item:nth-child(1) .imgshow__list__button {
+            background: rgba($color-primary-rose,.6);
+        }
+        &:nth-child(2):checked ~ .imgshow__list .imgshow__list__item:nth-child(2) .imgshow__list__button {
+            background: rgba($color-primary-rose,.6);
+        }
+        &:nth-child(3):checked ~ .imgshow__list .imgshow__list__item:nth-child(3) .imgshow__list__button {
+            background: rgba($color-primary-rose,.6);
+        }
+        &:nth-child(4):checked ~ .imgshow__list .imgshow__list__item:nth-child(4) .imgshow__list__button {
+            background: rgba($color-primary-rose,.6);
+        }
+        &:nth-child(5):checked ~ .imgshow__list .imgshow__list__item:nth-child(5) .imgshow__list__button {
+            background: rgba($color-primary-rose,.6);
+        }
+
+
+    }
+}
