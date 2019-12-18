@@ -62,4 +62,38 @@
             color: #666;
         }
     }
+
+    @include respon(phone) {
+        &__line {
+            padding: 0;
+            display: block;
+            &-wrap {
+                padding: 1px;
+                overflow: hidden;
+                width: auto;
+                text-align: center;
+                &:not(:last-child) .process__line__icon-box::before {
+                    bottom: -121px;
+                    top: 120px;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                    height: auto;
+                    padding: 0;
+                    width: 1px;
+                }
+            }
+
+            &__icon-box {
+                margin-left: 39%;
+                float: left;
+            }
+            &__pro {
+                float: left;
+                line-height: 120px;
+                overflow: hidden;
+                margin-left: 30px;
+            }
+        }
+    }
 }

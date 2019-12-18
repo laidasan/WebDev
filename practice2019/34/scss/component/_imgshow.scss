@@ -14,15 +14,15 @@
         &-wrap {
             font-size: 0;
             white-space: nowrap;
-            // overflow: hidden;
+            overflow: hidden;
             // position: relative;
 
             //可以滾
-            overflow-y: hidden;
-            overflow-x: auto;
+            // overflow-y: hidden;
+            // overflow-x: auto;
             //隱藏滾軸
-            padding-bottom: 60px;
-            margin-bottom: -60px;
+            // padding-bottom: 60px;
+            // margin-bottom: -60px;
             
             // &::after {
             //     content: '';
@@ -38,6 +38,12 @@
             margin: 15px 30px;
             // float: left;
             position: relative;
+            // left: 330px;  //img-1
+            // left: -165px; //img-2
+            left: -690px; // img-3
+            // left: -1190px;  //img-4
+            // left: -1700px;  //img-5
+
         }
 
         &__label {
@@ -94,6 +100,51 @@
             background: rgba($color-primary-rose,.6);
         }
 
+        &:nth-child(1):checked ~ .imgshow__img-wrap .imgshow__img-box {
+            animation: imgshow__scroll-1 .6s linear forwards;
+        }
+        &:nth-child(2):checked ~ .imgshow__img-wrap .imgshow__img-box {
+            animation: imgshow__scroll-2 .6s linear forwards;
+        }
+        &:nth-child(3):checked ~ .imgshow__img-wrap .imgshow__img-box {
+            animation: imgshow__scroll-3 .6s linear forwards;
+        }
+        &:nth-child(4):checked ~ .imgshow__img-wrap .imgshow__img-box {
+            animation: imgshow__scroll-4 .6s linear forwards;
+        }
+        &:nth-child(5):checked ~ .imgshow__img-wrap .imgshow__img-box {
+            animation: imgshow__scroll-5 .6s linear forwards;
+        }
+    }
 
+
+    @include respon(phone) {
+        &__RadioButton {
+            &:nth-child(1):checked ~ .imgshow__img-wrap .imgshow__img-box {
+                animation:none;
+                left: 50px;
+            }
+            &:nth-child(2):checked ~ .imgshow__img-wrap .imgshow__img-box {
+                animation:none;
+                left: -500px;
+            }
+            &:nth-child(3):checked ~ .imgshow__img-wrap .imgshow__img-box {
+                animation:none;
+                left: -1000px;
+
+            }
+            &:nth-child(4):checked ~ .imgshow__img-wrap .imgshow__img-box {
+                animation:none;
+                left: -1500px;
+            }
+            &:nth-child(5):checked ~ .imgshow__img-wrap .imgshow__img-box {
+                animation:none;
+                left: -2000px;
+
+            }
+        }
+
+        &__wrap {
+        }
     }
 }

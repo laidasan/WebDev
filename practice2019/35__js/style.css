@@ -1,0 +1,54 @@
+* {
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+
+:root body {
+    height: 100vh;
+    display: flex;
+    background: url("http://i.imgur.com/b9r5sEL.jpg")center / cover;
+}
+.container {
+    margin: auto;
+    /* padding: 0 10%; */
+    justify-content: center;
+    display: flex;
+}
+.item {
+    padding: 30px 600px 30px 18px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.green {
+    background: #0a9;
+}
+.red {
+    background: #aa0000;
+}
+.orange {
+    background: #fa0;
+}
+
+
+.link:link,.link:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+/*   main  */
+.key {
+    width: 0;
+    flex: 1;
+    padding: 18% 18%;
+    /* width: 30px;
+    height: 30px; */
+    margin: 0 15px;
+    border: 3px solid #000;
+    background: #cd0000;
+}
+.playing {
+}
