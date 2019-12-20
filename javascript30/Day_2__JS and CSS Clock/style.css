@@ -1,0 +1,54 @@
+html {
+    overflow-y: scroll;
+}
+:root {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+:root body {
+    position: absolute;
+}
+body {
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    background: #333;
+}
+
+.clock {
+    margin: auto;
+}
+.clock-face {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    position: relative;
+}
+.hand {
+    position: absolute;
+    /* top: 0; */
+    bottom: 50%;
+    /* right: 50%; */
+    right: 0;
+    left: 0;
+    margin: auto;
+    /* height: 3px; */
+    width: 3px;
+    background: #fff;
+    transform-origin: 50% 100%;
+}
+.hour {
+    top: 120px;
+    /* transform: rotate(90deg); */
+}
+.minute {
+    top: 60px;
+    /* transform: rotate(45deg); */
+}
+.second {
+    top: 12px;
+    /* transform: rotate(30deg); */
+}
