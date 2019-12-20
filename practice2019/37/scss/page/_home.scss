@@ -1,0 +1,30 @@
+.page-main {
+    width: 90%;
+    margin-left: -21%;
+    float: left;
+    background: #fff;
+    transition: all .6s;
+    padding: 0 5%;
+}
+.page-left {
+    width: 21%;
+    transform: translateX(-100%);
+    transition: all .6s;
+    float: left;
+    // background: #333;
+    background: #fbfbfb;
+
+}
+
+.section{
+
+    &-erat {
+        padding: 60px 0;
+        overflow: hidden;
+        border-bottom: 3px solid #ccc;
+    }
+    &-ipsum {
+        padding: 60px 0;
+        overflow: hidden;
+    }
+}
