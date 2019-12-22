@@ -7,7 +7,7 @@
         const now = new Date();
         const secondsDeg = (now.getSeconds() / 60) * 360;
         const minuteDeg = (now.getMinutes() / 60) * 360;
-        const hourDeg = ( (now.getHours() / 12) * 360 ) + (now.getMinutes() / 2);
+        const hourDeg = ( (now.getHours() / 12) * 360 ) + (now.getMinutes() / 2);  //每60分鐘時針走30度 => 一分鐘走1/2度
 
         secondHand.setAttribute('style',`transform: rotate(${secondsDeg}deg);`);
         minuteHand.setAttribute('style',`transform: rotate(${minuteDeg}deg);`);
