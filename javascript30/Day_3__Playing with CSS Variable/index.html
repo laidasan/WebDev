@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Playing With Variable</title>
+    <style type="text/css">
+        :root {
+            --spacing: 10px;
+            --blur: 10px;
+            --background: #ffc600;
+        }
+    </style>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h2 class="heading-secondary">Update CSS Variable WITH <span class="heading-span">JS</span> </h2>
+
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input data-sizing="px" type="range" name="spacing" id="spacint" min="0" max="200"  step="1">
+
+        <label for="blur">Blur</label>
+        <input data-sizing="px" type="range" name="blur" id="blur" min="0" max="10"  step="1">
+
+        <label for="backgorund">Color</label>
+        <input type="color" name="background" id="background" value="#ffc600">
+    </div>
+    <div class="img-box"><img src="https://picsum.photos/600/600/?random=10" alt="" class="img"></div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
