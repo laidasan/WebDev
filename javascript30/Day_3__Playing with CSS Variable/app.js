@@ -22,6 +22,9 @@
                 input.setAttribute('value',10);
             }
         });
+        html.style.setProperty('--spacing',10 + 'px');
+        html.style.setProperty('--blur',10 + 'px');
+        html.style.setProperty('--background','#ffc600');
     }
 
     init();
@@ -46,7 +49,7 @@
 
         // document.querySelector(':root').style.setProperty(`--${this.name}`,this.value + suffix);
         document.documentElement.style.setProperty(`--${this.name}`,this.value + (this.name === 'background' ? '' : 'px'));
-        // document.documentElement.style['--'+ this.name] = this.value + (this.name === 'background' ? '' : 'px' );  //不可行
+        // console.log(document.documentElement.style[`--${this.name}`] = this.value + (this.name === 'background' ? '' : 'px' ));  //不可行，改動不到html元素的style，只改動的到.style的這個物件內容
         // document.documentElement.setAttribute('style',`--${this.name}:${this.value}${suffix}`);
         // img_box.style['pad'+'ding'] = 200 + 'px';    //測試再[]取特性時能不能夠用加號，可以。
     }
