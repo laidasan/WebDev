@@ -32,8 +32,12 @@ body {
 .banner-wrap {
     flex: 1;
     text-align: center;
+    /* line-height: 100vh; */
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    transition: all 1s;
 }
 .banner-wrap:nth-child(1) {
     background: url("./img/img_1.jpg") no-repeat 60% center / cover;
@@ -52,24 +56,57 @@ body {
 }
 
 .banner__btn:link,.banner__btn:visited {
-    display: inline-block;
+    font-size: 30px;
     text-decoration: none;
     color: #fff;
     margin: auto;
-    position: relative;
+    position: absolute;
+    left:0;
+    right: 0;
+
+    opacity: 0;
+    transition: all .15s;
 }
 .banner__btn:nth-child(1) {
-    top: -180px;
+    /* transform: translateY(-3em); */
+    /* margin: 0 0 auto; */
+    top: 0px;
 }
 .banner__btn:nth-child(3) {
-    bottom: -180px;
+    bottom: 0px;
+    /* margin: auto 0 0; */
 }
+
 .banner__title {
     letter-spacing: 12px;
-    margin: auto;
     color: #fff;
+    margin: auto;
 }
 
 .click {
+    flex: .45;
+}
+.afterclick {
     flex: 3;
 }
+/* .banner-wrap:hover .banner__btn:nth-child(1){
+    top: 90px;
+}
+.banner-wrap:hover .banner__btn:nth-child(3){
+    bottom: 90px;
+}
+.banner-wrap:hover .banner__btn{
+    opacity: 1;
+} */
+.banner__btn--show {
+    opacity: 1;
+}
+.banner__btn--firstPosition {
+    top: 90px;
+}
+.banner__btn--lastPosition {
+    bottom: 90px;
+}
+/* .banner-wrap:hover {
+    flex: 3;
+} */
