@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Array Cardio 💪</title>
 </head>
+
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
   <script>
@@ -33,14 +35,14 @@
     const year = now.getFullYear();
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
-    let fifiten = inventors.filter(function(elem,index) {
+    let fifiten = inventors.filter(function (elem, index) {
       return (year - elem.year) >= 15;
     })
     console.log(fifiten);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
-    let name_ary = inventors.map(function(elem,index){
+    let name_ary = inventors.map(function (elem, index) {
       return {
         first: elem.first,
         last: elem.last
@@ -56,12 +58,12 @@
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-    let total = inventors.reduce(function(accumulator,inventor){
+    let total = inventors.reduce(function (accumulator, inventor) {
       return accumulator + (inventor.passed - inventor.year);
-    },0)
+    }, 0)
     console.log(total);
     // 5. Sort the inventors by years lived
-    inventors.sort(function(front,behind){
+    inventors.sort(function (front, behind) {
       return (front.passed - front.year) - (behind.passed - behind.year);
     })
     console.log(inventors);
@@ -69,10 +71,29 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+    // const a_name = document.querySelectorAll('.mw-category-group ul li a');
+    // let names = [];
+    // a_name.forEach(function (elem) {
+    //   names.push(elem.textContent);
+    // })
+    // const name_content_de = names.filter(function (elem, index) {
+    //   // return elem.split('de').length >= 2;
+    //   return elem.includes('de');
+    // });
+    // console.log(name_content_de);
+
+    // const a_name = Array.from(document.querySelectorAll('.mw-caegory-group ul li a'));
+    // const names = a_name.map(function(elem){
+    //   return elem.textContent;
+    // })
+    // const de = names.filter(function(stringName){
+    //   return stringName.includes('de');
+    // })
+
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    const alph = people.sort(function(lastone,nextone){
+    const alph = people.sort(function (lastone, nextone) {
       const aList = lastone.split(', ')[0];
       const bList = nextone.split(', ')[0];
       return aList - bList;
@@ -81,14 +102,20 @@
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-    const transportation = data.reduce(function(obj,item){
-      if(!obj[item]){obj[item] = 0};
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+    const transportation = data.reduce(function (obj, item) {
+      if (!obj[item]) { obj[item] = 0 };
       obj[item]++
 
       return obj;
-    },{})
+    }, {})
     console.log(transportation);
+
+
+    let name = 'axx dex bxx';
+    let x = name.split(' de ');
+    console.log(x);
   </script>
 </body>
+
 </html>
