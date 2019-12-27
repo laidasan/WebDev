@@ -50,8 +50,8 @@
             setTimeout(function () {
                 that.classList.add('click');
                 console.log('add click')
-            }, 420)
-            setTimeout(active, 720);
+            }, 300)
+            setTimeout(active, 600);
         }
         changing = true;
 
@@ -83,13 +83,25 @@
         // first_btn.classList.add('banner__btn--firstPosition');
         // first_btn.style.setProperty('opacity',1);
         // first_btn.style.setProperty('top',90 +'px');
+
+        
+    }
+    
+    // toggle
+    function toggleOpen() {
+        this.classList.toggle('open')
+    }
+    function toggleActive(e) {
+        console.log(e.propertyName);
+        if(e.propertyName.includes('flex')) {
+            this.classList.toggle('open--active')
+        }
     }
 
-
-
-
     banner__wrap.forEach(function (wrap) {
-        wrap.addEventListener('click', onClick);
+        // wrap.addEventListener('click', onClick);
+        wrap.addEventListener('click', toggleOpen);
+        wrap.addEventListener('transitionend',toggleActive)
     })
 
 })();

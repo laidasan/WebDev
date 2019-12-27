@@ -37,7 +37,7 @@ body {
     flex-direction: column;
     position: relative;
 
-    transition: all 1s;
+    transition: flex .6s  cubic-bezier(0.61,-0.19, 0.7,-0.11);
 }
 .banner-wrap:nth-child(1) {
     background: url("./img/img_1.jpg") no-repeat 60% center / cover;
@@ -86,9 +86,10 @@ body {
 .click {
     flex: .45;
 }
-.afterclick {
+.afterclick,.open {
     flex: 3;
 }
+
 /* .banner-wrap:hover .banner__btn:nth-child(1){
     top: 90px;
 }
@@ -106,6 +107,14 @@ body {
 }
 .banner__btn--lastPosition {
     bottom: 90px;
+}
+.banner-wrap.open--active > :first-child {
+    top: 90px;
+    opacity: 1;
+}
+.banner-wrap.open--active > :last-child {
+    bottom: 90px;
+    opacity: 1;
 }
 /* .banner-wrap:hover {
     flex: 3;
