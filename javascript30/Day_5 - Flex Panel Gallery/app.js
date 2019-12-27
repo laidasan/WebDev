@@ -87,6 +87,7 @@
         
     }
     
+    //效果二
     // toggle
     function toggleOpen() {
         this.classList.toggle('open')
@@ -99,9 +100,119 @@
     }
 
     banner__wrap.forEach(function (wrap) {
+        //效果一
         // wrap.addEventListener('click', onClick);
+
+        //效果二
         wrap.addEventListener('click', toggleOpen);
         wrap.addEventListener('transitionend',toggleActive)
     })
 
+    // function con2() {
+    //     console.log(4)
+    //     console.log(5);
+    // }
+
+    // function con(con2) {
+    //     console.log(1)
+    //     // console.log(2)
+    //     // console.log(3)
+    //     setTimeout(() => {
+    //         console.log(2);
+    //         setTimeout(() => {
+    //             console.log(3)   
+    //             if(typeof con2 === 'function'){
+    //                 setTimeout(() => {
+    //                     con2();
+    //                 })          
+    //             }   
+    //         }, 0);
+    //     },0)
+    // }
+
+
+   
+
+
+    //以下與本練習無關
+    //練習了使用settimeout了解同步與非同步是怎麼一回是，跟怎麼用callback來把非同步做成同步(順序性)
+    //也練習使用了Promise
+    // con(con2);
+
+    // let p1 = new Promise(function(resolve,reject){
+    //     setTimeout(() => {
+    //         console.log(1);
+    //         resolve('ok')
+    //     }, 3000);
+    // })
+
+    // p1.then(function(res){
+    //     alert(`resolve${res}`);
+    // })
+
+    // let p2 = new Promise(function(resolve,reject){
+    //     setTimeout(function(){
+    //         console.log(2);
+    //         reject('failed');
+    //     },3000)
+    // })
+
+    // p2.then(function(res){
+    //     alert(`resolve${res}`)
+    // }).catch(function(err){
+    //     alert(`err${err}`)
+    // })
+
+
+    //
+    // function task1(){
+    //     return new Promise(function(resolve,reject){
+    //         setTimeout(() => {
+    //             console.log(1);
+    //             resolve('resolve1')
+    //         }, 1000);
+    //     })
+    // }
+    
+    // function task2(){
+    //     return new Promise(function(resolve,reject){
+    //         setTimeout(() => {
+    //             console.log(2);
+    //             reject('reject2')
+    //         }, 1000);
+    //     })
+    // }
+    
+    // function task3(){
+    //     return new Promise(function(resolve,reject){
+    //         setTimeout(() => {
+    //             console.log(3);
+    //             resolve('resolve3')
+    //         }, 1000);
+    //     })
+    // }
+
+    // task1().then(res => {
+    //     console.log(`result=>${res}`)
+    //     return task2();
+    // }).catch(err => {
+    //     console.log(`err=>${err}`)
+    //     return task2();
+    // }).then(res => {
+    //     console.log(`result=>${res}`)
+    //     return task3();
+    // }).catch(err => {
+    //     console.log(`err=>${err}`)
+    //     return task3();
+    // }).then(res => {
+    //     console.log(`result=>${res}`);
+    //     done();
+    // }).catch(err => {
+    //     console.log(`result=>${err}`);
+    //     done(); 
+    // });
+
+    // function done() {
+    //     alert('done');
+    // }
 })();
