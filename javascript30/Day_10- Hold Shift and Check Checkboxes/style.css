@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style:none;
+}
+
+body {
+    background: #34aa84;
+    height: 100vh;
+    display: flex;
+}   
+
+.buy-container {
+    box-shadow: 12px 9px 6px rgba(0,84,0,.75);
+    background: #fff;
+    border-radius: 6px;
+    margin: auto;
+    /* padding: 0 360px 0 0 ; */
+    width: 100%;
+    min-width: 420px;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.buy__list {
+
+}
+.buy__item {
+    position: relative;
+}
+.buy__item + .buy__item::before {
+    content: '';
+    position: absolute;
+    height: 0;
+    left: 0;
+    right: -360px;
+    top: 0;
+    padding: .5px 0;
+    background: #aaa;
+}
+
+.buy__checkbox {
+    border: none;
+    outline: none;
+    display: inline-block;
+    background: #fff;
+    margin: 12px;
+    position: relative;
+}
+.buy__checkbox::after {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: -150%;
+    bottom: 0;
+    width: 0;
+    padding: 30px .5px;
+    background: #ccc;
+}
+.buy__name {
+    display: inline-block;
+    padding: 12px;
+    font-size: 21px;
+    user-select: none;
+}
