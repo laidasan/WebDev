@@ -1,0 +1,112 @@
+/* color */
+/*  #454545  */
+/*  #6D5959  */
+/*  #f17934  */
+/*  #9DCBBA  */
+/*  #ABEDB2  */
+/*  #89afa1  */
+/*  #FFEE6D  */
+/*  #998f44  */
+/*  #5cc3ff  */
+/* color  */
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body {
+    background: #454545;
+    font-family: 'Pacifico','Noto Sans TC';
+}
+.primary-main {
+    font-size: 60px;
+    font-weight: 600;
+}
+.title {
+    text-align: center;
+    /* margin-bottom: 30px; */
+    margin: 30px 0;
+    color: #fff;
+}
+.addItemContainer {
+    font-size: 0;
+    margin: 18px 0;
+    padding: 12px 50% 6px 0;
+}
+.addItemContainer__input {
+    border: none;
+    display: inline-block;
+    outline: none;
+    width: 100%;
+    font-size: 21px;
+    background: none;
+    padding-left: 12px;
+    /* border-bottom: 3px solid #89afa1; */
+}
+.addItemContainer::after {
+    content: '';
+    display: block;
+    margin-right: -15%;
+    margin-top: 6px;
+    height: 3px;
+    background: #89afa1;
+    border-radius: 12px;
+}
+.ToDoList {
+    /* padding: 0 27%; */
+    border-radius: 12px;
+    margin: 0 27%;
+    background: #ffee6d;
+    box-shadow: 12px 12px 6px 0 #998f44;
+    padding: 15px 30px 30px;
+}
+.notyet {
+
+}
+.finish {
+    
+}
+.notyet,.finish {
+    border: 3px solid #6d5959;
+    padding: 0 15px 15px;
+    margin: 15px 0 15px;
+    border-radius: 12px;
+}
+.listTitle {
+    margin: 15px 0; 
+}
+.list {
+}
+.list__item {
+    background: #ffbb93;
+    border-radius: 6px;
+    padding: 9px;
+    margin: 15px 0;
+    position: relative;
+    box-shadow: 3px 3px 3px #f17934;
+    font-size: 0;
+}
+.notyet .list__item {
+    background: #ffbb93;
+}
+.finish .list__item {
+    background: #5cc3ff;
+}
+.list__content {
+    font-size: 18px;
+}
+
+.operation-container {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.operation__icon {
+    font-size: 18px;
+    margin: 0 6px;
+    cursor: pointer;
+    /* vertical-align: middle; */
+}
