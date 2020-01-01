@@ -57,10 +57,26 @@ body {
     /* padding: 0 27%; */
     border-radius: 12px;
     margin: 0 27%;
+    /* min-width: 360px;
+    max-width: 600px;
+    margin: 0 auto; */
     background: #ffee6d;
     box-shadow: 12px 12px 6px 0 #998f44;
     padding: 15px 30px 30px;
+    
 }
+@media only screen and (max-width:768px) {
+    .ToDoList {
+        margin: 0 6%;
+    }
+}
+@media only screen and (max-width:1024px) and (min-width:768px){
+    .ToDoList {
+        margin: 0 18%;
+    }
+
+}
+
 .notyet {
 
 }
@@ -96,6 +112,12 @@ body {
 .list__content {
     font-size: 18px;
 }
+.list__inputEdit {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 18px;
+}
 
 .operation-container {
     position: absolute;
@@ -110,3 +132,9 @@ body {
     cursor: pointer;
     /* vertical-align: middle; */
 }
+input {
+    font-family: 'Pacifico','Noto Sans TC';
+
+}
+
+
