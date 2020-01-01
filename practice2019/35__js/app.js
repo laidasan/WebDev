@@ -57,3 +57,92 @@ list.addEventListener('click',function(event){
 },false);
 
 // console.log(tagP);
+
+let nan = 1 / 'two';
+console.log(isNaN(nan));
+
+
+let num_2 = 101010;
+let num_16 = 0xFF;
+let num_8 = 040;
+console.log(num_8);
+console.log(parseInt(num_2,2));
+console.log('sss\nss');
+console.log('\u0048');
+
+let p = {
+    name: 'joe'
+}
+
+function Person(){};
+function inherit(o) {
+    if(o === null){
+        throw TypeError();
+    }else if(typeof o !== 'object' && typeof o !== 'function') {
+        throw TypeError();
+    }else if(Object.create && typeof o !== 'function'){
+        return Object.create(o)
+    }else if(typeof o === 'function'){
+       return new o();
+    }else {
+        function f(){};
+        f.prototype = o;
+        return new f();
+    }
+}
+let t = inherit(Person);
+console.log(t);
+function Person() {
+    console.log('Hi');
+}
+// const joe = new Person();
+const joe = Object.create(Person);
+console.log(Object.getPrototypeOf(joe));
+console.log(typeof joe);
+console.log(joe instanceof Object);
+console.log(joe instanceof Function);
+
+function Person() {
+    this.name = 'joe';
+}
+let o = new Person();
+let p = {age: 40};
+Object.setPrototypeOf(p,o);
+let x = Object.setPrototypeOf({},p);
+console.log(x instanceof Person);
+
+
+let name = 'Joe'
+let nam = new String('shelly');
+console.log(name instanceof nam);
+
+
+function Person (){
+
+}
+function Dad(){
+    
+}
+Dad.prototype = Person.prototype;
+const dad = new Dad();
+console.log(Object.getPrototypeOf(dad));
+console.log(dad instanceof Dad);
+console.log(dad instanceof Person);
+
+
+console.log(0 / 3);
+
+let num = 3;
+let num_obj = Number(3)
+console.log(num_obj);
+console.log(typeof num_obj.valueOf());
+console.log(typeof Number(100).toString());
+
+console.log(Number(true))
+
+console.log('1' + true);
+console.log(true.toString());
+console.log(-Infinity % 100)
+
+
+let static = 0;

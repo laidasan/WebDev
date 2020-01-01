@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:css": "node-sass 36/scss/main.scss 36/style.css -w"
+    "watch:css": "node-sass 38/scss/main.scss 38/style.css -w"
   },
   "author": "Yuri",
   "license": "ISC",

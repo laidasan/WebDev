@@ -5,3 +5,7 @@
         ipsum_wrap[i].classList.add('ipsum__border-bottom')
     }
 })();
+
+function run() {
+    console.log(x);
+}
