@@ -138,3 +138,28 @@ input {
 }
 
 
+/* loading animation */
+.loadingAnimation {
+    
+}
+
+@keyframes loading {
+    0% {
+
+    }
+
+    100% {
+        
+    }
+}
+
+
+
+
+/* hide Element */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
