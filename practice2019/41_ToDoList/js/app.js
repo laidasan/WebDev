@@ -6,7 +6,6 @@
     const finishedList = document.querySelector('.finish .list')
     const value = localStorage.getItem('value');
 
-
     //產生一個新的listitem
     function ListItem() {
         const item = document.createElement('li');
@@ -97,9 +96,9 @@
                         content.classList.add('list__content');
                         content.textContent = this.value;
                         thisItem.replaceChild(content, thisItem.firstElementChild);
+                        updateLocalStorage();
                     }
                 })
-                updateLocalStorage();
                 break;
             case 'check':
                 let isfinish = e.target.dataset['isfinish'] === '0' ? false : true;
@@ -127,7 +126,10 @@
      //畫面更新
     //從localStorage取出資料，畫面更新
     function render() {
-        const localData = JSON.parse(localStorage.getItem('value'));
+        const localData = JSON.parse(localStorage.getItem('value')) || {
+            notfinish: [],
+            finished: []
+        };
         localData.notfinish.forEach((text) => {
             const item = ListItem();
             const contnet = itemContent();
