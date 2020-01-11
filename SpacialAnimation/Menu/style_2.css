@@ -1,0 +1,88 @@
+.Menu {
+    position: relative;
+}
+.menuTitle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    z-index: 1;
+    line-height: 300px;
+    text-align: center;
+    color: #33cdcd;
+    user-select: none;
+}
+.menuList {
+    /* width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    transform-origin: 50% 50%;
+    cursor: pointer; */
+}
+.menuItem {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+
+    transition: all 1s;
+}
+.menuLink:link,
+.menuLink:visited {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 150px;
+    background: #fff;
+
+    right: 0;
+    left: 0;
+    margin: auto;
+    /* top: -18 0px; */
+
+
+    transform: scale(0);
+    transition: transform 1s,top 1s;
+    color: #33cdcd;
+
+}
+/* .menuLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -99;
+    border-radius: 50%;
+    background: #fff;
+} */
+.rotate {
+    transform: rotate(360deg);
+}
+.hidden {
+    opacity: 0;
+    transform: scale(0);
+}
+.isvisible {
+    visibility: hidden;
+}
+.open .menuLink:link,
+.open .menuLink:visited {
+    /* width: 150px;
+    height: 150px;
+    font-size: 24px; */
+    transform: scale(1);
+}
+.u-color-blue {
+    color: #33cdcd;
+}

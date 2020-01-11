@@ -1,32 +1,6 @@
-* {
-    margin:0;
-    padding:0;
-    list-style: none;
+.Menu　{
+    
 }
-html {
-    overflow-y: scroll;
-}
-:root {
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-:root body {
-    /* position: absolute; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: #666666;
-}
-
-
-.Menu {
-}
-
 .menuList {
     width: 300px;
     height: 300px;

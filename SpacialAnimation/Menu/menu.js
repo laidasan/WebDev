@@ -1,19 +1,44 @@
-(function() {
-    const menu = document.querySelector('.menuList');
+(function () {
+    // const menu = document.querySelector('.menuList');
+    const menu = document.querySelector('.Menu');
+    const title = document.querySelector('.menuTitle')
     const items = document.querySelectorAll('.menuItem');
+    const links = menu.querySelectorAll('.menuLink');
 
+    //算出平均角度
+    let itemDeg = 360 / items.length;
 
-
-    menu.addEventListener('click',function(e) {
-        if(e.target.matches('.menuList')) {
-            menu.classList.toggle('rotate');
-            items.forEach((item) => {
-                item.classList.toggle('hidden');
-                item.addEventListener('transitionend',function(e) {
-                    this.classList.toggle('isvisible');
+    function handleItem(e) {
+        if(e.target.matches('.menuTitle')){
+            if (menu.matches('.Menu.open')) {
+                menu.classList.toggle('open');
+                console.log('close')
+                items.forEach(function (item, index) {
+                    item.style.setProperty('transform', `rotate(0)`);
+                    //menu close的時候把menuitem收回來一點，距離不會太遠的感覺
+                    links[index].style.setProperty('top','-90px');
                 })
-            })
+            } else {
+                console.log('open')
+                menu.classList.toggle('open');
+    
+                //計算每個li的旋轉角度，第一個 index * 60 => 0 * 60
+                //第二個 index * 60 => 1 *60 ，依此類推
+                items.forEach(function (item, index) {
+                    item.style.setProperty('transform', `rotate(${index * itemDeg}deg)`);
+                    links[index].style.setProperty('top','-180px')
+                })
+            }
         }
-    })
+    }
+
+    // links.forEach((link) => {
+    //     link.addEventListener('transitionend',(e) => {
+    //         console.log(color)
+    //         link.classList.toggle('u-color-blue');
+    //     })
+    // })
+
+    menu.addEventListener('click', handleItem)
 
 })()
