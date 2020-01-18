@@ -122,8 +122,10 @@
 
     // xhr.open('GET','data/data.html',true);
     // xhr.open('GET','data/data.xml',true);
-    // xhr.open('GET', 'data/data.json', true);
-    // xhr.send(null);
+    xhr.open('GET', 'data/data.json', true);
+    setTimeout(() => {
+        xhr.send(null);
+    },3000);
 
 })();
    
