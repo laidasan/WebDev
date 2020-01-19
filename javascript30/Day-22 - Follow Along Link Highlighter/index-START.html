@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>👀👀👀Follow Along Nav</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Order Status</a></li>
+        <li><a href="">Tweets</a></li>
+        <li><a href="">Read Our History</a></li>
+        <li><a href="">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+      <p>Lorem ipsum dolor sit amet, <a href="">consectetur</a> adipisicing elit. Est <a href="">explicabo</a> unde natus necessitatibus esse obcaecati distinctio, aut itaque, qui vitae!</p>
+      <p>Aspernatur sapiente quae sint <a href="">soluta</a> modi, atque praesentium laborum pariatur earum <a href="">quaerat</a> cupiditate consequuntur facilis ullam dignissimos, aperiam quam veniam.</p>
+      <p>Cum ipsam quod, incidunt sit ex <a href="">tempore</a> placeat maxime <a href="">corrupti</a> possimus <a href="">veritatis</a> ipsum fugit recusandae est doloremque? Hic, <a href="">quibusdam</a>, nulla.</p>
+      <p>Esse quibusdam, ad, ducimus cupiditate <a href="">nulla</a>, quae magni odit <a href="">totam</a> ut consequatur eveniet sunt quam provident sapiente dicta neque quod.</p>
+      <p>Aliquam <a href="">dicta</a> sequi culpa fugiat <a href="">consequuntur</a> pariatur optio ad minima, maxime <a href="">odio</a>, distinctio magni impedit tempore enim repellendus <a href="">repudiandae</a> quas!</p>
+    </div>
+
+  <script>
+    // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+
+    const triggers = document.querySelectorAll('a');
+    let highlight = document.createElement('span');
+    const wrapper = document.querySelector('.wrapper');
+    highlight.classList.add('highlight');
+    document.body.appendChild(highlight);
+    const body = document.body;
+
+    function hightcoords(e) {
+      const target = e.currentTarget;
+      console.log(target);
+      const coord = {
+        Left: target.offsetLeft,
+        Top: target.offsetTop,
+        Width: target.offsetWidth,
+        Height: target.offsetHeight,
+        Parent: target.offsetParent,
+        parentLeft: target.offsetParent.offsetLeft,
+        parentTop: target.offsetParent.offsetTop,
+        toString: function () {
+          console.log(this.Left,this.Top,this.Width,this.Height);
+          console.log(this.Parent);
+        }
+      }
+      coord.toString();
+      highlight.style.setProperty('width',`${coord.Width}px`);
+      highlight.style.setProperty('height',`${coord.Height}px`);
+      highlight.style.setProperty('transform',`translate(${coord.Left + coord.parentLeft}px,${coord.Top + coord.parentTop}px)`);
+      console.log(highlight);
+    }
+
+
+    triggers.forEach(function(trigger) {
+      trigger.addEventListener('mouseenter',hightcoords);
+    });
+
+
+    //取座標，自己嘗試，根本Day
+    window.addEventListener('mousemove',function (e) {
+      const {offsetX,offsetY} = e;
+      console.log(e.target.offsetParent);
+      let wrapperLeft = Boolean(e.target.offsetParent) ? wrapper.offsetLeft : 0;
+      let wrapperTop = Boolean(e.target.offsetParent) ? wrapper.offsetTop : 0;
+      let [pageWidth,pageHeight] = [body.offsetWidth,body.offsetHeight];
+      console.log( (offsetX + wrapperLeft) / pageWidth,(offsetY + wrapperTop) / pageHeight);
+    })
+  </script>
+</body>
+</html>
+
