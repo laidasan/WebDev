@@ -87,7 +87,7 @@
 //         //因為回去從第二個開始找，還是會在一樣的地方重複，所以可以不用去計算
 //         //比如說: q u s v b s p k 這個字串
 //         //當我們set.add到q u s v b 後要再add  s的時候就重複了
-//         //我們就把最前面到重覆的地方( q u ->s)刪掉
+//         //我們就把最前面到重覆的地方( q u s)刪掉
 //         //再加入s，這時候就會變成 v b s，開始重新計string!!
 //         //l是為了計算上次刪除字串到哪個位置了
 
@@ -113,6 +113,12 @@ function longestSubstring(s) {
     let longestLength = 0;
     let str = s;
 
+
+    //不用Set的版本
+    //但邏輯是一樣的
+    //當遇到重複的字的時候把temp開頭到重覆的地方刪除
+    //再開始塞字
+    //同時更新紀錄longesLength
     for(let i = 0; i < str.length;i++) {
 
         while(temp.find((char) => char === str[i])) {
