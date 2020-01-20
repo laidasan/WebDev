@@ -72,32 +72,55 @@
 
 
 //改良，使用Set來增強，不使用break邁進(好架構)
+// let str = 'qusvbspk';
+// function longestSubstring(s) {
+//     let temp = new Set();
+//     let longestLength = 0;
+//     let l = 0;
+//     let str = s;
+
+//     for (let i = 0; i < str.length; i++) {
+
+//         //跟上一個if裡面做一樣的事情
+//         //但不一樣的是我們直接從查到有重複地方之後開始找
+//         //不用再重頭從第二個找
+//         //因為回去從第二個開始找，還是會在一樣的地方重複，所以可以不用去計算
+//         //比如說: q u s v b s p k 這個字串
+//         //當我們set.add到q u s v b 後要再add  s的時候就重複了
+//         //我們就把最前面到重覆的地方( q u ->s)刪掉
+//         //再加入s，這時候就會變成 v b s，開始重新計string!!
+//         //l是為了計算上次刪除字串到哪個位置了
+
+//         while (temp.has(str[i])) {
+//             temp.delete(s[l]);
+//             l++;
+//         }
+//         temp.add(s[i]);
+//         longestLength = temp.size > longestLength ? temp.size : longestLength;
+
+//     }
+//     return longestLength;
+// }
+// console.log(longestSubstring(str));
+
+
+
+
+//不用Set的版本
 let str = 'qusvbspk';
 function longestSubstring(s) {
-    let temp = new Set();
+    let temp = [];
     let longestLength = 0;
-    let l = 0;
     let str = s;
 
-    for (let i = 0; i < str.length; i++) {
+    for(let i = 0; i < str.length;i++) {
 
-        //跟上一個if裡面做一樣的事情
-        //但不一樣的是我們直接從查到有重複地方之後開始找
-        //不用再重頭從第二個找
-        //因為回去從第二個開始找，還是會在一樣的地方重複，所以可以不用去計算
-        //比如說: q u s v b s p k 這個字串
-        //當我們set.add到q u s v b 後要再add  s的時候就重複了
-        //我們就把最前面到重覆的地方( q u ->s)刪掉
-        //再加入s，這時候就會變成 v b s，開始重新計string!!
-        //l是為了計算到哪裡
-
-        while (temp.has(str[i])) {
-            temp.delete(s[l]);
-            l++;
+        while(temp.find((char) => char === str[i])) {
+            temp.shift();
         }
-        temp.add(s[i]);
-        longestLength = temp.size > longestLength ? temp.size : longestLength;
-
+        
+        temp.push(str[i]);
+        longestLength = temp.length > longestLength ? temp.length : longestLength;
     }
     return longestLength;
 }
