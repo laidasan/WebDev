@@ -1,0 +1,165 @@
+.Menu　{
+    
+}
+.menuList {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 1px #fff;
+}
+.menuItem {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background: #000; */
+
+    /* transition: all .6s 1s; */
+}
+/* .menuItem:nth-child(2) {
+    top: -60px;
+    left: 30px;
+}
+.menuItem:nth-child(14) {
+    top: -60px;
+    left: -30px;
+}
+.menuItem:nth-child(3) {
+    top: -90px;
+    left: 45px;
+}
+.menuItem:nth-child(13) {
+    top: -90px;
+    left: -45px;
+}
+.menuItem:nth-child(4) {
+    top: -150px;
+    left: 60px;
+}
+.menuItem:nth-child(12) {
+    top: -150px;
+    left: -60px;
+}
+.menuItem:nth-child(5) {
+    top: -240px;
+    left: 180px;
+}
+.menuItem:nth-child(11) {
+    top: -240px;
+    left: -180px;
+}
+.menuItem:nth-child(6) {
+    top: -360px;
+    left: 270px;
+}
+.menuItem:nth-child(10) {
+    top: -360px;
+    left: -270px;
+}
+.menuItem:nth-child(7) {
+    top: -999px;
+    left: 381px;
+}
+.menuItem:nth-child(9) {
+    top: -999px;
+    left: -381px;
+}
+.menuItem:nth-child(8) {
+    bottom: 60px;
+} */
+
+
+
+.menuItem.circle1 {
+    top:0;
+    left: 0;
+}
+.menuItem.circle2 {
+    top: -60px;
+    left: 30px;
+}
+.menuItem.circle14 {
+    top: -60px;
+    left: -30px;
+}
+.menuItem.circle3 {
+    top: -90px;
+    left: 45px;
+}
+.menuItem.circle13 {
+    top: -90px;
+    left: -45px;
+}
+.menuItem.circle4 {
+    top: -150px;
+    left: 60px;
+}
+.menuItem.circle12 {
+    top: -150px;
+    left: -60px;
+}
+.menuItem.circle5 {
+    top: -240px;
+    left: 180px;
+}
+.menuItem.circle11 {
+    top: -240px;
+    left: -180px;
+}
+.menuItem.circle6 {
+    top: -360px;
+    left: 270px;
+}
+.menuItem.circle10 {
+    top: -360px;
+    left: -270px;
+}
+.menuItem.circle7 {
+    top: -999px;
+    left: 381px;
+}
+.menuItem.circle9 {
+    top: -999px;
+    left: -381px;
+}
+.menuItem.circle8 {
+    bottom: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+.menuLink:link,
+.menuLink:visited {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: -90px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 90px;
+    color: #5e6973;
+    font-size: 24px;
+    background: #fff;
+}
+
+.menuTitle {
+    position: fixed;
+    /* left: 0; */
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+}
