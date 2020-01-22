@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+</head>
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+  
+  <!-- <label for="test" class="label">
+    checkbox
+    <input type="checkbox" name="" id="test" class="input"></label> -->
+
+    <label for="ckbox" class="label-ckbox">Checkbox click</label>
+    <div class="container">
+      <input type="checkbox" name="ckbox" id="ckbox" class="ckbox">
+    </div>
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after { 
+    box-sizing: inherit; 
+  }
+
+  div {
+    width: 100%;
+    padding: 100px;
+  }
+
+  .one {
+    background: thistle;
+  }
+
+  .two {
+    background: mistyrose;
+  }
+
+  .three {
+    background: coral;
+  }
+</style>
+
+<button></button>
+<script>
+  const divs = document.querySelectorAll('div');
+  // const body = document.querySelector('body');
+  // const label = document.querySelector('label');
+
+  const container = document.querySelector('.container');
+  const labelCkbox = document.querySelector('.label-ckbox');
+
+  // function onClick(e) {
+  //   console.log(this);
+  //   // console.log(e.target);
+  //   // e.stopPropagation(); // stop bubbling!
+    
+  // }
+
+  // divs.forEach((div) => {
+  //   div.addEventListener('click',onClick,true);
+  //   //true capture
+  //   //false bubble  default
+  // })
+  // divs.forEach((div) => {
+  //   div.addEventListener('click',onClick,false);
+  //   //true capture
+  //   //false bubble
+  // })
+
+  // label.addEventListener('click',(e) => {
+  //   console.log('click');
+  //   console.log(e.target);           
+  //   console.log(e.currentTarget);    //觸發事件的原素  => 我們點擊click的目標，所以我們點擊label currentTarget就是label
+  // });
+  
+  //label的click事件會帶給input:checkbox等等(有跟label連接的)
+  //input的click事件也會跟著觸發，並冒泡往上傳遞
+  //所以container的click事件也會觸發
+  labelCkbox.addEventListener('click',function (e) {
+    console.log('click label-ckbox');
+
+  })
+  container.addEventListener('click',(e) => {
+    console.log('click input to div');
+  })
+</script>
+</body>
+</html>
