@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Speed Scrubber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+
+<script>
+  const video = document.querySelector('video');
+  const speed = document.querySelector('.speed');
+  const bar = document.querySelector('.speed-bar');
+  video.playbackRate = 0;
+  function handle(e) {
+    console.log(this)
+    // const y = e.pageY - this.offsetTop;
+    const y = e.offsetY;
+    // console.log('y',y,'offsetY',e.offsetY);
+    const min = 0.5;
+    const max = 6;
+    const percent = y / this.offsetHeight;
+    const height = Math.round(percent * 100);
+    const playbackRate = percent * (max - min) + min;
+    bar.style.setProperty('height',`${height}%`);
+    bar.textContent = playbackRate.toFixed(2) + 'x';
+    video.playbackRate = playbackRate;
+
+    console.log(percent);
+  }
+
+  // playbackRate 可以調節影片速度
+  //percent 算出 紫色bar區域的高度 總高度 / bar頂端到滑鼠座標的位置
+  //min max為影片最低速度與最大速度限制，因為最低也要min的速度，所以得出
+  //percent * (max - min) + min
+  //假設min = 1,max = 4,percent => 50%
+  //這時速度就是
+  //  0------1------------4
+  //  |------|------------|
+  //  1 加上 1到4的50% => 1 + (4-1) * 50% 
+  //這樣即使0%，也會有最小的速度
+speed.addEventListener('mousemove',handle);
+</script>
+</body>
+</html>
