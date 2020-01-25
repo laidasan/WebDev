@@ -34,7 +34,7 @@ body {
   position: relative;
   background: rgba(255,255,255,0.1);
   font-size: 0;
-  perspective: 500px;
+  perspective: 500px;   /* 3D point*/
 }
 
 .items:hover.will-change {
@@ -70,5 +70,5 @@ body {
 .item:nth-child(9n+8) { background: darkslateblue;}
 .item:nth-child(9n+9) { background: rebeccapurple;}
 
-.item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }
-.item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }
+.item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }  /* 3D point */
+.item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }  /* 3D point */
