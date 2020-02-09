@@ -1,5 +1,6 @@
 ;(function() {
     let num = 1990;
+    let roman = 'LVIII';
     function integerToRoman(number) {
         const romanNumber = {
             1 : 'I',
@@ -57,10 +58,39 @@
             }
             return romanary;
         },[])
-
-        console.log(roman);
         return roman.join('');
     }
 
-    console.log(integerToRoman(num));
+    // console.log(integerToRoman(num));
+
+    
+    
+    function romainToInteger(romannum) {
+        if(typeof romannum !== 'string') {return;}
+        const romantonum = {
+            'I' : 1,
+            'V' : 5,
+            'X' : 10,
+            'L' : 50,
+            'C' : 100,
+            'D' : 500,
+            'M' : 1000
+        }
+        const roman = romannum.split('');
+        let value = 0;
+
+        for(let i = 0;i < roman.length;i++) {
+            if(romantonum[roman[i]] > romantonum[roman[i - 1]]) {
+                console.log(roman[i],'big');
+                value += (romantonum[roman[i]] - romantonum[roman[i - 1]] * 2);
+            }else {
+                console.log(roman[i]);
+                value += romantonum[roman[i]];
+                console.log(value);
+            }
+        }
+        return value;
+    }
+   
+    romainToInteger(roman);
 })();
