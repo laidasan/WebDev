@@ -1,23 +1,19 @@
-function route(handle,pathname,response) {
+function route(handle,pathname,response,postData,search) {
     console.log("About to route a request for " + pathname);
     let filename = pathname.split('.');
     switch (filename[filename.length - 1]) {
-        case 'js' :
-            pathname = '/script';
+        case '/start' :
+            pathname = '/start'
             break;
-        case 'html' :
-            pathname = '/html';
-            break;
-        case 'jpg' :
-        case 'png' :
-            pathname = '/img';
-            break;
+        case '/upload' :
+            pathname = '/upload';
+            break
         default :
-            pathname = pathname;
+            pathname = '/findFileResponse';
             break;
     }
     if(typeof handle[pathname] === 'function') {
-        handle[pathname](response,filename);
+        handle[pathname](response,filename,postData,search);
     }else {
         console.log("no request handler found for " + pathname);
         response.writeHead(404, { "Content-Type": "text/plain" });  // (status code,httpHeader(JSON))
