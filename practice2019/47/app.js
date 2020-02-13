@@ -155,6 +155,14 @@
         // handler = slideNavHandler(index);
         // circle.addEventListener('click',handler);
     })
+    mapTowns.forEach((town,index) => {
+        town.addEventListener('click',(e) => {
+            slidelast = slidethis; 
+            slidethis = index;
+            resultSlide();
+        })
+    })
+
 
     window.addEventListener('scroll',throttle(resultCreateShow,500));
     resultCreates.forEach((item,index) => {
