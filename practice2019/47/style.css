@@ -539,6 +539,11 @@ html {
     text-align: center;
     letter-spacing: 3px;
     color: #fff;
+    opacity: 0;
+    transition: opacity .6s;
+}
+.result__create.show {
+    opacity: 1;
 }
 .result__create::after {
     content: '';

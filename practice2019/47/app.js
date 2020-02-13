@@ -6,6 +6,9 @@
     const slidenav = document.querySelector('.result__detail__nav');
     const resultDatas = document.querySelectorAll('.result__data');
     const mapTowns = document.querySelectorAll('.result__map__town');
+    const resultCreateContainer = document.querySelector('.result-container--create')
+    const resultCreates = document.querySelectorAll('.result__create');
+
     let lastOpen = null;
     let thisOpen = null;
     let slidelast = 0;
@@ -68,6 +71,71 @@
         }
     }
 
+    function throttle(fn,cycle) {
+        let timer;
+        return function() {
+            let context = this;
+            let args = arguments;
+            if(!timer) {
+                timer = setTimeout(() => {
+                    fn.apply(context,args);
+                    timer = null;
+                },cycle)
+            }
+        }
+    }
+
+    function resultCreateShow() {
+        const windowBottom = window.scrollY + window.innerHeight;
+        const createContainerTop = resultCreateContainer.offsetTop;
+        if (windowBottom > createContainerTop && !resultCreates[0].matches('.show')) {
+            console.log('show resultCreate');
+            resultCreates.forEach((item) => {
+                item.classList.add('show');
+            })
+        }
+    }
+    
+    function resultCreateHandler(e,index,item) {
+        let speed = 990;
+        let timeouts;
+        if(index === 0 && !timeouts) {
+            return function () {
+                setCreateTimeout();
+            }(e,index,item);
+        }else if (index === 1 && !timeouts) {
+            return function () {
+                setCreateTimeout();
+            }(e,index,item);
+        }
+        
+        function setCreateTimeout() {
+            let resultCreateData = item.querySelector('.result__create__data'); 
+            let content = parseInt(resultCreateData.textContent);
+            let stop,step,result;
+            switch (index) {
+                case 0 :
+                    stop = 8;
+                    step = 1;
+                    result = 8;
+                break;
+                case 1 :
+                    stop = 38326;
+                    step = 48;
+                    result = 38326;
+                break;
+            }
+            timeouts = setInterval(() => {
+                content += step; 
+                resultCreateData.textContent = content;
+                if(content >= stop){
+                    clearInterval(timeouts);
+                    resultCreateData.textContent = result;
+                }
+            },1000 - speed * index);
+        }
+    }
+
     whoImgBox.forEach((imgBox) => {
         imgBox.addEventListener('click', openimg);
     })
@@ -88,6 +156,10 @@
         // circle.addEventListener('click',handler);
     })
 
-
-
+    window.addEventListener('scroll',throttle(resultCreateShow,500));
+    resultCreates.forEach((item,index) => {
+        item.addEventListener('transitionend',(e) => {
+            resultCreateHandler(e,index,item);
+        });
+    })
 })();
