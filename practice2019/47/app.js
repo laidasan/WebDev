@@ -87,6 +87,14 @@
         // handler = slideNavHandler(index);
         // circle.addEventListener('click',handler);
     })
+    mapTowns.forEach((town,index) => {
+        town.addEventListener('click',(e) => {
+            slidelast = slidethis; 
+            slidethis = index;
+            resultSlide();
+        })
+    })
+
 
 
 
