@@ -9,14 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="circle"></div>
-    <!-- <img src="./bk.jpg" alt="background"> -->
-    <form action="/upload" method="post">
-        <!-- <input type="text" name="" id=""> -->
-        <textarea name="text" id="" cols="60" rows="20"></textarea>
-        <button type="submit">submit</button>
-    </form>
-    <script src="index.js"></script>e
+    <div class="lotto">
+        <h1 class="heading-primary">Lotto</h1>
+        <form action="/lotto" method="get" class="lotto-form">
+            <input type="text" name="name" id="" placeholder="enter your name " required>
+            <input type="tel"  name='tellphone' placeholder=" xxxx-xxx-xxx" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required>
+            <div class="form__buttonWrap">
+                <button type="submit" class="form__button">送出</button>
+                <button type="reset" class="form__button">重設</button>
+            </div>
+        </form>
+    </div>
+    <script src="index.js"></script>
+    <script src="lotto.js"></script>
     <!-- <script src="./main.js"></script> -->
 </body>
 </html>

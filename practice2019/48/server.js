@@ -9,17 +9,21 @@ function createOnRequest(router, handle) {
         // console.log('use url module',url.parse(request.url));  //object
         let pathname = url.parse(request.url).pathname;  
         let search = url.parse(request.url).search || '';
+        let query = url.parse(request.url).query || '';
+        let headers = request.headers;
+        console.log(url.parse(request.url));
         request.setEncoding('utf8');
         console.log('Request for ' + pathname + ' reveived');
         request.addListener('data',(postDataChunk) => {
             postData += postDataChunk;
+            console.log(postDataChunk);
             console.log(postData);
             console.log(`Received POST data chunk ${postData}.`);
         })
 
         request.addListener('end',() => {
             console.log('end listener');
-            router.route(handle, pathname,response,postData,search);
+            router.route(handle, pathname,response,postData,search,query,headers);
         })
 
     }

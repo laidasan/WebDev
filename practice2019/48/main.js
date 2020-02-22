@@ -67,9 +67,11 @@ let router = require('./router');
 let requestHandlers = require('./requestHandler');
 
 let handle = {
-    // "/" : requestHandlers.start,
+    "/" : requestHandlers.findFileResponse,
     "/start" : requestHandlers.start,
     "/upload" : requestHandlers.upload,
+    "/lotto" : requestHandlers.lotto,
+    "/getlotto": requestHandlers.getLottoUsers,
     "/findFileResponse" : requestHandlers.findFileResponse,
 }
 
