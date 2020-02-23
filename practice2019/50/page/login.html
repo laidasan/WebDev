@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="heading-primary title">Log In</h1>
+    <form action="/login" method="POST" class="form">
+        <input type="text" name="userID" class="form__input" placeholder="user_id" autofocus required>
+        <input type="password" name="userPassword" class="form__input" placeholder="password 長度8，應含大小寫字母各1" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <div class="form__button-wrap">
+            <button type="submit" class="form__btn" value="login">Log in</button>
+            <button type="submit" class="form__btn" value="sign in">sign up</button>
+        </div>
+    </form>
+    <script src="userlogin.js"></script>
+</body>
+</html>
