@@ -8,6 +8,8 @@
     const mapTowns = document.querySelectorAll('.result__map__town');
     const resultCreateContainer = document.querySelector('.result-container--create')
     const resultCreates = document.querySelectorAll('.result__create');
+    const newsImgs = document.querySelectorAll('.news__img');
+
 
     let lastOpen = null;
     let thisOpen = null;
@@ -17,13 +19,6 @@
         data.style.setProperty('transform', 'translateX(0%)');
     })
 
-    // const slide = {
-    //     slidelast : null,
-    //     slidethis : null,
-    //     slidenavListener : function(e) {
-
-    //     }
-    // }
     function openimg(e) {
         lastOpen = thisOpen;
         thisOpen = e.currentTarget;
@@ -135,6 +130,10 @@
             },1000 - speed * index);
         }
     }
+
+    newsImgs.forEach((ele,index) => {
+        ele.style.setProperty('background',`url('./img/news_${index + 1}.jpg') no-repeat center center / cover`)
+    })
 
     whoImgBox.forEach((imgBox) => {
         imgBox.addEventListener('click', openimg);
