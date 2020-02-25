@@ -1,8 +1,8 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     list-style: none;
-}
+} */
 html {
   font-family: 'Noto Sans TC', sans-serif;
   scroll-behavior: smooth;
@@ -108,7 +108,7 @@ html {
     float: left;
     min-width: 120px;
     padding: 30px 0;
-    background: url("./logo.png") no-repeat center center / contain;
+    background: url("../logo.png") no-repeat center center / contain;
 }
 .header__navigation {
     /* box-shadow: 0 0 0 1px #cd0000; */
@@ -150,7 +150,7 @@ html {
     left: 0;
     right: 0;
     z-index: -1;
-    background: url("./banner.jpg") no-repeat center center / cover;
+    background: url("../banner.jpg") no-repeat center center / cover;
 }
 .banner-txt {
     transform: translateY(50%);
@@ -198,8 +198,7 @@ html {
 /* section--hr */
 .section--hr {
     padding: 120px 0;
-    margin-bottom: 150px;
-    background: url('./img/sec_hr.jpg') fixed;
+    background: url('../img/sec_hr.jpg') fixed;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -207,7 +206,10 @@ html {
     color: #fff;
     text-align: center;
 }
-
+.section--hr__title > span {
+    display: block;
+    text-align: center;
+}
 /* section */
 
 .section {
@@ -382,7 +384,7 @@ html {
     display: inline-block;
     min-width: 450px;
     padding: 210px 0;
-    background: url("./cc_area.png") no-repeat center / contain;
+    background: url("../cc_area.png") no-repeat center / contain;
 }
 .result__map__town {
     position: absolute;
@@ -408,7 +410,7 @@ html {
     width: 18px;
     padding: 15px 0;
     margin: 0 auto;
-    background: url("./pin.png") no-repeat center / contain;
+    background: url("../pin.png") no-repeat center / contain;
     cursor: pointer;
 }
 .result__map__town:nth-child(1) {
@@ -488,7 +490,7 @@ html {
 .result__data__img {
     overflow: hidden;
     padding: 150px 0;
-    background: url("./img/town.jpg") no-repeat center center / cover;
+    background: url("../img/town.jpg") no-repeat center center / cover;
 }
 
 .result__detail__direct {
@@ -659,7 +661,49 @@ html {
 }
 
 
+/* section--boss */
+.boss-txt {
+    padding: 60px 0;
+}
+.boss-txt__article {
+    line-height: 2.1;
+}
+.boss-txt__article__part {
+    display: block;
+    text-align: center;
+    color: #333;
 
+}
+
+.boss-videoContain {
+    max-width: 640px;
+    margin: auto;
+    background: #000;
+    min-height: 360px;
+    /* max-height: 960px; */
+}
+
+
+/* section--joinus */
+.joinus-slogan {
+
+}
+.joinus-slogan__img {
+    
+}
+.joinus-slogan__txt {
+
+}
+.joinus-content {
+
+}
+.joinus-content__list {
+    list-style: decimal;
+    padding-left: 21px;
+}
+.joinus-content__listItem {
+
+}
 
 /* anmation */
 @keyframes bannerScroll {

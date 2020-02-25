@@ -1,10 +1,10 @@
-var a = 3;
-console.log('外面的',this)
-function demo() {
-    console.log('function 裡面的',this);
-    // console.log(this.a);
-}
-demo();
+// var a = 3;
+// console.log('外面的',this)
+// function demo() {
+//     console.log('function 裡面的',this);
+//     // console.log(this.a);
+// }
+// demo();
 
 // function test() {
 //     var a  = 3;
@@ -21,3 +21,11 @@ demo();
 // }
 // let p = new Person();
 // console.log(p)
+
+function add(x,y) {
+    return x + y;
+}
+
+module.exports = {
+    add : add
+}
