@@ -197,7 +197,7 @@ html {
 
 /* section--hr */
 .section--hr {
-    padding: 120px 0;
+    padding: 60px 0;
     background: url('../img/sec_hr.jpg') fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -205,10 +205,12 @@ html {
 .section--hr__title {
     color: #fff;
     text-align: center;
+    line-height: 2;
 }
 .section--hr__title > span {
     display: block;
     text-align: center;
+    user-select: none;
 }
 /* section */
 
@@ -368,9 +370,6 @@ html {
 }
 
 /* section result */
-.seciton__result {
-
-}
 .result-container {
     padding: 60px 0;
     /* margin: 0 18%; */
@@ -463,9 +462,6 @@ html {
     padding: 42px 0px;
     width: 45%;
     letter-spacing: 3px;
-}
-.result__data__txt__townName {
-
 }
 .result__data__txt__address {
     font-size: 18px;
@@ -685,26 +681,173 @@ html {
 
 
 /* section--joinus */
+.section--joinus::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    margin: 120px auto -60px;
+    padding: 0 36%;
+    background: #999;
+    /* background-clip: content-box; */
+}
 .joinus-slogan {
-
+    padding: 60px 0;
 }
 .joinus-slogan__img {
-    
+    padding: 90px 0 ;
+    min-width: 540px;
+    max-width: 600px;
+    margin: auto;
+    background: url('../img/news_1.jpg') no-repeat center 15% / cover;
 }
 .joinus-slogan__txt {
+    min-width: 450px;
+    max-width: 540px;
+    margin: 0 auto;
+    margin-top: -45px;
+    padding: 21px 0;
+    text-align: center;
+    background: #143975;
+    color: #fff;
+}
+.joinus-slogan__txt__title > span {
+    display: block;
+    letter-spacing: 3px;
+    line-height: 1.8;
 
 }
 .joinus-content {
-
+    text-align: center;
 }
 .joinus-content__list {
-    list-style: decimal;
-    padding-left: 21px;
+    list-style: none;
+    padding: 21px 0;
+    counter-reset: join;
 }
 .joinus-content__listItem {
-
+    padding: 12px 0;
+}
+.joinus-content__listItem::before {
+    content: counters(join,'-') '.';
+    counter-increment: join;
+}
+.joinus-concat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.joinus-concat__infoWrap {
+    position: relative;
+    background: #fff;
+}
+.joinus-concat__infoWrap:not(:last-child)::before  {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* height: 0; */
+    margin: auto;
+    height: 1px;
+    transform: translateX(100%);
+    background: #000;
+    z-index: -1;
+}
+.joinus-concat__infoWrap::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(75px);
+}
+.joinus-concat__infoWrap--mail::after {
+    content: '※請註明聯絡人、聯絡電話';
+}
+.joinus-concat__infoWrap--phone::after{
+    content: '※週一至週五早上9點至晚上18點。週六、日休息';
+    left: -60px;
+    right: -60px;
+}
+.joinus-concat__infoWrap:not(:last-child) {
+    margin-right: 120px;
 }
 
+
+.joinus-concat__info {
+    position: relative;
+    padding: 21px 48px;
+    box-shadow: 0 0 0 1px #000;
+    line-height: 1.5;
+}
+.joinus-concat__info__title {
+    color: #143975;
+    letter-spacing: 3px;
+
+}
+.joinus-concat__info::after,
+.joinus-concat__info::after{
+    position: absolute;
+    padding: 21px 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(72%);
+    margin: 0 15%;
+    background: #143975;
+    color: #fff;
+}
+.joinus-concat__info--mail::after {
+    content: '合作信箱';
+}
+.joinus-concat__info--phone::after {
+    content: '合作電話';
+}
+.joinus-concat__info > span {
+    font-size: 15px;
+    letter-spacing: 2.1px;
+}
+
+/* footer */
+.footer {
+    padding: 60px 0 0;
+}
+.footer__direct {
+    padding: 0 12%;
+    font-size: 0;
+    margin-bottom: 30px;
+}
+.footer__direct > a:link,
+.footer__direct > a:visited {
+    display: inline-block;
+    min-width: 18%;
+    padding: 18px 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 0 1px #000;
+
+    transition: all .3s;
+}
+.footer__direct > a:not(:last-child) {
+    margin-right: 2%;
+}
+.footer__direct > a:hover {
+    background: #143975;
+    color: #fff;
+}
+.footer__copyright {
+    padding: 21px 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+    background: #143975;
+}
 /* anmation */
 @keyframes bannerScroll {
     0% {
