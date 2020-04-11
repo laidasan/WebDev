@@ -95,7 +95,10 @@ var funParabola = function(element, target, options) {
 		
 		// 目标元素的坐标位置
 		var coordElement = {}, coordTarget = {};
-		
+        
+        // mark 只是作者方便觀看與演示，把每次的移動後的座標寫在元素的 data-center 上
+        // 實際使用上不用mark方法也可以
+        // 重點在於position 與 move 方法，獲取座標與計算移動量
 		// 标注当前元素的坐标
 		exports.mark = function() {
 			if (flagMove == false) return this;
@@ -105,7 +108,7 @@ var funParabola = function(element, target, options) {
             console.log(this)
 			return this;
 		}
-		
+		// position 取得element(移動的元素) 與  目的(target) 的位置
 		exports.position = function() {
 			if (flagMove == false) return this;
 			
@@ -173,7 +176,21 @@ var funParabola = function(element, target, options) {
 				var tangent = 2 * a * startx + b; // = y / x
 				// y*y + x*x = speed
 				// (tangent * x)^2 + x*x = speed
-				// x = Math.sqr(speed / (tangent * tangent + 1));
+                // x = Math.sqr(speed / (tangent * tangent + 1));
+                //上面這個算法會用到切線公式、畢氏定理(a * a + b * b = c * c)
+                // tangent = 2 * a * x * x + b = y => tangent = 2a = y / x
+                // 在運用畢氏定理 a平方 加 b 平方 = c平方 => x * x + y * y = speed => x * x + (2ax) * (2ax) = speed
+                // => x * x + ((y / x) * x) * ((y / x) * x) = speed = x 平方 加上 ( (y / x) * x ) 平方 = speed
+                // => x平方 + (y / x)平方 * x平方 = speed => x平方((y / x)平方 + 1) = speed
+                // x平方 = speed / ( (y / x)平方 + 1) => x = ( speed / ( (y / x)平方 + 1) ) 的開根號
+                // => x = (speed / (tangent * tangent +1) ) 開根號
+                // => x = Math.sqrt( speed / (tangent * tangent +1) )
+
+                // 每次element (移動的點) 每次移動量距離為speed
+                // 在用切線公式與畢氏定理算出 移動後的 x 座標 y 座標
+                // 再利用 margin 或是 translate 來進行移動
+                // 直到抵達目標(目的)的 中心 x 座標
+                // 為防止移動到目的後超過 中心座標位置，所以防止過界功能就是一旦過界了，就把element(移動的元素)移動到目標目的(target)的中心位置上
 				startx = startx + rate * Math.sqrt(params.speed / (tangent * tangent + 1));
 				
 				// 防止过界
@@ -192,7 +209,10 @@ var funParabola = function(element, target, options) {
 				} else {
 					element.style[moveStyle] = "translate("+ [x + "px", y + "px"].join() +")";
 				}
-				
+                
+                
+                // 以下是各種情況的回調，現在還沒擴充這兩個功能(目前都是只有return this而已)
+                // 有需要可以自行擴充
 				if (startx !== coordTarget.x) {
 					params.progress(x, y);
 					window.requestAnimationFrame(step);	

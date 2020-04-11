@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="element"></div>
+    <div class="target">target</div>
+    <!-- <script>
+        ;(() => {
+            let ele = document.querySelector('.element')
+            
+
+            window.addEventListener('resize',(e) => {
+                let eleRect = ele.getBoundingClientRect()
+                let {left,top} = eleRect
+                console.log(left,top)
+            })
+        })()
+    </script> -->
+    <script src="./funparablola.js"></script>
+    <script>
+        let element = document.querySelector('.element')
+        let target = document.querySelector('.target')
+        console.log(element)
+        console.log(target)
+        let parabola = funparabola(element,target)
+        // console.log(parabola.position())
+        parabola.init()
+    </script>
+</body>
+</html>

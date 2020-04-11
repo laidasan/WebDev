@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.element {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #0066aa;
+}
+
+.target {
+    position: absolute;
+    top: 90px;
+    left: 90px;
+    padding: 12px 21px;
+    font-size: 1.5rem;
+    box-shadow: 0 0 0 1px #000;
+}
+
+
