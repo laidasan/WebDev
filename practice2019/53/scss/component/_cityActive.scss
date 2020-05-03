@@ -1,0 +1,81 @@
+.cityActive {
+    text-align: center;
+    font-size: 0;
+    &__wrap {
+        display: inline-block;
+        box-shadow: 0 6px 6px -3px rgba($color-black,.24);
+        position: relative;
+    }
+    &__icon {
+        height: 3.9rem;
+        width: 3.9rem;
+        line-height: 3.9rem;
+        font-size: 2.1rem;
+        color: $color-white;
+        background: $color-primary;
+
+        vertical-align: top;
+    }
+
+    &-citySearch {
+        display: inline-block;
+        position: relative;
+        min-width: 27rem;
+
+    }
+    &__select {
+
+        position: relative;
+        height: 3.9rem;
+        padding-left: 1.5rem;
+        background: $color-white;
+        
+        display: block;
+        font-size: 1.5rem;
+        line-height: 3.9rem;
+        text-decoration: none;
+        color: $color-text;
+        text-align: left;
+
+        &::after {
+            content: '>';
+            position: absolute;
+            top: 0 ;bottom : 0; right: 0;
+            margin: auto;
+            font-size: 1.5rem;
+            padding: 1.2rem;
+            transform: rotateZ(90deg);
+        }
+
+        &Options {
+            position: absolute; left: 0; right: 0; top: 4.2rem;
+            display: none;
+            background: $color-white;
+            box-shadow: 0 0 0 1px rgba($color-black,.35);
+            border-radius: 3px;
+            padding: .6rem .3rem;
+
+            &.open {
+                display: block;
+            }
+            > a {
+                &:link,&:visited {
+                    display: block;
+                    text-decoration: none;
+                    padding: .6rem 0 .6rem .9rem;
+                    font-size: 1.5rem;
+                    color: $color-black;
+                    text-align: left;
+                }
+                &:hover {
+                    background: rgba($color-primary,.35);
+                }
+            }
+
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

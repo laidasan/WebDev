@@ -1,0 +1,108 @@
+.footer {
+    padding: 9rem 12% 0 12%;
+    margin-right: 3%;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 9rem;
+    }
+    &__logo {
+        float: left;
+        margin-right: .6rem;
+        > img {
+            object-fit: cover;
+            vertical-align: top;
+            height: 5.1rem;
+        }
+    }
+
+    &__list {
+        width: 60%;
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+
+    &__nav {
+        padding: 1.2rem 0;
+        font-size: 0;
+        li {
+            position: relative;
+            display: inline-block;
+            > a {
+                &:link,&:visited {
+                    text-decoration: none;
+                    color: $color-footerNav;
+                    font-size: 1.5rem;
+                    display: inline-block;
+                    margin: 0 .6rem;
+                }
+            }
+            > nav {
+                position: absolute; top: 100%; left: 0; right: 0;
+                margin-top: 1.5rem;
+                text-align: center;
+
+                > .icon {
+                    display: block;
+                    margin-bottom: 1.2rem;
+                    img {
+                        object-fit: cover;
+                        vertical-align: middle;
+                    }
+
+                    .social {
+                        height: 3.2rem;
+                    }
+                    .app {
+                        width: 9.9rem;
+                    }
+                }
+            }    
+        }
+    }
+
+    &__server {
+        width: 39%;
+        text-align: right;
+
+        &__txt {
+            color: $color-text;
+            display: inline-block;
+            text-align: left;
+            padding-right: 2.4rem;
+            > .title {
+                margin-bottom: 1.5rem;
+            }
+            > span {
+                font-size: 1.5rem;
+                display: block;
+                padding: .3rem 0;
+
+                span {
+                    color: $color-black;
+                }
+            }
+        }
+    }
+
+    &__copyright {
+        display: block;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 3rem 0;
+        color: $color-text;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 0;
+            padding: .6px 12%;
+            margin: 1.8rem;
+            background: $color-text;
+        }
+    }
+}

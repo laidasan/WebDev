@@ -1,0 +1,111 @@
+.header {
+    position: fixed;
+    z-index: 3;
+    top: 0; right: 0; left: 0;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    background: $color-white;
+    box-shadow: 0 3px 3px rgba(#333333,.3);
+    &__logo {
+        vertical-align: top;
+        object-fit: cover;
+        height: 4.5rem;
+        &-box {
+            min-width: 15rem;
+            > span {
+                font-size: 4.2rem;
+                font-style: italic;
+                color: $color-white;
+                text-shadow: 3px 3px 2px rgba(90,90,90,.75);
+            }
+        }
+
+
+    }
+
+    &-navigation {
+        display: flex;
+        align-items: center;
+        min-width: 45rem;
+    }
+
+
+    &__form {
+        position: relative;
+        z-index: 0;  // 產生結界用
+        font-size: 0;
+        border-radius: 12px;
+        box-shadow: 0px 6px 12px 0 rgba($color-black,.15);
+        &::after {
+            content: '>';
+            position: absolute;
+            left: .45rem; top: 0; bottom: 0;
+            font-size: 1.5rem;
+            line-height: 3rem;
+            color: rgba($color-text,.6);
+        }
+
+        input[type="text"] {
+            position: relative;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 12px 0 0 12px;
+            padding: .6rem 0 .6rem 1.5rem;
+            vertical-align: top;
+            &:focus {
+                outline: none;
+            }
+        }
+        &__submit {
+            position: relative;
+            z-index: 0;
+            height: 3rem;
+            padding: 0 1.2rem;
+            border: none;
+            outline: none;
+            
+            border-radius: 0 12px 12px 0;
+            background: $color-white;
+            cursor: pointer;
+
+            &::before,&::after {
+                content: '';
+                position: absolute;
+            }
+            &::before {
+                top: .6rem; left: .1rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
+                background: radial-gradient(circle at center , #fff , #fff .45rem , $color-primary .45rem , $color-primary);
+            }
+            &::after {
+                z-index: -1;
+                left: 1rem; top: 1.5rem;
+                width: .18rem;
+                height: .75rem;
+                background: $color-primary;
+
+                transform: rotateZ(-30deg);
+            }
+        }
+    }
+
+
+    &__nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        &__item {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: $color-text;
+        
+            &:first-child {
+                margin-right: 3rem;
+            }
+        }
+    }
+
+}

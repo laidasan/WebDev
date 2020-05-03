@@ -1,0 +1,67 @@
+.carousel {
+    position: relative;
+
+    &__img-box {
+        max-width: 1060px;
+        min-width: 1060px;
+        margin: auto;
+        > img {
+            vertical-align: middle;
+            object-fit: cover;
+            height: 500px;
+        }
+    }
+
+
+    &__direct {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute; top: 0; bottom : 0;left: 0; right: 0;
+        min-width: 1060px;
+        max-width: 1200px;
+        margin: auto;
+
+        &__button {
+            position: relative;
+            display: inline-block;
+            width: 3.9em;
+            height: 3.9rem;
+            background: $color-primary;
+            border-radius: 50%;
+
+            &::before {
+                content: '>';
+                position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+                margin: auto;
+                text-align: center;
+                line-height: 3.9rem;
+                border-radius: 50%;
+                color: $color-white;
+                font-size: 1.8rem;
+            }
+            &:first-child::before {
+                transform: scale(-1);
+            }
+        }
+    }
+
+
+    &__dots {
+        position: absolute;
+        bottom: 1.5rem; left: 0; right: 0;
+        text-align: center;
+        font-size: 0;
+        > li {
+            display: inline-block;
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px $color-white;
+            margin:  0 .6rem;
+        }
+        > .choose {
+            background: $color-white;
+        }
+    }
+}

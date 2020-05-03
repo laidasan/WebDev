@@ -1,0 +1,62 @@
+.activeCard {
+    margin: 1.5rem auto;
+    box-shadow: 0 0 6px rgba($color-black,.35);
+    border-radius: 10px;
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: left;
+        margin-bottom: 2.4rem;
+    }
+
+    &__img-box {
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+        img {
+            vertical-align: middle;
+            object-fit: cover;
+            height: 170px;
+        }
+    }
+
+    &-content {
+        padding: 1.2rem 1.5rem;
+        border-radius: 0 0 6px 6px;
+        &__title {
+            > span {
+                display: block;
+            }
+        }
+
+
+        &__description {
+            display: flex;
+            justify-content: space-between;
+            padding: .6rem 0;
+            > p {
+                padding-left: 1.5rem;
+                font-size: 1.5rem;
+                &:first-child {
+                    box-shadow: 0 0 0 1px #cd0000;
+                }
+            }
+
+            &__date {
+                background: url('../../img/calendar.svg') no-repeat left center;
+                background-size: 1.2rem;
+            }
+
+            &__country {
+                background: url('../../img/mark-solid.svg') no-repeat left center;
+                background-size: 1.2rem;
+            }
+
+            &__location {
+                background: url('../../img/star.svg') no-repeat left center;
+                background-size: 1.2rem;
+            }
+        }
+
+    }
+}

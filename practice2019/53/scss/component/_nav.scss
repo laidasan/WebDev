@@ -1,0 +1,30 @@
+.nav {
+    &-active {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.2rem 0;
+        &__option {
+            &:link,
+            &:visited {
+                // display: inline-block;
+                width: 9rem;
+                height: 9rem;
+                box-shadow: 0 0 0 2.4px $color-primary;
+                border-radius: 50%;
+                color: $color-primary;
+                background: $color-white;
+
+                text-decoration: none;
+                text-align: center;
+                line-height: 9rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            &:hover {
+                color: $color-white;
+                background: $color-primary;
+            }
+        }
+    }
+}
