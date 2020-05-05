@@ -1,4 +1,35 @@
 .active {
+    &Page {
+        padding: 4.5rem 0;
+
+        &Container {
+            display: flex;
+            justify-content: center;
+            padding: 3rem 0;
+            > .left {
+                flex-grow: 1;
+                max-width: 24%;
+                margin-right: 6%;
+            }
+            > .right {
+                flex-grow: 1;
+                max-width: 79rem;
+            }
+        }
+
+        &Section {
+            &:not(:last-child)::after {
+                content: '';
+                display: block;
+                height: 0;
+                padding: .05rem 0;
+                background: $color-text;
+                margin: 1.5rem 0;
+            }
+        }
+    }
+
+
     &Now {
         text-align: center;
     }

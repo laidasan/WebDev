@@ -64,4 +64,42 @@
             background: $color-white;
         }
     }
+
+
+    // carousel-card
+    &-card {
+        position: relative;
+        max-width: 112rem;
+        margin: auto;
+        
+        &__container {
+            font-size: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 0 .1rem;
+
+            > .activeCard {
+                display: inline-block;
+                margin-right: 4.8rem;
+            }
+        }
+
+        .carousel__direct {
+            max-width: none;
+            min-width: auto;
+            left: -6rem ; right: -6rem;
+
+            &__button {
+                width: 4.5rem;
+                height: 4.5rem;
+                background: $color-white;
+                color: $color-text;
+                box-shadow: 0 0 0 2.1px $color-text;
+                &::before {
+                    line-height: 4.5rem;
+                    color: $color-text;
+                }
+            }
+        }
+    }
 }

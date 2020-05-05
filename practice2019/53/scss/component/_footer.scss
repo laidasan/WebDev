@@ -1,7 +1,6 @@
 .footer {
     padding: 9rem 12% 0 12%;
-    margin-right: 3%;
-
+    background: $color-footerbk;
     &__container {
         display: flex;
         justify-content: space-between;
@@ -68,12 +67,14 @@
     &__server {
         width: 39%;
         text-align: right;
+        margin-right: 3%;
 
         &__txt {
             color: $color-text;
             display: inline-block;
             text-align: left;
             padding-right: 2.4rem;
+
             > .title {
                 margin-bottom: 1.5rem;
             }
