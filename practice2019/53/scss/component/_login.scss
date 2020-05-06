@@ -1,0 +1,178 @@
+.login {
+    padding: 9rem 36%;
+    &-container {
+        min-width: 32rem;
+        padding-top: 3rem;
+        background: $color-loginbk;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__btn {
+        &:link,&:visited {
+            display: block;
+            padding: .9rem 0;
+            background: $color-primary;
+            text-align: center;
+            text-decoration: none;
+            color: $color-white;
+            font-size: 1.5rem;
+            border-radius: 3px;
+        }
+        &--social {
+            &:link,
+            &:visited {
+                background: $color-primaryDark;
+            }
+        }
+        
+        &--sign {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: $color-primary;
+            font-size: 1.2rem;
+        }
+    }
+
+    &__notice {
+        font-size: 1.2rem;
+        padding: 3rem 0;
+        color: $color-text;
+        line-height: 2.1;
+        &--upline {
+            &::before {
+                content: '';
+                display: block;
+                height: 0;
+                padding: .3rem 0;
+                background: $color-white;
+                margin-bottom: 3rem;
+            }   
+        }
+
+        > span {
+            display: block;
+            padding: 0 12%;
+            // &:not(:last-child) {
+            //     margin-bottom: 1.8rem;
+            // }
+        }
+    }
+
+    &__form {
+        padding: 3rem 12% 0;
+        // padding: 3rem 0 0;
+        margin-bottom: 1.2rem;
+        text-align: center;
+        &__input {
+            display: block;
+            // width: calc(100% - 9px);
+            width: 100%;
+            max-width: calc(100% - 12px);
+            border: none;
+            border-radius: 3px;
+            padding: .9rem 0 .9rem 1.2rem;
+            margin-bottom: .9rem;
+
+            box-shadow: 0 0 0 1px #000;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+
+        &__remember {
+            float: left;
+            // display: inline-block;
+            cursor: pointer;
+            font-size: 1.2rem;
+            // padding: .3rem ;
+
+            > span {
+                position: relative;
+                display: inline-block;
+                font-size: 0;
+                width: 1.2rem;
+                height: 1.2rem;
+                box-shadow: 0 0 0 .5px $color-black;
+                border-radius: 50%;
+                margin-right: .6rem;
+
+                &::after {
+                    content: '';
+                    // position: absolute; top: .21rem; bottom : .21rem; left: .21rem; right: .21rem;
+                    position: absolute; top: .75px;bottom: 0; right: .3px; left: 0;
+                    margin: auto;
+                    width: 0.81rem;
+                    height: 0.81rem; 
+                    border-radius: 50%;
+                }
+            }
+
+            &Checkbox {
+                display: none;
+
+                &:checked  + label > span {
+                    &::after {
+                        background: $color-text;
+                    }
+                }
+            }
+
+            + .wrap {
+                overflow: hidden;
+                text-align: right;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+
+        &__forget {
+        }
+
+        &__submit {
+            display: block;
+            margin-top: 2.7rem;
+            width: 100%;
+            padding: .9rem 0;
+            font-size: 1.5rem;
+            color: $color-white;
+            background: $color-primary;
+            border: none;
+            border-radius: 3px;
+            margin-bottom: .9rem;
+        }   
+
+        // notice
+        > .login__notice {
+        }
+
+        //    or
+        // new guest
+
+        > span, > span + a {
+            display: block;
+            margin: 2.4rem 0;
+            font-size: 1.2rem;
+            &:link,
+            &:visited {
+                font-size: 1.5rem;
+            }
+        }
+
+
+    }
+}
