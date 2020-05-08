@@ -583,6 +583,36 @@ html {
       padding: .6px 12%;
       margin: 1.8rem;
       background: #484848; }
+  .footer--login {
+    padding: 0 33%;
+    display: flex;
+    align-items: center; }
+    .footer--login img {
+      height: 4.2rem;
+      vertical-align: middle; }
+    .footer--login__nav {
+      flex-grow: 6;
+      font-size: 0; }
+      .footer--login__nav > a:link, .footer--login__nav > a:visited {
+        position: relative;
+        display: inline-block;
+        padding: 0 calc((100% - 152px) / 6);
+        text-decoration: none;
+        color: #484848;
+        font-size: 1.5rem; }
+    .footer--login__item + .footer--login__item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      padding: 0 .01rem;
+      background: #000; }
+    .footer--login > p {
+      flex-grow: 1;
+      text-align: right;
+      font-size: 1.5rem; }
 
 .login {
   padding: 9rem 36%; }

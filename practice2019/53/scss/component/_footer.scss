@@ -106,4 +106,51 @@
             background: $color-text;
         }
     }
+
+
+    // login footer
+    &--login {
+        padding: 0 33%;
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 4.2rem;
+            vertical-align: middle;
+        }
+
+        &__nav {
+            flex-grow: 6;
+            font-size: 0;
+            > a {
+                &:link,
+                &:visited {
+                    position: relative;
+                    display: inline-block;
+                    padding: 0 calc((100% - 152px) / 6);
+                    text-decoration: none;
+                    color: $color-text;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        
+        &__item {
+            & + &::before {
+                content: '';
+                position: absolute;
+                top: 0; bottom : 0; left: 0;
+                width: 0;
+                padding: 0 .01rem;
+                background: $color-black;
+            }
+        }
+
+        > p {
+            flex-grow: 1;
+            text-align: right;
+            font-size: 1.5rem;
+        }
+    }
 }
