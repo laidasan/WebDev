@@ -15,6 +15,18 @@ html {
   font-size: 1.8rem;
   font-weight: 700; }
 
+.u-margin-bottom-big {
+  margin-bottom: 6rem; }
+
+.u-margin-bottom-mid {
+  margin-bottom: 4.5rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 3rem; }
+
+.u-margin-bottom-smaller {
+  margin-bottom: 1.5rem; }
+
 .cityActive {
   text-align: center;
   font-size: 0; }
@@ -616,12 +628,35 @@ html {
 
 .login {
   padding: 9rem 36%; }
+  .login--forget {
+    margin-top: 6rem; }
   .login-container {
     min-width: 32rem;
-    padding-top: 3rem;
+    padding: 3rem 0;
     background: #f6f6f6; }
   .login__title {
     text-align: center; }
+  .login__subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 3rem; }
+    .login__subtitle.textCenter {
+      text-align: center; }
+    .login__subtitle--icon::after {
+      content: '';
+      display: inline-block;
+      margin-left: .6rem;
+      vertical-align: middle;
+      background: url("../../img/status-success.svg") no-repeat left top/contain; }
+    .login__subtitle--icon.capchaSend::after {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: url("../../img/status-success.svg") no-repeat left top/contain; }
+    .login__subtitle--icon.capchaError::after {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: url("../../img/status-error.svg") no-repeat left top/contain; }
   .login__btn:link, .login__btn:visited {
     display: block;
     padding: .9rem 0;
@@ -635,6 +670,8 @@ html {
     background: #395590; }
   .login__btn--sign {
     margin-bottom: 1.2rem; }
+  .login__btn--forget:link, .login__btn--forget:hover {
+    padding: 1.5rem 0; }
   .login__link:link, .login__link:visited {
     text-decoration: none;
     color: #02bad3;
@@ -644,6 +681,11 @@ html {
     padding: 3rem 0;
     color: #484848;
     line-height: 2.1; }
+    .login__notice--forget {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      text-align: left;
+      padding: 3rem 12%; }
     .login__notice--upline::before {
       content: '';
       display: block;
@@ -655,7 +697,8 @@ html {
       display: block;
       padding: 0 12%; }
   .login__form {
-    padding: 3rem 12% 0;
+    padding-top: 3rem;
+    margin: 0 12%;
     margin-bottom: 1.2rem;
     text-align: center; }
     .login__form__input {
@@ -721,6 +764,64 @@ html {
       font-size: 1.2rem; }
       .login__form > span:link, .login__form > span:visited, .login__form > span + a:link, .login__form > span + a:visited {
         font-size: 1.5rem; }
+  .login__selectGroup {
+    display: flex;
+    text-align: left;
+    margin: 2.1rem 0; }
+    .login__selectGroup__icon > img {
+      object-fit: cover;
+      vertical-align: middle;
+      width: 2.1rem; }
+    .login__selectGroupWrap {
+      flex-grow: 1;
+      margin-left: 1.2rem;
+      font-size: 1.5rem; }
+    .login__selectGroupWrap {
+      flex-grow: 1; }
+      .login__selectGroupWrap--email {
+        position: relative; }
+      .login__selectGroupWrap > P {
+        line-height: 1.5; }
+      .login__selectGroupWrap.open {
+        box-shadow: 0 0 0 7.5px #fff, 0 -3px 0 7.5px #fff; }
+        .login__selectGroupWrap.open > p {
+          background: #fff; }
+      .login__selectGroupWrap > ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: .9rem 0; }
+        .login__selectGroupWrap > ul.open {
+          display: block;
+          left: -7.5px;
+          right: -7.5px; }
+    .login__selectGroup__listItem {
+      position: relative;
+      padding: .6rem .3rem;
+      margin: 0 4.5px;
+      cursor: pointer;
+      background: #fff; }
+      .login__selectGroup__listItem:not(:last-child) {
+        margin-bottom: .6rem; }
+      .login__selectGroup__listItem:hover {
+        background: rgba(2, 186, 211, 0.3); }
+  .login__capcha {
+    font-size: 1.5rem;
+    padding: .9rem 1.2rem;
+    width: 100%;
+    max-width: calc(100% - 11.1rem);
+    margin-left: .6rem;
+    border: none; }
+    .login__capcha:focus {
+      outline: none; }
+    .login__capchaLabel {
+      font-size: 1.5rem;
+      text-align: left; }
+      .login__capchaLabel--block {
+        display: block; }
 
 .section {
   padding: 6rem 0; }

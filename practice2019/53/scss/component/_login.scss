@@ -1,13 +1,53 @@
 .login {
     padding: 9rem 36%;
+    &--forget {
+        margin-top: 6rem;
+    }
     &-container {
         min-width: 32rem;
-        padding-top: 3rem;
+        // padding-top: 3rem;
+        padding: 3rem 0;
         background: $color-loginbk;
     }
 
     &__title {
         text-align: center;
+    }
+    &__subtitle {
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-align: left;
+        margin-bottom: 3rem;
+
+        &.textCenter {
+            text-align: center;
+        }
+
+        &--icon {
+            &::after {
+                content: '';
+                display: inline-block;
+                margin-left: .6rem;
+                vertical-align: middle;
+                background: url("../../img/status-success.svg") no-repeat left top / contain;
+            }
+
+            &.capchaSend {
+                &::after {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    background: url("../../img/status-success.svg") no-repeat left top / contain;
+                }
+            }
+
+            &.capchaError {
+                &::after {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    background: url("../../img/status-error.svg") no-repeat left top / contain;
+                }
+            }
+        }
     }
 
     &__btn {
@@ -31,6 +71,16 @@
         &--sign {
             margin-bottom: 1.2rem;
         }
+
+        &--forget {
+            &:link,
+            &:hover {
+                padding: 1.5rem 0;
+            }
+            // margin: 6rem 0;
+            // margin-bottom: 0;
+        }
+        
     }
 
     &__link {
@@ -47,6 +97,14 @@
         padding: 3rem 0;
         color: $color-text;
         line-height: 2.1;
+
+        &--forget {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            text-align: left;
+            padding: 3rem 12%;
+        }
+
         &--upline {
             &::before {
                 content: '';
@@ -68,8 +126,10 @@
     }
 
     &__form {
-        padding: 3rem 12% 0;
+        // padding: 3rem 12% 0;
         // padding: 3rem 0 0;
+        padding-top: 3rem;
+        margin: 0 12%;
         margin-bottom: 1.2rem;
         text-align: center;
         &__input {
@@ -140,9 +200,6 @@
             }
         }
 
-        &__forget {
-        }
-
         &__submit {
             display: block;
             margin-top: 2.7rem;
@@ -156,9 +213,7 @@
             margin-bottom: .9rem;
         }   
 
-        // notice
-        > .login__notice {
-        }
+
 
         //    or
         // new guest
@@ -172,7 +227,107 @@
                 font-size: 1.5rem;
             }
         }
+    }
 
+
+    &__selectGroup {
+        display: flex;
+        text-align: left;
+        margin: 2.1rem 0;
+        &__icon {
+            > img {
+                object-fit: cover;
+                vertical-align: middle;
+                width: 2.1rem;
+
+
+            }
+        }
+
+        &Wrap {
+            flex-grow: 1;
+            margin-left: 1.2rem;
+            font-size: 1.5rem;
+        }
+
+        &Wrap {
+            flex-grow: 1;
+
+            &--email {
+                position: relative;
+            }
+
+            > P {
+                line-height: 1.5;
+            }
+
+            &.open {
+                box-shadow: 0 0 0 7.5px $color-white,
+                            0 -3px 0 7.5px $color-white;
+                > p {
+                    background: $color-white;
+                }
+            }
+
+
+
+            > ul {
+                display: none;
+                position: absolute; top : 100%; left: 0; right: 0;
+                background: $color-white;
+                padding: .9rem 0;
+                &.open {
+                    display: block;
+                    left: -7.5px; right: -7.5px;
+                }
+            }
+
+        }
+
+        &__list {
+            &Item {
+                position: relative;
+                padding: .6rem .3rem;
+                margin: 0 4.5px;
+                cursor: pointer;
+                background: $color-white;
+
+                &:not(:last-child) {
+                    margin-bottom: .6rem;
+                }
+                &:hover {
+                    background: rgba($color-primary,.3);
+                }
+            }
+        }
 
     }
+
+
+    // capcha 驗證碼
+
+    &__capcha {
+        // capcha input
+        font-size: 1.5rem;
+        padding: .9rem 1.2rem;
+        width: 100%;
+        max-width: calc(100% - 11.1rem);
+        margin-left: .6rem;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+        // label
+        &Label {
+            // box-shadow: 0 0 0 1px #cd0000;
+            font-size: 1.5rem;
+            text-align: left;
+            &--block {
+                display: block;
+            }
+        }
+
+    }
+
+
 }
