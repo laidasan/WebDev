@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>sign</title>
+</head>
+<body class="home">
+    <header class="header">
+        <div class="header__logo-box">
+            <img src="../img/logo_3x.png" alt="logo" class="header__logo">
+            <span>ahda</span>
+        </div>
+        <div class="header-navigation loginPage">
+            <nav class="header__nav loginPage">
+                <a href="#" class="header__nav__item">刊登活動</a>
+                <a href="#" class="header__nav__item">登入</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="login login--sign">
+        <h4 class="login--sign__errorMessage u-margin-bottom-smaller">請確認填妥註冊資料</h4>
+        <div class="login-container login-container--sign">
+            <h3 class="heading-fifth login__title">註冊</h3>
+            <form method="POST" class="login__form login__form--sign">
+                <input type="email" name="SignEmail" id="SignEmail" class="login__form__input sign__input" placeholder="請輸入您的Email">
+                <input type="text" name="SignName" id="SignName" class="login__form__input sign__input" placeholder="店名、公司團體、藝名姓名">
+                <input type="password" name="SignPassword" id="SignPassword" class="login__form__input sign__input" placeholder="請輸入密碼">
+                <label for="SignPasswordConfirm" class="sign__inputLabel error">
+                    <input type="text" name="SignPasswordConfirm" id="SignPasswordConfirm" class="login__form__input sign__input" placeholder="請再次輸入密碼">
+                </label>
+                <div class="login__selectGroup login__selectGroup--sign">
+                    <div class="login__selectGroupWrap login__selectGroupWrap--sign ">
+                        <p class="city select">縣市</p>
+                        <ul class="login__selectGroup__list cityList selectList">
+                            <li class="login__selectGroup__listItem">新北</li>
+                            <li class="login__selectGroup__listItem">基隆</li>
+                        </ul>
+                    </div>
+                    <div class="login__selectGroupWrap login__selectGroupWrap--sign">
+                        <p class="location select">地區</p>
+                        <ul class="login__selectGroup__list locationList selectList">
+                            <!-- <li class="login__selectGroup__listItem"></li> -->
+                            <!-- <li class="login__selectGroup__listItem"></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <button type="submit" class="login__form__submit sign__submit">註冊</button>
+                <p class="login__notice sign__notice">註冊登入即表示您同意我們的<a href="#" class="login__link">隱私政策</a> 及<a href="#" class="login__link">服務條款</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../source/selectopen.js"></script>
+</html>

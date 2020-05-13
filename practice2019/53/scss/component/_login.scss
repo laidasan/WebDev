@@ -8,6 +8,10 @@
         // padding-top: 3rem;
         padding: 3rem 0;
         background: $color-loginbk;
+
+        &--sign {
+            padding: 1.2rem 0;
+        }
     }
 
     &__title {
@@ -211,6 +215,7 @@
             border: none;
             border-radius: 3px;
             margin-bottom: .9rem;
+            cursor: pointer;
         }   
 
 
@@ -227,6 +232,65 @@
                 font-size: 1.5rem;
             }
         }
+
+
+        // sign form 
+        &--sign {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;;
+
+            .sign__input {
+                box-shadow: none;
+
+                &Label {
+                    position: relative;
+                    display: block;
+                    &.error {
+                        &::after {
+                            content: '';
+                            position: absolute; top: 0; bottom :0; right: .9rem;
+                            padding: .75rem;
+                            background: url("../../img/status-error.svg")no-repeat left center / 1.5rem;
+                        }
+
+                        > input {
+                            &::-webkit-input-placeholder,
+                            &::placeholder {
+                                color: $color-error;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sign__notice {
+                padding: 0;
+            }
+
+            .sign__submit {
+                margin: 4.5rem 0;
+            }
+        }
+    }
+    
+    &--sign__errorMessage {
+        position: relative;
+        text-align: center;
+        color: $color-error;
+        background: $color-errorbk;
+        font-size: 1.5rem;
+        padding: .6rem 0;
+        min-width: 32rem;
+
+        &::after {
+            content: '';
+            position: absolute; top: 0; bottom :0; right: 0; left: 18rem;
+            margin: auto;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: url("../../img/status-error.svg")no-repeat left center / 1.5rem;
+        }
     }
 
 
@@ -234,6 +298,8 @@
         display: flex;
         text-align: left;
         margin: 2.1rem 0;
+        
+
         &__icon {
             > img {
                 object-fit: cover;
@@ -248,26 +314,51 @@
             flex-grow: 1;
             margin-left: 1.2rem;
             font-size: 1.5rem;
-        }
+            
+            &--sign {
+                position: relative;
+                margin-left: 0;
+                max-width: 48%;
+                margin: auto;
 
-        &Wrap {
-            flex-grow: 1;
+                background: $color-white;
+
+                > p {
+                    padding: .9rem 0;
+                    margin-left: 1.2rem;
+                }
+            }
 
             &--email {
                 position: relative;
+
+                &.open {
+                    box-shadow: 0 0 0 7.5px $color-white,
+                                0 -3px 0 7.5px $color-white;
+                    > p {
+                        background: $color-white;
+                    }
+                }
+
+                > ul {
+                    &.open {
+                        left: -7.5px; right: -7.5px;
+                    }
+                }
             }
 
             > P {
                 line-height: 1.5;
             }
 
-            &.open {
-                box-shadow: 0 0 0 7.5px $color-white,
-                            0 -3px 0 7.5px $color-white;
-                > p {
-                    background: $color-white;
-                }
-            }
+            // &.open {
+                
+            //     box-shadow: 0 0 0 7.5px $color-white,
+            //                 0 -3px 0 7.5px $color-white;
+            //     > p {
+            //         background: $color-white;
+            //     }
+            // }
 
 
 
@@ -278,7 +369,7 @@
                 padding: .9rem 0;
                 &.open {
                     display: block;
-                    left: -7.5px; right: -7.5px;
+                    // left: -7.5px; right: -7.5px;
                 }
             }
 

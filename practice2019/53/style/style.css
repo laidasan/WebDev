@@ -634,6 +634,8 @@ html {
     min-width: 32rem;
     padding: 3rem 0;
     background: #f6f6f6; }
+    .login-container--sign {
+      padding: 1.2rem 0; }
   .login__title {
     text-align: center; }
   .login__subtitle {
@@ -757,13 +759,56 @@ html {
       background: #02bad3;
       border: none;
       border-radius: 3px;
-      margin-bottom: .9rem; }
+      margin-bottom: .9rem;
+      cursor: pointer; }
     .login__form > span, .login__form > span + a {
       display: block;
       margin: 2.4rem 0;
       font-size: 1.2rem; }
       .login__form > span:link, .login__form > span:visited, .login__form > span + a:link, .login__form > span + a:visited {
         font-size: 1.5rem; }
+    .login__form--sign {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-bottom: 0; }
+      .login__form--sign .sign__input {
+        box-shadow: none; }
+        .login__form--sign .sign__inputLabel {
+          position: relative;
+          display: block; }
+          .login__form--sign .sign__inputLabel.error::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: .9rem;
+            padding: .75rem;
+            background: url("../../img/status-error.svg") no-repeat left center/1.5rem; }
+          .login__form--sign .sign__inputLabel.error > input::-webkit-input-placeholder, .login__form--sign .sign__inputLabel.error > input::placeholder {
+            color: #d6191E; }
+      .login__form--sign .sign__notice {
+        padding: 0; }
+      .login__form--sign .sign__submit {
+        margin: 4.5rem 0; }
+  .login--sign__errorMessage {
+    position: relative;
+    text-align: center;
+    color: #d6191E;
+    background: #ffd8d8;
+    font-size: 1.5rem;
+    padding: .6rem 0;
+    min-width: 32rem; }
+    .login--sign__errorMessage::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 18rem;
+      margin: auto;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: url("../../img/status-error.svg") no-repeat left center/1.5rem; }
   .login__selectGroup {
     display: flex;
     text-align: left;
@@ -776,16 +821,26 @@ html {
       flex-grow: 1;
       margin-left: 1.2rem;
       font-size: 1.5rem; }
-    .login__selectGroupWrap {
-      flex-grow: 1; }
+      .login__selectGroupWrap--sign {
+        position: relative;
+        margin-left: 0;
+        max-width: 48%;
+        margin: auto;
+        background: #fff; }
+        .login__selectGroupWrap--sign > p {
+          padding: .9rem 0;
+          margin-left: 1.2rem; }
       .login__selectGroupWrap--email {
         position: relative; }
+        .login__selectGroupWrap--email.open {
+          box-shadow: 0 0 0 7.5px #fff, 0 -3px 0 7.5px #fff; }
+          .login__selectGroupWrap--email.open > p {
+            background: #fff; }
+        .login__selectGroupWrap--email > ul.open {
+          left: -7.5px;
+          right: -7.5px; }
       .login__selectGroupWrap > P {
         line-height: 1.5; }
-      .login__selectGroupWrap.open {
-        box-shadow: 0 0 0 7.5px #fff, 0 -3px 0 7.5px #fff; }
-        .login__selectGroupWrap.open > p {
-          background: #fff; }
       .login__selectGroupWrap > ul {
         display: none;
         position: absolute;
@@ -795,9 +850,7 @@ html {
         background: #fff;
         padding: .9rem 0; }
         .login__selectGroupWrap > ul.open {
-          display: block;
-          left: -7.5px;
-          right: -7.5px; }
+          display: block; }
     .login__selectGroup__listItem {
       position: relative;
       padding: .6rem .3rem;
