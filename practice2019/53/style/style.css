@@ -91,12 +91,12 @@ html {
     .cityActive__select:focus {
       outline: none; }
 
-.hoveActiveIntro__tagList {
+.homeActiveIntro__tagList {
   display: flex;
   box-shadow: 0 0 0 1px #02bad3;
   margin-bottom: 3rem; }
 
-.hoveActiveIntro__tag {
+.homeActiveIntro__tag {
   position: relative;
   flex-grow: 1;
   text-align: center;
@@ -105,13 +105,13 @@ html {
   color: #02bad3;
   cursor: pointer;
   transition: color .15s linear; }
-  .hoveActiveIntro__tag > span {
+  .homeActiveIntro__tag > span {
     position: relative;
     z-index: 1; }
-  .hoveActiveIntro__tag.choose, .hoveActiveIntro__tag:hover {
+  .homeActiveIntro__tag.choose, .homeActiveIntro__tag:hover {
     color: #fff;
     padding: .75rem 0 1.5rem 0; }
-    .hoveActiveIntro__tag.choose::after, .hoveActiveIntro__tag:hover::after {
+    .homeActiveIntro__tag.choose::after, .homeActiveIntro__tag:hover::after {
       content: '';
       position: absolute;
       left: -1px;
@@ -125,6 +125,10 @@ html {
   margin: 1.5rem auto;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
   border-radius: 10px; }
+  .activeCard:link, .activeCard:visited {
+    text-decoration: none;
+    display: block;
+    color: #000; }
   .activeCard-container {
     display: flex;
     flex-wrap: wrap;
@@ -149,8 +153,6 @@ html {
       .activeCard-content__description > p {
         padding-left: 1.5rem;
         font-size: 1.5rem; }
-        .activeCard-content__description > p:first-child {
-          box-shadow: 0 0 0 1px #cd0000; }
       .activeCard-content__description__date {
         background: url("../../img/calendar.svg") no-repeat left center;
         background-size: 1.2rem; }
@@ -189,6 +191,7 @@ html {
   object-fit: cover; }
 
 .activePage__paragraph {
+  display: none;
   font-size: 1.5rem;
   line-height: 1.5;
   letter-spacing: .3rem; }
@@ -227,12 +230,16 @@ html {
 .activePageAbout__desTags {
   font-size: 0; }
   .activePageAbout__desTags > a {
+    position: relative;
     display: inline-block;
     margin: 3rem 1.2rem 0rem 0;
     border-radius: 50%;
     overflow: hidden; }
     .activePageAbout__desTags > a.choose {
       box-shadow: 0 0 0 0.21rem #02bad3; }
+    .activePageAbout__desTags > a > img {
+      position: relative;
+      z-index: -1; }
 
 .activePageAbout__pContainer {
   display: none;

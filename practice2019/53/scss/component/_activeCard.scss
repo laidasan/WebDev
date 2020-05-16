@@ -3,6 +3,15 @@
     box-shadow: 0 0 6px rgba($color-black,.35);
     border-radius: 10px;
 
+    // active a tag 
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+        display: block;
+        color: $color-black;
+    }
+
     &-container {
         display: flex;
         flex-wrap: wrap;
@@ -38,7 +47,6 @@
                 padding-left: 1.5rem;
                 font-size: 1.5rem;
                 &:first-child {
-                    box-shadow: 0 0 0 1px #cd0000;
                 }
             }
 

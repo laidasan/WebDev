@@ -45,6 +45,7 @@
     }
 
     function submit(target) {
+        window.location.href = 'forget-2.html'
         return this
     }
 
