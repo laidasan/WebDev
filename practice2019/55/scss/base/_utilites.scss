@@ -1,0 +1,39 @@
+.u-bk-primary {
+    background: $color-primary;
+}
+.u-bk-sub {
+    background: $color-sub;
+}
+.u-color-primary {
+    color: $color-primary;
+}
+
+
+
+.u-margin {
+    &-b-big {
+        margin-bottom: 3.6rem;
+    }
+
+    &-b-mid {
+        margin-bottom: 2.1rem;
+    }
+
+    &-b-small {
+        margin-bottom: 1.2rem;  
+    }
+
+    @include respond(m-mobile) {
+        &-b-big {
+            margin-bottom: 3rem;
+        }
+    
+        &-b-mid {
+            margin-bottom: 1.5rem;
+        }
+    
+        &-b-small {
+            margin-bottom: .6rem;  
+        }
+    }
+}

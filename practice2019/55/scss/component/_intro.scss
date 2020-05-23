@@ -1,0 +1,130 @@
+.intro {
+    font-size: 0;
+
+    &__des {
+        display: inline-block;
+        width: 48%;
+        font-size: 1.5rem;
+
+        &__img-box {
+            padding: 7.5rem 0;
+            background: url("../../image/img/pics05.jpg") no-repeat left top / cover;
+        }
+
+        > p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+
+            > a {
+                &:link,
+                &:visited {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__sidebarWrap {
+        display: inline-block;
+        width: 47.5%;
+        margin-left: 4.5%;
+        vertical-align: top;
+    }
+    
+    
+    &__sidebar {
+        display: inline-block;
+        width: 45%;
+
+        & + & {
+            margin-left: 10%;
+        }
+
+        &__title {
+            margin-bottom: 5.19rem;
+        }
+
+        &__list {
+            
+            &Item {
+                // position: relative;
+                margin: 1.5rem 0;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &:not(:last-child)::after {
+                    content: '';
+                    display: block;
+                    height: 1.5px;
+                    background: rgba($color-black,.3);
+                    margin-top: 1.5rem;
+                }
+
+                &::before {
+                    content: '';
+                    float: left;
+                    height: 1.2rem;
+                    width: 1.2rem;
+                    vertical-align: middle;
+                    margin-right: 1.8rem;
+
+                }
+                &.black::before {
+                    box-shadow: 0 0 0 1px $color-black;
+                }
+                &.white::before {
+                    box-shadow: 0 0 0 1px $color-white;
+                }
+
+                > p {
+                    overflow: hidden;
+                }
+
+                a {
+                    &:link,
+                    &:visited {
+                        color: $color-primary;
+                        font-size: 1.5rem;
+                    }
+
+                    // &::before {
+                    //     content: '';
+                    //     float: left;
+                    //     height: 1.2rem;
+                    //     width: 1.2rem;
+                    //     vertical-align: middle;
+                    //     margin-right: 1.8rem;
+                    // }
+                }
+
+            }
+        }
+    }
+
+    @include respond(m-mobile) {
+        &__des {
+            display: block;
+            width: auto;
+            margin-bottom: 6rem;
+    
+            &__img-box {
+            }
+    
+            > p {
+                line-height: 1.8;
+            }
+        }
+    
+        &__sidebarWrap {
+            display: block;
+            width: auto;
+            margin: 0;
+        }
+
+        &__sidebar {
+            vertical-align: top;
+        }
+    }
+}

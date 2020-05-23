@@ -1,0 +1,10 @@
+.footer {
+    font-size: 0;
+    padding: 9rem 9%;
+    background: $color-black;
+    color: $color-white;
+
+    &__paragraph {
+        color: rgba($color-white,.3)
+    }
+}

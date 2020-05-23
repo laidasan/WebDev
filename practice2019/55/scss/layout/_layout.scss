@@ -1,0 +1,12 @@
+.row {
+    font-size: 0;
+    &-2c {
+        display: inline-block;
+        width: 50%;
+    }
+
+    &-3c {
+        display: inline-block;
+        width: 33%;
+    }
+}
