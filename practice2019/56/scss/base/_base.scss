@@ -1,0 +1,31 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    overflow-y: scroll;
+}
+
+:root {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    body {
+        position: absolute;
+    }
+}
+
+body {
+    width: 100vw;
+    overflow: hidden;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+.header-space {
+    padding-top: 10rem;
+}
+
+section {
+    padding: 12rem 0;
+}

@@ -1,0 +1,44 @@
+.btn {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: $color-text;
+    }
+
+    &--login {
+        &:link,
+        &:visited {
+            position: relative;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            padding: 0 3rem;
+            line-height: 2;
+            background: $color-white;
+            box-shadow: 0 0 0 1px $color-text;
+            border-radius: 6px;
+
+            // use flaot to right
+            float: right;
+        }
+
+        &:hover {
+            background: rgba(144,144,144,.07);
+        }
+    }
+
+    &--primary {
+        &:link,
+        &:visited{
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $color-white;
+            padding: 0 6rem;
+            line-height: 3;
+            background: $color-primary;
+            border-radius: 6px;
+        }
+    }
+}

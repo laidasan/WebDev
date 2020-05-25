@@ -1,0 +1,18 @@
+.heading {
+    &-primary  {
+        font-size: 4.5rem;
+        font-weight: 700;
+    }
+    &-secondary {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+    &-thread {
+        font-size: 2.1rem;
+        font-weight: 700;
+    }
+    &-fourth {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+}

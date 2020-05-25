@@ -1,0 +1,38 @@
+.photos {
+    margin: 0 12%;
+    font-size: 0;
+    &__card {
+        display: inline-block;
+        width: 30%;
+        box-shadow: 0 0 0 1px rgba($color-black,.3);
+
+        & + & {
+            margin-left: 5%;
+        }
+
+        &__img-box {
+
+            > img {
+                object-fit: contain;
+                vertical-align: middle;
+                width: 100%;
+
+            }
+        }
+
+        &-txt {
+            padding: 3rem 1.8rem;
+
+            &__title {
+                color: $color-sub;
+                margin-bottom: 1.8rem;
+            }
+
+            &__article {
+                font-size: 1.5rem;
+                color: $color-text;
+                line-height: 1.5;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.footer {
+    padding: 6rem 0;
+    color: $color-white;
+    background: $color-sub;
+    text-align: center;
+
+    &__concat {
+        font-size: 0;
+        margin: 0 12%;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 0;
+            padding: .05rem 0;
+            background: $color-white;
+            margin: 4.5rem 12%;
+        }
+
+
+        &__item {
+            display: inline-block;
+            width: 33%;
+            text-align: left;
+            font-size: 1.5rem;
+            vertical-align: top;
+
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 1.5rem;
+                color: $color-primary;
+                margin-right: 1.2rem;
+            }
+
+            &.phone::before {
+                content: "\f095";
+            }
+            
+            &.email::before {
+                content: "\f0e0";
+            }
+
+            &.location::before {
+                content: "\f041";
+            }
+        }
+
+    }
+
+    &__copyright {
+        font-size: 1.2rem;
+    }
+
+    @include respond(desktop) {
+        &__concat {
+            margin: 0 6%;
+        }
+    }
+}

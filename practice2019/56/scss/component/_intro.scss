@@ -1,0 +1,58 @@
+.intro {
+    &__list {
+        position: relative;
+        margin: 0 12%;
+        font-size: 0;
+        box-shadow: 0 0 0 1px #00cd00;
+        &Item {
+            display: inline-block;
+            width: 30%;
+            text-align: right;
+            margin-right: 20%;
+
+            &:first-child,
+            &:nth-child(2) {
+                margin-bottom: 12rem;
+            }
+
+            &:nth-child(2),
+            &:nth-child(4) {
+                text-align: left;
+                margin: 0;
+                margin-left: 20%;
+            }
+
+            > .title {
+                color: $color-sub;
+                margin-bottom: 1.8rem;;
+            }
+
+            > p {
+                font-size: 1.5rem;
+                color: $color-text;
+            }
+
+
+            
+            &.img {
+                position: absolute;
+                left: 0; right: 0; top: 0; bottom: 0;
+                width: 40%;
+                margin: auto;
+
+                > .img-box {
+                    text-align: center;
+                    height: 100%;
+                    > img {
+                        height: 100%;
+                        vertical-align: middle;
+                        object-fit: cover;
+                        border-radius: 50%;
+
+                    }
+                    // background: url("../../img/pic01.jpg") no-repeat left top / cover;
+                }
+            }
+        }
+    }
+}
