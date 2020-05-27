@@ -1,0 +1,32 @@
+.footer {
+    padding: 9rem 0;
+    background: $color-sub;
+    font-size: 1.5rem;
+    color: $color-white;
+    text-align: center;
+
+
+    &__copyright {
+        display: inline-block;
+        letter-spacing: .1rem;
+    }
+    
+    &__social {
+        font-size: 0;
+        > a {
+            &:link,
+            &:visited {
+                display: inline-block;
+                width: 3.9rem;
+                height: 3.9rem;
+                font-size: 1.5rem;
+                color: $color-white;
+                line-height: 3.9rem;
+                &:not(:last-child) {
+                    margin-right: 1.2rem;
+                }
+                background: $color-sub-dark;
+            }
+        }
+    }
+}

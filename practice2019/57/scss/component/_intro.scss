@@ -1,0 +1,60 @@
+.intro {
+    display: flex;
+    padding: 6rem 9%;
+    background: $color-gray;
+    &__main {
+        position: relative;
+        font-size: 0;
+        flex-grow: 2;
+        max-width: 54%;
+        padding-right: 12%;
+    }
+
+    &__sidebar {
+        flex-grow: 1;
+        max-width: 33%;
+    }
+
+    &__group {
+        display: inline-block;
+        width: 45%;
+        & + & {
+            margin-left: 10%;
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0; left: 0; right: 33%;
+                width: 0;
+                margin: auto;
+                padding: 9rem .05rem;
+                background: rgba($color-black,.15);
+            }
+        }
+
+    }
+
+    &__paragraph {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: rgba($color-black,.6);
+    }
+
+    &__linkList {
+        &__item {
+            > a {
+                &:link,
+                &:visited {
+                    display: block;
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                    text-decoration: none;
+                    color: rgba($color-black,.6)
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,211 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  overflow-y: scroll;
+  font-size: 62.5%; }
+
+:root {
+  overflow-x: hidden;
+  overflow-y: auto; }
+  :root body {
+    position: absolute; }
+
+body {
+  width: 100vw;
+  overflow: hidden; }
+
+.body-container {
+  padding: 0 3%; }
+
+strong {
+  font-weight: 900; }
+
+.heading-primary {
+  font-size: 5.7rem;
+  font-weight: 700; }
+
+.heading-sub {
+  font-size: 4.5rem;
+  font-weight: 700; }
+
+.heading-fourth {
+  font-size: 2.4rem;
+  font-weight: 700; }
+
+.heading-fifth {
+  font-size: 1.8rem;
+  font-size: 700; }
+
+.u-margin-b-big {
+  margin-bottom: 3.6rem; }
+
+.u-margin-b-mid {
+  margin-bottom: 3rem; }
+
+.u-margin-b-s {
+  margin-bottom: 2.4rem; }
+
+.u-margin-b-ss {
+  margin-bottom: 1.8rem; }
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  padding: 1.2rem 3.2rem;
+  text-decoration: none;
+  font-size: 1.5rem; }
+
+.btn--primary:link, .btn--primary:visited {
+  background: #f67c78;
+  color: #fff; }
+
+.btn--card:link, .btn--card:visited {
+  font-size: 1.6rem;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  letter-spacing: .1rem;
+  color: #fff; }
+
+.btn--card.primary {
+  background: #e85d48; }
+
+.btn--card.b {
+  background: #57aead; }
+
+.btn--card.c {
+  background: #809944; }
+
+.header {
+  padding: 3rem 9%;
+  min-width: 120rem;
+  overflow: hidden; }
+  .header__logo-box {
+    float: left; }
+  .header__logo:link, .header__logo:visited {
+    text-decoration: none;
+    font-size: 5.7rem;
+    font-weight: 700;
+    color: #f67c78; }
+  .header__nav {
+    position: relative;
+    padding: .7rem 0;
+    max-width: 60rem;
+    margin: 0 0 0 auto; }
+    .header__nav::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: -6px;
+      width: 0;
+      padding: 0 .1rem;
+      background: #f3f3f3; }
+    .header__nav > a:link, .header__nav > a:visited {
+      display: inline-block;
+      padding: 1.8rem 2.1rem;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f67c78; }
+      .header__nav > a:link.choose, .header__nav > a:visited.choose {
+        color: #fff;
+        background: #f67c78; }
+
+.banner {
+  padding: 20rem 0;
+  margin: 6rem 9%;
+  background: #0000cd;
+  background: url("../../img/banner/banner.jpg") no-repeat center top/100%; }
+  .banner-m {
+    padding: 9rem 9%;
+    background: #f3f3f3; }
+    .banner-m > .paragraph {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      letter-spacing: .05rem;
+      color: rgba(0, 0, 0, 0.6); }
+      .banner-m > .paragraph > a {
+        color: #f67c78; }
+
+.intro {
+  display: flex;
+  padding: 6rem 9%;
+  background: #f3f3f3; }
+  .intro__main {
+    position: relative;
+    font-size: 0;
+    flex-grow: 2;
+    max-width: 54%;
+    padding-right: 12%; }
+  .intro__sidebar {
+    flex-grow: 1;
+    max-width: 33%; }
+  .intro__group {
+    display: inline-block;
+    width: 45%; }
+    .intro__group + .intro__group {
+      margin-left: 10%; }
+      .intro__group + .intro__group::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 33%;
+        width: 0;
+        margin: auto;
+        padding: 9rem .05rem;
+        background: rgba(0, 0, 0, 0.15); }
+  .intro__paragraph {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6); }
+  .intro__linkList__item > a:link, .intro__linkList__item > a:visited {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6); }
+  .intro__linkList__item > a:hover {
+    text-decoration: underline; }
+
+.procard {
+  padding: 6rem 9%;
+  font-size: 0;
+  background: #fff; }
+  .procard__card {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 33%;
+    vertical-align: top; }
+    .procard__card:nth-child(1) {
+      background: #f67c78; }
+    .procard__card:nth-child(2) {
+      background: #79c4ca; }
+    .procard__card:nth-child(3) {
+      background: #abc269; }
+    .procard__card-txt {
+      padding: 7.5rem 3.9rem; }
+      .procard__card-txt > .paragraph {
+        font-size: 1.5rem;
+        line-height: 2.1; }
+
+.footer {
+  padding: 9rem 0;
+  background: #e4c65d;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center; }
+  .footer__copyright {
+    display: inline-block;
+    letter-spacing: .1rem; }
+  .footer__social {
+    font-size: 0; }
+    .footer__social > a:link, .footer__social > a:visited {
+      display: inline-block;
+      width: 3.9rem;
+      height: 3.9rem;
+      font-size: 1.5rem;
+      color: #fff;
+      line-height: 3.9rem;
+      background: #e2ad1c; }
+      .footer__social > a:link:not(:last-child), .footer__social > a:visited:not(:last-child) {
+        margin-right: 1.2rem; }

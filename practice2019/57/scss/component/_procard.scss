@@ -1,0 +1,24 @@
+.procard {
+    padding: 6rem 9%;
+    font-size: 0;
+    background: $color-white;
+    &__card {
+        display: inline-block;
+        color: $color-white;
+        text-align: center;
+        width: 33%;
+        vertical-align: top;
+
+        &:nth-child(1) {background: $color-primary;}
+        &:nth-child(2) {background: $color-card-b;}
+        &:nth-child(3) {background: $color-card-c;}
+        &-txt {
+            padding: 7.5rem 3.9rem;
+
+            > .paragraph {
+                font-size: 1.5rem;
+                line-height: 2.1;
+            }
+        }
+    }
+}
