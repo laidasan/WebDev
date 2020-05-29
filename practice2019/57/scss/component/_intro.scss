@@ -57,4 +57,32 @@
         }
     }
 
+
+    @include respond(mobile) {
+        display: block;
+        text-align: center;
+        &__main {
+            max-width: initial;
+            margin-bottom: 6rem;
+            padding: 0;
+        }
+
+        &__sidebar {
+            max-width: initial;
+            font-size: 0;
+        }
+
+        &__group {
+            display: inline-block;
+            width: 50%;
+            & + & {
+                margin-left: 0;
+                &::before {
+                    content: none;
+                }
+            }
+    
+        }
+    }
+
 }

@@ -2,6 +2,7 @@
     padding: 6rem 9%;
     font-size: 0;
     background: $color-white;
+
     &__card {
         display: inline-block;
         color: $color-white;
@@ -19,6 +20,13 @@
                 font-size: 1.5rem;
                 line-height: 2.1;
             }
+        }
+    }
+
+    @include respond(mobile) {
+        &__card {
+            display: block;
+            width: auto;
         }
     }
 }

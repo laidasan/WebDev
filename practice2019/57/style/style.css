@@ -165,6 +165,24 @@ strong {
     color: rgba(0, 0, 0, 0.6); }
   .intro__linkList__item > a:hover {
     text-decoration: underline; }
+  @media only screen and (max-width: 960px) {
+    .intro {
+      display: block;
+      text-align: center; }
+      .intro__main {
+        max-width: initial;
+        margin-bottom: 6rem;
+        padding: 0; }
+      .intro__sidebar {
+        max-width: initial;
+        font-size: 0; }
+      .intro__group {
+        display: inline-block;
+        width: 50%; }
+        .intro__group + .intro__group {
+          margin-left: 0; }
+          .intro__group + .intro__group::before {
+            content: none; } }
 
 .procard {
   padding: 6rem 9%;
@@ -187,6 +205,10 @@ strong {
       .procard__card-txt > .paragraph {
         font-size: 1.5rem;
         line-height: 2.1; }
+  @media only screen and (max-width: 960px) {
+    .procard__card {
+      display: block;
+      width: auto; } }
 
 .footer {
   padding: 9rem 0;
