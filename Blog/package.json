@@ -13,7 +13,7 @@
   "author": "laidasan",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "uglify-js": "^3.6.0"
   },
   "dependencies": {
